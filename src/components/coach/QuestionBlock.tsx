@@ -23,9 +23,11 @@ export function QuestionBlock({
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (customText.trim()) {
-      onSelectAnswer(customText.trim(), "typed");
+    const clean = customText.trim().slice(0, 100);
+    if (clean) {
+      onSelectAnswer(clean, "typed");
       setShowCustomInput(false);
+      setCustomText("");
     }
   };
 
@@ -83,6 +85,7 @@ export function QuestionBlock({
         <form onSubmit={handleCustomSubmit} className="flex items-center gap-1.5 pt-1 animate-fade-in">
           <input
             type="text"
+            maxLength={100}
             value={customText}
             onChange={(e) => setCustomText(e.target.value)}
             placeholder="Type your own answer..."
