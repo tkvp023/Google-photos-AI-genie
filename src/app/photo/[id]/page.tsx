@@ -29,8 +29,9 @@ function PhotoViewerContent({ photoId }: { photoId: string }) {
   const [showInfo, setShowInfo] = useState(false);
   const [targets, setTargets] = useState<StudyTarget[]>([]);
 
-  const cleanId = photoId.replace(/\.[^.]+$/, "");
-  const photoSrc = `/library/${cleanId}.jpg`;
+  const rawId = photoId.replace(/\.[^.]+$/, "");
+  const cleanId = rawId.replace(/[^a-zA-Z0-9_-]/g, "");
+  const photoSrc = `/library/${cleanId || "beach_01"}.jpg`;
 
   const isStudyMode = Boolean(sessionId && targetId);
 

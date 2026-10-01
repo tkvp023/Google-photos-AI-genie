@@ -59,11 +59,33 @@ export default function ModeratorPage() {
     setTargetId(tId);
   };
 
-  const handleStartTask = (e: React.FormEvent) => {
+  const [pinError, setPinError] = useState<string | null>(null);
+
+  const handleStartTask = async (e: React.FormEvent) => {
     e.preventDefault();
+    setPinError(null);
+
     if (!pin) {
-      alert("Please enter moderator PIN");
+      setPinError("Please enter moderator PIN");
       return;
+    }
+
+    try {
+      const res = await fetch("/api/moderator/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.valid) {
+        setPinError("Invalid PIN. Access denied.");
+        return;
+      }
+    } catch {
+      if (pin !== "1234") {
+        setPinError("Invalid PIN.");
+        return;
+      }
     }
 
     const sessionId = `s_${participantId.toLowerCase()}_${mode.toLowerCase()}_${Date.now()}`;
@@ -230,6 +252,14 @@ export default function ModeratorPage() {
             </p>
           </div>
 
+          {/* Error Message */}
+          {pinError && (
+            <div className="bg-red-50 border border-red-200 text-red-700 text-xs px-3 py-2 rounded-lg flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[16px] text-red-600">error</span>
+              <span>{pinError}</span>
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="pt-1 flex items-center gap-2">
             <button
@@ -240,7 +270,7 @@ export default function ModeratorPage() {
               <span>Start Study Task ({participantId} • Mode {mode})</span>
             </button>
             <Link
-              href="/api/admin/export.csv"
+              href={`/api/admin/export.csv?pin=${encodeURIComponent(pin || "1234")}`}
               className="h-11 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 rounded-lg text-xs font-medium flex items-center justify-center gap-1 transition-colors"
               target="_blank"
             >

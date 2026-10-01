@@ -128,7 +128,15 @@ def test_derived_metrics(session_id):
 
 def test_export_csv(session_id):
     print("\n--- [5/6] Testing /api/admin/export.csv Endpoint ---")
-    url = f"{BASE_URL}/api/admin/export.csv"
+    # Verify unauthenticated request is blocked
+    try:
+        urllib.request.urlopen(f"{BASE_URL}/api/admin/export.csv")
+        assert False, "Expected 401 for unauthenticated export.csv"
+    except urllib.error.HTTPError as e:
+        assert e.code == 401, f"Expected 401 for unauthenticated export.csv, got {e.code}"
+        print("PASS: Unauthenticated export correctly blocked (401)")
+
+    url = f"{BASE_URL}/api/admin/export.csv?pin=1234"
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as resp:
         assert resp.getcode() == 200, f"Expected 200, got {resp.getcode()}"

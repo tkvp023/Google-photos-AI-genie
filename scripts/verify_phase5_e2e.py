@@ -183,7 +183,15 @@ def test_s8_zero_results():
 
 def test_export_csv_and_metrics(mode_a_session, mode_b_session):
     print("\n--- [5/6] Testing CSV Export & Metrics Validation ---")
-    url = f"{BASE_URL}/api/admin/export.csv"
+    # Check unauthenticated blocked
+    try:
+        urllib.request.urlopen(f"{BASE_URL}/api/admin/export.csv")
+        assert False, "Expected 401 for unauthenticated export.csv"
+    except urllib.error.HTTPError as e:
+        assert e.code == 401, f"Expected 401, got {e.code}"
+        print("PASS: Unauthenticated CSV export blocked with 401")
+
+    url = f"{BASE_URL}/api/admin/export.csv?pin=1234"
     with urllib.request.urlopen(url) as resp:
         assert resp.getcode() == 200
         content = resp.read().decode("utf-8")

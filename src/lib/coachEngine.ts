@@ -32,37 +32,37 @@ export function filterCandidates(photos: PhotoItem[], answers: Answer[]): PhotoI
 
       switch (ans.cueType) {
         case "who":
-          const matchesGroup = tag.group_type.toLowerCase() === targetVal;
-          const matchesAge = tag.people_ages.some((a) => a.toLowerCase() === targetVal);
+          const matchesGroup = (tag.group_type || "").toLowerCase() === targetVal;
+          const matchesAge = Array.isArray(tag.people_ages) && tag.people_ages.some((a) => (a || "").toLowerCase() === targetVal);
           if (!matchesGroup && !matchesAge) return false;
           break;
 
         case "where":
-          const matchesSetting = tag.setting.toLowerCase().includes(targetVal);
-          const matchesInOut = tag.indoor_outdoor.toLowerCase() === targetVal;
+          const matchesSetting = (tag.setting || "").toLowerCase().includes(targetVal);
+          const matchesInOut = (tag.indoor_outdoor || "").toLowerCase() === targetVal;
           if (!matchesSetting && !matchesInOut) return false;
           break;
 
         case "what":
-          if (!tag.activity.toLowerCase().includes(targetVal)) return false;
+          if (!(tag.activity || "").toLowerCase().includes(targetVal)) return false;
           break;
 
         case "occasion":
           const cleanOccasion = targetVal.replace(/\?$/, "");
-          if (!tag.occasion_guess.toLowerCase().includes(cleanOccasion)) return false;
+          if (!(tag.occasion_guess || "").toLowerCase().includes(cleanOccasion)) return false;
           break;
 
         case "look":
-          const matchesClothing = tag.clothing.some(
-            (c) => c.colour.toLowerCase().includes(targetVal) || c.item.toLowerCase().includes(targetVal)
+          const matchesClothing = Array.isArray(tag.clothing) && tag.clothing.some(
+            (c) => (c?.colour || "").toLowerCase().includes(targetVal) || (c?.item || "").toLowerCase().includes(targetVal)
           );
-          const matchesObject = tag.objects.some((o) => o.toLowerCase().includes(targetVal));
+          const matchesObject = Array.isArray(tag.objects) && tag.objects.some((o) => (o || "").toLowerCase().includes(targetVal));
           if (!matchesClothing && !matchesObject) return false;
           break;
 
         case "when":
-          const matchesTime = tag.time_of_day.toLowerCase() === targetVal;
-          const matchesWeather = tag.weather_or_season.toLowerCase().includes(targetVal);
+          const matchesTime = (tag.time_of_day || "").toLowerCase() === targetVal;
+          const matchesWeather = (tag.weather_or_season || "").toLowerCase().includes(targetVal);
           if (!matchesTime && !matchesWeather) return false;
           break;
       }
@@ -103,7 +103,9 @@ export function computeFieldDistribution(
         values = [tag.occasion_guess];
       }
     } else if (field === "clothing_color") {
-      values = tag.clothing.map((c) => c.colour).filter((c) => c && c !== "unknown");
+      values = Array.isArray(tag.clothing)
+        ? (tag.clothing.map((c) => c?.colour).filter((c) => c && c !== "unknown") as string[])
+        : [];
     } else if (field === "time_of_day") {
       if (tag.time_of_day && tag.time_of_day !== "unknown") values = [tag.time_of_day];
     }

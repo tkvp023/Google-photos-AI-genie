@@ -34,6 +34,11 @@ export function useCoach(query: string, mode: "A" | "B") {
     }
 
     const trimmed = query.trim();
+    if (trimmed.length === 0) {
+      setIsDismissed(false);
+      lastAnalyzedQueryRef.current = "";
+    }
+
     if (trimmed.length < 3 || isDismissed) {
       setState("IDLE");
       setQuestions([]);

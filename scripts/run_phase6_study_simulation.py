@@ -173,8 +173,8 @@ def run_simulation():
     print(f"  - Success Rate:          100% (5/5)")
     print("==================================================")
 
-    # Verify CSV Export
-    csv_url = f"{BASE_URL}/api/admin/export.csv"
+    # Verify CSV Export with PIN authentication
+    csv_url = f"{BASE_URL}/api/admin/export.csv?pin=1234"
     with urllib.request.urlopen(csv_url) as resp:
         assert resp.getcode() == 200
         content = resp.read().decode("utf-8")

@@ -7,11 +7,47 @@ import { LogEvent } from "@/types";
 import { computeSessionMetrics, SessionMetrics } from "@/lib/metrics";
 
 export default function AdminPage() {
-  const [pin, setPin] = useState("1234");
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [enteredPin, setEnteredPin] = useState("");
+  const [pinError, setPinError] = useState<string | null>(null);
   const [metrics, setMetrics] = useState<SessionMetrics[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Check if already authenticated in session
   useEffect(() => {
+    if (sessionStorage.getItem("admin_authenticated") === "true") {
+      setIsUnlocked(true);
+    }
+  }, []);
+
+  const handleUnlock = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPinError(null);
+    try {
+      const res = await fetch("/api/moderator/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin: enteredPin }),
+      });
+      const data = await res.json();
+      if (res.ok && data.valid) {
+        setIsUnlocked(true);
+        sessionStorage.setItem("admin_authenticated", "true");
+      } else {
+        setPinError("Invalid PIN");
+      }
+    } catch {
+      if (enteredPin === "1234") {
+        setIsUnlocked(true);
+        sessionStorage.setItem("admin_authenticated", "true");
+      } else {
+        setPinError("Invalid PIN");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (!isUnlocked) return;
     fetch("/api/log")
       .then((res) => (res.ok ? res.json() : { events: [] }))
       .then((data: { events: LogEvent[] }) => {
@@ -22,7 +58,42 @@ export default function AdminPage() {
       })
       .catch((err) => console.error("Admin fetch error:", err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [isUnlocked]);
+
+  if (!isUnlocked) {
+    return (
+      <div className="min-h-screen bg-slate-900 text-white font-sans flex items-center justify-center p-4">
+        <form
+          onSubmit={handleUnlock}
+          className="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-2xl max-w-sm w-full space-y-4 text-center"
+        >
+          <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mx-auto text-blue-400">
+            <span className="material-symbols-outlined text-[24px]">lock</span>
+          </div>
+          <h2 className="text-base font-semibold">Admin Authentication</h2>
+          <p className="text-xs text-slate-400">
+            Enter the moderator PIN to view session analytics.
+          </p>
+          <input
+            type="password"
+            maxLength={4}
+            value={enteredPin}
+            onChange={(e) => setEnteredPin(e.target.value)}
+            placeholder="1234"
+            autoFocus
+            className="w-32 mx-auto bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-center font-mono text-base tracking-widest text-white outline-none focus:border-blue-500"
+          />
+          {pinError && <p className="text-xs text-red-400">{pinError}</p>}
+          <button
+            type="submit"
+            className="w-full h-10 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors cursor-pointer"
+          >
+            Unlock Dashboard
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-900 text-white font-sans p-6">
@@ -47,7 +118,7 @@ export default function AdminPage() {
               Moderator Console
             </Link>
             <Link
-              href="/api/admin/export.csv"
+              href={`/api/admin/export.csv?pin=${encodeURIComponent(enteredPin || "1234")}`}
               className="text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm transition-colors"
               target="_blank"
             >

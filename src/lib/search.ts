@@ -112,28 +112,32 @@ export function scorePhoto(
   const fieldWeights = config.FIELD_WEIGHTS;
   const cueWeights = config.CUE_WEIGHTS;
 
+  const peopleAgesList = Array.isArray(tag.people_ages) ? tag.people_ages : [];
+  const clothingList = Array.isArray(tag.clothing) ? tag.clothing : [];
+  const objectsList = Array.isArray(tag.objects) ? tag.objects : [];
+
   // Extract searchable strings per field
   const fieldsToCheck: Record<string, { weight: number; text: string }> = {
-    theme: { weight: 2.5, text: photo.theme },
-    setting: { weight: fieldWeights.setting, text: tag.setting },
-    indoor_outdoor: { weight: 2.0, text: tag.indoor_outdoor },
-    one_line: { weight: fieldWeights.one_line, text: tag.one_line },
-    activity: { weight: fieldWeights.activity, text: tag.activity },
-    occasion_guess: { weight: fieldWeights.occasion_guess, text: tag.occasion_guess },
-    group_type: { weight: fieldWeights.group_type, text: tag.group_type },
-    people_ages: { weight: fieldWeights.people_ages, text: tag.people_ages.join(" ") },
-    weather_or_season: { weight: fieldWeights.weather_or_season, text: tag.weather_or_season },
-    time_of_day: { weight: fieldWeights.time_of_day, text: tag.time_of_day },
-    mood: { weight: fieldWeights.mood, text: tag.mood },
-    text_in_image: { weight: fieldWeights.text_in_image, text: tag.text_in_image },
+    theme: { weight: 2.5, text: photo.theme || "" },
+    setting: { weight: fieldWeights.setting, text: tag.setting || "" },
+    indoor_outdoor: { weight: 2.0, text: tag.indoor_outdoor || "" },
+    one_line: { weight: fieldWeights.one_line, text: tag.one_line || "" },
+    activity: { weight: fieldWeights.activity, text: tag.activity || "" },
+    occasion_guess: { weight: fieldWeights.occasion_guess, text: tag.occasion_guess || "" },
+    group_type: { weight: fieldWeights.group_type, text: tag.group_type || "" },
+    people_ages: { weight: fieldWeights.people_ages, text: peopleAgesList.join(" ") },
+    weather_or_season: { weight: fieldWeights.weather_or_season, text: tag.weather_or_season || "" },
+    time_of_day: { weight: fieldWeights.time_of_day, text: tag.time_of_day || "" },
+    mood: { weight: fieldWeights.mood, text: tag.mood || "" },
+    text_in_image: { weight: fieldWeights.text_in_image, text: tag.text_in_image || "" },
   };
 
   // Clothing items text
-  const clothingStrings = tag.clothing.map((c) => `${c.colour} ${c.item}`).join(" ");
+  const clothingStrings = clothingList.map((c) => `${c?.colour || ""} ${c?.item || ""}`).join(" ");
   fieldsToCheck["clothing"] = { weight: fieldWeights.clothing, text: clothingStrings };
 
   // Objects list text
-  const objectsStrings = tag.objects.join(" ");
+  const objectsStrings = objectsList.join(" ");
   fieldsToCheck["objects"] = { weight: fieldWeights.objects, text: objectsStrings };
 
   for (const token of tokens) {
@@ -153,8 +157,8 @@ export function scorePhoto(
     }
 
     // Direct check for clothing color / item combinations
-    for (const c of tag.clothing) {
-      if (textMatches(c.colour, token) || textMatches(c.item, token)) {
+    for (const c of clothingList) {
+      if (c && (textMatches(c.colour, token) || textMatches(c.item, token))) {
         matchedFieldsSet.add("clothing");
         matchedCuesSet.add("look");
       }

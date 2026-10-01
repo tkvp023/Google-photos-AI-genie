@@ -1,10 +1,22 @@
 // src/app/api/admin/export.csv/route.ts — Export Study Metrics as CSV
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { readEvents } from "@/lib/eventLogger";
 import { computeSessionMetrics, metricsToCsv } from "@/lib/metrics";
 
-export async function GET() {
+export const dynamic = "force-dynamic";
+
+export async function GET(req: NextRequest) {
   try {
+    const authHeader = req.headers.get("authorization") || "";
+    const bearerPin = authHeader.replace(/^Bearer\s+/i, "").trim();
+    const queryPin = req.nextUrl.searchParams.get("pin") || "";
+    const expectedPin = String(process.env.MODERATOR_PIN || "1234").trim();
+
+    const providedPin = bearerPin || queryPin;
+    if (!providedPin || providedPin !== expectedPin) {
+      return new NextResponse("Unauthorized: Invalid PIN", { status: 401 });
+    }
+
     const events = await readEvents();
     const metrics = computeSessionMetrics(events);
     const csvContent = metricsToCsv(metrics);
