@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search home (empty)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F1F1F;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-brand {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s infinite;
+    }
+    /* Touch target guarantee */
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  </style>
+<meta content="mobile_stack" name="shell-type"/></head>
+<body class="bg-white text-[#1F1F1F] min-h-screen flex justify-center selection:bg-[#FFE9D6]">
+<!-- Mobile screen container (390px fixed simulation) -->
+<div class="w-full max-w-[390px] min-h-screen bg-white flex flex-col justify-between relative shadow-2xl border-x border-[#E3E5E8]">
+<!-- Top section: Header & Main content -->
+<div class="flex-1 flex flex-col overflow-y-auto pb-4">
+<!-- Top App Bar with Back Arrow -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md px-3 h-14 flex items-center border-b border-[#E3E5E8]/60">
+<button aria-label="Go back" class="touch-target flex items-center justify-center rounded-full hover:bg-[#F5F6F8] active:bg-[#EEF0F3] text-[#1F1F1F] transition-colors -ml-1">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<span class="ml-2 font-medium text-[17px] tracking-tight text-[#1F1F1F]">Search</span>
+</header>
+<main class="px-4 pt-4 flex-1"><div class="flex flex-col w-full">
+<!-- Suggestions container: ultra-clean, distraction-free typing state -->
+<div class="w-full flex flex-col pt-1">
+<!-- Single Primary Search Suggestion Row -->
+<div class="w-full min-h-[52px] px-2 py-3 flex items-center gap-3.5 rounded-DEFAULT hover:bg-surface-container active:bg-surface-container-high transition-colors cursor-pointer group" role="button" tabindex="0">
+<!-- Search Magnifier Icon -->
+<div class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant flex-shrink-0 group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</div>
+<!-- Suggestion Label -->
+<div class="flex items-center min-w-0 flex-1">
+<p class="font-body-lg text-body-lg text-on-surface truncate">
+<span>Search for </span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">“pool”</span>
+</p>
+</div>
+<!-- Quick Fill Arrow Glyph -->
+<div class="w-8 h-8 flex items-center justify-center text-outline flex-shrink-0 -mr-1">
+<span class="material-symbols-outlined text-[20px] -rotate-45">north</span>
+</div>
+</div>
+<!-- Soft Tonal Divider Line (strictly via background color, no borders) -->
+<div class="w-full h-[1px] bg-surface-container-high mt-1 mb-2"></div>
+<!-- Empty focused surface state area with subtle visual hint of library depth -->
+<div class="w-full py-12 flex flex-col items-center justify-center text-center opacity-40 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[40px] text-outline mb-2">photo_library</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Searching your photos &amp; videos</p>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic sync between slot content and simulated shell keyboard/input bar
+  (function initTypingSync() {
+    // Select the pill placeholder and text nodes in the app shell
+    const inputContainer = document.querySelector('.bg-\\[\\#EEF0F3\\]');
+    if (inputContainer) {
+      // Find label & blinking cursor container
+      const textSpan = inputContainer.querySelector('span:first-of-type');
+      if (textSpan && textSpan.textContent.includes('Search or ask')) {
+        textSpan.textContent = 'pool';
+        textSpan.classList.remove('text-[#5F6368]');
+        textSpan.classList.add('text-[#1F1F1F]', 'font-medium');
+      }
+
+      // Replace mic button with clear "×" button if not already swapped
+      const micBtn = inputContainer.querySelector('button[aria-label="Voice search"]');
+      if (micBtn) {
+        micBtn.setAttribute('aria-label', 'Clear search text');
+        micBtn.innerHTML = `
+          <svg class="w-5 h-5 text-[#5F6368] hover:text-[#1F1F1F]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        `;
+        micBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (textSpan) {
+            textSpan.textContent = '';
+            textSpan.classList.add('text-[#5F6368]');
+            textSpan.classList.remove('text-[#1F1F1F]');
+          }
+        });
+      }
+    }
+
+    // Update predictive / suggestion bar row in keyboard with queries related to "pool"
+    const predictiveBar = document.querySelector('.bg-\\[\\#F0F2F5\\] .flex.items-center.justify-around');
+    if (predictiveBar) {
+      predictiveBar.innerHTML = `
+        <span class="px-2 py-0.5 rounded text-[13px] text-[#5F6368] hover:bg-black/5 cursor-pointer">pools</span>
+        <div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+        <span class="px-2 py-0.5 rounded text-[13px] font-semibold text-[#1F1F1F] hover:bg-black/5 cursor-pointer">pool party</span>
+        <div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+        <span class="px-2 py-0.5 rounded text-[13px] text-[#5F6368] hover:bg-black/5 cursor-pointer">poolside</span>
+      `;
+    }
+  })();
+</script></main>
+</div>
+<!-- Bottom Fixed / Keyboard Area -->
+<div class="bg-[#F5F6F8] border-t border-[#E3E5E8] flex flex-col z-40 select-none">
+<!-- Input Pill Bar ("Search or ask" with blinking cursor & mic icon) -->
+<div class="px-3 pt-2.5 pb-2.5 bg-white border-b border-[#E3E5E8]/80">
+<div class="w-full h-13 px-4 py-2.5 bg-[#EEF0F3] rounded-[28px] flex items-center justify-between shadow-inner focus-within:ring-2 focus-within:ring-[#1F6FEB]">
+<div class="flex items-center gap-2 overflow-hidden flex-1">
+<!-- Search icon with subtle AI sparkle accent -->
+<div class="flex items-center justify-center text-[#5F6368] flex-shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Label and blinking cursor -->
+<div class="flex items-center text-[15px] text-[#5F6368] flex-1 select-none pointer-events-none">
+<span>Search or ask</span>
+<span class="inline-block w-[2px] h-[19px] bg-[#1F6FEB] ml-1 cursor-blink"></span>
+</div>
+</div>
+<!-- Mic button with minimum touch target -->
+<button aria-label="Voice search" class="touch-target w-10 h-10 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] active:bg-[#E3E5E8] transition-colors -mr-2">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3v6a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Modern Android On-screen Keyboard Simulation -->
+<div class="bg-[#F0F2F5] px-1.5 pt-2 pb-5 flex flex-col gap-2">
+<!-- Predictive / Suggestion bar -->
+<div class="flex items-center justify-around px-2 py-1 text-[13px] text-[#5F6368] border-b border-[#E3E5E8]/80 pb-1.5">
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"photos from last summer"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded font-medium text-[#1F1F1F] hover:bg-black/5 cursor-pointer">"sunset"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"dogs"</span>
+</div>
+<!-- Row 1: Q - P -->
+<div class="flex justify-center gap-1.5">
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">q</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">w</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">e</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">r</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">t</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">y</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">u</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">i</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">o</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">p</button>
+</div>
+<!-- Row 2: A - L -->
+<div class="flex justify-center gap-1.5 px-2">
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">a</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">s</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">d</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">f</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">g</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">h</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">j</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">k</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">l</button>
+</div>
+<!-- Row 3: Shift, Z - M, Backspace -->
+<div class="flex justify-center gap-1.5">
+<!-- Shift key -->
+<button aria-label="Shift" class="flex-1 max-w-[44px] h-10 bg-[#DCE0E5] rounded-md shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 4.5l-7.5 7.5h4.5V19.5h6v-7.5h4.5L12 4.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">z</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">x</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">c</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">v</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">b</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">n</button>
+<button class="flex-1 max-w-[34px] h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[17px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">m</button>
+<!-- Delete / Backspace key -->
+<button aria-label="Backspace" class="flex-1 max-w-[44px] h-10 bg-[#DCE0E5] rounded-md shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.21-.21.496-.33.795-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25H10.215a1.125 1.125 0 01-.795-.33z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Row 4: Symbols, Comma, Space, Period, Blue Search Return Key -->
+<div class="flex justify-center gap-1.5 items-center">
+<button class="w-12 h-10 bg-[#DCE0E5] rounded-md shadow-sm flex items-center justify-center text-[14px] font-medium text-[#1F1F1F] active:bg-[#C9CFD6]">?123</button>
+<button class="w-8 h-10 bg-[#DCE0E5] rounded-md shadow-sm flex items-center justify-center text-[16px] text-[#1F1F1F] active:bg-[#C9CFD6]">,</button>
+<!-- Spacebar -->
+<button class="flex-1 h-10 bg-white rounded-md shadow-sm flex items-center justify-center text-[13px] text-[#5F6368] active:bg-[#D9DDE2]">English</button>
+<button class="w-8 h-10 bg-[#DCE0E5] rounded-md shadow-sm flex items-center justify-center text-[16px] text-[#1F1F1F] active:bg-[#C9CFD6]">.</button>
+<!-- Search / Action Key (Primary blue #1F6FEB) -->
+<button aria-label="Search" class="w-12 h-10 bg-[#1F6FEB] hover:bg-[#1A5DC8] rounded-md shadow flex items-center justify-center text-white active:scale-95 transition-all">
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Bottom Home Indicator / Gesture bar -->
+<div class="w-full flex justify-center pt-2">
+<div class="w-32 h-1 bg-[#1F1F1F]/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

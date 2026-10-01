@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search home (empty) - Coach panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F1F1F;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      min-height: max(884px, 100dvh);
+    }
+    .font-brand {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s infinite;
+    }
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  </style>
+<meta content="mobile_stack" name="shell-type"/>
+</head>
+<body class="bg-[#F0F2F5] text-[#1F1F1F] min-h-screen flex justify-center selection:bg-[#FFE9D6]">
+<!-- Mobile screen container (390px fixed simulation) -->
+<div class="w-full max-w-[390px] min-h-screen bg-white flex flex-col justify-between relative shadow-2xl border-x border-[#E3E5E8]">
+<!-- Top section: Header & Main content -->
+<div class="flex-1 flex flex-col overflow-y-auto">
+<!-- Top App Bar with Back Arrow -->
+<header class="sticky top-0 z-30 bg-white px-3 h-14 flex items-center border-b border-[#E3E5E8]/60">
+<button aria-label="Go back" class="touch-target flex items-center justify-center rounded-full hover:bg-[#F5F6F8] active:bg-[#EEF0F3] text-[#1F1F1F] transition-colors -ml-1">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<span class="ml-2 font-medium text-[17px] tracking-tight text-[#1F1F1F]">Search</span>
+</header>
+<main class="px-3.5 pt-3.5 pb-4 flex-1 flex flex-col space-y-3">
+<!-- Search Bar: #EEF0F3 rounded pill (28px radius) -->
+<div class="w-full">
+<div class="w-full h-12 px-4 bg-[#EEF0F3] rounded-[28px] flex items-center justify-between shadow-inner">
+<div class="flex items-center gap-2.5 flex-1 min-w-0">
+<svg class="w-5 h-5 text-[#5F6368] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[15px] font-medium text-[#1F1F1F] truncate">pool</span>
+</div>
+<button aria-label="Clear search input" class="touch-target w-8 h-8 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] active:bg-[#DCE0E5] transition-colors -mr-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Coach Panel Card (Directly UNDER search pill) -->
+<section aria-label="AI Search Coach Assistant" class="w-full rounded-[16px] p-4 bg-[#FFE9D6] border border-[#FFD3AE] flex flex-col space-y-3.5" style="box-shadow: 0 8px 24px -4px rgba(255, 159, 90, 0.35), 0 2px 6px rgba(0,0,0,0.06);">
+<!-- Coach Header with 4-point Sparkle Icon (NO back chevron, NO number) -->
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-[#FFD3AE]/50 flex items-center justify-center flex-shrink-0 mt-0.5 text-[#FF9F5A]">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h2 class="font-brand font-semibold text-[17px] text-[#1F1F1F] leading-snug tracking-tight">
+                Lots of photos match. Help us narrow it down.
+              </h2>
+</div>
+</div>
+<!-- Question Block 1: Who was with you? -->
+<div class="flex flex-col space-y-2 border-t border-[#FF9F5A]/25 pt-3">
+<div class="flex items-center justify-between">
+<span class="text-[14px] font-semibold text-[#1F1F1F]">
+                Who was with you?
+              </span>
+<button class="touch-target -mr-2 px-2 py-1 text-[#5F6368] hover:text-[#1F1F1F] text-[13px] font-medium" type="button">
+                Skip
+              </button>
+</div>
+<!-- Chips list -->
+<div aria-label="Who was with you options" class="flex flex-wrap gap-1.5" role="group">
+<!-- Selected Chip: peach fill #FFD3AE, border 1.5px solid #FF9F5A, dark text #1F1F1F, checkmark ✓ -->
+<button aria-pressed="true" class="touch-target h-9 px-3.5 rounded-full bg-[#FFD3AE] border-[1.5px] border-[#FF9F5A] text-[#1F1F1F] text-[13px] font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5 text-[#1F1F1F] stroke-[2.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Friends</span>
+</button>
+<!-- Unselected chips: outlined #C7CBD1, white bg, dark text -->
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Family
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Just me
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Couple
+              </button>
+<!-- Something else: text link chip with pencil icon -->
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-white/70 border border-dashed border-[#FF9F5A] text-[#944A07] text-[13px] font-medium flex items-center gap-1 active:bg-white transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Something else</span>
+</button>
+<!-- I don't remember: muted grey chip -->
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-black/5 text-[#5F6368] text-[12px] font-medium flex items-center active:bg-black/10 transition-all" type="button">
+                I don't remember
+              </button>
+</div>
+</div>
+<!-- Question Block 2: What was the occasion? -->
+<div class="flex flex-col space-y-2 border-t border-[#FF9F5A]/25 pt-3">
+<div class="flex items-center justify-between">
+<span class="text-[14px] font-semibold text-[#1F1F1F]">
+                What was the occasion?
+              </span>
+<button class="touch-target -mr-2 px-2 py-1 text-[#5F6368] hover:text-[#1F1F1F] text-[13px] font-medium" type="button">
+                Skip
+              </button>
+</div>
+<div aria-label="What was the occasion options" class="flex flex-wrap gap-1.5" role="group">
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Birthday?
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Vacation?
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Celebration?
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Nothing special
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-white/70 border border-dashed border-[#FF9F5A] text-[#944A07] text-[13px] font-medium flex items-center gap-1 active:bg-white transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Something else</span>
+</button>
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-black/5 text-[#5F6368] text-[12px] font-medium flex items-center active:bg-black/10 transition-all" type="button">
+                I don't remember
+              </button>
+</div>
+</div>
+<!-- Question Block 3: What did it look like? -->
+<div class="flex flex-col space-y-2 border-t border-[#FF9F5A]/25 pt-3">
+<div class="flex items-center justify-between">
+<span class="text-[14px] font-semibold text-[#1F1F1F]">
+                What did it look like?
+              </span>
+<button class="touch-target -mr-2 px-2 py-1 text-[#5F6368] hover:text-[#1F1F1F] text-[13px] font-medium" type="button">
+                Skip
+              </button>
+</div>
+<div aria-label="What did it look like options" class="flex flex-wrap gap-1.5" role="group">
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Red swimsuit
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Outdoors
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Sunny
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3.5 rounded-full bg-white border border-[#C7CBD1] text-[#1F1F1F] text-[13px] font-medium flex items-center shadow-xs active:bg-[#F5F6F8] transition-all" type="button">
+                Group of 6+
+              </button>
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-white/70 border border-dashed border-[#FF9F5A] text-[#944A07] text-[13px] font-medium flex items-center gap-1 active:bg-white transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Something else</span>
+</button>
+<button aria-pressed="false" class="touch-target h-9 px-3 rounded-full bg-black/5 text-[#5F6368] text-[12px] font-medium flex items-center active:bg-black/10 transition-all" type="button">
+                I don't remember
+              </button>
+</div>
+</div>
+<!-- Bottom Actions inside Coach Card -->
+<div class="pt-2 flex flex-col space-y-2">
+<!-- Primary Action Button with Sparkle Icon -->
+<button class="touch-target w-full h-11 rounded-full bg-[#1F6FEB] text-white font-semibold text-[15px] flex items-center justify-center gap-2 shadow-md hover:bg-[#1A5DC8] active:scale-[0.98] transition-all" type="button">
+<svg class="w-4 h-4 fill-white" viewbox="0 0 24 24">
+<path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z"></path>
+</svg>
+<span>Build my search</span>
+</button>
+<!-- Secondary Navigation Row -->
+<div class="flex items-center justify-between px-1">
+<button class="touch-target text-[14px] text-[#1F1F1F] hover:text-black font-medium" type="button">
+                Search anyway
+              </button>
+<button class="touch-target text-[13px] text-[#5F6368] hover:text-[#1F1F1F] underline underline-offset-4" type="button">
+                Not these
+              </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Bottom Fixed / Keyboard Area -->
+<div class="bg-[#F5F6F8] border-t border-[#E3E5E8] flex flex-col z-40 select-none">
+<!-- Input Pill Bar ("Search or ask" with blinking cursor & mic icon) -->
+<div class="px-3 pt-2 pb-2 bg-white border-b border-[#E3E5E8]/80">
+<div class="w-full h-11 px-3.5 py-2 bg-[#EEF0F3] rounded-[28px] flex items-center justify-between shadow-inner focus-within:ring-2 focus-within:ring-[#1F6FEB]">
+<div class="flex items-center gap-2 overflow-hidden flex-1">
+<svg class="w-4 h-4 text-[#5F6368] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div class="flex items-center text-[14px] text-[#5F6368] flex-1 select-none pointer-events-none">
+<span>Search or ask</span>
+<span class="inline-block w-[2px] h-[17px] bg-[#1F6FEB] ml-1 cursor-blink"></span>
+</div>
+</div>
+<button aria-label="Voice search" class="touch-target w-8 h-8 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] active:bg-[#E3E5E8] transition-colors -mr-1.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3v6a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Modern Android On-screen Keyboard Simulation -->
+<div class="bg-[#F0F2F5] px-1.5 pt-1.5 pb-4 flex flex-col gap-1.5">
+<!-- Predictive / Suggestion bar -->
+<div class="flex items-center justify-around px-2 py-0.5 text-[12px] text-[#5F6368] border-b border-[#E3E5E8]/80 pb-1">
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"photos from last summer"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded font-medium text-[#1F1F1F] hover:bg-black/5 cursor-pointer">"sunset"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"dogs"</span>
+</div>
+<!-- Row 1: Q - P -->
+<div class="flex justify-center gap-1">
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">q</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">w</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">e</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">r</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">t</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">y</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">u</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">i</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">o</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">p</button>
+</div>
+<!-- Row 2: A - L -->
+<div class="flex justify-center gap-1 px-2">
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">a</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">s</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">d</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">f</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">g</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">h</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">j</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">k</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">l</button>
+</div>
+<!-- Row 3: Shift, Z - M, Backspace -->
+<div class="flex justify-center gap-1">
+<button aria-label="Shift" class="flex-1 max-w-[42px] h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 4.5l-7.5 7.5h4.5V19.5h6v-7.5h4.5L12 4.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">z</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">x</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">c</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">v</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">b</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">n</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">m</button>
+<button aria-label="Backspace" class="flex-1 max-w-[42px] h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.21-.21.496-.33.795-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25H10.215a1.125 1.125 0 01-.795-.33z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Row 4: Symbols, Space, Period, Blue Search Return Key -->
+<div class="flex justify-center gap-1 items-center">
+<button class="w-11 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[13px] font-medium text-[#1F1F1F] active:bg-[#C9CFD6]">?123</button>
+<button class="w-8 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[15px] text-[#1F1F1F] active:bg-[#C9CFD6]">,</button>
+<button class="flex-1 h-9 bg-white rounded shadow-sm flex items-center justify-center text-[13px] text-[#5F6368] active:bg-[#D9DDE2]">English</button>
+<button class="w-8 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[15px] text-[#1F1F1F] active:bg-[#C9CFD6]">.</button>
+<button aria-label="Search" class="w-11 h-9 bg-[#1F6FEB] hover:bg-[#1A5DC8] rounded shadow flex items-center justify-center text-white active:scale-95 transition-all">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Bottom Home Indicator / Gesture bar -->
+<div class="w-full flex justify-center pt-1">
+<div class="w-28 h-1 bg-[#1F1F1F]/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script for dynamic chip toggling -->
+<script>
+    document.querySelectorAll('[role="group"] button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Toggle selection behavior
+        const isSelected = btn.getAttribute('aria-pressed') === 'true';
+        if (isSelected) {
+          btn.setAttribute('aria-pressed', 'false');
+          btn.classList.remove('bg-[#FFD3AE]', 'border-[1.5px]', 'border-[#FF9F5A]', 'font-semibold');
+          btn.classList.add('bg-white', 'border', 'border-[#C7CBD1]', 'font-medium');
+          const checkIcon = btn.querySelector('svg');
+          if (checkIcon && !btn.querySelector('span:contains("Something else")')) {
+            checkIcon.remove();
+          }
+        } else {
+          btn.setAttribute('aria-pressed', 'true');
+          btn.classList.remove('bg-white', 'border-[#C7CBD1]', 'bg-black/5', 'font-medium');
+          btn.classList.add('bg-[#FFD3AE]', 'border-[1.5px]', 'border-[#FF9F5A]', 'font-semibold');
+          if (!btn.querySelector('svg')) {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'w-3.5 h-3.5 text-[#1F1F1F] stroke-[2.8]');
+            svg.setAttribute('fill', 'none');
+            svg.setAttribute('stroke', 'currentColor');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            svg.innerHTML = '<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>';
+            btn.prepend(svg);
+          }
+        }
+      });
+    });
+  </script>
+</body></html>

@@ -1,0 +1,22 @@
+You are tagging one photo for a photo-search test. Describe only what is
+visible. Do not guess names or identities. For people, give counts and
+rough age bands only (child, teen, adult, older adult). If unsure, use
+"unknown". Return JSON only, matching this shape:
+
+{
+  "one_line": "plain sentence describing the scene",
+  "setting": "e.g. pool, beach, restaurant, park, home, street",
+  "indoor_outdoor": "indoor | outdoor | unknown",
+  "activity": "what people are doing, e.g. swimming, eating, hiking",
+  "occasion_guess": "e.g. birthday, graduation, festival, none, unknown",
+  "occasion_basis": "visible clue behind the guess, or none",
+  "people_count": 0,
+  "people_ages": ["child", "adult"],
+  "group_type": "solo | couple | family | friends | mixed | unknown",
+  "clothing": ["colour + item, e.g. red swimsuit"],
+  "objects": ["notable objects"],
+  "time_of_day": "morning | afternoon | evening | night | unknown",
+  "weather_or_season": "e.g. sunny, snow, unknown",
+  "mood": "e.g. cheerful, calm, unknown",
+  "text_in_image": "visible text, or none"
+}

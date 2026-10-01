@@ -1,0 +1,35 @@
+{
+  "who": [
+    "friend", "friends", "family", "me", "us", "kids", "child", "children",
+    "couple", "group", "alone", "solo", "partner", "sister", "brother",
+    "mom", "dad", "parents", "baby", "toddler", "colleagues", "classmates"
+  ],
+  "when": [
+    "morning", "afternoon", "evening", "night", "midnight", "dawn", "dusk",
+    "summer", "winter", "spring", "autumn", "fall", "sunset", "sunrise",
+    "yesterday", "last", "ago", "year", "month", "week", "holiday",
+    "weekend", "daytime", "nighttime"
+  ],
+  "where": [
+    "pool", "beach", "restaurant", "park", "mountain", "home", "house",
+    "office", "stadium", "café", "cafe", "outdoor", "indoor", "indoors",
+    "outdoors", "garden", "forest", "lake", "river", "sea", "ocean",
+    "hotel", "school", "campus", "street", "mall", "airport", "train"
+  ],
+  "what": [
+    "swimming", "eating", "hiking", "dancing", "running", "playing",
+    "drinking", "celebrating", "cooking", "laughing", "jumping", "singing",
+    "climbing", "cycling", "walking", "sitting", "standing", "hugging"
+  ],
+  "occasion": [
+    "birthday", "graduation", "wedding", "festival", "party", "celebration",
+    "trip", "holiday", "vacation", "reunion", "anniversary", "ceremony",
+    "concert", "game", "match", "picnic", "barbecue", "bbq"
+  ],
+  "look": [
+    "red", "blue", "green", "yellow", "orange", "pink", "purple",
+    "white", "black", "grey", "gray", "brown", "beige", "bright",
+    "dark", "colourful", "colorful", "sunny", "rainy", "snowy",
+    "swimsuit", "dress", "jacket", "hat", "uniform", "swimwear"
+  ]
+}

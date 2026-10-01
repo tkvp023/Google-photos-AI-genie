@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search home (empty) - Coach panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F1F1F;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      min-height: max(884px, 100dvh);
+    }
+    .font-brand {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s infinite;
+    }
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  </style>
+<meta content="mobile_stack" name="shell-type"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F0F2F5] text-[#1F1F1F] min-h-screen flex justify-center selection:bg-[#FFE9D6]">
+<!-- Mobile screen container (390px fixed simulation) -->
+<div class="w-full max-w-[390px] min-h-screen bg-white flex flex-col justify-between relative shadow-2xl border-x border-[#E3E5E8]">
+<!-- Top section: Header & Main content -->
+<div class="flex-1 flex flex-col overflow-y-auto">
+<!-- Top App Bar with Back Arrow -->
+<header class="sticky top-0 z-30 bg-white px-3 h-14 flex items-center border-b border-[#E3E5E8]/60">
+<button aria-label="Go back" class="touch-target flex items-center justify-center rounded-full hover:bg-[#F5F6F8] active:bg-[#EEF0F3] text-[#1F1F1F] transition-colors -ml-1">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<span class="ml-2 font-medium text-[17px] tracking-tight text-[#1F1F1F]">Search</span>
+</header>
+<main class="px-3.5 pt-3.5 pb-4 flex-1 flex flex-col space-y-3"><div class="flex flex-col w-full">
+<section class="flex flex-col gap-3">
+<!-- Header Title -->
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight leading-snug">
+        Here's your search. Change anything you like.
+      </h1>
+</div>
+<!-- Active Cue Pills -->
+<div aria-label="Active search cues" class="flex flex-wrap items-center gap-1.5" id="cue-chip-group" role="region">
+<div class="inline-flex items-center gap-1.5 pl-3 pr-1.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed shadow-sm transition-all duration-200" id="chip-friends">
+<span class="font-label-md text-label-md">Friends</span>
+<button aria-label="Remove Friends cue" class="w-5 h-5 rounded-full flex items-center justify-center text-on-primary-fixed hover:bg-primary-container/30 active:scale-90 transition-all touch-target" onclick="removeChip('chip-friends', 'Friends')" type="button">
+<span class="material-symbols-outlined text-[16px] leading-none">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1.5 pl-3 pr-1.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed shadow-sm transition-all duration-200" id="chip-swimsuit">
+<span class="font-label-md text-label-md">Red swimsuit</span>
+<button aria-label="Remove Red swimsuit cue" class="w-5 h-5 rounded-full flex items-center justify-center text-on-primary-fixed hover:bg-primary-container/30 active:scale-90 transition-all touch-target" onclick="removeChip('chip-swimsuit', 'Red swimsuit')" type="button">
+<span class="material-symbols-outlined text-[16px] leading-none">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1.5 pl-3 pr-1.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed shadow-sm transition-all duration-200" id="chip-outdoors">
+<span class="font-label-md text-label-md">Outdoors</span>
+<button aria-label="Remove Outdoors cue" class="w-5 h-5 rounded-full flex items-center justify-center text-on-primary-fixed hover:bg-primary-container/30 active:scale-90 transition-all touch-target" onclick="removeChip('chip-outdoors', 'Outdoors')" type="button">
+<span class="material-symbols-outlined text-[16px] leading-none">close</span>
+</button>
+</div>
+</div>
+<!-- Editable Prompt Card -->
+<div class="relative bg-surface-container-lowest rounded-2xl p-3.5 shadow-md flex flex-col gap-2.5">
+<!-- Glow ambient backdrop layer -->
+<div class="absolute inset-0 rounded-2xl bg-primary-container/10 -z-10 blur-sm pointer-events-none"></div>
+<!-- Text Container Area -->
+<div class="relative min-h-[92px] cursor-text" onclick="focusPrompt()">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed select-text inline" id="prompt-display">
+          Me with friends at the pool in red swimsuits, outdoors
+        </p>
+<span class="inline-block w-[2px] h-[19px] bg-secondary-container align-middle ml-0.5 animate-pulse" id="prompt-cursor"></span>
+</div>
+<!-- Assisted Attribution Subtext -->
+<div class="flex items-center gap-1.5 pt-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px] leading-none select-none" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<span class="font-body-sm text-body-sm text-tertiary select-none">
+          Written for you — edit freely
+        </span>
+</div>
+</div>
+<!-- Quick Suggestions Visual Bar -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-0.5 px-0.5 no-scrollbar">
+<span class="font-label-sm text-label-sm text-tertiary flex-shrink-0">Add detail:</span>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors active:scale-95" onclick="appendDetail('sunny day')" type="button">
+        + sunny day
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors active:scale-95" onclick="appendDetail('last July')" type="button">
+        + last July
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors active:scale-95" onclick="appendDetail('action shot')" type="button">
+        + action shot
+      </button>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-12 rounded-full bg-secondary-container text-on-secondary-container font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all" id="search-cta" type="button">
+<span class="material-symbols-outlined text-[20px] leading-none">search</span>
+<span>Search</span>
+</button>
+<button class="w-full h-10 rounded-full text-tertiary hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none">arrow_back</span>
+<span>Back to questions</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  function removeChip(chipId, textVal) {
+    const chip = document.getElementById(chipId);
+    if (!chip) return;
+    
+    chip.style.opacity = '0';
+    chip.style.transform = 'scale(0.85)';
+    setTimeout(() => {
+      chip.remove();
+      const promptEl = document.getElementById('prompt-display');
+      if (promptEl) {
+        let current = promptEl.textContent;
+        const regex = new RegExp('(,\\s*)?' + textVal + '|' + textVal + '(,\\s*)?', 'gi');
+        promptEl.textContent = current.replace(regex, '').replace(/\s{2,}/g, ' ').trim();
+      }
+    }, 180);
+  }
+
+  function appendDetail(detail) {
+    const promptEl = document.getElementById('prompt-display');
+    if (promptEl) {
+      let current = promptEl.textContent.trim();
+      if (!current.includes(detail)) {
+        promptEl.textContent = current + ', ' + detail;
+      }
+    }
+  }
+
+  function focusPrompt() {
+    const cursor = document.getElementById('prompt-cursor');
+    if (cursor) {
+      cursor.classList.remove('opacity-0');
+      cursor.classList.add('animate-pulse');
+    }
+  }
+</script></main>
+</div>
+<!-- Bottom Fixed / Keyboard Area -->
+<div class="bg-[#F5F6F8] border-t border-[#E3E5E8] flex flex-col z-40 select-none">
+<!-- Input Pill Bar ("Search or ask" with blinking cursor & mic icon) -->
+<div class="px-3 pt-2 pb-2 bg-white border-b border-[#E3E5E8]/80">
+<div class="w-full h-11 px-3.5 py-2 bg-[#EEF0F3] rounded-[28px] flex items-center justify-between shadow-inner focus-within:ring-2 focus-within:ring-[#1F6FEB]">
+<div class="flex items-center gap-2 overflow-hidden flex-1">
+<svg class="w-4 h-4 text-[#5F6368] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div class="flex items-center text-[14px] text-[#5F6368] flex-1 select-none pointer-events-none">
+<span>Search or ask</span>
+<span class="inline-block w-[2px] h-[17px] bg-[#1F6FEB] ml-1 cursor-blink"></span>
+</div>
+</div>
+<button aria-label="Voice search" class="touch-target w-8 h-8 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] active:bg-[#E3E5E8] transition-colors -mr-1.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3v6a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Modern Android On-screen Keyboard Simulation -->
+<div class="bg-[#F0F2F5] px-1.5 pt-1.5 pb-4 flex flex-col gap-1.5">
+<!-- Predictive / Suggestion bar -->
+<div class="flex items-center justify-around px-2 py-0.5 text-[12px] text-[#5F6368] border-b border-[#E3E5E8]/80 pb-1">
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"photos from last summer"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded font-medium text-[#1F1F1F] hover:bg-black/5 cursor-pointer">"sunset"</span>
+<div class="w-[1px] h-3 bg-[#DCDCDC]"></div>
+<span class="px-2 py-0.5 rounded hover:bg-black/5 cursor-pointer">"dogs"</span>
+</div>
+<!-- Row 1: Q - P -->
+<div class="flex justify-center gap-1">
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">q</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">w</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">e</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">r</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">t</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">y</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">u</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">i</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">o</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">p</button>
+</div>
+<!-- Row 2: A - L -->
+<div class="flex justify-center gap-1 px-2">
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">a</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">s</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">d</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">f</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">g</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">h</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">j</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">k</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">l</button>
+</div>
+<!-- Row 3: Shift, Z - M, Backspace -->
+<div class="flex justify-center gap-1">
+<button aria-label="Shift" class="flex-1 max-w-[42px] h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 4.5l-7.5 7.5h4.5V19.5h6v-7.5h4.5L12 4.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">z</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">x</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">c</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">v</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">b</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">n</button>
+<button class="flex-1 max-w-[34px] h-9 bg-white rounded shadow-sm flex items-center justify-center text-[16px] font-normal text-[#1F1F1F] active:bg-[#D9DDE2]">m</button>
+<button aria-label="Backspace" class="flex-1 max-w-[42px] h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[#1F1F1F] active:bg-[#C9CFD6]">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.21-.21.496-.33.795-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25H10.215a1.125 1.125 0 01-.795-.33z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Row 4: Symbols, Space, Period, Blue Search Return Key -->
+<div class="flex justify-center gap-1 items-center">
+<button class="w-11 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[13px] font-medium text-[#1F1F1F] active:bg-[#C9CFD6]">?123</button>
+<button class="w-8 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[15px] text-[#1F1F1F] active:bg-[#C9CFD6]">,</button>
+<button class="flex-1 h-9 bg-white rounded shadow-sm flex items-center justify-center text-[13px] text-[#5F6368] active:bg-[#D9DDE2]">English</button>
+<button class="w-8 h-9 bg-[#DCE0E5] rounded shadow-sm flex items-center justify-center text-[15px] text-[#1F1F1F] active:bg-[#C9CFD6]">.</button>
+<button aria-label="Search" class="w-11 h-9 bg-[#1F6FEB] hover:bg-[#1A5DC8] rounded shadow flex items-center justify-center text-white active:scale-95 transition-all">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Bottom Home Indicator / Gesture bar -->
+<div class="w-full flex justify-center pt-1">
+<div class="w-28 h-1 bg-[#1F1F1F]/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script for dynamic chip toggling -->
+<script>
+    document.querySelectorAll('[role="group"] button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Toggle selection behavior
+        const isSelected = btn.getAttribute('aria-pressed') === 'true';
+        if (isSelected) {
+          btn.setAttribute('aria-pressed', 'false');
+          btn.classList.remove('bg-[#FFD3AE]', 'border-[1.5px]', 'border-[#FF9F5A]', 'font-semibold');
+          btn.classList.add('bg-white', 'border', 'border-[#C7CBD1]', 'font-medium');
+          const checkIcon = btn.querySelector('svg');
+          if (checkIcon && !btn.querySelector('span:contains("Something else")')) {
+            checkIcon.remove();
+          }
+        } else {
+          btn.setAttribute('aria-pressed', 'true');
+          btn.classList.remove('bg-white', 'border-[#C7CBD1]', 'bg-black/5', 'font-medium');
+          btn.classList.add('bg-[#FFD3AE]', 'border-[1.5px]', 'border-[#FF9F5A]', 'font-semibold');
+          if (!btn.querySelector('svg')) {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'w-3.5 h-3.5 text-[#1F1F1F] stroke-[2.8]');
+            svg.setAttribute('fill', 'none');
+            svg.setAttribute('stroke', 'currentColor');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            svg.innerHTML = '<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>';
+            btn.prepend(svg);
+          }
+        }
+      });
+    });
+  </script>
+</body></html>

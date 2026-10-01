@@ -1,0 +1,1006 @@
+{
+  "pool_01.jpg": {
+    "one_line": "a group of friends splashing in a sunny outdoor pool",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "adult",
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "swimsuit"
+      },
+      {
+        "colour": "blue",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "pool float",
+      "sunglasses"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pool_02.jpg": {
+    "one_line": "a child jumping into the clear turquoise pool with goggles",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "jumping",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "yellow",
+        "item": "swimwear"
+      }
+    ],
+    "objects": [
+      "goggles",
+      "water splash"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "sunny",
+    "mood": "playful",
+    "text_in_image": "none"
+  },
+  "beach_01.jpg": {
+    "one_line": "an adult playfully holds a child upside down on a sandy beach by the ocean.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing, swinging playfully",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "patterned short-sleeve shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "trousers"
+      },
+      {
+        "colour": "brown",
+        "item": "leather shoes"
+      },
+      {
+        "colour": "pink",
+        "item": "and white tie-dye top"
+      },
+      {
+        "colour": "black",
+        "item": "leggings"
+      },
+      {
+        "colour": "white",
+        "item": "sneakers"
+      }
+    ],
+    "objects": [],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_01.jpg": {
+    "one_line": "a crowd of young adults socializing and dancing under string lights on an outdoor patio.",
+    "setting": "patio",
+    "indoor_outdoor": "outdoor",
+    "activity": "dancing, socializing, and watching",
+    "occasion_guess": "party",
+    "occasion_basis": "string lights overhead, music/dancing atmosphere, and several people wearing event lanyards",
+    "people_count": 25,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "and white striped t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "print shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "shirt draped over shoulders"
+      },
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      },
+      {
+        "colour": "blue",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "shirt tied around waist"
+      }
+    ],
+    "objects": [
+      "string lights",
+      "pergola",
+      "event badges",
+      "bubbles"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "restaurant_01.jpg": {
+    "one_line": "people dining together at a sunlit restaurant table with pasta, salad, and beer.",
+    "setting": "restaurant",
+    "indoor_outdoor": "outdoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "older adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "orange",
+        "item": "striped shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "patterned top"
+      }
+    ],
+    "objects": [
+      "plate of spaghetti",
+      "beer glass",
+      "wine glass",
+      "caprese salad",
+      "dipping sauce",
+      "fork",
+      "red sunglasses",
+      "smartphone"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "0.2l"
+  },
+  "festival_01.jpg": {
+    "one_line": "a silhouetted crowd raises their hands facing an illuminated stage with lights and smoke.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "cheering at a concert",
+    "occasion_guess": "festival",
+    "occasion_basis": "illuminated stage with trussing, spotlights, and crowd raising hands",
+    "people_count": 30,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "t-shirt"
+      }
+    ],
+    "objects": [
+      "stage",
+      "stage lights",
+      "truss structure",
+      "fog"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "hiking_01.jpg": {
+    "one_line": "a hiker carrying a backpack walks up a narrow dirt trail in a rugged mountain landscape under a clear sky.",
+    "setting": "mountains",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "purple",
+        "item": "jacket"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      },
+      {
+        "colour": "blue",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "mountain peak",
+      "dirt path",
+      "rocks"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "adventurous",
+    "text_in_image": "none"
+  },
+  "kids_01.jpg": {
+    "one_line": "two young children crouch at the edge of a garden pond touching the water.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "touching water in a pond",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "patterned short-sleeve shirt"
+      },
+      {
+        "colour": "black",
+        "item": "shorts"
+      },
+      {
+        "colour": "blue",
+        "item": "denim cap"
+      },
+      {
+        "colour": "green",
+        "item": "and black clogs"
+      },
+      {
+        "colour": "red",
+        "item": "floral shirt"
+      },
+      {
+        "colour": "black",
+        "item": "flat cap"
+      }
+    ],
+    "objects": [
+      "pond",
+      "rocks",
+      "stepping stones"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "playful",
+    "text_in_image": "do"
+  },
+  "graduation_01.jpg": {
+    "one_line": "a woman adjusts a young man's tie as he playfully points towards the camera.",
+    "setting": "building exterior",
+    "indoor_outdoor": "outdoor",
+    "activity": "adjusting a tie and posing for a photo",
+    "occasion_guess": "formal event",
+    "occasion_basis": "dressing up in a collared shirt and necktie",
+    "people_count": 2,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "collared button-up shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "necktie"
+      },
+      {
+        "colour": "unknown",
+        "item": "sleeveless top"
+      }
+    ],
+    "objects": [
+      "necktie",
+      "windows"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "playful",
+    "text_in_image": "none"
+  },
+  "pets_01.jpg": {
+    "one_line": "a brown labrador retriever wearing a harness and leash stands outside on fallen leaves next to a person.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking dog",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "black leash",
+      "black harness",
+      "dog collar",
+      "bone-shaped dog tag",
+      "dry leaves",
+      "stone wall"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "autumn",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_02.jpg": {
+    "one_line": "a person stands near the breaking waves on a sandy beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "standing by the water",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "hooded top"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "footprints in sand"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "clear with scattered clouds",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_06.jpg": {
+    "one_line": "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "sunglasses"
+      },
+      {
+        "colour": "purple",
+        "item": "sunglasses"
+      },
+      {
+        "colour": "unknown",
+        "item": "swimsuit"
+      }
+    ],
+    "objects": [
+      "inflatable ring",
+      "swim ring",
+      "water splashes"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "roadtrip_01.jpg": {
+    "one_line": "a fluffy black and white dog sitting inside a car looking happily towards the camera.",
+    "setting": "car interior",
+    "indoor_outdoor": "indoor",
+    "activity": "riding in a car",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "black and white dog",
+      "car interior",
+      "car door",
+      "side-view mirror"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_03.jpg": {
+    "one_line": "two young children play in the sand on a sunny beach near tropical blue water.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing in the sand",
+    "occasion_guess": "photoshoot",
+    "occasion_basis": "staged flowers sticking out of the sand and coordinated formal clothing",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "wide-brim hat"
+      },
+      {
+        "colour": "white",
+        "item": "dress"
+      },
+      {
+        "colour": "white",
+        "item": "collared shirt"
+      },
+      {
+        "colour": "beige",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "straw hat",
+      "purple flowers",
+      "driftwood",
+      "sand"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_04.jpg": {
+    "one_line": "a man holding two young children and a woman in a coral dress smiling on a sandy beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing for a photo",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "child",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "blue trousers"
+      },
+      {
+        "colour": "orange",
+        "item": "maxi dress"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "shorts"
+      },
+      {
+        "colour": "grey",
+        "item": "shirt"
+      },
+      {
+        "colour": "orange",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "sand",
+      "ocean waves",
+      "sun"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_05.jpg": {
+    "one_line": "a family of four plays in the sand on a beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing in the sand",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "child",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "orange",
+        "item": "red maxi dress"
+      },
+      {
+        "colour": "pink",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "and white t-shirt"
+      },
+      {
+        "colour": "red",
+        "item": "shorts"
+      },
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "blue shorts"
+      }
+    ],
+    "objects": [
+      "sand",
+      "ocean",
+      "boats"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_06.jpg": {
+    "one_line": "three people sit in shallow ocean water facing away from the camera toward gentle waves.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "wading in water",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "child",
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "patterned rashguard"
+      },
+      {
+        "colour": "white",
+        "item": "polka-dot hooded rashguard"
+      },
+      {
+        "colour": "beige",
+        "item": "straw hat"
+      }
+    ],
+    "objects": [
+      "straw hat"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_07.jpg": {
+    "one_line": "three children are jumping on a trampoline on a sandy beach near the ocean.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "jumping on a trampoline",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "child",
+      "child",
+      "child"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "shorts"
+      },
+      {
+        "colour": "unknown",
+        "item": "shorts"
+      },
+      {
+        "colour": "pink",
+        "item": "tank top"
+      },
+      {
+        "colour": "green",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "trampoline",
+      "sand",
+      "ocean",
+      "straw umbrellas",
+      "tables",
+      "volleyball net",
+      "palm fronds"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_08.jpg": {
+    "one_line": "a young child plays in the sand while pulling a colorful toy wagon and holding a plastic shovel.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing in the sand, pulling a toy wagon",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "brown baseball cap"
+      },
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "and white floral swim shorts"
+      }
+    ],
+    "objects": [
+      "blue plastic toy wagon with orange wheels",
+      "green wagon handle",
+      "yellow plastic toy shovel",
+      "sand"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "playful",
+    "text_in_image": "none"
+  },
+  "beach_09.jpg": {
+    "one_line": "the shadows of two adults and a child holding hands are cast onto a sandy surface.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "standing and holding hands",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "child",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [],
+    "objects": [
+      "bag shadow"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_10.jpg": {
+    "one_line": "a silhouette of a young child wearing inflatable armbands runs through shallow ocean water at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "running in water",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "swimsuit"
+      },
+      {
+        "colour": "unknown",
+        "item": "armbands"
+      }
+    ],
+    "objects": [
+      "inflatable arm floaties",
+      "ocean waves",
+      "splashing water"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "playful",
+    "text_in_image": "none"
+  },
+  "birthday_02.jpg": {
+    "one_line": "three teens wearing party hats are sitting around a table eating sushi indoors.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "birthday",
+    "occasion_basis": "party hats and cake or food items on the table",
+    "people_count": 3,
+    "people_ages": [
+      "teen",
+      "teen",
+      "teen"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "top"
+      },
+      {
+        "colour": "blue",
+        "item": "top"
+      },
+      {
+        "colour": "grey",
+        "item": "cardigan"
+      }
+    ],
+    "objects": [
+      "party hats",
+      "chopsticks",
+      "sushi",
+      "paper cups",
+      "paper plates",
+      "balloons"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "tiktok"
+  },
+  "birthday_03.jpg": {
+    "one_line": "three dogs wearing birthday hats and festive wear sit in a grassy park with balloons and a cake.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing for a birthday photo",
+    "occasion_guess": "birthday",
+    "occasion_basis": "birthday hats, cake, banners, and text on bandanas",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "multi-colored party hats",
+      "birthday cake",
+      "balloons",
+      "party banners",
+      "bandanas",
+      "tinsel leis"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "birthday boy, happy birthday"
+  },
+  "birthday_04.jpg": {
+    "one_line": "a person holds a white plate filled with sushi and noodles at a buffet.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "holding food plate",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "and white striped shirt"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "white plate",
+      "sushi",
+      "noodles",
+      "fried food",
+      "handbag"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "neutral",
+    "text_in_image": "none"
+  },
+  "birthday_05.jpg": {
+    "one_line": "a metal chafing dish filled with cooked scallops served in open shells with seasonings.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "stainless steel chafing dish",
+      "scallops in shells",
+      "stacked plates"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "unknown",
+    "text_in_image": "none"
+  },
+  "birthday_06.jpg": {
+    "one_line": "a person using cooking tongs to lift hot, steaming spaghetti from a pan on an induction burner.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "cooking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "brown",
+        "item": "top"
+      }
+    ],
+    "objects": [
+      "spaghetti",
+      "frying pan",
+      "induction cooktop",
+      "cooking tongs",
+      "stack of white plates",
+      "white ingredient bowls",
+      "steam"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "birthday_07.jpg": {
+    "one_line": "several small appetizers on individual white tasting spoons displayed on a green platter.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "dining",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "white tasting spoons",
+      "appetizers",
+      "green glass platter"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "neutral",
+    "text_in_image": "none"
+  },
+  "birthday_08.jpg": {
+    "one_line": "a white and pink unicorn pi\u00f1ata stands surrounded by party hats and a pink balloon on a plain white background.",
+    "setting": "studio",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "unicorn pi\u00f1ata and party hats",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "unicorn pi\u00f1ata",
+      "pink party hats",
+      "pink balloon"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  }
+}

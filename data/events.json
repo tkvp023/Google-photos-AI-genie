@@ -1,0 +1,1718 @@
+[
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "pool",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "questionId": "q_who",
+      "value": "friends"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "pool",
+      "refinedPrompt": "pool with friends"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "prompt_edited",
+    "payload": {
+      "originalPrompt": "pool with friends",
+      "editedPrompt": "pool with friends outdoors"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "pool with friends outdoors",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_01",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "wrong_open",
+    "payload": {
+      "photoId": "pool_01",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_06",
+      "rank": 2
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "pool_06",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 2,
+      "satisfactionRating": 5,
+      "comment": "Coach made it fast!"
+    }
+  },
+  {
+    "ts": "2026-10-01T10:00:00.000Z",
+    "sessionId": "test_verify_session_2856",
+    "participantId": "P99",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "pool",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_06",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "pool_06",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 3,
+      "satisfactionRating": 3,
+      "comment": "Found in plain search"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:00:00.000Z",
+    "sessionId": "s_p01_a_16852",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "pool",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "questionId": "q_group_type",
+      "value": "friends"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "pool",
+      "refinedPrompt": "pool friends"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "prompt_edited",
+    "payload": {
+      "originalPrompt": "pool friends",
+      "editedPrompt": "pool friends sunny"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "pool friends sunny",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_06",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "pool_06",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 1,
+      "satisfactionRating": 5,
+      "comment": "Coach was super fast!"
+    }
+  },
+  {
+    "ts": "2026-10-01T12:05:00.000Z",
+    "sessionId": "s_p01_b_16852",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T01",
+      "task": "Task 1"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "pool swimming kids"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "pool swimming kids",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_06.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:15.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "pool_06.jpg",
+      "targetId": "T01",
+      "timeToFindSec": 42
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 3,
+      "satisfactionRating": 3,
+      "comment": "Found after scrolling through pool pictures."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_a_t01_1790860515",
+    "participantId": "P01",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T02",
+      "task": "Task 2"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "beach"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "beach",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "beach"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "cueType": "who",
+      "value": "family"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "beach",
+      "refinedPrompt": "beach family playing"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "prompt_edited",
+    "payload": {
+      "originalPrompt": "beach family playing",
+      "editedPrompt": "beach family playing"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "beach family playing",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "beach_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "beach_01.jpg",
+      "targetId": "T02",
+      "timeToFindSec": 19
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 1,
+      "satisfactionRating": 5,
+      "comment": "The coach suggested family right away, very quick."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p01_b_t02_1790860516",
+    "participantId": "P01",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T03",
+      "task": "Task 1"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "birthday"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "birthday",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "birthday"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:16.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "cueType": "who",
+      "value": "young adults"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "birthday",
+      "refinedPrompt": "birthday young adults patio"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "birthday young adults patio",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "birthday_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "birthday_01.jpg",
+      "targetId": "T03",
+      "timeToFindSec": 24
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 2,
+      "satisfactionRating": 5,
+      "comment": "Questions helped remember the string lights."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_b_t03_1790860516",
+    "participantId": "P02",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T04",
+      "task": "Task 2"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T04"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T04"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "festival concert lights"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "festival concert lights",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "festival_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "festival_01.jpg",
+      "targetId": "T04",
+      "timeToFindSec": 55
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 4,
+      "satisfactionRating": 3,
+      "comment": "Hard to distinguish concert crowds without tags."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p02_a_t04_1790860517",
+    "participantId": "P02",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T04"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T05",
+      "task": "Task 1"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T05"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T05"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "graduation suit"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "graduation suit",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:17.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "graduation_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "graduation_01.jpg",
+      "targetId": "T05",
+      "timeToFindSec": 48
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 3,
+      "satisfactionRating": 4,
+      "comment": "Got it on second query."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_a_t05_1790860517",
+    "participantId": "P03",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T05"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T06",
+      "task": "Task 2"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T06"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T06"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "hiking"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "hiking",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "hiking"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "cueType": "who",
+      "value": "backpack"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "hiking",
+      "refinedPrompt": "hiking mountain path backpack"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "prompt_edited",
+    "payload": {
+      "originalPrompt": "hiking mountain path backpack",
+      "editedPrompt": "hiking mountain path backpack"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "hiking mountain path backpack",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "hiking_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "hiking_01.jpg",
+      "targetId": "T06",
+      "timeToFindSec": 16
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 1,
+      "satisfactionRating": 5,
+      "comment": "Prompt review was great to tweak."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p03_b_t06_1790860518",
+    "participantId": "P03",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T06"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T01",
+      "task": "Task 1"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "pool",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "pool"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "cueType": "who",
+      "value": "friends"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "pool",
+      "refinedPrompt": "pool friends sunglasses"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "pool friends sunglasses",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "pool_06.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "pool_06.jpg",
+      "targetId": "T01",
+      "timeToFindSec": 21
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 2,
+      "satisfactionRating": 4,
+      "comment": "Coach candidate pill gave good feedback."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_b_t01_1790860518",
+    "participantId": "P04",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T01"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:18.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T03",
+      "task": "Task 2"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "birthday dancing"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "birthday dancing",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "birthday_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "birthday_01.jpg",
+      "targetId": "T03",
+      "timeToFindSec": 62
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 4,
+      "satisfactionRating": 2,
+      "comment": "Too many similar party photos to check."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p04_a_t03_1790860518",
+    "participantId": "P04",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T03"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T02",
+      "task": "Task 1"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "query_typed",
+    "payload": {
+      "query": "beach holding child"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "search_submitted",
+    "payload": {
+      "query": "beach holding child",
+      "mode": "A"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "beach_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "found",
+    "payload": {
+      "photoId": "beach_01.jpg",
+      "targetId": "T02",
+      "timeToFindSec": 38
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 3,
+      "satisfactionRating": 4,
+      "comment": "Found it within a minute."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_a_t02_1790860519",
+    "participantId": "P05",
+    "mode": "A",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T02"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "task_start",
+    "payload": {
+      "targetId": "T05",
+      "task": "Task 2"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "target_shown",
+    "payload": {
+      "targetId": "T05"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "target_hidden",
+    "payload": {
+      "targetId": "T05"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "query_typed",
+    "payload": {
+      "query": "graduation"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "vague_check",
+    "payload": {
+      "query": "graduation",
+      "isVague": true
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "coach_triggered",
+    "payload": {
+      "query": "graduation"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "coach_shown",
+    "payload": {
+      "questionCount": 3
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "chip_tapped",
+    "payload": {
+      "cueType": "who",
+      "value": "couple"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "prompt_composed",
+    "payload": {
+      "query": "graduation",
+      "refinedPrompt": "graduation young man woman necktie"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "prompt_edited",
+    "payload": {
+      "originalPrompt": "graduation young man woman necktie",
+      "editedPrompt": "graduation young man woman necktie"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "search_submitted",
+    "payload": {
+      "query": "graduation young man woman necktie",
+      "mode": "B"
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "photo_opened",
+    "payload": {
+      "photoId": "graduation_01.jpg",
+      "rank": 1
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "found",
+    "payload": {
+      "photoId": "graduation_01.jpg",
+      "targetId": "T05",
+      "timeToFindSec": 18
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:19.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "survey_answered",
+    "payload": {
+      "difficultyRating": 1,
+      "satisfactionRating": 5,
+      "comment": "Extremely fast."
+    }
+  },
+  {
+    "ts": "2026-10-01T13:15:20.000Z",
+    "sessionId": "study_p05_b_t05_1790860519",
+    "participantId": "P05",
+    "mode": "B",
+    "type": "task_end",
+    "payload": {
+      "outcome": "found",
+      "targetId": "T05"
+    }
+  }
+]
