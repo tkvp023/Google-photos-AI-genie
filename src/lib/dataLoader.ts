@@ -25,7 +25,7 @@ class DataStore {
 
   public init(): void {
     const cwd = process.cwd();
-    const dataDir = path.join(cwd, "data");
+    const dataDir = process.env.DATA_DIR || path.join(cwd, "data");
     const libraryDir = path.join(cwd, "public", "library");
 
     // 1. Load tags.json (fall back to tags_sample.json if needed)

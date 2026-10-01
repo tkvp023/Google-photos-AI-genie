@@ -27,7 +27,8 @@ export async function GET() {
     );
 
     // Optional tags.json metadata
-    const tagsPath = path.join(process.cwd(), "data", "tags.json");
+    const dataDir = process.env.DATA_DIR || path.join(process.cwd(), "data");
+    const tagsPath = path.join(dataDir, "tags.json");
     let tags: Record<string, { setting?: string }> = {};
     if (fs.existsSync(tagsPath)) {
       try {

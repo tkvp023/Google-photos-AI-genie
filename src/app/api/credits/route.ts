@@ -8,7 +8,8 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const csvPath = path.join(process.cwd(), "data", "credits.csv");
+    const dataDir = process.env.DATA_DIR || path.join(process.cwd(), "data");
+    const csvPath = path.join(dataDir, "credits.csv");
     if (!fs.existsSync(csvPath)) {
       return NextResponse.json({ credits: [] });
     }

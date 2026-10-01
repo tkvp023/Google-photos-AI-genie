@@ -3,7 +3,8 @@ import fs from "fs";
 import path from "path";
 import { LogEvent } from "@/types";
 
-const EVENTS_FILE = path.join(process.cwd(), "data", "events.json");
+const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), "data");
+const EVENTS_FILE = path.join(DATA_DIR, "events.json");
 
 // Serialized write queue to prevent race conditions during rapid concurrent logging
 let writeQueue: Promise<void> = Promise.resolve();
