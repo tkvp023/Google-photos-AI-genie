@@ -1,6 +1,6 @@
 # QA AI Genie Trigger & Questions Matrix
 
-Generated: 2026-10-04T11:25:26.693Z
+Generated: 2026-10-04T12:07:05.555Z
 Trigger mode tested: `COACH_TRIGGER_MODE=simple` (with backward compatibility audit of `strict`)
 
 ## Summary

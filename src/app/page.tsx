@@ -1,12 +1,16 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, { useEffect, useState, useCallback, useMemo, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { X, Cloud, ChevronRight } from "lucide-react";
 import { TopBar } from "@/components/ui/TopBar";
 import { PhotoGrid, PhotoGridItem } from "@/components/ui/PhotoGrid";
 import { Toast } from "@/components/ui/Toast";
+import { GuideCard } from "@/components/ui/GuideCard";
+import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
+import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
+import { useGuide } from "@/hooks/useGuide";
 
 interface MemoryStory {
   id: string;
@@ -16,12 +20,14 @@ interface MemoryStory {
   src: string;
 }
 
-export default function GooglePhotosHomePage() {
+function HomeContent() {
   const [photos, setPhotos] = useState<PhotoGridItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
+  const { isGuideOn } = useGuide();
 
   const fetchPhotos = useCallback(async () => {
     setIsLoading(true);
@@ -114,6 +120,9 @@ export default function GooglePhotosHomePage() {
         onProfileClick={() => setIsProfileOpen(true)}
       />
 
+      {/* A4: Welcome guide card — shown when guide=on (default), session-dismissible */}
+      <GuideCard isGuideOn={isGuideOn} />
+
       <div className="flex-1 flex flex-col">
         {isLoading ? (
           <div className="flex-1 flex flex-col items-center justify-center py-24 space-y-3">
@@ -176,19 +185,37 @@ export default function GooglePhotosHomePage() {
               <PhotoGrid photos={photos} isLoading={isLoading} />
             </div>
 
-            {/* S1 Attribution Requirement */}
-            <div className="py-6 px-4 text-center text-sm text-[#5F6368] space-y-1">
-              <p>Photos from Pixabay. Dates, places, and people are synthetic.</p>
-              <Link
-                href="/about"
-                className="inline-block text-[#1A73E8] hover:underline font-medium min-h-[44px] leading-[44px]"
-              >
-                About &amp; Credits
-              </Link>
+            {/* S1 Attribution + A2 Disclaimer + A3 Library Info link */}
+            <div className="py-4 px-4 text-center space-y-1">
+              <p className="text-sm text-[#5F6368]">Photos from Pixabay. Dates, places, and people are synthetic.</p>
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <Link
+                  href="/about"
+                  className="inline-block text-[#1A73E8] hover:underline font-medium min-h-[44px] leading-[44px] text-sm"
+                >
+                  About &amp; Credits
+                </Link>
+                <span className="text-[#DADCE0] select-none">·</span>
+                <button
+                  type="button"
+                  onClick={() => setIsLibraryInfoOpen(true)}
+                  className="text-[#1A73E8] hover:underline font-medium min-h-[44px] leading-[44px] text-sm cursor-pointer bg-transparent border-none"
+                >
+                  About this library
+                </button>
+              </div>
+              {/* A2: Tester disclaimer */}
+              <TesterDisclaimer />
             </div>
           </>
         )}
       </div>
+
+      {/* A3: About this library modal */}
+      <LibraryInfoModal
+        isOpen={isLibraryInfoOpen}
+        onClose={() => setIsLibraryInfoOpen(false)}
+      />
 
       {/* Google Account Profile & Settings Sheet */}
       {isProfileOpen && (
@@ -266,5 +293,13 @@ export default function GooglePhotosHomePage() {
       {/* Toast Feedback */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
     </main>
+  );
+}
+
+export default function GooglePhotosHomePage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-sm text-[#5F6368]">Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }

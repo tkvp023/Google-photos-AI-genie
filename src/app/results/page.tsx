@@ -8,6 +8,8 @@ import { CoachStrip } from "@/components/coach/CoachStrip";
 import { Toast } from "@/components/ui/Toast";
 import { PhotoItem, Question, QuestionOption } from "@/types";
 import { getChipPhrase, removeChipPhrase, replaceOrAppendChipPhrase } from "@/lib/phraseTemplates";
+import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
+import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
 
 interface ScoredPhotoItem extends PhotoItem {
   score: number;
@@ -60,6 +62,7 @@ function ResultsContent() {
   const [isCoachHelpOpen, setIsCoachHelpOpen] = useState<boolean>(false);
   const [coachQuestions, setCoachQuestions] = useState<Question[]>([]);
   const [coachLoading, setCoachLoading] = useState<boolean>(false);
+  const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
 
   useEffect(() => {
     if (!q) {
@@ -419,8 +422,8 @@ function ResultsContent() {
               ))}
             </div>
 
-            {/* Step 2 Required Attribution: S6 attribution line */}
-            <div className="py-6 text-center text-[14px] text-[#8f7e73] space-y-1">
+            {/* Step 2 Required Attribution: S6 attribution line + A2 disclaimer + A3 library info */}
+            <div className="py-4 text-center text-[14px] text-[#8f7e73] space-y-1">
               <p>
                 <a
                   href="https://pixabay.com"
@@ -434,6 +437,14 @@ function ResultsContent() {
               <p className="text-[12px] text-[#736357]">
                 Dates, places and people are synthetic
               </p>
+              <button
+                type="button"
+                onClick={() => setIsLibraryInfoOpen(true)}
+                className="text-[13px] text-[#736357] hover:text-[#f59e6c] min-h-[36px] transition-colors cursor-pointer bg-transparent border-none"
+              >
+                About this library
+              </button>
+              <TesterDisclaimer />
             </div>
           </div>
         ) : (
@@ -478,6 +489,18 @@ function ResultsContent() {
                 <span>Ask Genie for ideas</span>
               </button>
             )}
+
+            {/* A2/A3: Disclaimer + library info for S8 zero-results */}
+            <div className="mt-6 text-center">
+              <button
+                type="button"
+                onClick={() => setIsLibraryInfoOpen(true)}
+                className="text-[13px] text-[#736357] hover:text-[#f59e6c] min-h-[36px] transition-colors cursor-pointer bg-transparent border-none"
+              >
+                About this library
+              </button>
+              <TesterDisclaimer />
+            </div>
           </div>
         )}
       </main>
@@ -519,6 +542,12 @@ function ResultsContent() {
 
       {/* Toast Feedback */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
+
+      {/* A3: About this library modal */}
+      <LibraryInfoModal
+        isOpen={isLibraryInfoOpen}
+        onClose={() => setIsLibraryInfoOpen(false)}
+      />
     </div>
   );
 }

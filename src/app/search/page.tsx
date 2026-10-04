@@ -10,6 +10,10 @@ import { useCoach } from "@/hooks/useCoach";
 import { CoachStrip } from "@/components/coach/CoachStrip";
 import { GboardKeyboard } from "@/components/ui/GboardKeyboard";
 import { Question, QuestionOption } from "@/types";
+import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
+import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
+import { SearchHint } from "@/components/ui/SearchHint";
+import { useGuide } from "@/hooks/useGuide";
 
 function SearchContent() {
   const router = useRouter();
@@ -22,6 +26,10 @@ function SearchContent() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(Boolean(initialQuery));
   const [submittedQuery, setSubmittedQuery] = useState<string>("");
+  const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
+
+  // A1: guide switch
+  const { isGuideOn } = useGuide();
 
   // Search input ref to keep focus when chips are tapped
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -265,6 +273,10 @@ function SearchContent() {
           <div className="flex flex-col gap-5 pt-3">
             {/* People Circles Row */}
             <section aria-label="People faces" className="pt-1">
+              {/* A3: People avatar caption */}
+              <p className="text-[12px] text-[#736357] px-1 pb-1 select-none">
+                Avatars are illustrative only — not real face recognition
+              </p>
               <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-1">
                 {peopleList.map((person) => (
                   <button
@@ -357,6 +369,8 @@ function SearchContent() {
         ) : (
           /* Typing Suggestion Row */
           <div className="w-full flex flex-col pt-3">
+            {/* A4: search hint for typing state */}
+            <SearchHint isGuideOn={isGuideOn} variant="typing" className="mb-3 mx-1" />
             <div
               onClick={() => handleSearchSubmit(query)}
               className="w-full min-h-[50px] px-2 py-3 flex items-center gap-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors cursor-pointer group"
@@ -385,6 +399,18 @@ function SearchContent() {
               </span>
               <p className="text-[14px] text-[#a89b92]">Searching your 200 photos</p>
             </div>
+
+            {/* A2: Tester disclaimer + A3: About this library link */}
+            <div className="mt-auto pb-3 text-center">
+              <button
+                type="button"
+                onClick={() => setIsLibraryInfoOpen(true)}
+                className="text-[13px] text-[#736357] hover:text-[#f59e6c] min-h-[36px] transition-colors cursor-pointer bg-transparent border-none"
+              >
+                About this library
+              </button>
+              <TesterDisclaimer />
+            </div>
           </div>
         )}
       </main>
@@ -393,16 +419,24 @@ function SearchContent() {
       <div className="sticky bottom-0 bg-[#1b1512] z-30 flex flex-col w-full border-t border-[#2a211b] shadow-2xl">
         {/* Compact Coach Strip: visible unless hidden switch ?genie=off */}
         {!isGenieOff && config.GENIE_ENABLED && (coach.isCoachVisible || coach.isNoMatch || coach.noMatchState === "partial") && (
-          <CoachStrip
-            questions={coach.questions}
-            currentText={query}
-            candidateCount={coach.candidateCount}
-            isDebug={isDebug}
-            noMatchState={coach.noMatchState}
-            unmatchedTerms={coach.unmatchedTermsList}
-            onChipTap={handleChipTap}
-            onDismiss={handleDismissCoach}
-          />
+          <>
+            {/* A4: strip hint — shown once, guide-gated, above the strip */}
+            <SearchHint isGuideOn={isGuideOn} variant="strip" className="mx-3 mt-2" />
+            <CoachStrip
+              questions={coach.questions}
+              currentText={query}
+              candidateCount={coach.candidateCount}
+              isDebug={isDebug}
+              noMatchState={coach.noMatchState}
+              unmatchedTerms={coach.unmatchedTermsList}
+              onChipTap={handleChipTap}
+              onDismiss={handleDismissCoach}
+            />
+            {/* A4: chip-tap hint — shown after user taps a chip */}
+            {coach.chipHistory.length > 0 && (
+              <SearchHint isGuideOn={isGuideOn} variant="chip" className="mx-3 mb-1" />
+            )}
+          </>
         )}
 
         {/* Floating Pill: "Search or ask" at the Bottom */}
@@ -543,6 +577,12 @@ function SearchContent() {
 
       {/* Toast Feedback */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
+
+      {/* A3: About this library modal */}
+      <LibraryInfoModal
+        isOpen={isLibraryInfoOpen}
+        onClose={() => setIsLibraryInfoOpen(false)}
+      />
     </div>
   );
 }

@@ -49,7 +49,7 @@ export interface SnapshotItem {
   top10Results: Array<{
     id: string;
     score: number;
-    tier: number;
+    tier: number | undefined;
     theme?: string;
   }>;
 }
@@ -75,11 +75,11 @@ export function generateSnapshot(genieOff = false): SnapshotItem[] {
       if (questions.length === 0) {
         questions = genericFallbackQuestions(trimmed, [], triggerEval.candidatePhotos);
       }
-      rows = questions.map((qn) => ({
+      rows = questions.map((qn: any) => ({
         cueType: qn.cueType,
-        questionText: qn.questionText,
+        questionText: qn.questionText || qn.text || "",
         field: qn.field,
-        options: (qn.options || []).map((opt) => ({
+        options: (qn.options || []).map((opt: any) => ({
           value: opt.value,
           label: opt.label,
           count: opt.count ?? 0,

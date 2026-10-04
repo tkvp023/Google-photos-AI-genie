@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink, ShieldCheck, Heart, Search, Sparkles } from "lucide-react";
 import { CreditRow } from "@/types";
+import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
 
 export default function AboutPage() {
   const [credits, setCredits] = useState<CreditRow[]>([]);
@@ -224,23 +225,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Quick Navigation Links */}
-        <section className="pt-2 pb-6 flex items-center justify-center gap-4 text-xs text-[#5F6368]">
-          <Link href="/" className="hover:text-[#1F6FEB] underline">
-            Home Gallery
-          </Link>
-          <span>•</span>
-          <Link href="/search" className="hover:text-[#1F6FEB] underline">
-            Search
-          </Link>
-          <span>•</span>
-          <Link href="/moderator" className="hover:text-[#1F6FEB] underline">
-            Moderator Console
-          </Link>
-          <span>•</span>
-          <Link href="/admin" className="hover:text-[#1F6FEB] underline">
-            Admin Metrics
-          </Link>
+        {/* Quick Navigation Links + A2 Disclaimer */}
+        <section className="pt-2 pb-6 flex flex-col items-center gap-3 text-xs text-[#5F6368]">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="hover:text-[#1F6FEB] underline min-h-[36px] leading-[36px]">
+              Home Gallery
+            </Link>
+            <span>•</span>
+            <Link href="/search" className="hover:text-[#1F6FEB] underline min-h-[36px] leading-[36px]">
+              Search
+            </Link>
+          </div>
+          <TesterDisclaimer className="text-center" />
         </section>
       </main>
     </div>

@@ -6,7 +6,7 @@
 > **Target Deployment:** Stateless Single-Service on Vercel or Railway  
 > **Repository:** `Gp2-solution`  
 > **Author / Lead Engineer:** AI Pair Programming Team with Tharun  
-> **Status:** Production-Ready MVP (All 7 QA Suites Passing, 46/46 Matrix Validated)  
+> **Status:** Ready for owner testing (All 7 QA Suites Passing, 46/46 Matrix Validated)  
 
 ---
 
@@ -219,15 +219,13 @@ To guarantee predictable, trustworthy search behavior without OR-widening, photo
 - **Tier 2 (Partial Matches, $\ge 60\%$ Co-occurrence):** Photos matching at least 60% of content terms.
 - **Tier 3 (Broad Matches, $< 60\%$ Co-occurrence):** Photos matching at least one content term.
 
-#### Mathematical Monotonicity Theorem
+#### Monotonicity Property
 **Definition:** The primary candidate count is defined as $\text{count\_strong}(Q) = |\text{Tier 1}(Q)|$.
 
-**Theorem:** For any query $Q$ and any appended refinement term $w$:
+**Property:** For any query $Q$ and any appended refinement term $w$, adding words to a search narrows or preserves Tier 1 candidate counts:
 $$\text{count\_strong}(Q \cup \{w\}) \le \text{count\_strong}(Q)$$
 
-**Proof:** Let $P \in \text{Tier 1}(Q \cup \{w\})$. By definition of Tier 1, photo $P$ must contain matches for all tokens in $Q \cup \{w\}$. Consequently, $P$ matches all tokens in $Q$, which implies $P \in \text{Tier 1}(Q)$. Therefore:
-$$\text{Tier 1}(Q \cup \{w\}) \subseteq \text{Tier 1}(Q) \implies |\text{Tier 1}(Q \cup \{w\})| \le |\text{Tier 1}(Q)|$$
-Adding words to a search query strictly narrows or maintains Tier 1 candidates. It can **never** increase `count_strong`.
+This follows from Tier 1 requiring every token to match: a superset of tokens is a strictly stronger constraint. Checked on 1,000 random queries (0 violations found — see `scripts/test_monotonicity_1000.ts`).
 
 ### 5.2 Field Weights & Diversity Bonus
 Field scores are weighted according to semantic specificity:
