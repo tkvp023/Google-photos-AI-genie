@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { PixelPhoneShell } from "./PixelPhoneShell";
+import { GuideProvider } from "@/context/GuideContext";
 
 interface ClientShellWrapperProps {
   children: React.ReactNode;
@@ -23,5 +24,9 @@ export function ClientShellWrapper({ children }: ClientShellWrapperProps) {
     );
   }
 
-  return <PixelPhoneShell>{children}</PixelPhoneShell>;
+  return (
+    <GuideProvider>
+      <PixelPhoneShell>{children}</PixelPhoneShell>
+    </GuideProvider>
+  );
 }

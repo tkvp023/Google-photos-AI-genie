@@ -12,8 +12,6 @@ import { GboardKeyboard } from "@/components/ui/GboardKeyboard";
 import { Question, QuestionOption } from "@/types";
 import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
 import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
-import { SearchHint } from "@/components/ui/SearchHint";
-import { useGuide } from "@/hooks/useGuide";
 
 function SearchContent() {
   const router = useRouter();
@@ -27,9 +25,6 @@ function SearchContent() {
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(Boolean(initialQuery));
   const [submittedQuery, setSubmittedQuery] = useState<string>("");
   const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
-
-  // A1: guide switch
-  const { isGuideOn } = useGuide();
 
   // Search input ref to keep focus when chips are tapped
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -369,8 +364,6 @@ function SearchContent() {
         ) : (
           /* Typing Suggestion Row */
           <div className="w-full flex flex-col pt-3">
-            {/* A4: search hint for typing state */}
-            <SearchHint isGuideOn={isGuideOn} variant="typing" className="mb-3 mx-1" />
             <div
               onClick={() => handleSearchSubmit(query)}
               className="w-full min-h-[50px] px-2 py-3 flex items-center gap-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors cursor-pointer group"
@@ -419,24 +412,16 @@ function SearchContent() {
       <div className="sticky bottom-0 bg-[#1b1512] z-30 flex flex-col w-full border-t border-[#2a211b] shadow-2xl">
         {/* Compact Coach Strip: visible unless hidden switch ?genie=off */}
         {!isGenieOff && config.GENIE_ENABLED && (coach.isCoachVisible || coach.isNoMatch || coach.noMatchState === "partial") && (
-          <>
-            {/* A4: strip hint — shown once, guide-gated, above the strip */}
-            <SearchHint isGuideOn={isGuideOn} variant="strip" className="mx-3 mt-2" />
-            <CoachStrip
-              questions={coach.questions}
-              currentText={query}
-              candidateCount={coach.candidateCount}
-              isDebug={isDebug}
-              noMatchState={coach.noMatchState}
-              unmatchedTerms={coach.unmatchedTermsList}
-              onChipTap={handleChipTap}
-              onDismiss={handleDismissCoach}
-            />
-            {/* A4: chip-tap hint — shown after user taps a chip */}
-            {coach.chipHistory.length > 0 && (
-              <SearchHint isGuideOn={isGuideOn} variant="chip" className="mx-3 mb-1" />
-            )}
-          </>
+          <CoachStrip
+            questions={coach.questions}
+            currentText={query}
+            candidateCount={coach.candidateCount}
+            isDebug={isDebug}
+            noMatchState={coach.noMatchState}
+            unmatchedTerms={coach.unmatchedTermsList}
+            onChipTap={handleChipTap}
+            onDismiss={handleDismissCoach}
+          />
         )}
 
         {/* Floating Pill: "Search or ask" at the Bottom */}

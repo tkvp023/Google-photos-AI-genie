@@ -7,10 +7,8 @@ import { X, Cloud, ChevronRight } from "lucide-react";
 import { TopBar } from "@/components/ui/TopBar";
 import { PhotoGrid, PhotoGridItem } from "@/components/ui/PhotoGrid";
 import { Toast } from "@/components/ui/Toast";
-import { GuideCard } from "@/components/ui/GuideCard";
 import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
 import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
-import { useGuide } from "@/hooks/useGuide";
 
 interface MemoryStory {
   id: string;
@@ -27,7 +25,6 @@ function HomeContent() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
-  const { isGuideOn } = useGuide();
 
   const fetchPhotos = useCallback(async () => {
     setIsLoading(true);
@@ -119,9 +116,6 @@ function HomeContent() {
         onInertClick={handleInertTabClick}
         onProfileClick={() => setIsProfileOpen(true)}
       />
-
-      {/* A4: Welcome guide card — shown when guide=on (default), session-dismissible */}
-      <GuideCard isGuideOn={isGuideOn} />
 
       <div className="flex-1 flex flex-col">
         {isLoading ? (
