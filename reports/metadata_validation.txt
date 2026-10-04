@@ -1,0 +1,79 @@
+================================================================================
+METADATA VALIDATION & AUDIT REPORT
+Generated deterministically from story_events.json and cast.json
+DEMO_TODAY: 2026-10-01
+================================================================================
+
+Total photos processed: 200
+Total story events: 30
+Total cast members: 8
+
+1. EVENT CAPACITY CHECK (4-10 photos each):
+  - ev_beach_01     [beach     ] in Goa         :  7 photos [OK]
+  - ev_beach_02     [beach     ] in Pondicherry :  7 photos [OK]
+  - ev_beach_03     [beach     ] in Chennai     :  6 photos [OK]
+  - ev_bday_01      [birthday  ] in Bengaluru   :  7 photos [OK]
+  - ev_bday_02      [birthday  ] in Hyderabad   :  7 photos [OK]
+  - ev_bday_03      [birthday  ] in Chennai     :  6 photos [OK]
+  - ev_fest_01      [festival  ] in Goa         :  7 photos [OK]
+  - ev_fest_02      [festival  ] in Bengaluru   :  7 photos [OK]
+  - ev_fest_03      [festival  ] in Hyderabad   :  6 photos [OK]
+  - ev_grad_01      [graduation] in Chennai     :  7 photos [OK]
+  - ev_grad_02      [graduation] in Bengaluru   :  7 photos [OK]
+  - ev_grad_03      [graduation] in Hyderabad   :  6 photos [OK]
+  - ev_hike_01      [hiking    ] in Munnar      :  7 photos [OK]
+  - ev_hike_02      [hiking    ] in Ooty        :  7 photos [OK]
+  - ev_hike_03      [hiking    ] in Coorg       :  6 photos [OK]
+  - ev_kids_01      [kids      ] in Chennai     :  7 photos [OK]
+  - ev_kids_02      [kids      ] in Bengaluru   :  7 photos [OK]
+  - ev_kids_03      [kids      ] in Manali      :  6 photos [OK]
+  - ev_pets_01      [pets      ] in Bengaluru   :  7 photos [OK]
+  - ev_pets_02      [pets      ] in Chennai     :  7 photos [OK]
+  - ev_pets_03      [pets      ] in Pondicherry :  6 photos [OK]
+  - ev_pool_01      [pool      ] in Goa         :  7 photos [OK]
+  - ev_pool_02      [pool      ] in Pondicherry :  7 photos [OK]
+  - ev_pool_03      [pool      ] in Bengaluru   :  6 photos [OK]
+  - ev_rest_01      [restaurant] in Bengaluru   :  7 photos [OK]
+  - ev_rest_02      [restaurant] in Chennai     :  7 photos [OK]
+  - ev_rest_03      [restaurant] in Hyderabad   :  6 photos [OK]
+  - ev_road_01      [roadtrip  ] in Goa         :  7 photos [OK]
+  - ev_road_02      [roadtrip  ] in Pondicherry :  7 photos [OK]
+  - ev_road_03      [roadtrip  ] in Manali      :  6 photos [OK]
+
+2. FIELD COVERAGE IN PHOTO_META.JSON:
+  - synthetic: 200/200 (100.0%)
+  - event_id: 200/200 (100.0%)
+  - taken_at: 200/200 (100.0%)
+  - year/month/season: 200/200 (100.0%)
+  - place (city, venue, lat, lng): 200/200 (100.0%)
+  - people assigned: 126/200
+
+3. SEASONS DISTRIBUTION:
+  - monsoon        :  14 photos
+  - post-monsoon   :  26 photos
+  - summer         :  80 photos
+  - winter         :  80 photos
+
+4. YEARS DISTRIBUTION (2019-2026):
+  - 2019:   7 photos
+  - 2020:  14 photos
+  - 2021:  28 photos
+  - 2022:  28 photos
+  - 2023:  48 photos
+  - 2024:  20 photos
+  - 2025:  37 photos
+  - 2026:  18 photos
+
+5. CITIES DISTRIBUTION:
+  - Bengaluru      :  48 photos
+  - Chennai        :  40 photos
+  - Coorg          :   6 photos
+  - Goa            :  28 photos
+  - Hyderabad      :  25 photos
+  - Manali         :  12 photos
+  - Munnar         :   7 photos
+  - Ooty           :   7 photos
+  - Pondicherry    :  27 photos
+
+6. CONTRADICTION & ERROR AUDIT:
+PASS: Zero contradictions detected. All constraints satisfied!

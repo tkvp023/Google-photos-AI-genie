@@ -1,0 +1,92 @@
+[
+  {
+    "id": "T01",
+    "file": "pool_06.jpg",
+    "theme": "pool",
+    "difficulty": "medium",
+    "distinctiveFeature": "two children in swimming pool with sunglasses and inflatable tubes",
+    "pairsWith": "T02",
+    "hint": "a couple of summers ago, at a resort pool with family"
+  },
+  {
+    "id": "T02",
+    "file": "beach_01.jpg",
+    "theme": "beach",
+    "difficulty": "medium",
+    "distinctiveFeature": "adult playfully holding child upside down on sandy beach",
+    "pairsWith": "T01",
+    "hint": "a few years back around autumn, by the beach with family"
+  },
+  {
+    "id": "T03",
+    "file": "birthday_01.jpg",
+    "theme": "birthday",
+    "difficulty": "high-match-count",
+    "distinctiveFeature": "young adults socializing and dancing under string lights on patio",
+    "pairsWith": "T04",
+    "hint": "a while back in winter, at a rooftop patio with friends"
+  },
+  {
+    "id": "T04",
+    "file": "festival_01.jpg",
+    "theme": "festival",
+    "difficulty": "high-match-count",
+    "distinctiveFeature": "crowd raising hands facing illuminated concert stage with lights",
+    "pairsWith": "T03",
+    "hint": "a couple of winters ago, at an outdoor music festival with friends"
+  },
+  {
+    "id": "T05",
+    "file": "graduation_01.jpg",
+    "theme": "graduation",
+    "difficulty": "medium",
+    "distinctiveFeature": "woman adjusting young man's necktie posing outside building",
+    "pairsWith": "T06",
+    "hint": "a few summers ago, outside a university campus with friends"
+  },
+  {
+    "id": "T06",
+    "file": "hiking_01.jpg",
+    "theme": "hiking",
+    "difficulty": "medium",
+    "distinctiveFeature": "hiker with purple jacket and blue backpack on narrow mountain path",
+    "pairsWith": "T05",
+    "hint": "last autumn, on a scenic mountain trail with friends"
+  },
+  {
+    "id": "T07",
+    "file": "kids_01.jpg",
+    "theme": "kids",
+    "difficulty": "medium",
+    "distinctiveFeature": "two children touching water at garden pond in blue shirt and black shorts",
+    "pairsWith": "T08",
+    "hint": "a few years ago during winter, in a botanical garden with family"
+  },
+  {
+    "id": "T08",
+    "file": "pets_01.jpg",
+    "theme": "pets",
+    "difficulty": "medium",
+    "distinctiveFeature": "brown labrador retriever on leash outside on fallen autumn leaves",
+    "pairsWith": "T07",
+    "hint": "early this year, at a quiet woodland park with pets"
+  },
+  {
+    "id": "T09",
+    "file": "restaurant_01.jpg",
+    "theme": "restaurant",
+    "difficulty": "medium",
+    "distinctiveFeature": "people dining with pasta, salad, and glasses of beer in sunlit restaurant",
+    "pairsWith": "T10",
+    "hint": "a couple of winters back, at a sunny dining bistro with friends"
+  },
+  {
+    "id": "T10",
+    "file": "roadtrip_01.jpg",
+    "theme": "roadtrip",
+    "difficulty": "medium",
+    "distinctiveFeature": "black and white dog sitting happily inside car looking at camera",
+    "pairsWith": "T09",
+    "hint": "a few monsoons ago, along a scenic mountain highway with a pet"
+  }
+]

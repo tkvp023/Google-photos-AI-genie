@@ -185,16 +185,14 @@ def call_gemini_vision(img_bytes: bytes, prompt_text: str, api_key: str, model_n
     for attempt in range(1, 6):
         try:
             resp = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=60)
-            if resp.status_code == 429 or resp.status_code >= 500:
-                resp_json = {}
-                try:
-                    resp_json = resp.json()
-                except Exception:
-                    pass
-                msg = resp_json.get("error", {}).get("message", resp.text)
-                if resp.status_code == 429:
-                    time.sleep(20)
-                raise RuntimeError(f"HTTP {resp.status_code}: {msg}")
+            if resp.status_code == 429:
+                delay = 12 * attempt
+                print(f"[429: sleep {delay}s] ", end="", flush=True)
+                time.sleep(delay)
+                continue
+            if resp.status_code >= 500:
+                time.sleep(5 * attempt)
+                continue
             resp.raise_for_status()
             result = resp.json()
 
@@ -239,12 +237,17 @@ def main():
                     os.environ[k] = v
 
     api_key = os.environ.get("GEMINI_API_KEY")
-    model_name = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+    model_name = os.environ.get("GEMINI_MODEL")
 
     if not api_key:
         print("[ERROR] GEMINI_API_KEY environment variable is not set.", file=sys.stderr)
         print("Please set GEMINI_API_KEY before running this script:", file=sys.stderr)
         print("  Windows: $env:GEMINI_API_KEY=\"your_key\"", file=sys.stderr)
+        sys.exit(1)
+
+    if not model_name:
+        print("[ERROR] GEMINI_MODEL environment variable is not set.", file=sys.stderr)
+        print("GEMINI_MODEL must come from environment variables only (e.g. gemini-2.5-flash).", file=sys.stderr)
         sys.exit(1)
 
     lib_path = Path(args.library_dir)
@@ -312,17 +315,14 @@ def main():
         try:
             img_bytes = img_file.read_bytes()
             raw_tag = None
-            models_to_try = [model_name, "gemini-3.7-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash"]
+            models_to_try = [model_name, "gemini-2.5-flash", "gemini-2.0-flash"]
             for m in models_to_try:
                 try:
                     raw_tag = call_gemini_vision(img_bytes, prompt_text, api_key, m)
                     if raw_tag:
                         break
                 except Exception as me:
-                    if "429" in str(me) or "503" in str(me):
-                        continue
-                    else:
-                        raise me
+                    continue
             if not raw_tag:
                 raise RuntimeError("All models in pool throttled")
             norm_tag = normalise_tag(raw_tag)

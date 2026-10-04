@@ -1,12 +1,12 @@
 // src/types/index.ts — Canonical Type Definitions
 
-export type CueType = "who" | "when" | "where" | "what" | "occasion" | "look";
+export type CueType = "who" | "when" | "where" | "what" | "occasion" | "look" | "mood";
 
 export type Mode = "A" | "B" | "C";
 
 export type Layer = "generic_fallback" | "dynamic_adaptive";
 
-export type Composer = "groq" | "fallback";
+export type Composer = "groq" | "fallback" | "template";
 
 export type Bucket = "few" | "some" | "many";
 
@@ -45,16 +45,43 @@ export interface PhotoTag {
 
 export type Tags = Record<string, PhotoTag>;
 
-export interface StudyTarget {
-  id: string;                  // e.g. "T01", "T02"
-  file: string;                // filename, e.g. "pool_03.jpg"
-  theme: string;               // e.g. "pool"
-  difficulty: "high-match-count" | "low-match-count" | "medium";
-  distinctiveFeature: string;  // e.g. "red swimsuit, group of 5"
-  pairsWith?: string;          // partner target ID
+export interface SyntheticPhotoPlace {
+  city: string;
+  venue: string;
+  country: string;
+  lat: number;
+  lng: number;
 }
 
-export type Targets = StudyTarget[];
+export interface SyntheticPhotoMeta {
+  synthetic: boolean;
+  event_id: string;
+  event_title: string;
+  taken_at: string;
+  year: number;
+  month: number;
+  month_name: string;
+  season: "summer" | "monsoon" | "post-monsoon" | "winter";
+  place: SyntheticPhotoPlace;
+  people: string[];
+  device: string;
+}
+
+export interface StoryEvent {
+  id: string;
+  title: string;
+  theme: string;
+  date_start: string;
+  date_end: string;
+  city: string;
+  venue: string;
+  country: string;
+  lat: number;
+  lng: number;
+  cast: string[];
+  cast_relation_mix: "family" | "friends" | "mixed" | "solo";
+  notes: string;
+}
 
 export interface PhotoItem {
   id: string;     // filename without extension, e.g. "pool_01"
@@ -62,6 +89,7 @@ export interface PhotoItem {
   theme: string;  // "pool"
   src: string;    // "/library/pool_01.jpg"
   tag?: PhotoTag;
+  metadata?: SyntheticPhotoMeta;
 }
 
 export interface PhotoResult {
@@ -73,11 +101,24 @@ export interface PhotoResult {
 
 export type PhotoMeta = PhotoItem & { tag: PhotoTag };
 
+export interface SearchResultItem extends PhotoItem {
+  score: number;
+  matchedFields: string[];
+  explanation?: string;
+  tier?: 1 | 2 | 3;
+  matches?: Array<{ field: string; token: string; termType?: string; weight: number }>;
+}
+
 export interface SearchResponse {
-  results: (PhotoItem & { score: number; matchedFields: string[]; explanation?: string })[];
+  results: SearchResultItem[];
   count: number;
+  count_strong?: number;
+  count_total?: number;
+  ambiguous_count?: number;
+  top_score?: number;
   bucket: "few" | "some" | "many";
   query: string;
+  unmatched_terms?: string[];
 }
 
 export interface QuestionOption {
@@ -121,37 +162,6 @@ export interface VagueCheckResult {
   preciseCount: number;
 }
 
-export type EventType =
-  | "task_start"
-  | "target_shown"
-  | "target_hidden"
-  | "query_typed"
-  | "vague_check"
-  | "coach_triggered"
-  | "coach_shown"
-  | "chip_tapped"
-  | "chip_skipped"
-  | "coach_reset"
-  | "prompt_composed"
-  | "prompt_edited"
-  | "search_submitted"
-  | "photo_opened"
-  | "found"
-  | "wrong_open"
-  | "gave_up"
-  | "timeout"
-  | "task_end"
-  | "survey_answered";
-
-export interface LogEvent {
-  ts: string;              // ISO 8601 UTC timestamp
-  sessionId: string;
-  participantId: string;
-  mode: Mode;
-  type: EventType | string;
-  payload: Record<string, unknown>;
-}
-
 export interface CreditRow {
   file: string;
   theme: string;
@@ -159,3 +169,6 @@ export interface CreditRow {
   photographer: string;
   url: string;
 }
+
+
+

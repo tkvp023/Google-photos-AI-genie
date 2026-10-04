@@ -1,0 +1,59 @@
+================================================================================
+FINAL EVALUATION REPORT: OVER-TRIGGERING RESOLUTION & LIBRARY AUDIT
+================================================================================
+
+--------------------------------------------------------------------------------
+1. 11 DIAGNOSIS QUERIES: BEFORE VS AFTER COMPARISON
+--------------------------------------------------------------------------------
+| Query                             | Before Matches | Before Trigger | Strong (T1) | Ambiguous | Top Score | After Trigger | Decision Reason               |
+|-----------------------------------|----------------|----------------|-------------|-----------|-----------|---------------|-------------------------------|
+| pool                              | 15             | YES (over)     | 21          | 13        | 9.2       | YES           | Ambiguous broad set           |
+| birthday                          | 10             | YES (over)     | 20          | 1         | 11.3      | NO            | clear_winner                  |
+| beach                             | 11             | YES (over)     | 23          | 21        | 5.3       | YES           | Ambiguous broad set           |
+| friends                           | 27             | YES (over)     | 33          | 1         | 3.5       | NO            | clear_winner                  |
+| red swimsuit pool friends         | 19             | YES (over)     | 1           | 1         | 21.7      | NO            | few_strong_matches            |
+| me at the pool                    | 18             | YES (over)     | 21          | 13        | 9.2       | YES           | Ambiguous broad set           |
+| dog                               | 8              | NO             | 20          | 11        | 3.8       | NO            | clear_winner                  |
+| restaurant dinner                 | 7              | NO             | 1           | 1         | 7.7       | NO            | few_strong_matches            |
+| hiking                            | 9              | NO             | 21          | 12        | 6.1       | YES           | Ambiguous broad set           |
+| silver racket                     | 3              | NO             | 0           | 0         | 0.0       | NO            | few_strong_matches            |
+| elephant                          | 0              | NO             | 0           | 0         | 0.0       | NO            | few_strong_matches            |
+
+--------------------------------------------------------------------------------
+2. LIBRARY SIZE AUDIT PER THEME (TARGET: 20 PHOTOS/THEME = 200 TOTAL)
+--------------------------------------------------------------------------------
+  - Theme 'beach       ': 20/20 photos (OK)
+  - Theme 'birthday    ': 20/20 photos (OK)
+  - Theme 'festival    ': 20/20 photos (OK)
+  - Theme 'graduation  ': 20/20 photos (OK)
+  - Theme 'hiking      ': 20/20 photos (OK)
+  - Theme 'kids        ': 20/20 photos (OK)
+  - Theme 'pets        ': 20/20 photos (OK)
+  - Theme 'pool        ': 20/20 photos (OK)
+  - Theme 'restaurant  ': 20/20 photos (OK)
+  - Theme 'roadtrip    ': 20/20 photos (OK)
+  Total Photos in Library: 200/200 photos
+
+--------------------------------------------------------------------------------
+3. TAG COVERAGE AUDIT ACROSS ALL 200 LIBRARY PHOTOS
+--------------------------------------------------------------------------------
+  - Field 'one_line          ': 200/200 (100.0%)
+  - Field 'setting           ': 199/200 ( 99.5%)
+  - Field 'indoor_outdoor    ': 196/200 ( 98.0%)
+  - Field 'activity          ': 135/200 ( 67.5%)
+  - Field 'occasion_guess    ':  55/200 ( 27.5%)
+  - Field 'people_count      ': 200/200 (100.0%)
+  - Field 'people_bucket     ': 136/200 ( 68.0%)
+  - Field 'group_type        ': 123/200 ( 61.5%)
+  - Field 'clothing          ': 114/200 ( 57.0%)
+  - Field 'objects           ': 196/200 ( 98.0%)
+  - Field 'time_of_day       ': 149/200 ( 74.5%)
+  - Field 'weather_or_season ': 130/200 ( 65.0%)
+  - Field 'mood              ': 175/200 ( 87.5%)
+
+================================================================================
+CONCLUSION: OVER-TRIGGERING IS RESOLVED.
+Specific multi-term queries ('red swimsuit pool friends', 'restaurant dinner')
+no longer trigger coach. Only genuinely broad queries ('pool', 'beach', 'hiking')
+with >= 15 strong matches and >= 12 ambiguous candidates trigger.
+================================================================================

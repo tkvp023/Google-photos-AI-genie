@@ -4,39 +4,62 @@ import React, { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { CoachStrip } from "@/components/coach/CoachStrip";
 import { Toast } from "@/components/ui/Toast";
-import { BottomNav } from "@/components/ui/BottomNav";
-import { StudyBanner } from "@/components/study/StudyBanner";
-import { logClientEvent } from "@/lib/clientLogger";
-import { PhotoItem } from "@/types";
+import { PhotoItem, Question, QuestionOption } from "@/types";
+import { getChipPhrase, removeChipPhrase, replaceOrAppendChipPhrase } from "@/lib/phraseTemplates";
 
 interface ScoredPhotoItem extends PhotoItem {
   score: number;
+  tier?: 1 | 2 | 3;
   matchedFields: string[];
+  matches?: Array<{ field: string; token: string; termType?: string; weight: number }>;
   explanation?: string;
+}
+
+function getAiExplanation(query: string, count: number, results: ScoredPhotoItem[]): string {
+  if (count === 0) {
+    return `We couldn't find any photos matching "${query}". Try another term or explore suggestions.`;
+  }
+  // Dynamic contextual summary generated strictly from real query and result themes/activities
+  const themes = Array.from(new Set(results.slice(0, 5).map((r) => r.theme))).filter(Boolean);
+  const activities = Array.from(
+    new Set(
+      results.slice(0, 5).flatMap((r) => {
+        const act = r.tag?.activity || "";
+        return act ? [act.split(",")[0].trim()] : [];
+      })
+    )
+  )
+    .filter(Boolean)
+    .slice(0, 2);
+  const themeText = themes.length > 0 ? themes.join(" and ") : "your photos";
+  const activityText = activities.length > 0 ? ` featuring ${activities.join(" and ")}` : "";
+  return `Found ${count} matching photo${count === 1 ? "" : "s"} for "${query}" across ${themeText}${activityText}.`;
 }
 
 function ResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const q = searchParams.get("q") || "";
-  const mode = (searchParams.get("mode") as "A" | "B") || "A";
-  const sessionId = searchParams.get("session");
-  const participantId = searchParams.get("participant");
-  const targetId = searchParams.get("target");
+  const isDebug = searchParams.get("debug") === "1";
+  const isGenieOff = searchParams.get("genie") === "off";
 
   const [results, setResults] = useState<ScoredPhotoItem[]>([]);
   const [count, setCount] = useState<number>(0);
+  const [countStrong, setCountStrong] = useState<number>(0);
+  const [countTotal, setCountTotal] = useState<number>(0);
+  const [ambiguousCount, setAmbiguousCount] = useState<number>(0);
+  const [topScore, setTopScore] = useState<number>(0);
+  const [coachTriggerStatus, setCoachTriggerStatus] = useState<{ triggered: boolean; reason: string } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [feedbackRating, setFeedbackRating] = useState<"up" | "down" | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const forwardStudyParams = (baseUrl: string) => {
-    const url = new URL(baseUrl, "http://localhost");
-    if (sessionId) url.searchParams.set("session", sessionId);
-    if (participantId) url.searchParams.set("participant", participantId);
-    if (targetId) url.searchParams.set("target", targetId);
-    return `${url.pathname}${url.search}`;
-  };
+  // Coach help state on results page
+  const [isCoachHelpOpen, setIsCoachHelpOpen] = useState<boolean>(false);
+  const [coachQuestions, setCoachQuestions] = useState<Question[]>([]);
+  const [coachLoading, setCoachLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (!q) {
@@ -47,12 +70,16 @@ function ResultsContent() {
     }
 
     setLoading(true);
-    fetch(`/api/search?q=${encodeURIComponent(q)}&mode=${mode}`)
+    fetch(`/api/search?q=${encodeURIComponent(q)}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.results) {
           setResults(data.results);
           setCount(data.count || data.results.length);
+          setCountStrong(data.count_strong ?? 0);
+          setCountTotal(data.count_total ?? data.count ?? data.results.length);
+          setAmbiguousCount(data.ambiguous_count ?? 0);
+          setTopScore(data.top_score ?? 0);
         } else {
           setResults([]);
           setCount(0);
@@ -64,201 +91,433 @@ function ResultsContent() {
         setCount(0);
       })
       .finally(() => setLoading(false));
-  }, [q, mode]);
 
-  const handleInertClick = () => {
-    setToastMessage("Not part of this prototype");
+    if (isDebug && q && !isGenieOff) {
+      fetch("/api/coach/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: q, explicit: false, genieOff: isGenieOff }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setCoachTriggerStatus({
+            triggered: Boolean(data.triggered),
+            reason: data.trigger_blocked_reason || (data.triggered ? "ambiguity and match thresholds satisfied" : "not triggered"),
+          });
+        })
+        .catch(() => {});
+    }
+  }, [q, isDebug, isGenieOff]);
+
+  const fetchCoachQuestions = async (targetQuery: string) => {
+    if (!targetQuery || isGenieOff) return;
+    setCoachLoading(true);
+    try {
+      const res = await fetch("/api/coach/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: targetQuery, explicit: true, genieOff: isGenieOff }),
+      });
+      const data = await res.json();
+      if (data.questions && data.questions.length > 0) {
+        setCoachQuestions(data.questions);
+      } else {
+        setCoachQuestions([]);
+      }
+    } catch (err) {
+      console.error("Failed to fetch coach questions:", err);
+      setCoachQuestions([]);
+    } finally {
+      setCoachLoading(false);
+    }
+  };
+
+  const handleToggleCoachHelp = () => {
+    if (isGenieOff) return;
+    const nextState = !isCoachHelpOpen;
+    setIsCoachHelpOpen(nextState);
+    if (nextState) {
+      fetchCoachQuestions(q);
+    }
+  };
+
+  const handleResultsChipTap = (question: Question, option: QuestionOption, isSelected: boolean) => {
+    const phrase = getChipPhrase(question.cueType, option.value);
+    let newQ = "";
+
+    if (isSelected) {
+      newQ = removeChipPhrase(q, phrase);
+    } else {
+      const existingPhrases = question.options.map((opt) => getChipPhrase(question.cueType, opt.value));
+      newQ = replaceOrAppendChipPhrase(q, phrase, existingPhrases);
+    }
+
+    const params = new URLSearchParams();
+    params.set("q", newQ);
+    if (isDebug) params.set("debug", "1");
+    if (isGenieOff) params.set("genie", "off");
+
+    router.replace(`/results?${params.toString()}`);
+  };
+
+  const handleFeedback = (rating: "up" | "down") => {
+    setFeedbackRating(rating);
+    setToastMessage(rating === "up" ? "Thanks for your feedback!" : "Feedback recorded.");
+  };
+
+  const handleInertClick = (msg = "Not part of this prototype") => {
+    setToastMessage(msg);
   };
 
   const handleSuggestionClick = (term: string) => {
-    router.push(forwardStudyParams(`/results?q=${encodeURIComponent(term)}&mode=${mode}`));
+    const params = new URLSearchParams();
+    params.set("q", term);
+    if (isDebug) params.set("debug", "1");
+    if (isGenieOff) params.set("genie", "off");
+    router.push(`/results?${params.toString()}`);
   };
 
+  const aiExplanation = getAiExplanation(q, count, results);
+
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-white">
-      {/* Sticky Study Timer Banner */}
-      <StudyBanner sessionId={sessionId} targetId={targetId} mode={mode} />
+    <div className="flex-1 flex flex-col min-h-screen bg-[#1b1512] text-[#f3e3d9] select-none font-sans">
+      {/* Top Header */}
+      <header className="sticky top-0 z-30 bg-[#1b1512]/95 backdrop-blur-md px-3 h-14 flex items-center justify-between border-b border-[#29201a]">
+        <Link
+          href={`/search?${new URLSearchParams({ q, ...(isDebug ? { debug: "1" } : {}), ...(isGenieOff ? { genie: "off" } : {}) }).toString()}`}
+          className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-white/10 active:bg-white/15 text-white transition-colors -ml-1 flex-shrink-0 cursor-pointer"
+          aria-label="Back to search"
+        >
+          <span className="material-symbols-outlined text-[24px]">arrow_back</span>
+        </Link>
 
-      {/* Search Header Capsule (S6 / S8) */}
-      <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md px-3 pt-2.5 pb-2 border-b border-[#E3E5E8]/60">
-        <div className="flex items-center gap-2 bg-[#EEF0F3] rounded-full px-3 h-12 shadow-inner">
-          <Link
-            href={forwardStudyParams(`/search?mode=${mode}`)}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] transition-colors"
-            aria-label="Back to search"
+        <h1 className="text-[17px] font-semibold text-white tracking-tight truncate max-w-[200px] text-center">
+          {q || "Search"}
+        </h1>
+
+        <div className="flex items-center gap-1 flex-shrink-0">
+          {!isGenieOff && (
+            <button
+              type="button"
+              onClick={handleToggleCoachHelp}
+              className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                isCoachHelpOpen
+                  ? "bg-[#f59e6c] text-[#281204] shadow-xs"
+                  : "text-[#f59e6c] hover:bg-white/10"
+              }`}
+              aria-label="Ask AI Genie for help"
+              title="Ask AI Genie for help"
+            >
+              <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                auto_awesome
+              </span>
+            </button>
+          )}
+
+          <button
+            type="button"
+            onClick={() => handleInertClick()}
+            className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-white/10 active:bg-white/15 text-white/80 hover:text-white transition-colors -mr-1 flex-shrink-0 cursor-pointer"
+            aria-label="More options"
           >
-            <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-          </Link>
-          <div className="flex-1 min-w-0 flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[#1F6FEB] text-[18px]">
-              auto_awesome
-            </span>
-            <span className="text-[14px] text-[#1F1F1F] font-medium truncate">
-              {q}
-            </span>
-          </div>
-          <Link
-            href={forwardStudyParams(`/search?mode=${mode}`)}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-[#5F6368] hover:text-[#1F1F1F] transition-colors"
-            aria-label="Clear query"
-          >
-            <span className="material-symbols-outlined text-[18px]">close</span>
-          </Link>
+            <span className="material-symbols-outlined text-[22px]">more_vert</span>
+          </button>
         </div>
+      </header>
 
-        {/* Query Context Filter Chips */}
-        {q && (
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-2 pb-0.5">
-            <div className="inline-flex items-center gap-1 bg-[#E8F0FE] text-[#1F6FEB] px-2.5 py-0.5 rounded-full text-xs font-medium flex-shrink-0">
-              <span className="material-symbols-outlined text-[13px]">search</span>
-              <span>&ldquo;{q}&rdquo;</span>
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col pb-28">
+        {/* Controls Bar & Feedback */}
+        <section aria-label="Search feedback" className="px-4 py-2.5 flex items-center justify-between gap-2 border-b border-[#29201a]/50">
+          {!isGenieOff ? (
+            <button
+              type="button"
+              onClick={handleToggleCoachHelp}
+              className={`min-h-[44px] px-3.5 py-1.5 rounded-full text-[14px] font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer ${
+                isCoachHelpOpen
+                  ? "bg-[#f59e6c] text-[#281204] border border-[#f59e6c]"
+                  : "bg-[#2d221c] text-[#f59e6c] border border-[#483b34] hover:bg-[#3d3027] hover:text-white"
+              }`}
+              aria-label="Ask AI Genie for help"
+            >
+              <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                auto_awesome
+              </span>
+              <span>{isCoachHelpOpen ? "Genie Active" : "Need help?"}</span>
+            </button>
+          ) : <div />}
+
+          {/* Feedback Buttons */}
+          <div className="flex items-center gap-1.5 text-[#d7c3b8]">
+            <button
+              type="button"
+              onClick={() => handleFeedback("up")}
+              aria-label="Thumbs up feedback"
+              className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                feedbackRating === "up"
+                  ? "text-[#f8a370] bg-white/10 font-bold"
+                  : "hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              <span
+                className="material-symbols-outlined text-[20px]"
+                style={{ fontVariationSettings: feedbackRating === "up" ? "'FILL' 1" : "'FILL' 0" }}
+              >
+                thumb_up
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleFeedback("down")}
+              aria-label="Thumbs down feedback"
+              className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                feedbackRating === "down"
+                  ? "text-[#f8a370] bg-white/10 font-bold"
+                  : "hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              <span
+                className="material-symbols-outlined text-[20px]"
+                style={{ fontVariationSettings: feedbackRating === "down" ? "'FILL' 1" : "'FILL' 0" }}
+              >
+                thumb_down
+              </span>
+            </button>
+          </div>
+        </section>
+
+        {/* Debug Panel (?debug=1) */}
+        {isDebug && (
+          <div className="bg-[#1f1612] border-b border-[#f59e6c]/40 px-3 py-2.5 text-[12px] font-mono text-[#f0e6e0] space-y-2 shadow-inner">
+            <div className="flex items-center justify-between text-[#f59e6c] font-bold">
+              <span>DEBUG PANEL (?debug=1)</span>
+              <span>Results: {count}</span>
             </div>
-            {mode === "B" && (
-              <div className="inline-flex items-center gap-1 bg-[#FEF7E0] text-[#B06000] px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0">
-                <span className="material-symbols-outlined text-[13px]">smart_toy</span>
-                <span>Coach Active</span>
+            <div className="grid grid-cols-3 gap-2 bg-[#2a1e18] p-2 rounded border border-[#3e2d24]">
+              <div>
+                <span className="text-[#a89b92]">Tier 1 (All):</span>{" "}
+                <span className="font-semibold text-emerald-400">{results.filter((r) => r.tier === 1).length}</span>
+              </div>
+              <div>
+                <span className="text-[#a89b92]">Tier 2 (≥50%):</span>{" "}
+                <span className="font-semibold text-amber-400">{results.filter((r) => r.tier === 2).length}</span>
+              </div>
+              <div>
+                <span className="text-[#a89b92]">Tier 3 (Weak):</span>{" "}
+                <span className="font-semibold text-zinc-400">{results.filter((r) => r.tier === 3).length}</span>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-[#d7c3b8]">
+              <div>Strong matches: <span className="font-semibold text-white">{countStrong}</span></div>
+              <div>Ambiguous count: <span className="font-semibold text-white">{ambiguousCount}</span></div>
+              <div>Top score: <span className="font-semibold text-white">{topScore.toFixed(1)}</span></div>
+              <div>Total matches: <span className="font-semibold text-white">{countTotal}</span></div>
+            </div>
+            {!isGenieOff && (
+              <div className="pt-1.5 border-t border-[#3e2d24]">
+                <span className="text-[#a89b92]">Coach Trigger:</span>{" "}
+                <span className={`font-bold ${coachTriggerStatus?.triggered ? "text-emerald-400" : "text-rose-400"}`}>
+                  {coachTriggerStatus?.triggered ? "TRIGGERED" : "NOT TRIGGERED"}
+                </span>{" "}
+                <span className="text-[#a89b92]">({coachTriggerStatus?.reason || "evaluating..."})</span>
               </div>
             )}
           </div>
         )}
-      </header>
 
-      {/* Main Content Area */}
-      <main className="flex-1 flex flex-col">
+        {/* Coach Strip when triggered */}
+        {!isGenieOff && isCoachHelpOpen && (
+          <div className="border-b border-[#29201a] animate-fade-in">
+            {coachLoading ? (
+              <div className="bg-[#241c17] px-4 py-3 flex items-center gap-2.5 text-[14px] text-[#a89b92]">
+                <div className="w-4 h-4 border-2 border-[#f59e6c] border-t-transparent rounded-full animate-spin" />
+                <span>Finding details to help narrow down &ldquo;{q}&rdquo;...</span>
+              </div>
+            ) : (
+              <CoachStrip
+                questions={coachQuestions}
+                currentText={q}
+                candidateCount={count}
+                isDebug={isDebug}
+                noMatchState="none"
+                unmatchedTerms={[]}
+                onChipTap={handleResultsChipTap}
+                onDismiss={() => setIsCoachHelpOpen(false)}
+              />
+            )}
+          </div>
+        )}
+
+        {/* Natural Language Explanation at the Top */}
+        {!isGenieOff && count > 0 && (
+          <section aria-label="AI summary" className="px-4 pt-2 pb-3 text-[14px] text-[#f0e6e0] leading-relaxed select-text animate-fade-in">
+            <p>{aiExplanation}</p>
+          </section>
+        )}
+
         {loading ? (
-          <div className="flex-1 flex flex-col items-center justify-center py-20 text-[#5F6368]">
-            <div className="w-8 h-8 border-2 border-[#1F6FEB] border-t-transparent rounded-full animate-spin mb-3" />
-            <p className="text-xs">Searching photos...</p>
+          <div className="flex-1 flex flex-col items-center justify-center py-20 text-[#a89b92]">
+            <div className="w-8 h-8 border-2 border-[#f59e6c] border-t-transparent rounded-full animate-spin mb-3" />
+            <p className="text-[14px]">Searching photos...</p>
           </div>
         ) : count > 0 ? (
-          /* S6 Results Grid */
+          /* Results Grid */
           <div className="flex-1 flex flex-col">
-            {/* Header info */}
-            <div className="px-3 py-2 flex items-center justify-between">
-              <div className="flex items-baseline gap-1.5">
-                <h2 className="text-[16px] font-semibold text-[#1F1F1F]">Photos</h2>
-                <span className="text-[13px] text-[#5F6368]">({count})</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <button
-                  onClick={handleInertClick}
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F5F6F8] text-xs font-medium text-[#5F6368] hover:bg-[#EEF0F3]"
-                >
-                  <span>Relevance</span>
-                  <span className="material-symbols-outlined text-[14px]">expand_more</span>
-                </button>
-              </div>
-            </div>
-
-            {/* 3-Column Photo Grid */}
-            <div className="grid grid-cols-3 gap-[2px] bg-[#E3E5E8]/30 pb-20">
-              {results.map((photo, index) => {
-                const isTopMatch = index === 0;
-                const photoHref = forwardStudyParams(
-                  `/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}&mode=${mode}`
-                );
-                return (
+            {/* Top Highlights */}
+            {results.length >= 2 && (
+              <div className="grid grid-cols-2 gap-1 px-1 pb-1">
+                {results.slice(0, 2).map((photo) => (
                   <Link
-                    key={photo.id}
-                    href={photoHref}
-                    onClick={() => {
-                      if (sessionId) {
-                        logClientEvent(
-                          "photo_opened",
-                          { photoId: photo.id, rank: index + 1, query: q },
-                          { sessionId, participantId: participantId || undefined, mode }
-                        );
-                      }
-                    }}
-                    className="relative aspect-square overflow-hidden group bg-[#F5F6F8] block"
+                    key={`highlight-${photo.id}`}
+                    href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                    className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
                   >
                     <Image
                       src={photo.src}
-                      alt={photo.tag?.one_line || photo.file}
+                      alt={photo.file}
                       fill
-                      sizes="33vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 400px) 50vw, 200px"
+                      className="object-cover group-hover:scale-102 transition-transform duration-200"
+                      unoptimized
                     />
-
-                    {/* Top Pick Star Badge for #1 result */}
-                    {isTopMatch && (
-                      <div className="absolute top-1.5 left-1.5 w-6 h-6 rounded-full bg-[#1F6FEB] text-white flex items-center justify-center shadow-md">
-                        <span
-                          className="material-symbols-outlined text-[14px]"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          star
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Score Metric Pill */}
-                    <div className="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm text-[10px] font-mono font-medium text-white px-1.5 py-0.5 rounded shadow-sm">
-                      {photo.score.toFixed(1)}
-                    </div>
                   </Link>
-                );
-              })}
+                ))}
+              </div>
+            )}
+
+            {/* Section Header: "Most recent" */}
+            <div className="px-3 pt-4 pb-2 flex items-center justify-between text-[#f0e6e0]">
+              <h2 className="text-[15px] font-semibold tracking-tight">Most recent</h2>
+              <span className="text-[13px] text-[#a89b92]">{count} photos</span>
+            </div>
+
+            {/* 3-Column Photo Grid */}
+            <div className="grid grid-cols-3 gap-[2px] px-1 pb-4">
+              {results.map((photo) => (
+                <Link
+                  key={photo.id}
+                  href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                  className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.file}
+                    fill
+                    sizes="(max-width: 400px) 33vw, 130px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-200"
+                    unoptimized
+                  />
+                  {isDebug && photo.tier && (
+                    <div className="absolute bottom-1 right-1 bg-black/85 backdrop-blur-xs text-[10px] font-mono text-white px-1.5 py-0.5 rounded flex items-center gap-1 border border-white/20 shadow-xs">
+                      <span className={`font-bold ${photo.tier === 1 ? "text-emerald-300" : photo.tier === 2 ? "text-amber-300" : "text-zinc-400"}`}>
+                        T{photo.tier}
+                      </span>
+                      <span>{photo.score.toFixed(1)}</span>
+                    </div>
+                  )}
+                </Link>
+              ))}
+            </div>
+
+            {/* Step 2 Required Attribution: S6 attribution line */}
+            <div className="py-6 text-center text-[14px] text-[#8f7e73] space-y-1">
+              <p>
+                <a
+                  href="https://pixabay.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-[#f59e6c] font-medium"
+                >
+                  Photos from Pixabay
+                </a>
+              </p>
+              <p className="text-[12px] text-[#736357]">
+                Dates, places and people are synthetic
+              </p>
             </div>
           </div>
         ) : (
           /* S8 Zero Results Fallback */
           <div className="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
-            {/* Ambient Illustration */}
-            <div className="w-24 h-24 rounded-full bg-[#EEF0F3] flex items-center justify-center mb-4">
-              <span className="material-symbols-outlined text-[44px] text-[#5F6368]">
+            <div className="w-20 h-20 rounded-full bg-[#2a211b] flex items-center justify-center mb-4">
+              <span className="material-symbols-outlined text-[40px] text-[#a89b92]">
                 search_off
               </span>
             </div>
 
-            <h3 className="text-[17px] font-semibold text-[#1F1F1F] mb-1">
+            <h3 className="text-[17px] font-semibold text-white mb-1">
               No matching photos found
             </h3>
-            <p className="text-[13px] text-[#5F6368] max-w-[260px] mb-6">
+            <p className="text-[14px] text-[#a89b92] max-w-[260px] mb-6 leading-relaxed">
               We couldn&apos;t find any photos matching &ldquo;{q}&rdquo;. Try another term or explore suggestions:
             </p>
 
-            {/* S8 Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-2 mb-6">
-              <Link
-                href={forwardStudyParams(`/search?mode=${mode}`)}
-                className="h-10 px-5 bg-[#1F6FEB] hover:bg-[#1A5DC8] text-white text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 shadow-sm transition-colors"
-              >
-                <span className="material-symbols-outlined text-[16px]">refresh</span>
-                <span>Try again</span>
-              </Link>
-              {mode === "B" && (
-                <Link
-                  href={forwardStudyParams(`/search?mode=B`)}
-                  className="h-10 px-4 bg-white hover:bg-[#F5F6F8] text-[#1F1F1F] border border-[#D5D9E0] text-xs font-medium rounded-full flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <span className="material-symbols-outlined text-[16px] text-[#1F6FEB]">
-                    smart_toy
-                  </span>
-                  <span>Back to my questions</span>
-                </Link>
-              )}
-            </div>
-
-            {/* Quick Suggestion Chips */}
             <div className="flex flex-wrap gap-2 justify-center max-w-[300px]">
-              {["pool", "beach", "birthday", "hiking", "friends"].map((term) => (
+              {["pool", "birthday cake", "road trip", "beach"].map((term) => (
                 <button
                   key={term}
+                  type="button"
                   onClick={() => handleSuggestionClick(term)}
-                  className="px-3 py-1.5 rounded-full bg-[#EEF0F3] hover:bg-[#E3E5E8] text-xs font-medium text-[#1F1F1F] transition-colors"
+                  className="min-h-[44px] px-4 py-2 rounded-full bg-[#2a211b] hover:bg-[#382b24] text-[14px] font-medium text-[#f0e6e0] transition-colors cursor-pointer"
                 >
                   {term}
                 </button>
               ))}
             </div>
+
+            {!isGenieOff && (
+              <button
+                type="button"
+                onClick={() => {
+                  setIsCoachHelpOpen(true);
+                  fetchCoachQuestions(q);
+                }}
+                className="mt-5 min-h-[44px] px-5 py-2.5 rounded-full bg-[#f59e6c] text-[#281204] font-semibold text-[14px] flex items-center gap-1.5 shadow-sm hover:bg-[#faaf82] active:scale-95 transition-all cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
+                <span>Ask Genie for ideas</span>
+              </button>
+            )}
           </div>
         )}
       </main>
 
-      {/* Bottom Navigation */}
-      <BottomNav onInertClick={handleInertClick} />
+      {/* Floating Follow-up Search Pill Bar */}
+      <div className="sticky bottom-0 bg-[#1b1512]/95 backdrop-blur-md p-3 border-t border-[#29201a] z-40">
+        <div className="flex items-center gap-2">
+          <Link
+            href={`/search?${new URLSearchParams({ q, ...(isDebug ? { debug: "1" } : {}), ...(isGenieOff ? { genie: "off" } : {}) }).toString()}`}
+            className="h-12 flex-1 bg-[#332924] hover:bg-[#3e322b] active:scale-98 rounded-full px-4 flex items-center justify-between border border-[#483b34] text-[#c9bbb2] shadow-lg transition-all cursor-pointer"
+          >
+            <div className="flex items-center gap-2.5 min-w-0">
+              <span className="material-symbols-outlined text-[19px] text-[#a89b92] flex-shrink-0">search</span>
+              <span className="text-[14px] font-normal text-[#d7c3b8] truncate">Search or follow up</span>
+            </div>
+            <span className="material-symbols-outlined text-[20px] text-[#d7c3b8] flex-shrink-0">mic</span>
+          </Link>
 
+          {!isGenieOff && (
+            <button
+              type="button"
+              onClick={handleToggleCoachHelp}
+              className={`h-12 px-4 rounded-full flex items-center gap-1.5 font-semibold text-[14px] transition-all shadow-lg flex-shrink-0 cursor-pointer ${
+                isCoachHelpOpen
+                  ? "bg-[#f59e6c] text-[#281204] border border-[#f59e6c]"
+                  : "bg-[#332924] text-[#f59e6c] border border-[#483b34] hover:bg-[#3e322b]"
+              }`}
+              aria-label="Ask AI Genie for help"
+              title="Ask AI Genie for help"
+            >
+              <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                auto_awesome
+              </span>
+              <span>Genie</span>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Toast Feedback */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
     </div>
   );
@@ -266,7 +525,7 @@ function ResultsContent() {
 
 export default function ResultsPage() {
   return (
-    <Suspense fallback={<div className="p-4 text-center text-sm text-[#5F6368]">Loading results...</div>}>
+    <Suspense fallback={<div className="p-6 text-center text-sm text-[#a89b92]">Loading results...</div>}>
       <ResultsContent />
     </Suspense>
   );

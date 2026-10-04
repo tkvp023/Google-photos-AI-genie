@@ -26,7 +26,7 @@ export async function GET() {
       imageExtensions.has(path.extname(f).toLowerCase())
     );
 
-    // Optional tags.json metadata
+    // Optional tags.json and photo_meta.json metadata
     const dataDir = process.env.DATA_DIR || path.join(process.cwd(), "data");
     const tagsPath = path.join(dataDir, "tags.json");
     let tags: Record<string, { setting?: string }> = {};
@@ -38,7 +38,17 @@ export async function GET() {
       }
     }
 
-    const photos: PhotoResponseItem[] = validFiles.map((file) => {
+    const photoMetaPath = path.join(dataDir, "photo_meta.json");
+    let photoMeta: Record<string, any> = {};
+    if (fs.existsSync(photoMetaPath)) {
+      try {
+        photoMeta = JSON.parse(fs.readFileSync(photoMetaPath, "utf-8"));
+      } catch {
+        // Continue without photo_meta
+      }
+    }
+
+    const photos: any[] = validFiles.map((file) => {
       const ext = path.extname(file);
       const id = path.basename(file, ext);
       
@@ -46,20 +56,30 @@ export async function GET() {
       const parts = id.split("_");
       const themeFromFilename = parts.length > 1 ? parts[0] : "general";
       const theme = tags[file]?.setting || themeFromFilename;
+      const meta = photoMeta[file] || {};
 
       return {
         id,
         file,
         theme,
         src: `/library/${file}`,
+        taken_at: meta.taken_at || null,
+        year: meta.year || null,
+        month_name: meta.month_name || null,
+        event_title: meta.event_title || null,
+        city: meta.place?.city || null,
+        venue: meta.place?.venue || null,
+        people: meta.people || [],
       };
     });
 
-    // Deterministic sort: by theme then filename
+    // Chronological sort: newest first (standard Google Photos order)
     photos.sort((a, b) => {
-      if (a.theme !== b.theme) {
-        return a.theme.localeCompare(b.theme);
+      if (a.taken_at && b.taken_at) {
+        return new Date(b.taken_at).getTime() - new Date(a.taken_at).getTime();
       }
+      if (a.taken_at) return -1;
+      if (b.taken_at) return 1;
       return a.file.localeCompare(b.file);
     });
 

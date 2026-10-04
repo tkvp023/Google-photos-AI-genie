@@ -1,10 +1,11 @@
 // src/lib/dataLoader.ts — In-Memory Data Store & Loader
 import fs from "fs";
 import path from "path";
-import { CueType, PhotoItem, PhotoTag, StudyTarget, Tags } from "@/types";
+import { CueType, PhotoItem, PhotoTag, Tags, SyntheticPhotoMeta, StoryEvent } from "@/types";
 
 export interface PlacesData {
   namedPlaces: string[];
+  venues?: string[];
   people: string[];
 }
 
@@ -16,7 +17,8 @@ class DataStore {
   private synonyms: Record<string, string> = {};
   private places: PlacesData = { namedPlaces: [], people: [] };
   private cueLexicon: Partial<CueLexiconData> = {};
-  private targets: StudyTarget[] = [];
+  private photoMeta: Record<string, SyntheticPhotoMeta> = {};
+  private storyEvents: StoryEvent[] = [];
   private initialized = false;
 
   constructor() {
@@ -84,14 +86,25 @@ class DataStore {
       }
     }
 
-    // 5. Load targets.json
-    this.targets = [];
-    const targetsPath = path.join(dataDir, "targets.json");
-    if (fs.existsSync(targetsPath)) {
+    // 5b. Load photo_meta.json
+    this.photoMeta = {};
+    const metaPath = path.join(dataDir, "photo_meta.json");
+    if (fs.existsSync(metaPath)) {
       try {
-        this.targets = JSON.parse(fs.readFileSync(targetsPath, "utf-8"));
+        this.photoMeta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
       } catch (err) {
-        console.warn("[DataLoader] Failed to parse targets.json:", err);
+        console.warn("[DataLoader] Failed to parse photo_meta.json:", err);
+      }
+    }
+
+    // 5c. Load story_events.json
+    this.storyEvents = [];
+    const eventsPath = path.join(dataDir, "story_events.json");
+    if (fs.existsSync(eventsPath)) {
+      try {
+        this.storyEvents = JSON.parse(fs.readFileSync(eventsPath, "utf-8"));
+      } catch (err) {
+        console.warn("[DataLoader] Failed to parse story_events.json:", err);
       }
     }
 
@@ -112,6 +125,7 @@ class DataStore {
         const id = file.replace(/\.[^.]+$/, "");
         const theme = file.split("_")[0] || "general";
         const tag = this.tags[file] || this.createDefaultTag(theme, file);
+        const metadata = this.photoMeta[file];
 
         this.photos.push({
           id,
@@ -119,6 +133,7 @@ class DataStore {
           theme,
           src: `/library/${file}`,
           tag,
+          metadata,
         });
       }
     }
@@ -182,9 +197,14 @@ class DataStore {
     return this.cueLexicon;
   }
 
-  public getTargets(): StudyTarget[] {
+  public getPhotoMeta(): Record<string, SyntheticPhotoMeta> {
     if (!this.initialized) this.init();
-    return this.targets;
+    return this.photoMeta;
+  }
+
+  public getStoryEvents(): StoryEvent[] {
+    if (!this.initialized) this.init();
+    return this.storyEvents;
   }
 }
 

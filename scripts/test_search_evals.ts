@@ -81,10 +81,18 @@ assert("SR-12", "bucket few", r12.bucket === "few", `bucket=${r12.bucket}, count
 const r13 = search("beach");
 assert("SR-13", "bucket some or many", r13.bucket === "some" || r13.bucket === "many", `bucket=${r13.bucket}, count=${r13.count}`);
 
-// SR-14: Bucket: many (count > 20)
-// With a generic term like "outdoor" or "friends"
-const r14 = search("outdoor");
-assert("SR-14", "bucket many", r14.bucket === "many" || r14.count > 20, `bucket=${r14.bucket}, count=${r14.count}`);
+// SR-14: Bucket: many (count > 20) with broad term "friends"
+const r14 = search("friends");
+assert("SR-14", "bucket many", r14.bucket === "many" || (r14.count_strong ?? r14.count) > 20, `bucket=${r14.bucket}, count_strong=${r14.count_strong}, count_total=${r14.count_total}`);
+
+// SR-15: Tier model verification (tier 1, 2, 3 ordering and strong_matches)
+const r15 = search("red swimsuit pool friends");
+const tiers = r15.results.map((p) => p.tier || 1);
+const isTierSorted = tiers.every((t, i) => i === 0 || t >= tiers[i - 1]);
+assert("SR-15", "tier sorting order", isTierSorted && r15.results.length > 0, `tiers sample: ${tiers.slice(0, 10).join(",")}`);
+
+// SR-16: count_strong <= count_total
+assert("SR-16", "count_strong <= count_total", (r15.count_strong ?? 0) <= (r15.count_total ?? r15.count), `strong=${r15.count_strong}, total=${r15.count_total}`);
 
 console.log("\n=============================================");
 const total = results.length;

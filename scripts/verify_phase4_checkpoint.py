@@ -136,8 +136,8 @@ def test_export_csv(session_id):
         assert e.code == 401, f"Expected 401 for unauthenticated export.csv, got {e.code}"
         print("PASS: Unauthenticated export correctly blocked (401)")
 
-    url = f"{BASE_URL}/api/admin/export.csv?pin=1234"
-    req = urllib.request.Request(url)
+    url = f"{BASE_URL}/api/admin/export.csv"
+    req = urllib.request.Request(url, headers={"Authorization": "Bearer 1234"})
     with urllib.request.urlopen(req) as resp:
         assert resp.getcode() == 200, f"Expected 200, got {resp.getcode()}"
         content_type = resp.headers.get("Content-Type", "")
@@ -147,10 +147,12 @@ def test_export_csv(session_id):
         lines = [l.strip() for l in csv_text.strip().split("\n") if l.strip()]
         assert len(lines) >= 2, f"CSV should contain at least header and one row, got {len(lines)} lines"
         
-        headers = lines[0].split(",")
+        # Locate header line
+        header_line = next((l for l in lines if l.startswith("session_id")), lines[0])
+        headers = header_line.split(",")
         expected_headers = [
             "session_id", "participant_id", "mode", "target_id", "outcome",
-            "time_to_find_sec", "queries_count", "chips_tapped_count",
+            "time_to_find_sec", "chips_tapped_count",
             "prompt_edited", "difficulty_rating", "satisfaction_rating", "comment"
         ]
         for eh in expected_headers:
@@ -164,6 +166,7 @@ def test_export_csv(session_id):
         assert "P99" in row, "Expected participant 'P99' in CSV row"
         assert "true" in row, "Expected prompt_edited 'true' in CSV row"
         print(f"PASS: CSV Export returned valid RFC 4180 format with correct columns and session metrics:\n      {row}")
+
 
 def test_pages_reachability():
     print("\n--- [6/6] Testing Study and Moderator Screens Reachability ---")

@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, ShieldCheck, Heart, Search } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShieldCheck, Heart, Search, Sparkles } from "lucide-react";
 import { CreditRow } from "@/types";
 
 export default function AboutPage() {
@@ -68,11 +68,30 @@ export default function AboutPage() {
           </div>
           <p className="text-[13px] text-[#3C4043] leading-relaxed">
             This application is an educational prototype developed for a product-management case study evaluating
-            an AI-assisted <em>&ldquo;Pre-Search Narrow It Down Coach&rdquo;</em> experience.
+            an AI-assisted <em>&ldquo;Pre-Search Narrow It Down Genie&rdquo;</em> experience.
           </p>
           <div className="bg-[#FEF7E0] text-[#7A4100] text-xs px-3 py-2 rounded-xl border border-[#FEEFC3] leading-snug">
             <strong>Disclaimer:</strong> This project is an independent research concept and is{" "}
             <strong>not affiliated with, endorsed by, or sponsored by Google LLC</strong>.
+          </div>
+        </section>
+
+        {/* Synthetic Metadata Disclosure & Privacy */}
+        <section className="bg-white rounded-2xl p-4 border border-[#E3E5E8] shadow-sm space-y-2.5">
+          <div className="flex items-center gap-2 text-[#8430CE]">
+            <Sparkles className="w-5 h-5 flex-shrink-0" />
+            <h2 className="text-[15px] font-semibold text-[#1F1F1F]">Synthetic Metadata Disclosure</h2>
+          </div>
+          <p className="text-[13px] text-[#3C4043] leading-relaxed">
+            All photo dates, timestamps, places with GPS coordinates, people names, and event titles in this prototype are <strong>100% synthetic</strong>, deterministically generated for this research evaluation. No real personal data or participant photos are used.
+          </p>
+          <div className="bg-[#F3E8FD] text-[#581C87] text-xs p-3 rounded-xl border border-[#E9D5FF] space-y-1.5 leading-relaxed">
+            <p className="font-semibold">How metadata was generated:</p>
+            <ul className="list-disc pl-4 space-y-1 text-[12px]">
+              <li><strong>Story Events:</strong> 30 fictional event records spanning Jan 2019 to Sep 2026 across Indian cities (Goa, Pondicherry, Bengaluru, Chennai, Hyderabad, Munnar, Ooty, Coorg, Manali) with realistic venue GPS coordinates.</li>
+              <li><strong>Fictional Cast:</strong> 8 fictional character names (Aarav, Priya, Rohan, Ananya, Vikram, Meera, Kavita, Arjun) with assigned relationships. No facial recognition or biometric identification is used.</li>
+              <li><strong>Deterministic Assignment:</strong> Photos were seeded and mapped to events matching their visual theme, season, and group type with 0 contradictions.</li>
+            </ul>
           </div>
         </section>
 
@@ -83,19 +102,18 @@ export default function AboutPage() {
             <h2 className="text-[14px] font-semibold text-[#1F1F1F]">Photo Licenses &amp; Attribution</h2>
           </div>
           <p className="text-[12px] text-[#5F6368] leading-relaxed">
-            All 100 stock library photographs are sourced from <strong>Pixabay</strong> and <strong>Pexels</strong>.
-            Photos are used under their permissive free-content licenses (free for commercial and personal use, no attribution strictly required, but proudly provided below).
+            All stock library photographs are sourced from <strong>Pixabay</strong> (including photographer contributions from Pexels on Pixabay). Photos are used under the Pixabay Content License (free for personal and research evaluation use).
           </p>
-          <div className="flex flex-wrap gap-2 pt-1">
+          <div className="flex flex-wrap items-center gap-3 pt-1">
             <a
-              href="https://www.pexels.com/license/"
+              href="https://pixabay.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[11px] font-medium text-[#1F6FEB] hover:underline bg-[#E8F0FE] px-2.5 py-1 rounded-full"
+              className="text-xs font-bold text-[#1F6FEB] hover:underline"
             >
-              <span>Pexels License</span>
-              <ExternalLink className="w-3 h-3" />
+              Photos from Pixabay
             </a>
+            <span>•</span>
             <a
               href="https://pixabay.com/service/license-summary/"
               target="_blank"

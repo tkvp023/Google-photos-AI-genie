@@ -1,4 +1,55 @@
 {
-  "namedPlaces": [],
-  "people": []
+  "namedPlaces": [
+    "Bengaluru",
+    "Chennai",
+    "Coorg",
+    "Goa",
+    "Hyderabad",
+    "Manali",
+    "Munnar",
+    "Ooty",
+    "Pondicherry"
+  ],
+  "venues": [
+    "Anamudi Shola National Park Trails",
+    "Anna University Convocation Hall",
+    "Atal Highway Snowy Pass",
+    "Auroville Quiet Woodlands",
+    "Candolim Infinity Palms Resort",
+    "Chorla Ghat Mountain Highway",
+    "Cubbon Park Pet Play Lawn",
+    "Cubbon Park Play Pavilion",
+    "Doddabetta Peak Forest Track",
+    "Dune Eco Beach Pool Villa",
+    "Durgam Cheruvu Overlook Cafe",
+    "ECR Highway Scenic Overlook",
+    "ECR Seaside Haven Villa",
+    "Edward Elliot Beach Park",
+    "Gachibowli Stadium Amphitheatre",
+    "Hyderabad International Convention Centre",
+    "IISc Main Faculty Quadrangle",
+    "Indiranagar 100ft Road Bistro",
+    "Jubilee Hills Garden Bistro",
+    "Marina Beach",
+    "Mylapore Traditional Dining Hall",
+    "Palace Grounds Open Air Stage",
+    "Palm Meadows Club Aqua Pavilion",
+    "Palolem Beach",
+    "Promenade Beach",
+    "Semmozhi Poonga Botanical Park",
+    "Solang Valley Meadows",
+    "Tadiandamol Base & Grasslands",
+    "Toit Brewpub & Rooftop",
+    "Vagator Festival Arena"
+  ],
+  "people": [
+    "Aarav",
+    "Ananya",
+    "Arjun",
+    "Kavita",
+    "Meera",
+    "Priya",
+    "Rohan",
+    "Vikram"
+  ]
 }

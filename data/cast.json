@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Aarav",
+    "relation": "friend",
+    "notes": "College friend and travel enthusiast"
+  },
+  {
+    "name": "Priya",
+    "relation": "family",
+    "notes": "Cousin who loves photography and outdoor trips"
+  },
+  {
+    "name": "Rohan",
+    "relation": "friend",
+    "notes": "Childhood friend and foodie companion"
+  },
+  {
+    "name": "Ananya",
+    "relation": "family",
+    "notes": "Younger sister who enjoys celebrations and pets"
+  },
+  {
+    "name": "Vikram",
+    "relation": "colleague",
+    "notes": "Tech team colleague and road trip planner"
+  },
+  {
+    "name": "Meera",
+    "relation": "friend",
+    "notes": "Fitness and trekking group buddy"
+  },
+  {
+    "name": "Kavita",
+    "relation": "family",
+    "notes": "Aunt and family gathering host"
+  },
+  {
+    "name": "Arjun",
+    "relation": "colleague",
+    "notes": "Project lead and music festival companion"
+  }
+]

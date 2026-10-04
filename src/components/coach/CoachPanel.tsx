@@ -10,6 +10,7 @@ interface CoachPanelProps {
   answers: Answer[];
   candidateCount: number;
   isComposing: boolean;
+  showCount?: boolean;
   onAnswer: (questionId: string, cueType: any, value: string, source?: "chip" | "typed") => void;
   onSkip: (questionId: string, cueType: any) => void;
   onBuildSearch: () => void;
@@ -22,6 +23,7 @@ export function CoachPanel({
   answers,
   candidateCount,
   isComposing,
+  showCount = false,
   onAnswer,
   onSkip,
   onBuildSearch,
@@ -32,7 +34,7 @@ export function CoachPanel({
 
   return (
     <section
-      aria-label="AI Search Coach Assistant"
+      aria-label="AI Search Genie Assistant"
       className="w-full rounded-2xl p-4 bg-gradient-to-b from-[#FFF5ED] to-[#FFF0E5] border border-[#FFDCC6] shadow-md flex flex-col space-y-3.5 my-2 animate-slide-down transition-all"
     >
       {/* Coach Header with AI Sparkle Icon & Match Count */}
@@ -47,17 +49,25 @@ export function CoachPanel({
             </span>
           </div>
           <div className="flex-1 min-w-0">
-            <h2 className="text-[15px] font-semibold text-[#311300] tracking-tight leading-snug">
-              Lots of photos match.
-            </h2>
-            <p className="text-[12px] text-[#723600]/80">
-              Pick a few details to narrow it down.
-            </p>
+            {showCount ? (
+              <>
+                <h2 className="text-[15px] font-semibold text-[#311300] tracking-tight leading-snug">
+                  Lots of photos match.
+                </h2>
+                <p className="text-[12px] text-[#723600]/80">
+                  Pick a few details to narrow it down.
+                </p>
+              </>
+            ) : (
+              <h2 className="text-[15px] font-semibold text-[#311300] tracking-tight leading-snug">
+                Lots of photos match. Help us narrow it down.
+              </h2>
+            )}
           </div>
         </div>
 
-        {/* Live Narrowing Count Pill */}
-        {candidateCount > 0 && (
+        {/* Live Narrowing Count Pill (only when showCount is true) */}
+        {showCount && candidateCount > 0 && (
           <div className="bg-[#FFE0CC] text-[#733700] px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-tight shadow-xs flex-shrink-0 animate-fade-in">
             {candidateCount} photos
           </div>
@@ -128,7 +138,7 @@ export function CoachPanel({
               type="button"
               onClick={onReset}
               className="py-1 px-3 text-[12px] font-medium text-[#723600] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F6FEB] rounded-full transition-colors cursor-pointer"
-              aria-label="Reset coach selections"
+              aria-label="Reset genie selections"
             >
               Not these
             </button>

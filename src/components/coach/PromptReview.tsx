@@ -95,7 +95,7 @@ export function PromptReview({
               >
                 auto_awesome
               </span>
-              <span>Refined with AI Coach</span>
+              <span>Refined with AI Genie</span>
             </div>
             <span className="font-mono text-[10px] uppercase bg-white px-2 py-0.5 rounded border border-[#E3E5E8] text-[#5F6368]">
               {composer === "groq" ? "Groq 120B" : "Fallback"}

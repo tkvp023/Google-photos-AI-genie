@@ -1,0 +1,20 @@
+query | tokens | recognised tokens | count_total | count_strong | ambiguous_count | top/second | blockedReason
+me in a restaurant | [me, in, a, restaurant] | [restaurant] | 25 | 25 | 20 | 5.3/5.3 | none
+restaurant | [restaurant] | [restaurant] | 25 | 25 | 20 | 5.3/5.3 | none
+family picnic | [family, picnic] | [family, picnic] | 29 | 0 | 0 | 5.5/5.5 | none
+family | [family] | [family] | 22 | 22 | 5 | 3.5/3.5 | none
+friends | [friends] | [friends] | 33 | 33 | 1 | 3.5/1.5 | none
+pool | [pool] | [pool] | 21 | 21 | 12 | 13.3/13.3 | none
+me in a pool | [me, in, a, pool] | [pool] | 21 | 21 | 12 | 13.3/13.3 | none
+beach | [beach] | [beach] | 37 | 37 | 16 | 9.4/9.4 | none
+birthday party | [birthday, party] | [birthday, party] | 29 | 7 | 1 | 19.3/12.5 | none
+hiking | [hiking] | [hiking] | 21 | 21 | 12 | 6.1/6.1 | none
+festival | [festival] | [festival] | 20 | 20 | 5 | 8.6/6.6 | none
+kids park | [kids, park] | [kids, park] | 60 | 24 | 7 | 17.9/16.9 | none
+graduation | [graduation] | [graduation] | 20 | 20 | 11 | 14.3/14.3 | none
+dog | [dog] | [dog] | 21 | 21 | 15 | 5.8/5.8 | none
+road trip | [road, trip] | [road, trip] | 26 | 0 | 0 | 9.8/9.8 | none
+cake | [cake] | [cake] | 3 | 3 | 3 | 3.8/3.8 | not_enough_candidates
+sunset | [sunset] | [sunset] | 12 | 12 | 12 | 1.8/1.8 | none
+elephant | [elephant] | [] | 0 | 0 | 0 | 0.0/0.0 | few_strong_matches
+me | [me] | [] | 0 | 0 | 0 | 0.0/0.0 | query_too_short

@@ -1,90 +1,86 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Image as ImageIcon, Search, FolderHeart, Library } from "lucide-react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Images, LayoutGrid, Plus, Search, Sparkles } from "lucide-react";
 
 interface BottomNavProps {
   onInertClick: (featureName: string) => void;
 }
 
-export function BottomNav({ onInertClick }: BottomNavProps) {
+function BottomNavContent({ onInertClick }: BottomNavProps) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const isPhotosActive = pathname === "/";
-  const isSearchActive = pathname.startsWith("/search") || pathname.startsWith("/results");
+  const isCollectionsActive = pathname === "/collections";
 
   return (
-    <nav className="sticky bottom-0 z-40 bg-white/95 backdrop-blur-sm border-t border-[#e8eaed] w-full h-16 flex items-center justify-around px-2 select-none">
-      {/* 1. Photos Tab */}
-      <Link
-        href="/"
-        className={`flex flex-col items-center justify-center flex-1 h-full py-1 text-center transition-colors ${
-          isPhotosActive ? "text-[#1a73e8]" : "text-[#5f6368] hover:text-[#202124]"
-        }`}
+    <div className="absolute bottom-3 left-0 right-0 px-3.5 z-40 pointer-events-none flex items-center justify-between gap-2.5">
+      {/* Floating Capsule Dock: Photos, Collections, Create */}
+      <nav
+        aria-label="Main Navigation"
+        className="pointer-events-auto flex-1 h-14 bg-white/95 backdrop-blur-xl rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.12),0_1px_4px_rgba(0,0,0,0.06)] border border-[#e8eaed] px-1.5 flex items-center justify-around select-none"
       >
-        <div
-          className={`px-3 py-0.5 rounded-full transition-colors ${
-            isPhotosActive ? "bg-[#c2e7ff]/60" : "bg-transparent"
+        {/* 1. Photos Tab */}
+        <Link
+          href="/"
+          aria-current={isPhotosActive ? "page" : undefined}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-200 ${
+            isPhotosActive
+              ? "bg-[#ffdcc6] text-[#723600] font-semibold shadow-[0_2px_8px_rgba(255,159,90,0.25)]"
+              : "text-[#544339] hover:text-[#1b1b1c] hover:bg-black/5 active:scale-95 font-medium"
           }`}
         >
-          <ImageIcon className={`w-5 h-5 ${isPhotosActive ? "stroke-[2.3]" : "stroke-[1.8]"}`} />
-        </div>
-        <span className={`text-[11px] mt-0.5 ${isPhotosActive ? "font-semibold" : "font-normal"}`}>
-          Photos
-        </span>
-      </Link>
+          <Images className="w-5 h-5 flex-shrink-0" />
+          <span className="text-[12px] tracking-tight">Photos</span>
+        </Link>
 
-      {/* 2. Search Tab */}
+        {/* 2. Collections Tab (Inert prototype) */}
+        <button
+          type="button"
+          onClick={() => onInertClick("Collections")}
+          className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+            isCollectionsActive
+              ? "bg-[#ffdcc6] text-[#723600] font-semibold shadow-[0_2px_8px_rgba(255,159,90,0.25)]"
+              : "text-[#544339] hover:text-[#1b1b1c] hover:bg-black/5 active:scale-95 font-medium"
+          }`}
+        >
+          <LayoutGrid className="w-4.5 h-4.5 flex-shrink-0" />
+          <span className="text-[12px] tracking-tight">Collections</span>
+        </button>
+
+        {/* 3. Create Tab (Inert prototype) */}
+        <button
+          type="button"
+          onClick={() => onInertClick("Create")}
+          className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-[#544339] hover:text-[#1b1b1c] hover:bg-black/5 active:scale-95 font-medium transition-all duration-200 cursor-pointer"
+        >
+          <Plus className="w-4.5 h-4.5 flex-shrink-0" />
+          <span className="text-[12px] tracking-tight">Create</span>
+        </button>
+      </nav>
+
+      {/* Floating Circular FAB: Ask Photos / Search */}
       <Link
         href="/search"
-        className={`flex flex-col items-center justify-center flex-1 h-full py-1 text-center transition-colors ${
-          isSearchActive ? "text-[#1a73e8]" : "text-[#5f6368] hover:text-[#202124]"
-        }`}
+        aria-label="Ask Photos AI or Search"
+        className="pointer-events-auto w-14 h-14 rounded-full bg-gradient-to-tr from-[#f97316] to-[#ff9f5a] hover:brightness-105 active:scale-95 text-white flex items-center justify-center shadow-[0_4px_16px_rgba(255,159,90,0.38)] transition-all cursor-pointer flex-shrink-0"
       >
-        <div
-          className={`px-3 py-0.5 rounded-full transition-colors ${
-            isSearchActive ? "bg-[#c2e7ff]/60" : "bg-transparent"
-          }`}
-        >
-          <Search className={`w-5 h-5 ${isSearchActive ? "stroke-[2.3]" : "stroke-[1.8]"}`} />
+        <div className="relative flex items-center justify-center">
+          <Search className="w-6 h-6 text-white" />
+          <Sparkles className="w-3.5 h-3.5 text-white absolute -top-1 -right-1" />
         </div>
-        <span className={`text-[11px] mt-0.5 ${isSearchActive ? "font-semibold" : "font-normal"}`}>
-          Search
-        </span>
       </Link>
+    </div>
+  );
+}
 
-      {/* 3. Collections (Inert Placeholder) */}
-      <button
-        type="button"
-        onClick={() => onInertClick("Collections")}
-        className="flex flex-col items-center justify-center flex-1 h-full py-1 text-center text-[#5f6368] hover:text-[#202124] transition-colors"
-      >
-        <div className="px-3 py-0.5 rounded-full bg-transparent">
-          <FolderHeart className="w-5 h-5 stroke-[1.8]" />
-        </div>
-        <span className="text-[11px] mt-0.5 font-normal">Collections</span>
-      </button>
-
-      {/* 4. About / Credits (S12) */}
-      <Link
-        href="/about"
-        className={`flex flex-col items-center justify-center flex-1 h-full py-1 text-center transition-colors ${
-          pathname === "/about" ? "text-[#1a73e8]" : "text-[#5f6368] hover:text-[#202124]"
-        }`}
-      >
-        <div
-          className={`px-3 py-0.5 rounded-full transition-colors ${
-            pathname === "/about" ? "bg-[#c2e7ff]/60" : "bg-transparent"
-          }`}
-        >
-          <Library className={`w-5 h-5 ${pathname === "/about" ? "stroke-[2.3]" : "stroke-[1.8]"}`} />
-        </div>
-        <span className={`text-[11px] mt-0.5 ${pathname === "/about" ? "font-semibold" : "font-normal"}`}>
-          About
-        </span>
-      </Link>
-    </nav>
+export function BottomNav(props: BottomNavProps) {
+  return (
+    <Suspense fallback={null}>
+      <BottomNavContent {...props} />
+    </Suspense>
   );
 }

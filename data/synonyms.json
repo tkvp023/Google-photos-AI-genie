@@ -1,5 +1,5 @@
 {
-  "pool": "swimming pool",
+  "pool": "swimming swim",
   "kid": "child",
   "kids": "child",
   "bday": "birthday",
@@ -7,8 +7,13 @@
   "friends": "friend",
   "beach": "seaside",
   "hike": "hiking",
-  "trip": "travel",
+  "trip": "travel roadtrip",
+  "road": "roadtrip",
   "roadtrip": "road trip",
+  "cake": "cupcake birthday",
+  "camping": "hiking outdoor",
+  "music": "concert festival",
+  "pasta": "eating dinner",
   "grad": "graduation",
   "pet": "dog",
   "pup": "dog",
@@ -18,5 +23,13 @@
   "inside": "indoor",
   "colour": "color",
   "colourful": "colorful",
-  "bright": "colourful"
+  "bright": "colourful",
+  "medal": "certificate award",
+  "certificate": "medal award",
+  "pondy": "pondicherry",
+  "bangalore": "bengaluru",
+  "blr": "bengaluru",
+  "madras": "chennai",
+  "hyd": "hyderabad",
+  "bombay": "mumbai"
 }

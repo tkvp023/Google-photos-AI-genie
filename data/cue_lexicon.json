@@ -31,5 +31,11 @@
     "white", "black", "grey", "gray", "brown", "beige", "bright",
     "dark", "colourful", "colorful", "sunny", "rainy", "snowy",
     "swimsuit", "dress", "jacket", "hat", "uniform", "swimwear"
+  ],
+  "mood": [
+    "cheerful", "playful", "energetic", "adventurous", "calm", "lively",
+    "celebratory", "formal", "relaxed", "peaceful", "happy", "cozy",
+    "excited", "serene", "fun", "vibe", "mood", "joyful"
   ]
 }
+

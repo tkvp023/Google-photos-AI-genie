@@ -3,20 +3,26 @@ import time
 from pathlib import Path
 from scripts.tag_library import call_gemini_vision, normalise_tag
 
-key = None
-model = "gemini-3.6-flash"
+import os
 
-for line in open(".env.local", encoding="utf-8"):
-    line = line.strip()
-    if line and not line.startswith("#") and "=" in line:
-        k, v = line.split("=", 1)
-        if k == "GEMINI_API_KEY":
-            key = v
-        if k == "GEMINI_MODEL":
-            model = v
+key = os.environ.get("GEMINI_API_KEY")
+model = os.environ.get("GEMINI_MODEL")
+
+if os.path.exists(".env.local"):
+    for line in open(".env.local", encoding="utf-8"):
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            if k == "GEMINI_API_KEY" and not key:
+                key = v
+            if k == "GEMINI_MODEL" and not model:
+                model = v
 
 if not key:
-    raise ValueError("GEMINI_API_KEY not found in .env.local")
+    raise ValueError("GEMINI_API_KEY not found in environment or .env.local")
+if not model:
+    raise ValueError("GEMINI_MODEL must come from environment variables only.")
+
 
 prompt = Path("scripts/tag_prompt.txt").read_text(encoding="utf-8")
 sample_file = Path("data/tags_sample.json")

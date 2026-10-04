@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 scripts/download_pixabay.py
-Downloads 10 photos per theme across 10 diverse themes focused on PEOPLE from Pixabay into /public/library/
-Generates data/credits.csv with photographer attribution.
+Downloads photos per theme across 10 diverse themes focused on PEOPLE from Pixabay into /public/library/
+Extends library to 20 photos per theme (200 total).
+Appends to data/credits.csv with photographer attribution without overwriting existing files.
 """
 
 import csv
@@ -22,37 +23,65 @@ CREDITS_CSV = PROJECT_ROOT / "data" / "credits.csv"
 
 # Diverse queries emphasizing people, activities, and settings
 THEMES = {
-    "pool": ["friends swimming pool party", "people swimming pool sunny"],
-    "beach": ["family beach vacation playing", "people walking beach ocean"],
-    "birthday": ["birthday party friends celebrating", "people birthday cake candles"],
-    "restaurant": ["friends dinner restaurant eating", "people dining table food"],
-    "festival": ["festival celebration dancing crowd", "people festival colorful celebration"],
-    "hiking": ["friends hiking mountain outdoor", "hikers trekking trail peak"],
-    "kids": ["children playing park happy", "kids running playground"],
-    "graduation": ["students graduation campus celebration", "graduates cap toss ceremony"],
-    "pets": ["person with dog playing park", "woman dog pet owner smile"],
-    "roadtrip": ["friends road trip car travel", "people road trip scenic car"],
+    "pool": ["friends swimming pool party", "people swimming pool sunny", "family pool summer swimming", "kids pool water inflatable"],
+    "beach": ["family beach vacation playing", "people walking beach ocean", "friends beach sunset laughing", "couple beach stroll waves"],
+    "birthday": ["birthday party friends celebrating", "people birthday cake candles", "kids birthday party balloons", "family birthday celebration toast"],
+    "restaurant": ["friends dinner restaurant eating", "people dining table food", "family dinner restaurant drinks", "couple dining restaurant romantic"],
+    "festival": ["festival celebration dancing crowd", "people festival colorful celebration", "music festival concert cheering", "cultural festival street dancing"],
+    "hiking": ["friends hiking mountain outdoor", "hikers trekking trail peak", "backpacking mountain trail hikers", "group hiking forest scenic"],
+    "kids": ["children playing park happy", "kids running playground", "children drawing art classroom", "kids playing soccer lawn"],
+    "graduation": ["students graduation campus celebration", "graduates cap toss ceremony", "university graduation diploma student", "graduate family portrait campus"],
+    "pets": ["person with dog playing park", "woman dog pet owner smile", "man playing fetch dog park", "family puppy dog living room"],
+    "roadtrip": ["friends road trip car travel", "people road trip scenic car", "family road trip camper highway", "couple road trip convertible adventure"],
 }
 
-PER_THEME = 10
+PER_THEME = 20
 
 def main():
+    # Load .env.local
+    env_local = PROJECT_ROOT / ".env.local"
+    if env_local.exists():
+        for line in env_local.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                if k not in os.environ:
+                    os.environ[k] = v
+
     api_key = os.environ.get("PIXABAY_API_KEY", "")
     if not api_key:
         print("Error: PIXABAY_API_KEY environment variable is required.")
         return
+
     LIBRARY_DIR.mkdir(parents=True, exist_ok=True)
     CREDITS_CSV.parent.mkdir(parents=True, exist_ok=True)
 
     rows = []
     seen = set()
-    total_downloaded = 0
+    if CREDITS_CSV.exists():
+        try:
+            with open(CREDITS_CSV, "r", encoding="utf-8") as f:
+                reader = csv.reader(f)
+                header = next(reader, None)
+                for r in reader:
+                    if r and len(r) >= 3:
+                        rows.append(r)
+                        seen.add(r[2])  # pexels_id / photo_id
+            print(f"Loaded {len(rows)} existing credit rows from {CREDITS_CSV}")
+        except Exception as e:
+            print(f"Warning reading {CREDITS_CSV}: {e}")
 
-    print(f"Starting Pixabay download (people-focused diversity) into {LIBRARY_DIR} ...")
+    total_downloaded = 0
+    print(f"Targeting {PER_THEME} photos per theme (200 total) into {LIBRARY_DIR} ...")
 
     for theme, query_list in THEMES.items():
-        theme_count = 0
-        print(f"\n[Theme: {theme}] Downloading {PER_THEME} photos...")
+        existing_files = sorted([f.name for f in LIBRARY_DIR.glob(f"{theme}_*.jpg")])
+        theme_count = len(existing_files)
+        print(f"\n[Theme: {theme}] Currently has {theme_count} photos. Target: {PER_THEME}...")
+
+        if theme_count >= PER_THEME:
+            print(f"  Already at {theme_count} >= {PER_THEME}, skipping.")
+            continue
 
         for query in query_list:
             if theme_count >= PER_THEME:
@@ -65,7 +94,7 @@ def main():
                         "q": query,
                         "image_type": "photo",
                         "orientation": "horizontal",
-                        "per_page": 20,
+                        "per_page": 40,
                         "safesearch": "true",
                     },
                     timeout=15,
@@ -74,18 +103,23 @@ def main():
                 hits = res.json().get("hits", [])
             except Exception as e:
                 print(f"  [ERROR] Query '{query}' failed: {e}", file=sys.stderr)
+                time.sleep(1.0)
                 continue
 
             for photo in hits:
                 if theme_count >= PER_THEME:
                     break
-                photo_id = photo["id"]
+                photo_id = str(photo["id"])
                 if photo_id in seen:
                     continue
-                seen.add(photo_id)
 
                 fn = f"{theme}_{theme_count + 1:02d}.jpg"
                 img_path = LIBRARY_DIR / fn
+                if img_path.exists():
+                    theme_count += 1
+                    continue
+
+                seen.add(photo_id)
                 img_url = photo.get("webformatURL") or photo.get("largeImageURL")
                 photographer = photo.get("user", "Unknown")
                 page_url = photo.get("pageURL", f"https://pixabay.com/photos/{photo_id}/")
@@ -105,14 +139,16 @@ def main():
                             saved = True
                             break
                         elif img_res.status_code == 429:
-                            time.sleep(1.5 * attempt)
+                            time.sleep(2.0 * attempt)
                     except Exception as e:
                         time.sleep(1.0)
 
                 if not saved:
                     print(f"  [SKIP] Could not download photo {photo_id} after retries")
 
-                time.sleep(0.3)
+                time.sleep(0.4)  # Respect Pixabay rate limits
+
+            time.sleep(0.5)
 
     # Save credits.csv
     with open(CREDITS_CSV, "w", newline="", encoding="utf-8") as f:
@@ -120,7 +156,9 @@ def main():
         writer.writerow(["file", "theme", "pexels_id", "photographer", "url"])
         writer.writerows(rows)
 
-    print(f"\n[DONE] Successfully downloaded {total_downloaded} diverse photos from Pixabay.")
+    total_library_photos = len(list(LIBRARY_DIR.glob("*.jpg")))
+    print(f"\n[DONE] Successfully downloaded {total_downloaded} new photos from Pixabay.")
+    print(f"Total photos in library: {total_library_photos}")
     print(f"Credits saved to: {CREDITS_CSV}")
 
 if __name__ == "__main__":

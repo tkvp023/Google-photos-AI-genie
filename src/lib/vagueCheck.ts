@@ -1,6 +1,7 @@
 // src/lib/vagueCheck.ts — Rule-based Query Specificity Classifier
-import { dataStore } from "./dataLoader";
+import placesData from "../../data/places.json";
 import { Anchor, VagueCheckResult } from "@/types";
+import { config } from "./config";
 
 const MONTH_NAMES = [
   "january", "february", "march", "april", "may", "june",
@@ -10,23 +11,25 @@ const MONTH_NAMES = [
 
 const MONTH_REGEX_PART = MONTH_NAMES.join("|");
 
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 /**
  * Checks for a precise time anchor in the query:
- * - Exact date (e.g. "12 March 2021" or "March 12 2021") -> precision count: 2
- * - Month + Year (e.g. "january 2022") -> precision count: 1
- * - Year only (e.g. "2023") -> precision count: 1
+ * Time precise = exact date, month+year, or a 4-digit year (counts at most once: 1 if present, 0 if not).
  */
 export function checkTimeAnchor(query: string): { hasTime: boolean; count: number } {
   if (!query) return { hasTime: false, count: 0 };
   const lower = query.toLowerCase();
 
-  // 1. Exact full date with day: e.g. "12 March 2021" or "March 12, 2021" or "2021-03-12"
+  // 1. Exact full date with day: e.g. "12 March 2021", "March 12, 2021", "2021-03-12"
   const exactDayMonthYear = new RegExp(
     `\\b(?:(?:\\d{1,2}(?:st|nd|rd|th)?\\s+(?:${MONTH_REGEX_PART})\\s+\\d{4})|(?:(?:${MONTH_REGEX_PART})\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s+\\d{4})|(?:\\d{4}[-/]\\d{1,2}[-/]\\d{1,2}))\\b`,
     "i"
   );
   if (exactDayMonthYear.test(lower)) {
-    return { hasTime: true, count: 2 };
+    return { hasTime: true, count: 1 };
   }
 
   // 2. Month + Year: e.g. "january 2022" or "jan 2022"
@@ -49,36 +52,59 @@ export function checkTimeAnchor(query: string): { hasTime: boolean; count: numbe
 
 /**
  * Checks for precise named people in query using the registered places/people database.
- * Note: words like "me", "friends", "family", "kids" are approximations, not named people.
+ * Matches with word boundaries. Words like "me", "friends", "family", "kids" are approximations, not named people.
  */
 export function checkPersonAnchor(query: string, registeredPeople: string[] = []): boolean {
   if (!query || !registeredPeople || registeredPeople.length === 0) return false;
-  const lower = query.toLowerCase();
   for (const person of registeredPeople) {
-    if (person && lower.includes(person.toLowerCase())) {
-      return true;
+    if (person && person.trim()) {
+      const rx = new RegExp(`\\b${escapeRegex(person.trim())}\\b`, "i");
+      if (rx.test(query)) {
+        return true;
+      }
     }
   }
   return false;
 }
 
+import synonymsData from "../../data/synonyms.json";
+
 /**
- * Checks for precise named places using the registered namedPlaces database.
- * Note: generic categories like "pool", "beach", "restaurant" are not named places.
+ * Checks for precise named places using the registered namedPlaces, venues, and place synonyms.
+ * Matches with word boundaries. Generic categories like "pool", "beach", "restaurant" are not named places.
  */
 export function checkLocationAnchor(query: string, namedPlaces: string[] = []): boolean {
-  if (!query || !namedPlaces || namedPlaces.length === 0) return false;
-  const lower = query.toLowerCase();
-  for (const place of namedPlaces) {
-    if (place && lower.includes(place.toLowerCase())) {
-      return true;
+  if (!query) return false;
+  const allPlaces = [...namedPlaces, ...(placesData.venues || [])];
+  for (const place of allPlaces) {
+    if (place && place.trim()) {
+      const rx = new RegExp(`\\b${escapeRegex(place.trim())}\\b`, "i");
+      if (rx.test(query)) {
+        return true;
+      }
     }
   }
+
+  // Also check city synonyms (e.g. "pondy" -> "pondicherry", "blr" -> "bengaluru")
+  const synRecord = synonymsData as Record<string, string>;
+  for (const [alias, canonical] of Object.entries(synRecord)) {
+    const isPlaceSynonym = allPlaces.some((p) => p.toLowerCase() === canonical.toLowerCase());
+    if (isPlaceSynonym) {
+      const rx = new RegExp(`\\b${escapeRegex(alias)}\\b`, "i");
+      if (rx.test(query)) {
+        return true;
+      }
+    }
+  }
+
   return false;
 }
 
 /**
- * Main vagueCheck function executing the classifier.
+ * Main vagueCheck function executing the classifier:
+ * A search is vague when it lacks a precise anchor in at least 2 of 3 filters (Person, Time, Location).
+ * precise_count = (hasPerson ? 1 : 0) + (hasTime ? 1 : 0) + (hasLocation ? 1 : 0).
+ * isVague = precise_count < VAGUE_MIN_PRECISE_FILTERS (config, default 2).
  */
 export function vagueCheck(query: string): VagueCheckResult {
   const q = (query || "").trim();
@@ -90,7 +116,6 @@ export function vagueCheck(query: string): VagueCheckResult {
     };
   }
 
-  const placesData = dataStore.getPlaces();
   const timeResult = checkTimeAnchor(q);
   const hasPerson = checkPersonAnchor(q, placesData.people);
   const hasLocation = checkLocationAnchor(q, placesData.namedPlaces);
@@ -101,12 +126,14 @@ export function vagueCheck(query: string): VagueCheckResult {
     location: hasLocation,
   };
 
+  // Each filter (person, time, location) counts at most once (max 3)
   const preciseCount =
     (hasPerson ? 1 : 0) +
-    timeResult.count +
+    (timeResult.hasTime ? 1 : 0) +
     (hasLocation ? 1 : 0);
 
-  const isVague = preciseCount < 1;
+  const minFilters = config.VAGUE_MIN_PRECISE_FILTERS ?? 2;
+  const isVague = preciseCount < minFilters;
 
   return {
     isVague,

@@ -1,4 +1,4 @@
-// scripts/test_vague_evals.ts — Automated Unit Tests for vagueCheck.ts (VC-01 to VC-10)
+// scripts/test_vague_evals.ts — Automated Unit Tests for vagueCheck.ts
 import { vagueCheck } from "../src/lib/vagueCheck";
 
 interface TestCase {
@@ -10,15 +10,17 @@ interface TestCase {
 
 const testCases: TestCase[] = [
   { id: "VC-01", input: "pool", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-02", input: "me at the pool", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-03", input: "silver racket", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-04", input: "12 March 2021 pool", expectedVague: false, expectedPreciseCount: 2 },
-  { id: "VC-05", input: "beach", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-06", input: "birthday party", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-07", input: "2023 pool", expectedVague: false, expectedPreciseCount: 1 },
+  { id: "VC-02", input: "pool 2023", expectedVague: true, expectedPreciseCount: 1 },
+  { id: "VC-03", input: "pool goa 2023", expectedVague: false, expectedPreciseCount: 2 },
+  { id: "VC-04", input: "pool with Priya", expectedVague: true, expectedPreciseCount: 1 },
+  { id: "VC-05", input: "pool with Priya goa", expectedVague: false, expectedPreciseCount: 2 },
+  { id: "VC-06", input: "me at the beach", expectedVague: true, expectedPreciseCount: 0 },
+  { id: "VC-07", input: "Priya in Goa 2022", expectedVague: false, expectedPreciseCount: 3 },
   { id: "VC-08", input: "", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-09", input: "pool me friends", expectedVague: true, expectedPreciseCount: 0 },
-  { id: "VC-10", input: "january 2022 beach", expectedVague: false, expectedPreciseCount: 1 },
+  { id: "VC-09", input: "silver racket", expectedVague: true, expectedPreciseCount: 0 },
+  { id: "VC-10", input: "birthday party", expectedVague: true, expectedPreciseCount: 0 },
+  { id: "VC-11", input: "pool last summer", expectedVague: true, expectedPreciseCount: 0 }, // Relative phrase is NOT precise
+  { id: "VC-12", input: "pool few years ago", expectedVague: true, expectedPreciseCount: 0 }, // Relative phrase is NOT precise
 ];
 
 console.log("=== Running Unit Evals for lib/vagueCheck.ts ===\n");

@@ -1002,5 +1002,5106 @@
     "weather_or_season": "unknown",
     "mood": "cheerful",
     "text_in_image": "none"
+  },
+  "birthday_09.jpg": {
+    "one_line": "a white unicorn pi\u00f1ata is surrounded by pink party hats and a pink balloon on a white background.",
+    "setting": "studio",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "party hats and pi\u00f1ata",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "white unicorn pi\u00f1ata",
+      "pink party hats",
+      "pink balloon"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_10.jpg": {
+    "one_line": "a white unicorn pi\u00f1ata is surrounded by pink party hats and a pink balloon on a light surface.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "party hats, balloon, and pi\u00f1ata",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "unicorn pi\u00f1ata",
+      "pink balloon",
+      "pink party hats"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_02.jpg": {
+    "one_line": "a large crowd of adults watch a band perform on a stage with bright lights.",
+    "setting": "concert venue",
+    "indoor_outdoor": "indoor",
+    "activity": "watching a concert, raising hands",
+    "occasion_guess": "concert",
+    "occasion_basis": "performers on stage and a large audience watching",
+    "people_count": 50,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "shirts"
+      },
+      {
+        "colour": "unknown",
+        "item": "wear"
+      }
+    ],
+    "objects": [
+      "stage lights",
+      "guitars",
+      "backdrop"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_03.jpg": {
+    "one_line": "crowd of people with hands raised in the air at an outdoor event during sunset.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "raising hands and holding phones up",
+    "occasion_guess": "concert",
+    "occasion_basis": "crowd with raised hands and phone recording",
+    "people_count": 8,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "smartphone",
+      "baseball cap",
+      "glasses",
+      "bracelets"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_04.jpg": {
+    "one_line": "a crowd of people with their hands raised at a concert under a large metal framework structure.",
+    "setting": "concert venue",
+    "indoor_outdoor": "indoor",
+    "activity": "attending a concert, cheering",
+    "occasion_guess": "concert",
+    "occasion_basis": "stage lights, trusses, and a large crowd with raised hands",
+    "people_count": 50,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [],
+    "objects": [
+      "stage lights",
+      "metal truss",
+      "scaffolding",
+      "video screen"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_05.jpg": {
+    "one_line": "a crowd of people with raised hands celebrating under a shower of colorful confetti and star-shaped paper against a dark background.",
+    "setting": "concert",
+    "indoor_outdoor": "unknown",
+    "activity": "celebrating",
+    "occasion_guess": "concert",
+    "occasion_basis": "crowd with raised hands and stage-like lighting under falling confetti",
+    "people_count": 50,
+    "people_ages": [],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [],
+    "objects": [
+      "confetti",
+      "star-shaped confetti"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_06.jpg": {
+    "one_line": "a group of dancers in ornate traditional costumes and feathered headpieces participate in a street festival.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "dancing",
+    "occasion_guess": "festival",
+    "occasion_basis": "traditional costumes, street setting, and large group of performers",
+    "people_count": 10,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "brown",
+        "item": "and gold headdress"
+      },
+      {
+        "colour": "unknown",
+        "item": "brown and beige top"
+      },
+      {
+        "colour": "yellow",
+        "item": "and green skirt"
+      },
+      {
+        "colour": "white",
+        "item": "feathered headpiece"
+      }
+    ],
+    "objects": [
+      "gold statue"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_07.jpg": {
+    "one_line": "a dj stands at a mixing console performing in front of a crowd at night.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "djing",
+    "occasion_guess": "concert",
+    "occasion_basis": "dj equipment and crowd",
+    "people_count": 15,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "dj mixer",
+      "headphones",
+      "cup"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "lively",
+    "text_in_image": "none"
+  },
+  "festival_08.jpg": {
+    "one_line": "a large crowd of people with their hands raised in front of a brightly lit stage at a concert.",
+    "setting": "concert",
+    "indoor_outdoor": "indoor",
+    "activity": "watching a concert",
+    "occasion_guess": "concert",
+    "occasion_basis": "stage lights, instruments, and large crowd",
+    "people_count": 50,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "clothing"
+      }
+    ],
+    "objects": [
+      "stage lights",
+      "instruments",
+      "chairs",
+      "speakers"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_09.jpg": {
+    "one_line": "a large group of performers in elaborate feathered costumes and headdresses dance in a street.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "dancing",
+    "occasion_guess": "festival",
+    "occasion_basis": "costumes and large group street performance",
+    "people_count": 15,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "yellow",
+        "item": "and orange feathered costumes"
+      },
+      {
+        "colour": "black",
+        "item": "wigs"
+      },
+      {
+        "colour": "unknown",
+        "item": "sandals"
+      }
+    ],
+    "objects": [
+      "headdresses",
+      "feathers",
+      "street banners"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_10.jpg": {
+    "one_line": "silhouetted crowd with raised hands at a concert under bright stage lights.",
+    "setting": "concert venue",
+    "indoor_outdoor": "indoor",
+    "activity": "attending a concert, cheering, raising hands",
+    "occasion_guess": "concert",
+    "occasion_basis": "large crowd facing a bright stage with arms raised",
+    "people_count": 50,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [],
+    "objects": [
+      "stage lights"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "graduation_02.jpg": {
+    "one_line": "a person wearing a graduation cap and gown poses with a peace sign outdoors in front of tall buildings.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing for a photo",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap and gown",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "unknown",
+        "item": "sleeve"
+      }
+    ],
+    "objects": [
+      "red and white tassel",
+      "silver bracelets"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_03.jpg": {
+    "one_line": "an adult woman wearing a graduation cap and gown poses in front of a white building with arches.",
+    "setting": "school",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing for a graduation photo",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap and sash",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "ao dai dress"
+      },
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "red",
+        "item": "graduation sash"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "graduation sash",
+      "building with arches"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "nguyen hoang le kha"
+  },
+  "graduation_04.jpg": {
+    "one_line": "a silhouette of a group of graduates standing on a hill and tossing graduation caps into the air at sunset.",
+    "setting": "hill",
+    "indoor_outdoor": "outdoor",
+    "activity": "tossing graduation caps",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduates wearing gowns and tossing graduation caps in the air",
+    "people_count": 20,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "unknown",
+        "item": "graduation cap"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "hills"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunset",
+    "mood": "celebratory",
+    "text_in_image": "none"
+  },
+  "graduation_05.jpg": {
+    "one_line": "a large group of graduates in caps and gowns toss their mortarboards into the air outdoors.",
+    "setting": "field",
+    "indoor_outdoor": "outdoor",
+    "activity": "throwing graduation caps into the air",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation caps and gowns",
+    "people_count": 35,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "graduation gowns"
+      },
+      {
+        "colour": "white",
+        "item": "stoles"
+      },
+      {
+        "colour": "black",
+        "item": "mortarboard caps"
+      }
+    ],
+    "objects": [
+      "mortarboards",
+      "graduation caps",
+      "graduation gowns",
+      "light poles",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_06.jpg": {
+    "one_line": "a hand writes the words learning and schooling on a dark chalkboard.",
+    "setting": "school",
+    "indoor_outdoor": "indoor",
+    "activity": "writing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "sleeve"
+      }
+    ],
+    "objects": [
+      "chalkboard",
+      "chalk"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "neutral",
+    "text_in_image": "learning schooling"
+  },
+  "graduation_07.jpg": {
+    "one_line": "an adult graduate in a cap and gown celebrates with raised fists outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "celebrating graduation",
+    "occasion_guess": "graduation",
+    "occasion_basis": "wearing a graduation cap and gown",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "red",
+        "item": "tassel"
+      },
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "white",
+        "item": "stole"
+      },
+      {
+        "colour": "grey",
+        "item": "waistcoat"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "tie"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "stole"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_08.jpg": {
+    "one_line": "a smiling graduate holds up a rolled diploma outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "graduating",
+    "occasion_guess": "graduation",
+    "occasion_basis": "wearing graduation cap, gown, and holding diploma",
+    "people_count": 3,
+    "people_ages": [
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "unknown",
+        "item": "striped stole"
+      }
+    ],
+    "objects": [
+      "rolled diploma"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_09.jpg": {
+    "one_line": "a large group of people wearing graduation caps and gowns seated indoors.",
+    "setting": "indoor",
+    "indoor_outdoor": "indoor",
+    "activity": "attending a graduation ceremony",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation caps and gowns",
+    "people_count": 20,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "unknown",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "white",
+        "item": "collar"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "graduation gown"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "formal",
+    "text_in_image": "none"
+  },
+  "graduation_10.jpg": {
+    "one_line": "an adult in graduation attire smiles while holding up a graduation cap outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "graduating",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap and gown",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "white",
+        "item": "collared shirt"
+      },
+      {
+        "colour": "black",
+        "item": "bow tie"
+      },
+      {
+        "colour": "blue",
+        "item": "and orange graduation hood"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "tassel"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "hiking_02.jpg": {
+    "one_line": "three people hike along a mountain ridge during a warm sunset.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      },
+      {
+        "colour": "unknown",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "mountains",
+      "trail"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_03.jpg": {
+    "one_line": "silhouettes of two hikers helping each other climb a rocky peak at sunset.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "couple",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "backpack"
+      },
+      {
+        "colour": "black",
+        "item": "shorts"
+      },
+      {
+        "colour": "black",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "rocks",
+      "backpacks"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "sunset",
+    "mood": "supportive",
+    "text_in_image": "none"
+  },
+  "hiking_04.jpg": {
+    "one_line": "three adults walk away from the camera along a dirt path in a scenic natural area.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "denim shirt"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      },
+      {
+        "colour": "yellow",
+        "item": "cardigan"
+      },
+      {
+        "colour": "red",
+        "item": "plaid shirt"
+      },
+      {
+        "colour": "brown",
+        "item": "hat"
+      },
+      {
+        "colour": "black",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "wooden fence",
+      "backpack"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_05.jpg": {
+    "one_line": "three hikers stand in silhouette against a colorful sunset sky on a mountain ridge.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "silhouette clothing"
+      }
+    ],
+    "objects": [
+      "backpacks",
+      "water bottle",
+      "hiking pole"
+    ],
+    "time_of_day": "evening",
+    "weather_or_season": "clear sunset",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_06.jpg": {
+    "one_line": "three people are silhouetted jumping mid-air in front of a mountain landscape at sunrise or sunset.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "jumping",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      },
+      {
+        "colour": "unknown",
+        "item": "hat"
+      },
+      {
+        "colour": "unknown",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "mountains",
+      "sky"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "hiking_07.jpg": {
+    "one_line": "four young adults sit together on a cliff overlooking a lush green valley.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "sitting and looking at the view",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "red",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      }
+    ],
+    "objects": [
+      "grass",
+      "dirt cliff",
+      "mountains"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "hiking_08.jpg": {
+    "one_line": "an adult man and two small dogs sit together on a rocky cliff overlooking a landscape.",
+    "setting": "nature overlook",
+    "indoor_outdoor": "outdoor",
+    "activity": "sightseeing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "hoodie"
+      },
+      {
+        "colour": "grey",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "dogs",
+      "dog harnesses",
+      "dog leashes",
+      "backpack",
+      "sunglasses"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "autumn",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_09.jpg": {
+    "one_line": "three hikers stand on a mountain ridge overlooking a landscape under a blue sky with clouds.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "hoodie"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      },
+      {
+        "colour": "blue",
+        "item": "gaiters"
+      },
+      {
+        "colour": "red",
+        "item": "backpack"
+      },
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      },
+      {
+        "colour": "beige",
+        "item": "pants"
+      },
+      {
+        "colour": "unknown",
+        "item": "backpack"
+      },
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "backpacks",
+      "gaiters",
+      "mountain ridge"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_10.jpg": {
+    "one_line": "an adult in protective gear stands amidst rocky terrain and thick volcanic smoke.",
+    "setting": "volcano",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "jacket"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      },
+      {
+        "colour": "black",
+        "item": "gloves"
+      }
+    ],
+    "objects": [
+      "respirator mask",
+      "rocks",
+      "smoke"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "adventurous",
+    "text_in_image": "none"
+  },
+  "kids_02.jpg": {
+    "one_line": "a child walking across a rope bridge outdoors among trees.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking across a rope bridge",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "rope bridge",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "active",
+    "text_in_image": "none"
+  },
+  "kids_03.jpg": {
+    "one_line": "two young children hold hands and look at each other in a park.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "holding hands",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "floral puffy jacket"
+      },
+      {
+        "colour": "yellow",
+        "item": "polka dot puffy jacket"
+      }
+    ],
+    "objects": [
+      "leaves"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "autumn",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_04.jpg": {
+    "one_line": "two children sit together inside a red toy wagon outdoors in a grassy park.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "riding in a toy wagon",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "shorts"
+      },
+      {
+        "colour": "pink",
+        "item": "dress"
+      }
+    ],
+    "objects": [
+      "red wagon",
+      "trees",
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_05.jpg": {
+    "one_line": "two young children are smiling and facing each other outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "standing and interacting",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "yellow",
+        "item": "polka dot jacket"
+      },
+      {
+        "colour": "unknown",
+        "item": "print jacket"
+      }
+    ],
+    "objects": [
+      "puffer jackets",
+      "hair bow"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "autumn",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_06.jpg": {
+    "one_line": "a child in a park holds a white panel over their head while looking up and smiling.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "holding a panel over head and playing in the rain",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "child",
+      "child",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "shorts"
+      },
+      {
+        "colour": "unknown",
+        "item": "cap"
+      },
+      {
+        "colour": "unknown",
+        "item": "bag"
+      }
+    ],
+    "objects": [
+      "white panel",
+      "trees",
+      "bench",
+      "shopping bag"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "rainy",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_07.jpg": {
+    "one_line": "a green and red dinosaur-shaped spring rider sits on a wood-chip ground at a playground.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "spring rider",
+      "wood chips",
+      "wooden fence"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_11.jpg": {
+    "one_line": "a red toy shovel stuck upright in wet sand on a beach.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "red toy shovel",
+      "sand"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "birthday_11.jpg": {
+    "one_line": "two blue wrapped gifts with ribbons sit on a textured white background.",
+    "setting": "unknown",
+    "indoor_outdoor": "unknown",
+    "activity": "none",
+    "occasion_guess": "holiday",
+    "occasion_basis": "wrapped gift boxes decorated with star motifs and bows on a snow-like surface",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "blue gift box",
+      "silver ribbon",
+      "curled ribbon",
+      "star embellishments"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "festive",
+    "text_in_image": "alamode"
+  },
+  "festival_11.jpg": {
+    "one_line": "a energetic crowd of people raising their hands towards a brightly lit stage at a concert.",
+    "setting": "concert venue",
+    "indoor_outdoor": "indoor",
+    "activity": "attending a concert, cheering, dancing",
+    "occasion_guess": "concert",
+    "occasion_basis": "bright stage lights, haze, and crowd facing a stage with hands raised",
+    "people_count": 25,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "mixed",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "top"
+      }
+    ],
+    "objects": [
+      "stage lights",
+      "lighting trusses",
+      "haze"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "graduation_11.jpg": {
+    "one_line": "four people standing outdoors in a row wearing purple graduation gowns while holding black mortarboard caps.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "standing, posing, holding graduation caps",
+    "occasion_guess": "graduation",
+    "occasion_basis": "purple graduation gowns and black mortarboard caps",
+    "people_count": 4,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "purple",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "black",
+        "item": "shoes"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "black graduation cap",
+      "wooden fence"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_11.jpg": {
+    "one_line": "two young women hold hands while walking through steep grey gravel mounds.",
+    "setting": "rocky terrain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "brown",
+        "item": "sweater"
+      },
+      {
+        "colour": "unknown",
+        "item": "shorts"
+      },
+      {
+        "colour": "green",
+        "item": "shirt"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      },
+      {
+        "colour": "blue",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "gravel mounds"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_11.jpg": {
+    "one_line": "a black and white photo of two young boys wearing plaid shirts walking together in a grassy field.",
+    "setting": "field",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "wooden fence",
+      "toy sword",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_11.jpg": {
+    "one_line": "a rough collie stands over a brown dog lying on a green lawn.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pool_11.jpg": {
+    "one_line": "a young woman rests her arms on the edge of an outdoor swimming pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "relaxing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [],
+    "objects": [
+      "swimming pool",
+      "hammock",
+      "lounge chairs"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_11.jpg": {
+    "one_line": "a black bun hamburger served with french fries and a glass of iced cola on a dark slate plate.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "black bun hamburger",
+      "french fries",
+      "glass of cola with ice",
+      "slate plate",
+      "fork",
+      "knife"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "unknown",
+    "text_in_image": "none"
+  },
+  "roadtrip_11.jpg": {
+    "one_line": "a small toy car is placed on top of a vintage map of north america.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "displaying a model car",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "toy car",
+      "vintage map"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "united states, canada, mexico, atlantic, gulf of mexico, hudson bay, and various city and geographical names"
+  },
+  "beach_12.jpg": {
+    "one_line": "a silhouette of a child plays on a sandy beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [],
+    "objects": [
+      "sand",
+      "ocean",
+      "sun",
+      "mountains",
+      "clouds"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_13.jpg": {
+    "one_line": "a decorated sandcastle sits on a beach with a person walking in the background.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "senior"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "orange",
+        "item": "shirt"
+      },
+      {
+        "colour": "beige",
+        "item": "shorts"
+      },
+      {
+        "colour": "red",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "sandcastle",
+      "shells",
+      "sand",
+      "ocean"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_14.jpg": {
+    "one_line": "a toddler plays in the sand with plastic beach toys.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "striped top"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      },
+      {
+        "colour": "yellow",
+        "item": "boots"
+      }
+    ],
+    "objects": [
+      "bucket",
+      "shovel",
+      "rake",
+      "sand",
+      "seaweed"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_15.jpg": {
+    "one_line": "a child in a bright jacket swings on a beach swing facing the ocean.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "green",
+        "item": "jacket"
+      },
+      {
+        "colour": "blue",
+        "item": "hoodie"
+      },
+      {
+        "colour": "unknown",
+        "item": "scarf"
+      }
+    ],
+    "objects": [
+      "swing",
+      "chains",
+      "sand",
+      "ocean"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_16.jpg": {
+    "one_line": "a family plays in the sand together on the beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "adult",
+      "adult",
+      "child",
+      "child"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "dress"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "sand",
+      "ocean",
+      "sun",
+      "boats"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_13.jpg": {
+    "one_line": "a party table decorated with pink cups, wooden bowls filled with snacks, and sweets.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "birthday",
+    "occasion_basis": "festive party food and cups",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "paper cups",
+      "wooden bowls",
+      "snacks",
+      "candies",
+      "tiered stand"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_14.jpg": {
+    "one_line": "champagne bottles resting in a metal ice bucket filled with ice.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "champagne bottles",
+      "ice bucket",
+      "ice"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "vaux"
+  },
+  "birthday_15.jpg": {
+    "one_line": "a small white birthday cake topped with berries and a single lit candle on a wooden table.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "birthday cake with lit candle",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "cake",
+      "candle",
+      "raspberries",
+      "blueberries",
+      "cherries"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_16.jpg": {
+    "one_line": "a pink frosted frosted cake decorated with rose patterns and three spiral candles next to a floral centerpiece.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "cake with candles",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "cake",
+      "candles",
+      "flowers",
+      "vase"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_17.jpg": {
+    "one_line": "a bottle of rose wine tied with a pink ribbon next to four filled glasses on a table with fairy lights.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "wine bottle",
+      "wine glasses",
+      "ribbon",
+      "flower vase",
+      "fairy lights"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "domaine de la verriere ventoux"
+  },
+  "birthday_18.jpg": {
+    "one_line": "several small packages are wrapped in blue and white patterned paper with white labels.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "wrapped gifts typically associated with celebrations",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "packages",
+      "wrapping paper",
+      "labels"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "birthday_19.jpg": {
+    "one_line": "a close-up view of frosted cupcakes with lit birthday candles.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "birthday",
+    "occasion_basis": "birthday candles on cupcakes",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "cupcakes",
+      "candles",
+      "frosting",
+      "sprinkles"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "birthday_20.jpg": {
+    "one_line": "a large cluster of colorful balloons floats against a cloudy blue sky.",
+    "setting": "outdoor",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "birthday",
+    "occasion_basis": "balloons commonly used for celebrations",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "balloons",
+      "strings"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_12.jpg": {
+    "one_line": "people dance in a dimly lit venue with colorful projected lights.",
+    "setting": "indoor",
+    "indoor_outdoor": "indoor",
+    "activity": "dancing",
+    "occasion_guess": "festival",
+    "occasion_basis": "disco lighting and crowd dancing",
+    "people_count": 10,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "dress"
+      }
+    ],
+    "objects": [
+      "lights"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_13.jpg": {
+    "one_line": "a band performs on a brightly lit stage before a large crowd at night.",
+    "setting": "outdoor",
+    "indoor_outdoor": "outdoor",
+    "activity": "dancing",
+    "occasion_guess": "festival",
+    "occasion_basis": "stage performance with live band and large audience",
+    "people_count": 20,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "stage",
+      "guitars",
+      "drums",
+      "stage lights",
+      "camera equipment"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_14.jpg": {
+    "one_line": "silhouetted concertgoers raise their hands in the air amidst bright red stage lighting.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "dancing",
+    "occasion_guess": "concert",
+    "occasion_basis": "stage lights and crowd raising hands",
+    "people_count": 20,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [],
+    "objects": [
+      "stage lights",
+      "hands"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_15.jpg": {
+    "one_line": "silhouettes of people stand in a smoky room illuminated by red and pink lights.",
+    "setting": "club",
+    "indoor_outdoor": "indoor",
+    "activity": "socializing",
+    "occasion_guess": "party",
+    "occasion_basis": "dim lighting, smoke, and silhouettes of people",
+    "people_count": 8,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [],
+    "objects": [
+      "spotlight",
+      "smoke"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "festival_16.jpg": {
+    "one_line": "a large crowd of people watches an outdoor concert as a shower of confetti falls.",
+    "setting": "outdoor festival",
+    "indoor_outdoor": "outdoor",
+    "activity": "watching a performance",
+    "occasion_guess": "festival",
+    "occasion_basis": "stage with lights, large crowd, and confetti",
+    "people_count": 100,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [],
+    "objects": [
+      "confetti",
+      "stage speakers",
+      "stage lights"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_17.jpg": {
+    "one_line": "a crowd of people faces a brightly lit stage during a concert performance.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "watching a performance",
+    "occasion_guess": "concert",
+    "occasion_basis": "stage lights and audience facing the stage",
+    "people_count": 100,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [],
+    "objects": [
+      "stage lights",
+      "performers on stage"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "festival_18.jpg": {
+    "one_line": "a large crowd views a stage show with complex white spotlights and a large video screen.",
+    "setting": "concert",
+    "indoor_outdoor": "outdoor",
+    "activity": "watching a performance",
+    "occasion_guess": "festival",
+    "occasion_basis": "stage, large screen, and crowd",
+    "people_count": 100,
+    "people_ages": [
+      "teen",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "vest"
+      }
+    ],
+    "objects": [
+      "spotlights",
+      "video screen",
+      "security vest"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "ecopark"
+  },
+  "festival_19.jpg": {
+    "one_line": "a band of musicians playing instruments outdoors on a street.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing music",
+    "occasion_guess": "festival",
+    "occasion_basis": "street band performance",
+    "people_count": 5,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      },
+      {
+        "colour": "orange",
+        "item": "shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "t-shirt"
+      }
+    ],
+    "objects": [
+      "trombone",
+      "drum",
+      "trumpet",
+      "saxophone"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "festival_20.jpg": {
+    "one_line": "a large crowd of people dancing and raising their hands at a nighttime concert.",
+    "setting": "concert venue",
+    "indoor_outdoor": "indoor",
+    "activity": "dancing",
+    "occasion_guess": "festival",
+    "occasion_basis": "crowd dancing at a music event",
+    "people_count": 50,
+    "people_ages": [
+      "adult",
+      "teen"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "stage lights",
+      "speakers"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "graduation_12.jpg": {
+    "one_line": "a young child dressed in a graduation gown and cap holding an apple.",
+    "setting": "outdoors near brick wall",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap and gown",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "black",
+        "item": "graduation cap"
+      }
+    ],
+    "objects": [
+      "apple",
+      "graduation cap",
+      "graduation gown"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_13.jpg": {
+    "one_line": "a young child wearing a graduation cap and gown looking bored with their hand supporting their head.",
+    "setting": "outdoors with foliage",
+    "indoor_outdoor": "outdoor",
+    "activity": "posing",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap and gown",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "grey",
+        "item": "graduation cap"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "graduation gown",
+      "wooden ledge"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "graduation_14.jpg": {
+    "one_line": "black and white photo of children wearing graduation caps and holding certificates.",
+    "setting": "hallway or auditorium",
+    "indoor_outdoor": "indoor",
+    "activity": "reading certificates",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation caps and certificates",
+    "people_count": 4,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "graduation gown"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "certificates"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "formal",
+    "text_in_image": "\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u0623\u0645\u0644 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629"
+  },
+  "graduation_15.jpg": {
+    "one_line": "an adult man hands a diploma to a young adult woman wearing graduation regalia.",
+    "setting": "indoor hall",
+    "indoor_outdoor": "indoor",
+    "activity": "receiving certificate",
+    "occasion_guess": "graduation",
+    "occasion_basis": "graduation cap, gown, and diploma certificate holder visible",
+    "people_count": 6,
+    "people_ages": [
+      "adult",
+      "teen"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "suit"
+      },
+      {
+        "colour": "black",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "red",
+        "item": "stole"
+      }
+    ],
+    "objects": [
+      "diploma",
+      "graduation cap",
+      "glasses"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "formal",
+    "text_in_image": "none"
+  },
+  "graduation_16.jpg": {
+    "one_line": "a graduate holds up a black mortarboard cap in front of her chest outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "holding graduation cap",
+    "occasion_guess": "graduation",
+    "occasion_basis": "mortarboard cap with tassel held by person in dress",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "dress"
+      },
+      {
+        "colour": "black",
+        "item": "mortarboard cap"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "tassel",
+      "necklace"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "graduation_17.jpg": {
+    "one_line": "a group of people in military camouflage toss a smiling man into the air.",
+    "setting": "building exterior",
+    "indoor_outdoor": "outdoor",
+    "activity": "tossing someone in the air",
+    "occasion_guess": "graduation",
+    "occasion_basis": "group celebration in uniform",
+    "people_count": 10,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "green",
+        "item": "camouflage uniform"
+      },
+      {
+        "colour": "green",
+        "item": "military cap"
+      }
+    ],
+    "objects": [
+      "boots",
+      "cap",
+      "building columns"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_18.jpg": {
+    "one_line": "two graduates stand by the sea at sunset, hugging and raising victory signs.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "hugging and posing",
+    "occasion_guess": "graduation",
+    "occasion_basis": "blue graduation cap and gown worn by one person",
+    "people_count": 2,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "couple",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "graduation gown"
+      },
+      {
+        "colour": "blue",
+        "item": "graduation cap"
+      },
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      }
+    ],
+    "objects": [
+      "graduation cap",
+      "rocks",
+      "ocean"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "graduation_19.jpg": {
+    "one_line": "a woman speaks during a meeting while gesturing with her hands.",
+    "setting": "office or classroom",
+    "indoor_outdoor": "indoor",
+    "activity": "talking in a meeting",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "group",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "blouse"
+      },
+      {
+        "colour": "blue",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "headband",
+      "pen",
+      "backpack",
+      "coffee cup"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "graduation_20.jpg": {
+    "one_line": "a young adult male sitting on a grassy sports field at sunset.",
+    "setting": "stadium",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "graduation",
+    "occasion_basis": "filename",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "sweater"
+      },
+      {
+        "colour": "unknown",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "grass",
+      "bleachers"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_12.jpg": {
+    "one_line": "two hikers with helmets and backpacks stand on a rocky mountain ridge surrounded by fog.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "jacket"
+      },
+      {
+        "colour": "white",
+        "item": "helmet"
+      },
+      {
+        "colour": "blue",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "helmet",
+      "rocks",
+      "fog"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "hiking_13.jpg": {
+    "one_line": "an adult male walks away on a dirt hiking trail through a hilly green landscape.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "plaid shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "path",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "hiking_14.jpg": {
+    "one_line": "a small wooden hut sits in a lush green mountain meadow surrounded by forests and peaks.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "cabin",
+      "trees",
+      "mountain"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_15.jpg": {
+    "one_line": "two hikers with backpacks walk along a mountain path during a sunny sunset.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      },
+      {
+        "colour": "unknown",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "hiking poles",
+      "mountains",
+      "trees"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "hiking_16.jpg": {
+    "one_line": "a lone hiker stands on a rocky mountain ridge looking at a peak rising above a sea of clouds.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "black",
+        "item": "shorts"
+      },
+      {
+        "colour": "blue",
+        "item": "backpack"
+      }
+    ],
+    "objects": [
+      "backpack",
+      "rocks",
+      "trees",
+      "mountain peak"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_17.jpg": {
+    "one_line": "an aerial panoramic view of vast snow-covered mountain peaks under a bright blue sky.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "snow-covered mountains",
+      "sky"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_18.jpg": {
+    "one_line": "a hiker walks up a rocky trail winding through a lush green valley toward misty mountain peaks.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "jacket"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "hiking poles",
+      "backpack",
+      "trail",
+      "rocks",
+      "trees"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "hiking_19.jpg": {
+    "one_line": "a winding road snakes through a lush green mountain valley under a bright blue sky with scattered clouds.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "green hills",
+      "mountains",
+      "clouds"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "hiking_20.jpg": {
+    "one_line": "a dramatic shot of jagged, snow-dusted mountain peaks with a small structure perched on top against a bright blue sky.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "mountain peak",
+      "building",
+      "clouds"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "kids_08.jpg": {
+    "one_line": "three children playing on a playground seesaw in an outdoor park.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 3,
+    "people_ages": [
+      "child",
+      "child",
+      "child"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      },
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "pink",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "seesaw",
+      "playground equipment",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_09.jpg": {
+    "one_line": "an aerial view of a colorful playground with children and adults walking and playing.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 15,
+    "people_ages": [
+      "child",
+      "child",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "shirt"
+      },
+      {
+        "colour": "red",
+        "item": "jacket"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      },
+      {
+        "colour": "black",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "playground castle",
+      "slide",
+      "trampoline",
+      "benches"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_10.jpg": {
+    "one_line": "two young children sitting on grass wearing costumes outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "costume party",
+    "occasion_basis": "costumes worn by children",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "dress"
+      },
+      {
+        "colour": "white",
+        "item": "shirt"
+      },
+      {
+        "colour": "black",
+        "item": "vest"
+      },
+      {
+        "colour": "red",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_12.jpg": {
+    "one_line": "a young boy smiling while swinging on a playground swing.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "swings",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "checked shirt"
+      },
+      {
+        "colour": "beige",
+        "item": "shorts"
+      }
+    ],
+    "objects": [
+      "swing",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_13.jpg": {
+    "one_line": "a toddler with curly hair smiling outdoors near some flowers.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "polo shirt"
+      }
+    ],
+    "objects": [
+      "flowers",
+      "bushes"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_14.jpg": {
+    "one_line": "an adult operating a tripod-mounted camera while a child reaches towards it outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "photography",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 4,
+    "people_ages": [
+      "child",
+      "adult",
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "sweater"
+      },
+      {
+        "colour": "blue",
+        "item": "jeans"
+      },
+      {
+        "colour": "pink",
+        "item": "cardigan"
+      },
+      {
+        "colour": "black",
+        "item": "leggings"
+      }
+    ],
+    "objects": [
+      "camera",
+      "tripod",
+      "stroller",
+      "fallen leaves"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "eos digital"
+  },
+  "kids_15.jpg": {
+    "one_line": "two young children smiling while swinging on swings in a grassy yard.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "swings",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "grey",
+        "item": "jacket"
+      },
+      {
+        "colour": "grey",
+        "item": "t-shirt"
+      }
+    ],
+    "objects": [
+      "swings",
+      "grass",
+      "hedge"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "cheerful",
+    "text_in_image": "soho's"
+  },
+  "kids_16.jpg": {
+    "one_line": "a young child sliding down a large mud slide with a smile.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "sliding",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "grey",
+        "item": "shorts"
+      },
+      {
+        "colour": "blue",
+        "item": "shoes"
+      }
+    ],
+    "objects": [
+      "slide",
+      "stairs"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "brave"
+  },
+  "kids_17.jpg": {
+    "one_line": "a child wearing a winter hat and scarf looking out of a wooden play structure.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "hat"
+      },
+      {
+        "colour": "red",
+        "item": "scarf"
+      },
+      {
+        "colour": "blue",
+        "item": "jacket"
+      },
+      {
+        "colour": "blue",
+        "item": "gloves"
+      }
+    ],
+    "objects": [
+      "wooden play structure",
+      "chain",
+      "snow"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "snow",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "kids_18.jpg": {
+    "one_line": "two young boys playing enthusiastically near a small inflatable pool outside.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "child"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "polo shirt"
+      },
+      {
+        "colour": "green",
+        "item": "t-shirt"
+      }
+    ],
+    "objects": [
+      "inflatable pool",
+      "grass",
+      "trees",
+      "cars"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "kids_19.jpg": {
+    "one_line": "close-up of red and metal playground gymnast rings hanging from ropes outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "gym rings",
+      "ropes"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "kids_20.jpg": {
+    "one_line": "a young child smiling and waving from a wooden playground tower next to a slide.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "jacket"
+      },
+      {
+        "colour": "red",
+        "item": "hat"
+      },
+      {
+        "colour": "red",
+        "item": "scarf"
+      },
+      {
+        "colour": "blue",
+        "item": "gloves"
+      }
+    ],
+    "objects": [
+      "playground structure",
+      "slide",
+      "wooden tower"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "overcast",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_02.jpg": {
+    "one_line": "an adult jumping across a ditch in a grassy field with a dog nearby.",
+    "setting": "field",
+    "indoor_outdoor": "outdoor",
+    "activity": "hiking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "t-shirt"
+      },
+      {
+        "colour": "purple",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "ditch",
+      "grass",
+      "dog"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_03.jpg": {
+    "one_line": "a happy light-colored dog panting and walking next to a person in a grassy field.",
+    "setting": "field",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "jeans"
+      }
+    ],
+    "objects": [
+      "dog",
+      "harness",
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_04.jpg": {
+    "one_line": "an adult german shepherd carrying a large wooden stick running across a grassy field with a puppy.",
+    "setting": "field",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dogs",
+      "stick",
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_05.jpg": {
+    "one_line": "a young child blows soap bubbles outdoors in a park.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "blowing bubbles",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "vest"
+      },
+      {
+        "colour": "white",
+        "item": "sweater"
+      }
+    ],
+    "objects": [
+      "soap bubbles",
+      "bubble wand container"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_06.jpg": {
+    "one_line": "a black dog lies on green grass chewing on a toy.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dog toy"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_07.jpg": {
+    "one_line": "a white and brown dog wearing a harness stands in a grassy field.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "harness"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pets_08.jpg": {
+    "one_line": "a person and a dog are silhouetted as they run on a wide beach at sunset.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "running",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "sand",
+      "hills"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_09.jpg": {
+    "one_line": "a small puppy lies on the ground between a person's legs.",
+    "setting": "outdoor",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "jeans"
+      },
+      {
+        "colour": "white",
+        "item": "socks"
+      },
+      {
+        "colour": "black",
+        "item": "shoes"
+      }
+    ],
+    "objects": [
+      "shoes",
+      "socks",
+      "jeans"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pets_10.jpg": {
+    "one_line": "a small white dog biting a wooden stick outdoors.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dog",
+      "stick",
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "playful",
+    "text_in_image": "none"
+  },
+  "pets_12.jpg": {
+    "one_line": "a fluffy cream-colored puppy running happily through a grassy field.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "running",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "collar"
+      }
+    ],
+    "objects": [
+      "dog",
+      "grass",
+      "leaves"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_13.jpg": {
+    "one_line": "an adult woman sitting on the grass lifts a small child into the air.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "dress"
+      },
+      {
+        "colour": "white",
+        "item": "wedges"
+      },
+      {
+        "colour": "white",
+        "item": "diaper"
+      }
+    ],
+    "objects": [
+      "grass",
+      "bushes",
+      "buildings",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_14.jpg": {
+    "one_line": "a dark-furred terrier type dog runs eagerly through green grass.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "running",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "harness"
+      }
+    ],
+    "objects": [
+      "dog",
+      "grass",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_15.jpg": {
+    "one_line": "a spotted dog leaps high in the air to catch a yellow frisbee in a field.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [
+      {
+        "colour": "brown",
+        "item": "collar"
+      }
+    ],
+    "objects": [
+      "dog",
+      "frisbee",
+      "grass",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_16.jpg": {
+    "one_line": "two dogs play tug-of-war with a toy on a grassy field.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dog toy",
+      "grass",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pets_17.jpg": {
+    "one_line": "a small dog runs towards a blue ball in a grassy field at sunset while people stand in the background.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "child",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "family",
+    "clothing": [],
+    "objects": [
+      "ball",
+      "grass"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pets_18.jpg": {
+    "one_line": "a light-colored puppy lies down on a grassy lawn in the warm sunlight.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "grass",
+      "collar"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pets_19.jpg": {
+    "one_line": "a fluffy collie dog sits in wet, dewy grass.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "grass",
+      "dew"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pets_20.jpg": {
+    "one_line": "a small white fluffy dog stands amidst tall grass and plants.",
+    "setting": "park",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "tall grass",
+      "plants",
+      "collar"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pool_03.jpg": {
+    "one_line": "close-up of blue pool water surface with ripples and light reflections.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "water"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_04.jpg": {
+    "one_line": "a person swims underwater in a clear blue pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "swimsuit"
+      }
+    ],
+    "objects": [
+      "water",
+      "pool tiles"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_05.jpg": {
+    "one_line": "colorful balloons float on the surface of a blue pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "party",
+    "occasion_basis": "multiple colorful balloons floating in pool",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "balloons",
+      "water"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pool_07.jpg": {
+    "one_line": "a pair of blue and yellow swim fins and a snorkel rest on a wooden table.",
+    "setting": "home",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "swim fins",
+      "snorkel",
+      "wooden table",
+      "chairs"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "pool_08.jpg": {
+    "one_line": "a shirtless adult stands in a pool resting their hands on the edge.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "pink",
+        "item": "swim trunks"
+      }
+    ],
+    "objects": [
+      "pool edge",
+      "water"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "pool_09.jpg": {
+    "one_line": "an indoor swimming pool with two life rings hanging on the wall.",
+    "setting": "pool",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "life rings",
+      "pool ladder",
+      "windows"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_10.jpg": {
+    "one_line": "a child with wet hair is submerged up to the neck in a swimming pool.",
+    "setting": "pool",
+    "indoor_outdoor": "unknown",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [],
+    "objects": [],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_12.jpg": {
+    "one_line": "an outdoor swimming pool surrounded by wooden decking, trees, and an umbrella.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "umbrella",
+      "decking",
+      "trees",
+      "pool ladder",
+      "lanterns"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_13.jpg": {
+    "one_line": "an underwater view of a person swimming freestyle in a lap pool.",
+    "setting": "pool",
+    "indoor_outdoor": "indoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "swim trunks"
+      }
+    ],
+    "objects": [
+      "lane lines",
+      "pool floor"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pool_14.jpg": {
+    "one_line": "a person floats relaxed on their back in the water of a swimming pool.",
+    "setting": "pool",
+    "indoor_outdoor": "unknown",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "swimsuit"
+      }
+    ],
+    "objects": [],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_15.jpg": {
+    "one_line": "stones are arranged on a blue surface with miniature pool lounge chairs and a beach ball.",
+    "setting": "pool",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "stones",
+      "lounge chairs",
+      "beach ball"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_16.jpg": {
+    "one_line": "an adult floats on their back underwater in a clear pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "orange",
+        "item": "swim shorts"
+      }
+    ],
+    "objects": [
+      "water"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_17.jpg": {
+    "one_line": "a person whips their wet hair around, creating a circular spray of water in a pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [],
+    "objects": [
+      "water",
+      "pool hose"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pool_18.jpg": {
+    "one_line": "water erupts in a geyser-like fountain from a formation of dark rocks in a bright blue pool.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "rocks",
+      "water fountain"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "energetic",
+    "text_in_image": "none"
+  },
+  "pool_19.jpg": {
+    "one_line": "close-up of blue mosaic tiles lining a swimming pool under clear water.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "tiles",
+      "water"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "pool_20.jpg": {
+    "one_line": "a woman relaxing in blue swimming pool water.",
+    "setting": "pool",
+    "indoor_outdoor": "outdoor",
+    "activity": "swimming",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "swimsuit"
+      }
+    ],
+    "objects": [
+      "water",
+      "pool tiling"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_02.jpg": {
+    "one_line": "a couple dining together in a restaurant.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "couple",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "blazer"
+      },
+      {
+        "colour": "blue",
+        "item": "shirt"
+      },
+      {
+        "colour": "unknown",
+        "item": "top"
+      }
+    ],
+    "objects": [
+      "wine glass",
+      "plate",
+      "salad",
+      "table",
+      "condiment holder"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "restaurant_03.jpg": {
+    "one_line": "close-up of a person eating a salad and meat dish.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "plate",
+      "salad",
+      "meat",
+      "fork",
+      "wine glass"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_04.jpg": {
+    "one_line": "an outdoor dining table set with wine glasses overlooking the water at sunset.",
+    "setting": "restaurant",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "wine glasses",
+      "tablecloth",
+      "plates",
+      "napkins",
+      "candles"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_05.jpg": {
+    "one_line": "two senior women sitting at an outdoor cafe table talking.",
+    "setting": "restaurant",
+    "indoor_outdoor": "outdoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "senior",
+      "senior"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "unknown",
+        "item": "striped top"
+      },
+      {
+        "colour": "unknown",
+        "item": "patterned top"
+      },
+      {
+        "colour": "unknown",
+        "item": "pants"
+      }
+    ],
+    "objects": [
+      "table",
+      "chairs",
+      "glasses",
+      "bags",
+      "cobblestone floor"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_06.jpg": {
+    "one_line": "a close-up shot of a pizza topped with broccoli, tomatoes, and other vegetables.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "pizza",
+      "broccoli",
+      "tomatoes",
+      "peppers"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_07.jpg": {
+    "one_line": "a buffet counter filled with various pots of indian curry dishes and sides.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "copper pots",
+      "serving spoons",
+      "curry",
+      "rice",
+      "bread"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_08.jpg": {
+    "one_line": "freshly baked pizzas sitting on pans inside an oven.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "pizza",
+      "oven",
+      "pizza pans"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_09.jpg": {
+    "one_line": "a person pouring wine at a crowded restaurant table with multiple plates and glasses.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 5,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "3-5",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "yellow",
+        "item": "dress"
+      }
+    ],
+    "objects": [
+      "wine bottle",
+      "wine glasses",
+      "water bottles",
+      "plates",
+      "silverware"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "purezza"
+  },
+  "restaurant_10.jpg": {
+    "one_line": "a plate of cooked mushrooms and bok choy served with fried rice in the background.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "plates",
+      "mushrooms",
+      "bok choy",
+      "fried rice",
+      "spoon"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_12.jpg": {
+    "one_line": "a bowl of soup with a spoon sits on a table next to a person's arm.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "white",
+        "item": "shirt"
+      }
+    ],
+    "objects": [
+      "bowl",
+      "spoon",
+      "plate",
+      "fork",
+      "ring"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_13.jpg": {
+    "one_line": "a steak meal with fries, salad, and a glass of beer on a wooden table outdoors.",
+    "setting": "restaurant",
+    "indoor_outdoor": "outdoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "steak",
+      "fries",
+      "salad",
+      "gravy boat",
+      "beer glass",
+      "fork",
+      "knife",
+      "napkin",
+      "salt shaker",
+      "pepper shaker",
+      "potted plant",
+      "wooden table"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "restaurant_14.jpg": {
+    "one_line": "a plate of meat, french fries, sliced cucumbers, tomatoes, and peppers on a placemat.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "plate",
+      "meat",
+      "french fries",
+      "cucumbers",
+      "tomatoes",
+      "peppers",
+      "onions",
+      "fork",
+      "knife",
+      "placemat"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_15.jpg": {
+    "one_line": "a close-up view of a baked pizza topped with cheese, olives, mushrooms, peppers, and pepperoni.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "pizza",
+      "cheese",
+      "olives",
+      "mushrooms",
+      "peppers",
+      "pepperoni"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "restaurant_16.jpg": {
+    "one_line": "a large overhead spread of grilled meats, fries, buns, sauces, fruit, and wine on a wooden table.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "grilled meat",
+      "shrimp",
+      "french fries",
+      "buns",
+      "sauce cups",
+      "pineapple",
+      "grapes",
+      "flowers",
+      "wine bottle",
+      "wine glass",
+      "fork",
+      "cinnamon sticks",
+      "dried citrus slices",
+      "wooden cutting board"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "house beer"
+  },
+  "restaurant_17.jpg": {
+    "one_line": "a dinner table is set with a metal fondue pot, plates, glasses, and decorative ornaments.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "christmas",
+    "occasion_basis": "angel figurines and star-patterned napkins",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "fondue pot",
+      "plates",
+      "wine glasses",
+      "napkins",
+      "ornaments",
+      "angel figurines"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "restaurant_18.jpg": {
+    "one_line": "two adults hold hands and share coffee and pastries at a wooden table.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "couple",
+    "clothing": [
+      {
+        "colour": "red",
+        "item": "sweater"
+      },
+      {
+        "colour": "white",
+        "item": "patterned shirt"
+      }
+    ],
+    "objects": [
+      "coffee cup",
+      "cupcake",
+      "plate",
+      "glass of water",
+      "teapot",
+      "table"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "unknown",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "restaurant_19.jpg": {
+    "one_line": "an overhead view shows a messy table cluttered with empty plates, cups, napkins, and condiment bottles.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "eating",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "plates",
+      "paper cup",
+      "napkins",
+      "ketchup bottle",
+      "hot sauce bottle",
+      "packets"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "it is our goal to serve you"
+  },
+  "restaurant_20.jpg": {
+    "one_line": "a freshly baked pizza with pepperoni, olives, and basil rests on a wooden paddle alongside fresh vegetables and salt.",
+    "setting": "restaurant",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "pizza",
+      "wooden paddle",
+      "red bell pepper",
+      "red onion",
+      "tomatoes",
+      "garlic cloves",
+      "salt container",
+      "basil"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "roadtrip_02.jpg": {
+    "one_line": "close-up of a car tire on an asphalt road with trees and grass in the background.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car tire",
+      "road",
+      "grass",
+      "trees"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_03.jpg": {
+    "one_line": "a car drives on a winding road through a dense, foggy forest.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car",
+      "road",
+      "trees"
+    ],
+    "time_of_day": "morning",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_04.jpg": {
+    "one_line": "a person holds a straw hat out of the window of a moving car.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "car",
+      "hat",
+      "road"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "roadtrip_05.jpg": {
+    "one_line": "a car drives along a snowy road flanked by snow-covered trees.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car",
+      "road",
+      "snow",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "snow",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_06.jpg": {
+    "one_line": "a blue vintage car is parked on a road surrounded by trees.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car",
+      "road",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_07.jpg": {
+    "one_line": "a boston terrier dog leans its head out of a car window.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dog",
+      "car",
+      "road"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "roadtrip_08.jpg": {
+    "one_line": "a view through a car's side mirror showing a highway at sunset.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car mirror",
+      "car",
+      "truck",
+      "highway"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_09.jpg": {
+    "one_line": "a smartphone mounted on a car dashboard displaying a gps navigation app.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "smartphone",
+      "car steering wheel",
+      "dashboard",
+      "cable"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "7 days with premium features are over gc premium solebaystraat livornostraat haarlemmerweg amsterdam 10:32 1.9 km 43 km/h"
+  },
+  "roadtrip_10.jpg": {
+    "one_line": "a silver suv parked on the side of a rural gravel road.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "car",
+      "suv",
+      "gravel road",
+      "fence"
+    ],
+    "time_of_day": "sunset",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "zh 348949"
+  },
+  "roadtrip_12.jpg": {
+    "one_line": "cars driving along a paved road through a desert canyon landscape under a clear blue sky.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "cars",
+      "mountains",
+      "bushes"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "roadtrip_13.jpg": {
+    "one_line": "a wide dirt road stretches across a barren landscape under a bright blue sky filled with white clouds.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "dirt road",
+      "hills",
+      "clouds",
+      "sky"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_14.jpg": {
+    "one_line": "an empty winding road stretches through a foggy mountainous landscape viewed from inside a car.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "hills",
+      "rearview mirror",
+      "car interior"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "overcast",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_15.jpg": {
+    "one_line": "a low-angle view of a two-lane asphalt road with yellow double lines running through a landscape with hills.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "yellow lines",
+      "hills",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_16.jpg": {
+    "one_line": "two adults are inside a car driving on a highway with mountains visible in the distance.",
+    "setting": "street",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [
+      {
+        "colour": "black",
+        "item": "shirt"
+      },
+      {
+        "colour": "blue",
+        "item": "jacket"
+      }
+    ],
+    "objects": [
+      "car",
+      "steering wheel",
+      "dashboard",
+      "rearview mirror",
+      "glasses"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "roadtrip_17.jpg": {
+    "one_line": "a large semi-truck drives on a highway at night under a cloudy star-filled sky.",
+    "setting": "street",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "semi-truck",
+      "road",
+      "yellow lines",
+      "hills",
+      "headlights"
+    ],
+    "time_of_day": "night",
+    "weather_or_season": "unknown",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_18.jpg": {
+    "one_line": "an empty road with yellow lines cuts through dry grassy hills under a bright blue sky.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "yellow lines",
+      "hills",
+      "mountains",
+      "grass"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_19.jpg": {
+    "one_line": "an empty asphalt road stretches through a desert landscape with dramatic red rock formations and a cloudy sky.",
+    "setting": "mountain",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "road",
+      "rock formations",
+      "clouds"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "roadtrip_20.jpg": {
+    "one_line": "driver's view from inside a car driving on a road surrounded by a lush green forest.",
+    "setting": "street",
+    "indoor_outdoor": "indoor",
+    "activity": "driving",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "adult"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [],
+    "objects": [
+      "steering wheel",
+      "car dashboard",
+      "rearview mirror",
+      "road",
+      "trees"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_17.jpg": {
+    "one_line": "two people kayaking in calm sea under bright sunlight.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "kayaking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 2,
+    "people_ages": [
+      "adult",
+      "adult"
+    ],
+    "people_bucket": "2",
+    "group_type": "friends",
+    "clothing": [],
+    "objects": [
+      "kayak",
+      "paddles",
+      "sea",
+      "mountain"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_18.jpg": {
+    "one_line": "children playing and building sandcastles on a crowded beach.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "playing",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 30,
+    "people_ages": [
+      "child",
+      "child",
+      "adult",
+      "senior"
+    ],
+    "people_bucket": "6+",
+    "group_type": "crowd",
+    "clothing": [
+      {
+        "colour": "orange",
+        "item": "swimsuit"
+      },
+      {
+        "colour": "pink",
+        "item": "cap"
+      },
+      {
+        "colour": "white",
+        "item": "cap"
+      }
+    ],
+    "objects": [
+      "sandcastle",
+      "sand",
+      "bottles"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "cheerful",
+    "text_in_image": "none"
+  },
+  "beach_19.jpg": {
+    "one_line": "a toddler standing on a wet sandy beach holding toys.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "walking",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 1,
+    "people_ages": [
+      "child"
+    ],
+    "people_bucket": "1",
+    "group_type": "solo",
+    "clothing": [
+      {
+        "colour": "blue",
+        "item": "striped hoodie"
+      },
+      {
+        "colour": "yellow",
+        "item": "boots"
+      }
+    ],
+    "objects": [
+      "bucket",
+      "shovel",
+      "sand",
+      "seaweed"
+    ],
+    "time_of_day": "afternoon",
+    "weather_or_season": "sunny",
+    "mood": "calm",
+    "text_in_image": "none"
+  },
+  "beach_20.jpg": {
+    "one_line": "a light blue bucket and a red plastic shovel resting in sand.",
+    "setting": "beach",
+    "indoor_outdoor": "outdoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "bucket",
+      "shovel",
+      "sand"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "sunny",
+    "mood": "none",
+    "text_in_image": "none"
+  },
+  "birthday_12.jpg": {
+    "one_line": "close-up of a bottle cap with german text resting among blurred bottles.",
+    "setting": "home",
+    "indoor_outdoor": "indoor",
+    "activity": "none",
+    "occasion_guess": "none",
+    "occasion_basis": "none",
+    "people_count": 0,
+    "people_ages": [],
+    "people_bucket": "none",
+    "group_type": "unknown",
+    "clothing": [],
+    "objects": [
+      "bottle",
+      "bottle cap"
+    ],
+    "time_of_day": "unknown",
+    "weather_or_season": "unknown",
+    "mood": "none",
+    "text_in_image": "klopf mich!"
   }
 }

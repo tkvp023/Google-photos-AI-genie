@@ -1,0 +1,4196 @@
+{
+  "beach_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-18T12:05:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.009,
+      "lng": 74.0223
+    },
+    "people": [
+      "Meera",
+      "Rohan",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-19T13:16:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.0094,
+      "lng": 74.0226
+    },
+    "people": [
+      "Aarav",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-20T14:27:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.0098,
+      "lng": 74.0229
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-18T15:38:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.0102,
+      "lng": 74.0232
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-19T12:49:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.0106,
+      "lng": 74.0235
+    },
+    "people": [
+      "Aarav",
+      "Meera",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-20T13:10:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.011,
+      "lng": 74.0238
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_01",
+    "event_title": "Palolem Beach Sun & Sand Weekend",
+    "taken_at": "2021-12-18T12:48:00Z",
+    "year": 2021,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Palolem Beach",
+      "country": "India",
+      "lat": 15.0114,
+      "lng": 74.0241
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "beach_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-14T17:00:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9328,
+      "lng": 79.835
+    },
+    "people": [
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-15T13:16:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9332,
+      "lng": 79.8353
+    },
+    "people": [
+      "Ananya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-14T19:26:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9336,
+      "lng": 79.8356
+    },
+    "people": [
+      "Ananya",
+      "Kavita",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-15T17:39:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.934,
+      "lng": 79.8359
+    },
+    "people": [
+      "Priya",
+      "Ananya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-14T12:49:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9344,
+      "lng": 79.8362
+    },
+    "people": [
+      "Kavita",
+      "Priya",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-15T13:10:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9348,
+      "lng": 79.8365
+    },
+    "people": [
+      "Ananya",
+      "Kavita",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_02",
+    "event_title": "Promenade Sunrise & Coastal Walk",
+    "taken_at": "2023-10-14T17:23:00Z",
+    "year": 2023,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Promenade Beach",
+      "country": "India",
+      "lat": 11.9352,
+      "lng": 79.8368
+    },
+    "people": [
+      "Ananya",
+      "Priya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-19T17:00:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0489,
+      "lng": 80.2816
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-20T13:16:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0493,
+      "lng": 80.2819
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-19T19:26:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0497,
+      "lng": 80.2822
+    },
+    "people": [
+      "Aarav",
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-20T15:38:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0501,
+      "lng": 80.2825
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "beach_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-19T18:52:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0505,
+      "lng": 80.2828
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "beach_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_beach_03",
+    "event_title": "Marina Coast Family Evening",
+    "taken_at": "2025-04-20T13:10:00Z",
+    "year": 2025,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Marina Beach",
+      "country": "India",
+      "lat": 13.0509,
+      "lng": 80.2831
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "birthday_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T19:00:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9781,
+      "lng": 77.6398
+    },
+    "people": [
+      "Aarav",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "birthday_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T18:13:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9785,
+      "lng": 77.6401
+    },
+    "people": [
+      "Meera",
+      "Rohan",
+      "Vikram",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "birthday_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T21:16:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9789,
+      "lng": 77.6404
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T22:24:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9793,
+      "lng": 77.6407
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T19:32:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9797,
+      "lng": 77.641
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T20:40:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9801,
+      "lng": 77.6413
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_01",
+    "event_title": "Rohan's 25th Rooftop Birthday Celebration",
+    "taken_at": "2021-01-22T21:48:00Z",
+    "year": 2021,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Toit Brewpub & Rooftop",
+      "country": "India",
+      "lat": 12.9805,
+      "lng": 77.6416
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T21:00:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4309,
+      "lng": 78.4065
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T20:08:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4313,
+      "lng": 78.4068
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T21:16:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4317,
+      "lng": 78.4071
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T21:27:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4321,
+      "lng": 78.4074
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T19:32:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4325,
+      "lng": 78.4077
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T20:40:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4329,
+      "lng": 78.408
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_02",
+    "event_title": "Ananya's Milestone Birthday Dinner",
+    "taken_at": "2023-11-08T14:21:00Z",
+    "year": 2023,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Jubilee Hills Garden Bistro",
+      "country": "India",
+      "lat": 17.4333,
+      "lng": 78.4083
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-16T12:05:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8701,
+      "lng": 80.2444
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-17T20:08:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8705,
+      "lng": 80.2447
+    },
+    "people": [
+      "Rohan",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "birthday_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-16T21:16:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8709,
+      "lng": 80.245
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-17T22:24:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8713,
+      "lng": 80.2453
+    },
+    "people": [
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "birthday_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-16T19:32:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8717,
+      "lng": 80.2456
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "birthday_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_bday_03",
+    "event_title": "ECR Beachside Villa Birthday Bash",
+    "taken_at": "2026-05-17T20:40:00Z",
+    "year": 2026,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "ECR Seaside Haven Villa",
+      "country": "India",
+      "lat": 12.8721,
+      "lng": 80.2459
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "festival_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-28T17:00:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.5987,
+      "lng": 73.7431
+    },
+    "people": [
+      "Vikram",
+      "Arjun",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-29T22:09:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.5991,
+      "lng": 73.7434
+    },
+    "people": [
+      "Arjun",
+      "Vikram",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-30T14:27:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.5995,
+      "lng": 73.7437
+    },
+    "people": [
+      "Vikram",
+      "Aarav",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-28T22:24:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.5999,
+      "lng": 73.744
+    },
+    "people": [
+      "Vikram",
+      "Aarav",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-29T12:49:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.6003,
+      "lng": 73.7443
+    },
+    "people": [
+      "Aarav",
+      "Vikram",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-30T23:45:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.6007,
+      "lng": 73.7446
+    },
+    "people": [
+      "Vikram",
+      "Aarav",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_01",
+    "event_title": "Vagator Electronic Music Nights",
+    "taken_at": "2022-12-28T17:23:00Z",
+    "year": 2022,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Goa",
+      "venue": "Vagator Festival Arena",
+      "country": "India",
+      "lat": 15.6011,
+      "lng": 73.7449
+    },
+    "people": [
+      "Aarav",
+      "Arjun",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-12T21:00:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0025,
+      "lng": 77.5883
+    },
+    "people": [
+      "Meera",
+      "Aarav",
+      "Arjun",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-13T22:09:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0029,
+      "lng": 77.5886
+    },
+    "people": [
+      "Rohan",
+      "Arjun",
+      "Meera",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-12T23:18:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0033,
+      "lng": 77.5889
+    },
+    "people": [
+      "Arjun",
+      "Rohan",
+      "Aarav",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-13T21:27:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0037,
+      "lng": 77.5892
+    },
+    "people": [
+      "Arjun",
+      "Aarav",
+      "Meera",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-12T22:36:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0041,
+      "lng": 77.5895
+    },
+    "people": [
+      "Rohan",
+      "Arjun",
+      "Meera",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-13T23:45:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0045,
+      "lng": 77.5898
+    },
+    "people": [
+      "Rohan",
+      "Meera",
+      "Arjun",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_02",
+    "event_title": "Palace Grounds Spring Live Concert",
+    "taken_at": "2024-04-12T21:54:00Z",
+    "year": 2024,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palace Grounds Open Air Stage",
+      "country": "India",
+      "lat": 13.0049,
+      "lng": 77.5901
+    },
+    "people": [
+      "Aarav",
+      "Arjun",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-24T21:00:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4425,
+      "lng": 78.3482
+    },
+    "people": [
+      "Arjun",
+      "Priya",
+      "Vikram",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-25T22:09:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4429,
+      "lng": 78.3485
+    },
+    "people": [
+      "Vikram",
+      "Arjun",
+      "Priya",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-24T23:18:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4433,
+      "lng": 78.3488
+    },
+    "people": [
+      "Rohan",
+      "Priya",
+      "Vikram",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-25T21:27:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4437,
+      "lng": 78.3491
+    },
+    "people": [
+      "Rohan",
+      "Priya",
+      "Vikram",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-24T18:52:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4441,
+      "lng": 78.3494
+    },
+    "people": [
+      "Rohan",
+      "Arjun",
+      "Priya",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "festival_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_fest_03",
+    "event_title": "Gachibowli Lights & Sounds Arena Fest",
+    "taken_at": "2025-10-25T23:45:00Z",
+    "year": 2025,
+    "month": 10,
+    "month_name": "October",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Gachibowli Stadium Amphitheatre",
+      "country": "India",
+      "lat": 17.4445,
+      "lng": 78.3497
+    },
+    "people": [
+      "Arjun",
+      "Priya",
+      "Rohan",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-24T12:05:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0108,
+      "lng": 80.2351
+    },
+    "people": [
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-25T12:08:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0112,
+      "lng": 80.2354
+    },
+    "people": [
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-24T19:26:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0116,
+      "lng": 80.2357
+    },
+    "people": [
+      "Aarav",
+      "Priya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-25T15:38:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.012,
+      "lng": 80.236
+    },
+    "people": [
+      "Aarav",
+      "Priya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-24T15:32:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0124,
+      "lng": 80.2363
+    },
+    "people": [
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-25T13:10:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0128,
+      "lng": 80.2366
+    },
+    "people": [
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_01",
+    "event_title": "Anna University Engineering Convocation",
+    "taken_at": "2019-05-24T14:21:00Z",
+    "year": 2019,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Anna University Convocation Hall",
+      "country": "India",
+      "lat": 13.0132,
+      "lng": 80.2369
+    },
+    "people": [
+      "Kavita",
+      "Aarav",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T12:05:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0209,
+      "lng": 77.5663
+    },
+    "people": [
+      "Arjun",
+      "Rohan",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T12:08:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0213,
+      "lng": 77.5666
+    },
+    "people": [
+      "Vikram",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T13:16:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0217,
+      "lng": 77.5669
+    },
+    "people": [
+      "Rohan",
+      "Vikram",
+      "Arjun"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T14:24:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0221,
+      "lng": 77.5672
+    },
+    "people": [
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T12:49:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0225,
+      "lng": 77.5675
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T13:10:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0229,
+      "lng": 77.5678
+    },
+    "people": [
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_02",
+    "event_title": "IISc Postgraduate Graduation Ceremony",
+    "taken_at": "2022-06-18T12:48:00Z",
+    "year": 2022,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "IISc Main Faculty Quadrangle",
+      "country": "India",
+      "lat": 13.0233,
+      "lng": 77.5681
+    },
+    "people": [
+      "Arjun",
+      "Vikram",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-30T11:00:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4717,
+      "lng": 78.372
+    },
+    "people": [
+      "Priya",
+      "Kavita",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-31T13:16:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4721,
+      "lng": 78.3723
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-30T14:27:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4725,
+      "lng": 78.3726
+    },
+    "people": [
+      "Priya",
+      "Kavita",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-31T17:39:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4729,
+      "lng": 78.3729
+    },
+    "people": [
+      "Ananya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-30T15:32:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4733,
+      "lng": 78.3732
+    },
+    "people": [
+      "Ananya",
+      "Kavita",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "graduation_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_grad_03",
+    "event_title": "HICC Management Degree Honours Gala",
+    "taken_at": "2025-05-31T19:10:00Z",
+    "year": 2025,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Hyderabad International Convention Centre",
+      "country": "India",
+      "lat": 17.4737,
+      "lng": 78.3735
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-11T17:00:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1689,
+      "lng": 77.1698
+    },
+    "people": [
+      "Aarav",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-12T13:16:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1693,
+      "lng": 77.1701
+    },
+    "people": [
+      "Aarav",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-13T19:26:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1697,
+      "lng": 77.1704
+    },
+    "people": [
+      "Rohan",
+      "Aarav",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-11T10:31:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1701,
+      "lng": 77.1707
+    },
+    "people": [
+      "Rohan",
+      "Meera",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-12T12:49:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1705,
+      "lng": 77.171
+    },
+    "people": [
+      "Aarav",
+      "Meera",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-13T13:10:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1709,
+      "lng": 77.1713
+    },
+    "people": [
+      "Aarav",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_01",
+    "event_title": "Anamudi Shola Mist & Ridge Trek",
+    "taken_at": "2020-01-11T14:21:00Z",
+    "year": 2020,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Munnar",
+      "venue": "Anamudi Shola National Park Trails",
+      "country": "India",
+      "lat": 10.1713,
+      "lng": 77.1716
+    },
+    "people": [
+      "Meera",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-06T12:05:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4001,
+      "lng": 76.735
+    },
+    "people": [
+      "Vikram",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-07T18:13:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4005,
+      "lng": 76.7353
+    },
+    "people": [
+      "Vikram",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-06T14:27:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4009,
+      "lng": 76.7356
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-07T15:38:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4013,
+      "lng": 76.7359
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "hiking_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-06T07:38:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4017,
+      "lng": 76.7362
+    },
+    "people": [
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-07T13:10:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4021,
+      "lng": 76.7365
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "hiking_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_02",
+    "event_title": "Doddabetta & Nilgiri Summit Trail",
+    "taken_at": "2023-05-06T14:21:00Z",
+    "year": 2023,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Ooty",
+      "venue": "Doddabetta Peak Forest Track",
+      "country": "India",
+      "lat": 11.4025,
+      "lng": 76.7368
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "hiking_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-09T12:05:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2121,
+      "lng": 75.6086
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-10T18:13:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2125,
+      "lng": 75.6089
+    },
+    "people": [
+      "Meera",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-09T14:27:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2129,
+      "lng": 75.6092
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-10T14:24:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2133,
+      "lng": 75.6095
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-09T12:49:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2137,
+      "lng": 75.6098
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "hiking_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_hike_03",
+    "event_title": "Tadiandamol Peak Monsoon-Green Trek",
+    "taken_at": "2024-11-10T13:10:00Z",
+    "year": 2024,
+    "month": 11,
+    "month_name": "November",
+    "season": "post-monsoon",
+    "place": {
+      "city": "Coorg",
+      "venue": "Tadiandamol Base & Grasslands",
+      "country": "India",
+      "lat": 12.2141,
+      "lng": 75.6101
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "kids_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T12:05:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0504,
+      "lng": 80.2497
+    },
+    "people": [
+      "Priya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T13:16:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0508,
+      "lng": 80.25
+    },
+    "people": [
+      "Priya",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T14:27:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0512,
+      "lng": 80.2503
+    },
+    "people": [
+      "Kavita",
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T15:38:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0516,
+      "lng": 80.2506
+    },
+    "people": [
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T12:49:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.052,
+      "lng": 80.2509
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T13:10:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0524,
+      "lng": 80.2512
+    },
+    "people": [
+      "Priya",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_01",
+    "event_title": "Semmozhi Poonga Family Garden Playday",
+    "taken_at": "2021-02-14T14:21:00Z",
+    "year": 2021,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Chennai",
+      "venue": "Semmozhi Poonga Botanical Park",
+      "country": "India",
+      "lat": 13.0528,
+      "lng": 80.2515
+    },
+    "people": [
+      "Priya",
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T12:05:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9753,
+      "lng": 77.5921
+    },
+    "people": [
+      "Rohan",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T13:16:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9757,
+      "lng": 77.5924
+    },
+    "people": [
+      "Ananya",
+      "Rohan",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T14:27:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9761,
+      "lng": 77.5927
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "kids_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T15:38:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9765,
+      "lng": 77.593
+    },
+    "people": [
+      "Rohan",
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T12:49:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9769,
+      "lng": 77.5933
+    },
+    "people": [
+      "Ananya",
+      "Priya",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T13:10:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9773,
+      "lng": 77.5936
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_02",
+    "event_title": "Cubbon Park Kids Adventure & Picnic",
+    "taken_at": "2023-04-22T09:52:00Z",
+    "year": 2023,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Play Pavilion",
+      "country": "India",
+      "lat": 12.9777,
+      "lng": 77.5939
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-20T12:05:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.3156,
+      "lng": 77.1567
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-21T13:16:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.316,
+      "lng": 77.157
+    },
+    "people": [
+      "Rohan",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-22T14:27:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.3164,
+      "lng": 77.1573
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-20T15:38:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.3168,
+      "lng": 77.1576
+    },
+    "people": [
+      "Rohan",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "kids_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-21T12:49:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.3172,
+      "lng": 77.1579
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "kids_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_kids_03",
+    "event_title": "Solang Valley Snow Play & Winter Cabin",
+    "taken_at": "2025-12-22T13:10:00Z",
+    "year": 2025,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Solang Valley Meadows",
+      "country": "India",
+      "lat": 32.3176,
+      "lng": 77.1582
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T12:05:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9728,
+      "lng": 77.59
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T18:13:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9732,
+      "lng": 77.5903
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T13:16:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9736,
+      "lng": 77.5906
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T15:38:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.974,
+      "lng": 77.5909
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T12:49:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9744,
+      "lng": 77.5912
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T13:10:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9748,
+      "lng": 77.5915
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_01",
+    "event_title": "Cubbon Dog Park Morning Play & Agility",
+    "taken_at": "2020-12-05T14:21:00Z",
+    "year": 2020,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Cubbon Park Pet Play Lawn",
+      "country": "India",
+      "lat": 12.9752,
+      "lng": 77.5918
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T12:05:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9974,
+      "lng": 80.2679
+    },
+    "people": [
+      "Priya",
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T18:13:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9978,
+      "lng": 80.2682
+    },
+    "people": [
+      "Ananya",
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T14:27:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9982,
+      "lng": 80.2685
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T15:38:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9986,
+      "lng": 80.2688
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T12:49:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.999,
+      "lng": 80.2691
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T08:45:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9994,
+      "lng": 80.2694
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_02",
+    "event_title": "Besant Nagar Beachfront Paws Stroll",
+    "taken_at": "2023-03-18T14:21:00Z",
+    "year": 2023,
+    "month": 3,
+    "month_name": "March",
+    "season": "summer",
+    "place": {
+      "city": "Chennai",
+      "venue": "Edward Elliot Beach Park",
+      "country": "India",
+      "lat": 12.9998,
+      "lng": 80.2697
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-24T11:00:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0061,
+      "lng": 79.8098
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-25T13:16:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0065,
+      "lng": 79.8101
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-24T14:27:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0069,
+      "lng": 79.8104
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-25T15:38:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0073,
+      "lng": 79.8107
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pets_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-24T12:49:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0077,
+      "lng": 79.811
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pets_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pets_03",
+    "event_title": "Auroville Green Belt Canine Outing",
+    "taken_at": "2026-01-25T13:10:00Z",
+    "year": 2026,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Auroville Quiet Woodlands",
+      "country": "India",
+      "lat": 12.0081,
+      "lng": 79.8113
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-10T12:05:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5165,
+      "lng": 73.762
+    },
+    "people": [
+      "Aarav",
+      "Rohan",
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-11T13:16:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5169,
+      "lng": 73.7623
+    },
+    "people": [
+      "Meera",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-12T09:24:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5173,
+      "lng": 73.7626
+    },
+    "people": [
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-10T15:38:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5177,
+      "lng": 73.7629
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-11T12:49:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5181,
+      "lng": 73.7632
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-12T13:10:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5185,
+      "lng": 73.7635
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_01",
+    "event_title": "Candolim Resort Summer Pool Party",
+    "taken_at": "2021-04-10T14:21:00Z",
+    "year": 2021,
+    "month": 4,
+    "month_name": "April",
+    "season": "summer",
+    "place": {
+      "city": "Goa",
+      "venue": "Candolim Infinity Palms Resort",
+      "country": "India",
+      "lat": 15.5189,
+      "lng": 73.7638
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-25T12:05:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0712,
+      "lng": 79.8623
+    },
+    "people": [
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-26T13:16:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0716,
+      "lng": 79.8626
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-27T13:16:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.072,
+      "lng": 79.8629
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-25T15:38:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0724,
+      "lng": 79.8632
+    },
+    "people": [
+      "Priya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-26T12:49:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0728,
+      "lng": 79.8635
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-27T11:40:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0732,
+      "lng": 79.8638
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_02",
+    "event_title": "Dune Eco Resort Azure Pool Retreat",
+    "taken_at": "2024-05-25T12:48:00Z",
+    "year": 2024,
+    "month": 5,
+    "month_name": "May",
+    "season": "summer",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "Dune Eco Beach Pool Villa",
+      "country": "India",
+      "lat": 12.0736,
+      "lng": 79.8641
+    },
+    "people": [
+      "Ananya"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-13T11:00:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.96,
+      "lng": 77.7462
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-14T13:16:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.9604,
+      "lng": 77.7465
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-13T14:27:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.9608,
+      "lng": 77.7468
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "pool_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-14T15:38:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.9612,
+      "lng": 77.7471
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-13T15:32:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.9616,
+      "lng": 77.7474
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "pool_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_pool_03",
+    "event_title": "Palm Meadows Clubhouse Swim Day",
+    "taken_at": "2026-06-14T13:10:00Z",
+    "year": 2026,
+    "month": 6,
+    "month_name": "June",
+    "season": "summer",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Palm Meadows Club Aqua Pavilion",
+      "country": "India",
+      "lat": 12.962,
+      "lng": 77.7477
+    },
+    "people": [
+      "Meera"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T12:05:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9774,
+      "lng": 77.64
+    },
+    "people": [
+      "Rohan",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T13:16:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9778,
+      "lng": 77.6403
+    },
+    "people": [
+      "Aarav",
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T21:16:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9782,
+      "lng": 77.6406
+    },
+    "people": [
+      "Vikram",
+      "Rohan",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T22:24:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9786,
+      "lng": 77.6409
+    },
+    "people": [
+      "Rohan",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T19:32:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.979,
+      "lng": 77.6412
+    },
+    "people": [
+      "Rohan"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T19:10:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9794,
+      "lng": 77.6415
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_01",
+    "event_title": "Indiranagar Artisanal Gourmet Trail",
+    "taken_at": "2022-01-15T21:48:00Z",
+    "year": 2022,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Bengaluru",
+      "venue": "Indiranagar 100ft Road Bistro",
+      "country": "India",
+      "lat": 12.9798,
+      "lng": 77.6418
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T19:00:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.0326,
+      "lng": 80.2686
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T20:08:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.033,
+      "lng": 80.2689
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T21:16:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.0334,
+      "lng": 80.2692
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T22:24:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.0338,
+      "lng": 80.2695
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T19:32:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.0342,
+      "lng": 80.2698
+    },
+    "people": [
+      "Kavita"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T13:10:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.0346,
+      "lng": 80.2701
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_02",
+    "event_title": "Mylapore Heritage & Coastal Cuisine Feast",
+    "taken_at": "2023-08-19T21:48:00Z",
+    "year": 2023,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Chennai",
+      "venue": "Mylapore Traditional Dining Hall",
+      "country": "India",
+      "lat": 13.035,
+      "lng": 80.2704
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T19:00:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.4332,
+      "lng": 78.3847
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T20:08:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.4336,
+      "lng": 78.385
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T14:27:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.434,
+      "lng": 78.3853
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T15:38:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.4344,
+      "lng": 78.3856
+    },
+    "people": [
+      "Rohan",
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "restaurant_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T19:32:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.4348,
+      "lng": 78.3859
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "restaurant_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_rest_03",
+    "event_title": "Durgam Cheruvu Lakeview Terrace Dinner",
+    "taken_at": "2025-02-21T20:40:00Z",
+    "year": 2025,
+    "month": 2,
+    "month_name": "February",
+    "season": "winter",
+    "place": {
+      "city": "Hyderabad",
+      "venue": "Durgam Cheruvu Overlook Cafe",
+      "country": "India",
+      "lat": 17.4352,
+      "lng": 78.3862
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_16.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-13T12:05:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6532,
+      "lng": 74.1346
+    },
+    "people": [
+      "Rohan",
+      "Aarav"
+    ],
+    "device": "Pixel 7"
+  },
+  "roadtrip_01.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-14T12:08:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6536,
+      "lng": 74.1349
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_02.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-15T19:26:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.654,
+      "lng": 74.1352
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_03.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-13T10:31:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6544,
+      "lng": 74.1355
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_04.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-14T12:49:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6548,
+      "lng": 74.1358
+    },
+    "people": [
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  },
+  "roadtrip_06.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-15T13:10:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6552,
+      "lng": 74.1361
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_07.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_01",
+    "event_title": "Western Ghats Monsoon Mist Highway Drive",
+    "taken_at": "2022-08-13T14:21:00Z",
+    "year": 2022,
+    "month": 8,
+    "month_name": "August",
+    "season": "monsoon",
+    "place": {
+      "city": "Goa",
+      "venue": "Chorla Ghat Mountain Highway",
+      "country": "India",
+      "lat": 15.6556,
+      "lng": 74.1364
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_08.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-18T17:00:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3351,
+      "lng": 80.0575
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_09.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-19T12:08:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3355,
+      "lng": 80.0578
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_10.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-18T19:26:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3359,
+      "lng": 80.0581
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_11.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-19T14:24:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3363,
+      "lng": 80.0584
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_12.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-18T12:49:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3367,
+      "lng": 80.0587
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_13.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-19T13:10:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3371,
+      "lng": 80.059
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_14.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_02",
+    "event_title": "East Coast Road Ocean Highway Cruising",
+    "taken_at": "2025-01-18T12:48:00Z",
+    "year": 2025,
+    "month": 1,
+    "month_name": "January",
+    "season": "winter",
+    "place": {
+      "city": "Pondicherry",
+      "venue": "ECR Highway Scenic Overlook",
+      "country": "India",
+      "lat": 12.3375,
+      "lng": 80.0593
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_05.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-16T12:05:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.3634,
+      "lng": 77.1717
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_15.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-17T13:16:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.3638,
+      "lng": 77.172
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_17.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-18T23:18:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.3642,
+      "lng": 77.1723
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_18.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-16T15:38:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.3646,
+      "lng": 77.1726
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_19.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-17T12:49:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.365,
+      "lng": 77.1729
+    },
+    "people": [],
+    "device": "Pixel 7"
+  },
+  "roadtrip_20.jpg": {
+    "synthetic": true,
+    "event_id": "ev_road_03",
+    "event_title": "Rohtang Pass & Atal Tunnel Snow Roadtrip",
+    "taken_at": "2023-12-18T13:10:00Z",
+    "year": 2023,
+    "month": 12,
+    "month_name": "December",
+    "season": "winter",
+    "place": {
+      "city": "Manali",
+      "venue": "Atal Highway Snowy Pass",
+      "country": "India",
+      "lat": 32.3654,
+      "lng": 77.1732
+    },
+    "people": [
+      "Vikram"
+    ],
+    "device": "Pixel 7"
+  }
+}
