@@ -205,7 +205,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
   }
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[1400px] h-full max-h-[880px] px-2 sm:px-4">
+    <div className="relative flex items-center justify-center w-full max-w-[1400px] h-full max-h-[880px] px-2 sm:px-4 pt-12 sm:pt-14">
       {isGuideOn && leftColumn}
       {children}
       {isGuideOn && rightColumn}

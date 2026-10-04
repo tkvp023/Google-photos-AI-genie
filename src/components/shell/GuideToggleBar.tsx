@@ -10,73 +10,92 @@ export function GuideToggleBar() {
 
   return (
     <>
-      {/* Floating Top Control Bar */}
-      <header
+      {/* Prominently Visible Side Toggle Widget (Pinned to Top-Right Side) */}
+      <aside
         aria-label="Tester Mode Controls"
-        className="fixed top-2 sm:top-3 z-50 flex items-center justify-between gap-3 px-3 py-1.5 bg-white/95 backdrop-blur-md rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#d0d7de] max-w-[95vw] transition-all"
+        className="fixed top-3 right-3 sm:top-4 sm:right-6 z-50 flex flex-col items-end gap-1 select-none pointer-events-auto transition-all"
       >
-        {/* App Label */}
-        <div className="flex items-center gap-2 pl-1 pr-2 border-r border-gray-200">
-          <span className="w-2 h-2 rounded-full bg-[#1a73e8] animate-pulse" />
-          <span className="text-[12px] font-semibold text-gray-800 tracking-tight whitespace-nowrap">
-            Photos Genie MVP
-          </span>
+        {/* Main Elevated Toggle Card */}
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl p-2 shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-2 border-[#1a73e8]/30 ring-4 ring-[#1a73e8]/10 flex flex-col gap-1.5 transition-all">
+          {/* Card Header: Label & Status Indicator */}
+          <div className="flex items-center justify-between gap-3 px-1.5 pt-0.5">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
+              View Mode
+            </span>
+            <span className="flex items-center gap-1.5 text-[11px] font-medium text-gray-700">
+              <span
+                className={`w-2 h-2 rounded-full ${
+                  isGuideOn ? "bg-[#1a73e8] animate-pulse" : "bg-emerald-500"
+                }`}
+              />
+              {isGuideOn ? (
+                <span className="text-[#1a73e8] font-bold">Guide ON</span>
+              ) : (
+                <span className="text-gray-600 font-semibold">Normal</span>
+              )}
+            </span>
+          </div>
+
+          {/* Mode Switcher Segmented Control */}
+          <div
+            role="radiogroup"
+            aria-label="Mode Selection"
+            className="flex items-center bg-[#f1f5f9] p-1 rounded-xl gap-1 border border-gray-200"
+          >
+            {/* Normal Mode Button */}
+            <button
+              type="button"
+              role="radio"
+              aria-checked={!isGuideOn}
+              onClick={() => setGuideOn(false)}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-[13px] font-bold transition-all cursor-pointer min-h-[40px] select-none ${
+                !isGuideOn
+                  ? "bg-white text-gray-900 shadow-md ring-1 ring-black/5"
+                  : "text-gray-500 hover:text-gray-900 bg-transparent"
+              }`}
+            >
+              <Smartphone className="w-4 h-4" />
+              <span>Normal Mode</span>
+            </button>
+
+            {/* Guide Mode Button */}
+            <button
+              type="button"
+              role="radio"
+              aria-checked={isGuideOn}
+              onClick={() => setGuideOn(true)}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-[13px] font-bold transition-all cursor-pointer min-h-[40px] select-none ${
+                isGuideOn
+                  ? "bg-[#1a73e8] text-white shadow-md shadow-[#1a73e8]/30"
+                  : "text-gray-500 hover:text-gray-900 bg-transparent"
+              }`}
+            >
+              <Lightbulb className="w-4 h-4" />
+              <span>Guide Mode</span>
+            </button>
+          </div>
+
+          {/* Helper caption */}
+          <div className="flex items-center justify-between px-1.5 pb-0.5 text-[10.5px] text-gray-500">
+            <span>
+              {isGuideOn ? "Side boxes explaining UI visible" : "Clean stock Google Photos view"}
+            </span>
+
+            {/* Mobile explanation drawer trigger */}
+            {isGuideOn && (
+              <button
+                type="button"
+                onClick={() => setIsMobileDrawerOpen(true)}
+                className="lg:hidden ml-2 text-[#1a73e8] font-bold underline cursor-pointer"
+              >
+                Notes
+              </button>
+            )}
+          </div>
         </div>
+      </aside>
 
-        {/* Mode Switcher Segmented Control */}
-        <div
-          role="radiogroup"
-          aria-label="Mode Selection"
-          className="flex items-center bg-[#f1f5f9] p-0.5 rounded-full"
-        >
-          {/* Normal Mode Button */}
-          <button
-            type="button"
-            role="radio"
-            aria-checked={!isGuideOn}
-            onClick={() => setGuideOn(false)}
-            className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-semibold transition-all cursor-pointer select-none ${
-              !isGuideOn
-                ? "bg-white text-gray-900 shadow-xs"
-                : "text-gray-500 hover:text-gray-900 bg-transparent"
-            }`}
-          >
-            <Smartphone className="w-3.5 h-3.5" />
-            <span>Normal Mode</span>
-          </button>
-
-          {/* Guide Mode Button */}
-          <button
-            type="button"
-            role="radio"
-            aria-checked={isGuideOn}
-            onClick={() => setGuideOn(true)}
-            className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-semibold transition-all cursor-pointer select-none ${
-              isGuideOn
-                ? "bg-[#1a73e8] text-white shadow-xs"
-                : "text-gray-500 hover:text-gray-900 bg-transparent"
-            }`}
-          >
-            <Lightbulb className="w-3.5 h-3.5" />
-            <span>Guide Mode</span>
-          </button>
-        </div>
-
-        {/* Mobile-only info button when guide is ON */}
-        {isGuideOn && (
-          <button
-            type="button"
-            onClick={() => setIsMobileDrawerOpen(true)}
-            className="lg:hidden flex items-center justify-center w-7 h-7 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors cursor-pointer"
-            aria-label="View guide explanations on mobile"
-            title="View guide explanations"
-          >
-            <Info className="w-4 h-4" />
-          </button>
-        )}
-      </header>
-
-      {/* Mobile Guide Modal Drawer (only needed on small viewports <1024px where side space is hidden) */}
+      {/* Mobile Guide Modal Drawer (for small screens <1024px where side columns hide) */}
       {isMobileDrawerOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex flex-col justify-end lg:hidden animate-fade-in"
@@ -119,7 +138,7 @@ export function GuideToggleBar() {
               <div className="p-3 bg-purple-50 border border-purple-100 rounded-xl space-y-1">
                 <p className="font-semibold text-purple-900">Desktop View Tip</p>
                 <p className="text-xs text-purple-800">
-                  Open this page on a desktop or wide browser screen to see live interactive callout boxes pointing directly to phone elements!
+                  On desktop screens, interactive callout boxes appear directly in the white space on both sides with arrows pointing to the phone UI!
                 </p>
               </div>
             </div>
