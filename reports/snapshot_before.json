@@ -1,0 +1,2471 @@
+[
+  {
+    "query": "me in a restaurant",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 25,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "couple",
+            "label": "Couple",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "eating",
+            "label": "Eating",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "holding food plate",
+            "label": "Holding food plate",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cooking",
+            "label": "Cooking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "dining",
+            "label": "Dining",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "restaurant_01",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_02",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_09",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_03",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_04",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_05",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_06",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_07",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_08",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_10",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      }
+    ]
+  },
+  {
+    "query": "restaurant",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 25,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "couple",
+            "label": "Couple",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "eating",
+            "label": "Eating",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "holding food plate",
+            "label": "Holding food plate",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cooking",
+            "label": "Cooking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "dining",
+            "label": "Dining",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "restaurant_01",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_02",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_09",
+        "score": 5.3,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_03",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_04",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_05",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_06",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_07",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_08",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      },
+      {
+        "id": "restaurant_10",
+        "score": 3.9,
+        "tier": 1,
+        "theme": "restaurant"
+      }
+    ]
+  },
+  {
+    "query": "family picnic",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 22,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playing in the sand",
+            "label": "Playing in the sand",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playing",
+            "label": "Playing",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "look",
+        "field": "clothing_color",
+        "options": [
+          {
+            "value": "white",
+            "label": "White",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "red",
+            "label": "Red",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "pink",
+            "label": "Pink",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "blue",
+            "label": "Blue",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "black",
+            "label": "Black",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "when",
+        "field": "time_of_day",
+        "options": [
+          {
+            "value": "afternoon",
+            "label": "Afternoon",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "evening",
+            "label": "Evening",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "sunset",
+            "label": "Sunset",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "kids_10",
+        "score": 5.5,
+        "tier": 2,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_11",
+        "score": 5.5,
+        "tier": 2,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_14",
+        "score": 5.5,
+        "tier": 2,
+        "theme": "kids"
+      },
+      {
+        "id": "beach_05",
+        "score": 3.5,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_16",
+        "score": 3.5,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_02",
+        "score": 2,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_08",
+        "score": 2,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_10",
+        "score": 2,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_11",
+        "score": 2,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_12",
+        "score": 2,
+        "tier": 2,
+        "theme": "beach"
+      }
+    ]
+  },
+  {
+    "query": "family",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 22,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playing in the sand",
+            "label": "Playing in the sand",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playing",
+            "label": "Playing",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "look",
+        "field": "clothing_color",
+        "options": [
+          {
+            "value": "white",
+            "label": "White",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "red",
+            "label": "Red",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "pink",
+            "label": "Pink",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "blue",
+            "label": "Blue",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "black",
+            "label": "Black",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "when",
+        "field": "time_of_day",
+        "options": [
+          {
+            "value": "afternoon",
+            "label": "Afternoon",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "evening",
+            "label": "Evening",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "sunset",
+            "label": "Sunset",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "beach_05",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_16",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "kids_10",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_11",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_14",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "beach_02",
+        "score": 2,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_08",
+        "score": 2,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_10",
+        "score": 2,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_11",
+        "score": 2,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_12",
+        "score": 2,
+        "tier": 1,
+        "theme": "beach"
+      }
+    ]
+  },
+  {
+    "query": "friends",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 33,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "hiking",
+            "label": "Hiking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "eating",
+            "label": "Eating",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "look",
+        "field": "clothing_color",
+        "options": [
+          {
+            "value": "blue",
+            "label": "Blue",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "black",
+            "label": "Black",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "grey",
+            "label": "Grey",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "yellow",
+            "label": "Yellow",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "red",
+            "label": "Red",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "pool_01",
+        "score": 3.5,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "beach_07",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_17",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "birthday_02",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "festival_02",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_04",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_06",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_09",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_19",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "graduation_04",
+        "score": 1.5,
+        "tier": 1,
+        "theme": "graduation"
+      }
+    ]
+  },
+  {
+    "query": "pool",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 22,
+    "rows": [
+      {
+        "cueType": "mood",
+        "field": "mood",
+        "options": [
+          {
+            "value": "calm",
+            "label": "Calm",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cheerful",
+            "label": "Cheerful",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "energetic",
+            "label": "Energetic",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playful",
+            "label": "Playful",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "pool_08",
+        "score": 13.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_13",
+        "score": 13.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_09",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_11",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_12",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_10",
+        "score": 10.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_14",
+        "score": 10.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_01",
+        "score": 10.3,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_04",
+        "score": 10.3,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_06",
+        "score": 9.3,
+        "tier": 1,
+        "theme": "pool"
+      }
+    ]
+  },
+  {
+    "query": "me in a pool",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 22,
+    "rows": [
+      {
+        "cueType": "mood",
+        "field": "mood",
+        "options": [
+          {
+            "value": "calm",
+            "label": "Calm",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cheerful",
+            "label": "Cheerful",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "energetic",
+            "label": "Energetic",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "playful",
+            "label": "Playful",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "pool_08",
+        "score": 13.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_13",
+        "score": 13.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_09",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_11",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_12",
+        "score": 11.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_10",
+        "score": 10.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_14",
+        "score": 10.4,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_01",
+        "score": 10.3,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_04",
+        "score": 10.3,
+        "tier": 1,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_06",
+        "score": 9.3,
+        "tier": 1,
+        "theme": "pool"
+      }
+    ]
+  },
+  {
+    "query": "beach",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 43,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "playing",
+            "label": "Playing",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "swimming",
+            "label": "Swimming",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "family",
+            "label": "Family",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "beach_07",
+        "score": 9.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_14",
+        "score": 9.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_15",
+        "score": 9.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_18",
+        "score": 9.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_19",
+        "score": 9.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_17",
+        "score": 8,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_20",
+        "score": 8,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_01",
+        "score": 7.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_02",
+        "score": 7.4,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_03",
+        "score": 7.4,
+        "tier": 1,
+        "theme": "beach"
+      }
+    ]
+  },
+  {
+    "query": "birthday party",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 7,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "eating",
+            "label": "Eating",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "posing for a birthday photo",
+            "label": "Posing for a birthday photo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "dancing",
+            "label": "Dancing",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "birthday_03",
+        "score": 19.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_02",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_08",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_09",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_10",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_13",
+        "score": 8.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_01",
+        "score": 6.5,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_15",
+        "score": 8.5,
+        "tier": 2,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_19",
+        "score": 8.5,
+        "tier": 2,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_16",
+        "score": 6.5,
+        "tier": 2,
+        "theme": "birthday"
+      }
+    ]
+  },
+  {
+    "query": "hiking",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 21,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "look",
+        "field": "clothing_color",
+        "options": [
+          {
+            "value": "black",
+            "label": "Black",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "blue",
+            "label": "Blue",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "red",
+            "label": "Red",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "grey",
+            "label": "Grey",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "white",
+            "label": "White",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "when",
+        "field": "time_of_day",
+        "options": [
+          {
+            "value": "afternoon",
+            "label": "Afternoon",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "evening",
+            "label": "Evening",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "morning",
+            "label": "Morning",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "hiking_05",
+        "score": 6.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_13",
+        "score": 6.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_15",
+        "score": 6.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_18",
+        "score": 6.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_01",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_02",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_03",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_09",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_10",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_11",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "hiking"
+      }
+    ]
+  },
+  {
+    "query": "festival",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 20,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "crowd",
+            "label": "Crowd",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "dancing",
+            "label": "Dancing",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "watching a performance",
+            "label": "Watching a performance",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "attending a concert",
+            "label": "Attending a concert",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cheering",
+            "label": "Cheering",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "watching a concert",
+            "label": "Watching a concert",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "festival_06",
+        "score": 8.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_01",
+        "score": 6.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_09",
+        "score": 6.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_16",
+        "score": 6.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_19",
+        "score": 6.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_02",
+        "score": 4.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_03",
+        "score": 4.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_04",
+        "score": 4.6,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_12",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "festival"
+      },
+      {
+        "id": "festival_13",
+        "score": 4.5,
+        "tier": 1,
+        "theme": "festival"
+      }
+    ]
+  },
+  {
+    "query": "kids park",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 24,
+    "rows": [
+      {
+        "cueType": "look",
+        "field": "clothing_color",
+        "options": [
+          {
+            "value": "blue",
+            "label": "Blue",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "red",
+            "label": "Red",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "white",
+            "label": "White",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "black",
+            "label": "Black",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "grey",
+            "label": "Grey",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "playing",
+            "label": "Playing",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "swings",
+            "label": "Swings",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "place_city",
+        "options": [
+          {
+            "value": "chennai",
+            "label": "Chennai",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "bengaluru",
+            "label": "Bengaluru",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "manali",
+            "label": "Manali",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "kids_06",
+        "score": 17.9,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_08",
+        "score": 16.9,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_05",
+        "score": 15.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_09",
+        "score": 15.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_12",
+        "score": 15.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_13",
+        "score": 15.5,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_07",
+        "score": 14.7,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_03",
+        "score": 10.9,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_04",
+        "score": 10.9,
+        "tier": 1,
+        "theme": "kids"
+      },
+      {
+        "id": "kids_02",
+        "score": 10.5,
+        "tier": 1,
+        "theme": "kids"
+      }
+    ]
+  },
+  {
+    "query": "graduation",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 20,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "posing",
+            "label": "Posing",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "graduating",
+            "label": "Graduating",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "crowd",
+            "label": "Crowd",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "graduation_09",
+        "score": 14.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_11",
+        "score": 14.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_03",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_04",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_10",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_12",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_13",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_14",
+        "score": 12.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_05",
+        "score": 10.5,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_07",
+        "score": 10.5,
+        "tier": 1,
+        "theme": "graduation"
+      }
+    ]
+  },
+  {
+    "query": "dog",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 21,
+    "rows": [
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "playing",
+            "label": "Playing",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "running",
+            "label": "Running",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "mood",
+        "field": "mood",
+        "options": [
+          {
+            "value": "cheerful",
+            "label": "Cheerful",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "energetic",
+            "label": "Energetic",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "calm",
+            "label": "Calm",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "when",
+        "field": "time_of_day",
+        "options": [
+          {
+            "value": "afternoon",
+            "label": "Afternoon",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "sunset",
+            "label": "Sunset",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "pets_10",
+        "score": 6,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_14",
+        "score": 6,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "hiking_08",
+        "score": 4,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "pets_01",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_02",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_03",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_06",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_07",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_08",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_11",
+        "score": 4,
+        "tier": 1,
+        "theme": "pets"
+      }
+    ]
+  },
+  {
+    "query": "road trip",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 20,
+    "rows": [
+      {
+        "cueType": "mood",
+        "field": "mood",
+        "options": [
+          {
+            "value": "calm",
+            "label": "Calm",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "cheerful",
+            "label": "Cheerful",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "roadtrip_05",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_10",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_12",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_13",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_14",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_15",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_18",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_19",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_20",
+        "score": 12.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      },
+      {
+        "id": "roadtrip_17",
+        "score": 10.6,
+        "tier": 1,
+        "theme": "roadtrip"
+      }
+    ]
+  },
+  {
+    "query": "cake",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 21,
+    "rows": [
+      {
+        "cueType": "mood",
+        "field": "mood",
+        "options": [
+          {
+            "value": "cheerful",
+            "label": "Cheerful",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "calm",
+            "label": "Calm",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "couple",
+            "label": "Couple",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "where",
+        "field": "indoor_outdoor",
+        "options": [
+          {
+            "value": "indoor",
+            "label": "Indoor",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "outdoor",
+            "label": "Outdoor",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "birthday_03",
+        "score": 8.8,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_15",
+        "score": 7.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_16",
+        "score": 7.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_19",
+        "score": 4.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_02",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_08",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_09",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_10",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_13",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      },
+      {
+        "id": "birthday_18",
+        "score": 3.3,
+        "tier": 1,
+        "theme": "birthday"
+      }
+    ]
+  },
+  {
+    "query": "sunset",
+    "trigger": true,
+    "blockedReason": "",
+    "candidateCount": 22,
+    "rows": [
+      {
+        "cueType": "who",
+        "field": "group_type",
+        "options": [
+          {
+            "value": "friends",
+            "label": "Friends",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "solo",
+            "label": "Solo",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "family",
+            "label": "Family",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "couple",
+            "label": "Couple",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "what",
+        "field": "activity",
+        "options": [
+          {
+            "value": "hiking",
+            "label": "Hiking",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "walking",
+            "label": "Walking",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      },
+      {
+        "cueType": "when",
+        "field": "time_of_day",
+        "options": [
+          {
+            "value": "sunset",
+            "label": "Sunset",
+            "count": 0,
+            "pct": 0
+          },
+          {
+            "value": "evening",
+            "label": "Evening",
+            "count": 0,
+            "pct": 0
+          }
+        ]
+      }
+    ],
+    "top10Results": [
+      {
+        "id": "beach_12",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_16",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "beach"
+      },
+      {
+        "id": "graduation_04",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_18",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "graduation_20",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "graduation"
+      },
+      {
+        "id": "hiking_03",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_05",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "hiking_15",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "hiking"
+      },
+      {
+        "id": "pets_08",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "pets"
+      },
+      {
+        "id": "pets_17",
+        "score": 2.1,
+        "tier": 1,
+        "theme": "pets"
+      }
+    ]
+  },
+  {
+    "query": "elephant",
+    "trigger": false,
+    "blockedReason": "no_matches",
+    "candidateCount": 0,
+    "rows": [],
+    "top10Results": []
+  },
+  {
+    "query": "me",
+    "trigger": false,
+    "blockedReason": "query_too_short",
+    "candidateCount": 0,
+    "rows": [],
+    "top10Results": []
+  },
+  {
+    "query": "12 March 2021 Goa pool",
+    "trigger": false,
+    "blockedReason": "not_vague",
+    "candidateCount": 0,
+    "rows": [],
+    "top10Results": [
+      {
+        "id": "pool_01",
+        "score": 18.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_04",
+        "score": 18.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_06",
+        "score": 17.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_07",
+        "score": 13.9,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_02",
+        "score": 11.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_03",
+        "score": 11.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "pool_05",
+        "score": 11.4,
+        "tier": 2,
+        "theme": "pool"
+      },
+      {
+        "id": "beach_07",
+        "score": 5,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_14",
+        "score": 5,
+        "tier": 2,
+        "theme": "beach"
+      },
+      {
+        "id": "beach_15",
+        "score": 5,
+        "tier": 2,
+        "theme": "beach"
+      }
+    ]
+  }
+]
