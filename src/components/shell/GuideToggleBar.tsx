@@ -10,10 +10,10 @@ export function GuideToggleBar() {
 
   return (
     <>
-      {/* Prominently Visible Side Toggle Widget (Pinned to Top-Right Side) */}
+      {/* Toggle Widget — pinned top-LEFT so right callout column is unobstructed */}
       <aside
         aria-label="Tester Mode Controls"
-        className="fixed top-3 right-3 sm:top-4 sm:right-6 z-50 flex flex-col items-end gap-1 select-none pointer-events-auto transition-all"
+        className="fixed top-3 left-3 sm:top-4 sm:left-6 z-50 flex flex-col items-start gap-1 select-none pointer-events-auto transition-all"
       >
         {/* Main Elevated Toggle Card */}
         <div className="bg-white/95 backdrop-blur-md rounded-2xl p-2 shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-2 border-[#1a73e8]/30 ring-4 ring-[#1a73e8]/10 flex flex-col gap-1.5 transition-all">

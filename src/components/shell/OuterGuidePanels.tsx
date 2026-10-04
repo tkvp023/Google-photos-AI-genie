@@ -10,36 +10,78 @@ interface OuterGuideLayoutProps {
 }
 
 /**
- * Callout box ~90px tall (compact).
- * Phone chassis: 860px total height.
- * Safe last top: 860 - 90 - 8 = 762px.
+ * Layout maths:
+ *   Phone chassis height  = 860px
+ *   Compact callout height ≈ 85px
+ *   Toggle widget (top-left, ~110px tall)
  *
- * Each column is `h-[860px] overflow-hidden relative` so nothing clips outside the chassis boundaries.
+ *   → Left column: first box must be ≥ top-[120] to clear toggle
+ *   → Right column: toggle is on the LEFT so right column is fully free from top-[20]
+ *   → Last safe top for any box: 860 - 85 - 5 = 770  →  use max top-[760]
+ *
+ *   Both columns: w-[210px] xl:w-[240px], h-[860px] overflow-hidden
  */
+
+// ─── Screen anatomy helpers ────────────────────────────────────────────────
+// HOME /
+//   56px  : status bar + top bar (search pill, Google Photos header)
+//   220px : memories carousel strip
+//   260px : date group header + first photo row
+//   560px : second photo row
+//   680px : bottom nav bar starts
+//   830px : gesture pill
+//
+// SEARCH /search  (empty state — no query)
+//   56px  : header bar (back + "Search" label)
+//   120px : people avatar row
+//   180px : divider + "Recent searches" label
+//   180–500: recent search items
+//   700px : bottom search input pill
+//   760px : gesture pill
+//
+// SEARCH /search  (with query / Genie visible)
+//   56px  : header bar
+//   350px : Genie strip header ("Lots of photos match...")
+//   410px : WHAT row chips
+//   480px : LOOK row chips
+//   545px : WHEN row chips
+//   640px : search input pill
+//   720px : keyboard / gesture
+//
+// RESULTS /results
+//   56px  : header + search bar pill
+//   140px : "Ask Genie for ideas" button
+//   200px : photo grid starts
+//   700px : footer + attribution
+
 export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps) {
   const pathname = usePathname();
 
   let leftColumn: React.ReactNode = null;
   let rightColumn: React.ReactNode = null;
 
-  // ──────────────────────────────────────────────────────────────
-  // HOME PAGE  /
-  // Left:  Top Search Bar (~50px), Photo Grid (~430px)
-  // Right: Memories Carousel (~160px), Bottom Nav FAB (~730px)
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
+  // HOME  /
+  // Left:  toggle occupies 0–110 → first box at 125
+  //        second box at 390 (photo grid mid)
+  // Right: free from top → first at 30 (search bar)
+  //        second at 590 (second photo row)
+  // ────────────────────────────────────────────────────────────────
   if (pathname === "/") {
     leftColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
-        <div className="absolute top-[32px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
+        {/* Points → memories strip area ~180px */}
+        <div className="absolute top-[125px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="concept"
             badgeText="Pre-Search Genie"
-            targetLabel="Top Search Bar"
-            title="Inline Cognitive Guidance"
-            description="Users recall vaguely ('pool', 'trip'). Genie narrows intent with memory cues before search."
+            targetLabel="Search Bar"
+            title="Inline Cognitive Guide"
+            description="Users recall vaguely ('pool', 'trip'). Genie narrows intent with memory cues before search fires."
           />
         </div>
+        {/* Points → photo grid ~450px */}
         <div className="absolute top-[390px] left-0 right-0">
           <GuideCallout
             side="left"
@@ -47,226 +89,229 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
             badgeText="Curated Library"
             targetLabel="Photo Timeline"
             title="200 Sample Photos"
-            description="Pixabay photos with synthetic episodic cues: Who, Where, Occasion, and Mood."
+            description="Pixabay CC0 photos enriched with synthetic cues: Who, Where, Occasion, Mood."
           />
         </div>
       </div>
     );
 
     rightColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
-        <div className="absolute top-[130px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
+        {/* Points → memories carousel ~190px */}
+        <div className="absolute top-[150px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="trigger"
             badgeText="How to Trigger"
-            targetLabel="Memories Strip"
+            targetLabel="Memories Carousel"
             title="Try Broad Search Terms"
-            description="Tap search and type 'pool', 'beach', 'hiking' or 'birthday' to see the Genie strip appear."
+            description="Type 'pool', 'beach', 'hiking' or 'birthday' in search to see the Genie strip appear."
           />
         </div>
-        <div className="absolute top-[720px] left-0 right-0">
+        {/* Points → bottom nav FAB ~710px */}
+        <div className="absolute top-[660px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="interaction"
             badgeText="Smart Gating"
             targetLabel="Bottom Nav FAB"
-            title="Specific Queries Bypass"
-            description="Queries with 2+ anchors (e.g. '12 March 2021 Goa pool') bypass Genie straight to results."
+            title="Precise Queries Bypass"
+            description="'12 March 2021 Goa pool' has 2 anchors → Genie skips straight to results."
           />
         </div>
       </div>
     );
   }
 
-  // ──────────────────────────────────────────────────────────────
-  // SEARCH PAGE  /search
-  // Screen anatomy (top→bottom):
-  //   ~0–56px   : top header bar (back arrow + "Search")
-  //   ~56–120px : people avatar row
-  //   ~120–164px: divider + "Recent searches" heading
-  //   ~164–450px: recent search items list
-  //   ~450–700px: when typing — coach strip (Genie rows)
-  //   ~700–760px: search input pill
-  //   ~760–820px: optional keyboard
-  //   ~820–860px: gesture pill
-  //
-  // Left:  People Avatars (~88px), Search Input Pill (~725px)
-  // Right: Genie Strip Header (~480px), Chip Row (~580px)
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
+  // SEARCH  /search  (covers both empty + Genie-active states)
+  // Left:  toggle at top-left → first box at 125
+  //        People row is at ~120px → box at 125 lines up perfectly
+  //        Search input pill ~640–700 → second box at 570
+  // Right: Genie strip header ~350px → box at 295
+  //        Chip rows ~410–545 → second box at 480
+  //        Both boxes: 295+85=380 ✓, 480+85=565 ✓ — well within 860
+  // ────────────────────────────────────────────────────────────────
   else if (pathname === "/search") {
     leftColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
-        <div className="absolute top-[50px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
+        {/* Points → people avatar row ~120px */}
+        <div className="absolute top-[80px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="privacy"
             badgeText="Synthetic Cast"
             targetLabel="People Avatar Row"
             title="Illustrative Circles"
-            description="Face circles simulate person-browsing without real biometric recognition. All labels are synthetic."
+            description="Face circles simulate person-based browsing without real biometric recognition."
           />
         </div>
-        <div className="absolute top-[640px] left-0 right-0">
+        {/* Points → search input pill ~670px */}
+        <div className="absolute top-[590px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="concept"
             badgeText="Master State"
             targetLabel="Search Input Pill"
             title="Bar = Single Source of Truth"
-            description="Chips at the top append phrases directly here. Edit, delete or retype freely at any time."
+            description="Chips append phrases directly here. Edit, delete or retype freely."
           />
         </div>
       </div>
     );
 
     rightColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
-        <div className="absolute top-[420px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
+        {/* Points → Genie strip header ~350px */}
+        <div className="absolute top-[295px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="interaction"
             badgeText="Inline Genie"
             targetLabel="Genie Strip Header"
             title="2–3 Memory Cue Rows"
-            description="When broad queries return ≥6 candidates, Genie shows Who, Where and Vibe rows above the keyboard."
+            description="Genie shows Who, Where and Vibe rows when ≥6 candidates match — no keyboard coverage."
           />
         </div>
-        <div className="absolute top-[535px] left-0 right-0">
+        {/* Points → chip rows ~480px */}
+        <div className="absolute top-[460px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="dataset"
             badgeText="Dynamic Pruning"
             targetLabel="Tappable Chips"
             title="Chips Shrink Candidates"
-            description="Tapping 'Friends' or 'Afternoon' refines the photo set live. Tap again to deselect; another in row replaces."
+            description="Tapping 'Friends' or 'Afternoon' refines photo set live. Tap again to deselect."
           />
         </div>
       </div>
     );
   }
 
-  // ──────────────────────────────────────────────────────────────
-  // RESULTS PAGE  /results
-  // Left:  Search bar top (~50px), Photo grid (~380px)
-  // Right: Ask Genie button (~130px), Footer credits (~720px)
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
+  // RESULTS  /results
+  // Left:  top-left toggle → first box at 125 (points to search bar ~60px)
+  //        second box at 350 (photo grid mid)
+  // Right: first at 100 (Ask Genie button ~140px)
+  //        second at 650 (footer ~720px)   650+85=735 ✓
+  // ────────────────────────────────────────────────────────────────
   else if (pathname === "/results") {
     leftColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
-        <div className="absolute top-[32px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
+        <div className="absolute top-[125px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="concept"
             badgeText="Query Composition"
             targetLabel="Search Bar (Top)"
             title="Natural Language Query"
-            description="Results are searched using the original query plus all selected chip phrases composed together."
+            description="Original query + chip phrases are composed into a natural language search prompt."
           />
         </div>
-        <div className="absolute top-[340px] left-0 right-0">
+        <div className="absolute top-[360px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="ranking"
             badgeText="Relevance Ranking"
             targetLabel="Photo Results Grid"
-            title="Multi-Cue Scoring Tiers"
-            description="Tier 1: exact multi-cue matches. Tier 2: partial or related cue overlaps. No AI hallucination."
+            title="Tier 1 & Tier 2 Scoring"
+            description="Tier 1: exact multi-cue match. Tier 2: partial overlap. Deterministic, no hallucination."
           />
         </div>
       </div>
     );
 
     rightColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
-        <div className="absolute top-[105px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
+        <div className="absolute top-[100px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="trigger"
             badgeText="Further Refinement"
             targetLabel="Ask Genie Button"
             title="Reopen Genie Anytime"
-            description="Too many or too few results? Tap Ask Genie to drill down with fresh memory cue chips."
+            description="Too many or too few results? Tap Ask Genie for fresh cue chips to drill down."
           />
         </div>
-        <div className="absolute top-[720px] left-0 right-0">
+        <div className="absolute top-[650px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="dataset"
             badgeText="Attribution"
             targetLabel="Footer Credits"
-            title="CC0 Pixabay + Synthetic"
-            description="Full photographer credits and synthetic-data disclosure at the bottom of every results page."
+            title="CC0 + Synthetic Disclosure"
+            description="Full Pixabay photographer credits and synthetic-data notice at bottom of results."
           />
         </div>
       </div>
     );
   }
 
-  // ──────────────────────────────────────────────────────────────
-  // PHOTO DETAIL PAGE  /photo/[id]
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
+  // PHOTO DETAIL  /photo/[id]
+  // Both single boxes centred vertically in safe zone
+  // ────────────────────────────────────────────────────────────────
   else if (pathname.startsWith("/photo/")) {
     leftColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
-        <div className="absolute top-[300px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
+        <div className="absolute top-[320px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="dataset"
             badgeText="Photo Metadata"
             targetLabel="Detail Inspector"
             title="Multi-Cue Tag View"
-            description="Each photo carries People, Setting, Activity, Clothing and Occasion tags that powered the search."
+            description="People, Setting, Activity, Clothing and Occasion tags that powered the match."
           />
         </div>
       </div>
     );
 
     rightColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
-        <div className="absolute top-[450px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
+        <div className="absolute top-[440px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="concept"
             badgeText="Explanation Engine"
-            targetLabel="AI Why Explanation"
+            targetLabel="AI Why Card"
             title="100% Data-Driven"
-            description="Explanations are built from tag data — never hardcoded or hallucinated canned strings."
+            description="Explanations built from tag data — never hardcoded or hallucinated canned strings."
           />
         </div>
       </div>
     );
   }
 
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
   // ABOUT / DEFAULT
-  // ──────────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────────
   else {
     leftColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
-        <div className="absolute top-[300px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pr-3">
+        <div className="absolute top-[320px] left-0 right-0">
           <GuideCallout
             side="left"
             badgeType="concept"
             badgeText="Architecture"
             targetLabel="MVP Overview"
             title="Stateless Client Engine"
-            description="Runs entirely in-browser. Zero database, zero telemetry, zero backend tracking."
+            description="Runs entirely in-browser: zero database, zero telemetry, zero backend tracking."
           />
         </div>
       </div>
     );
 
     rightColumn = (
-      <div className="hidden lg:block relative flex-shrink-0 w-[230px] xl:w-[260px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
-        <div className="absolute top-[450px] left-0 right-0">
+      <div className="hidden lg:block relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
+        <div className="absolute top-[440px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="dataset"
             badgeText="CC0 License"
             targetLabel="Photographer Credits"
             title="Public Domain Media"
-            description="Every sample photo is CC0 from Pixabay with full photographer credits preserved."
+            description="Every photo is CC0 from Pixabay with full photographer credits preserved."
           />
         </div>
       </div>
