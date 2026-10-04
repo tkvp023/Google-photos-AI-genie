@@ -1,7 +1,8 @@
 # Deployment Guide — Google Photos AI Genie MVP
 
-> **Architecture:** Single stateless Next.js service. No database, no persistent volume, no CORS proxy.
-> All data is read-only at startup from `data/` and `public/library/`.
+> **Architecture:** Single stateless Next.js service with flexible deployment:
+> - **Dual-Deploy (Recommended):** Frontend on **Vercel** + Backend on **Railway**
+> - **All-in-One:** Entire app deployed on either Vercel or Railway alone.
 
 ---
 
@@ -11,147 +12,103 @@
 |------|---------|
 | Node.js | >= 18 |
 | npm | >= 9 |
+| Git | Latest |
 
 ---
 
-## Local Development
+## 1. Deploy Backend to Railway
 
+Railway acts as the state-machine/API server for search, coach/Genie analysis, and photo metadata.
+
+### Step 1: Push / Link Git Repository
+1. Go to [railway.app](https://railway.app) and sign in.
+2. Click **New Project** → **Deploy from GitHub repo**.
+3. Select your repository: `Google-photos-AI-genie` (branch: `main` or `tester-experience`).
+
+### Step 2: Service Configuration
+Railway automatically detects `railway.json` and Nixpacks:
+- **Build Command:** `npm run build`
+- **Start Command:** `npm run start` (binds to `0.0.0.0` and uses `$PORT`)
+- **Healthcheck Path:** `/api/health`
+
+### Step 3: Set Environment Variables on Railway
+In Railway Dashboard → **Variables**:
+
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `GENIE_ENABLED` | `true` | Enables Genie strip & suggestions |
+| `GROQ_API_KEY` | *(optional)* | For LLM planner assistance |
+| `GROQ_MODEL` | `openai/gpt-oss-120b` | LLM model name |
+
+### Step 4: Generate Domain
+In Railway Dashboard → Service → **Settings** → **Networking** → Click **Generate Domain**.
+Copy your public domain (e.g. `https://google-photos-backend.up.railway.app`).
+
+### Verify Backend
 ```bash
-# 1. Install dependencies
-npm install
-
-# 2. Copy example env and fill in values
-cp .env.example .env.local
-# Edit .env.local — only GEMINI_API_KEY / GROQ_API_KEY are needed for LLM features.
-# Genie works fully deterministically even without them.
-
-# 3. Start dev server
-npm run dev
-# Open http://localhost:3000
+curl https://your-app.up.railway.app/api/health
 ```
-
----
-
-## Environment Variables
-
-The app requires **zero** required env vars to run. All variables are optional:
-
-| Variable | Where to Set | Purpose | Default |
-|----------|-------------|---------|---------|
-| `GENIE_ENABLED` | Server | Master on/off for Genie strip | `true` |
-| `GEMINI_API_KEY` | Server | Offline tag generation (scripts only) | (none) |
-| `GROQ_API_KEY` | Server | Optional LLM question planner | (none) |
-| `GROQ_MODEL` | Server | LLM model name | `openai/gpt-oss-120b` |
-| `PLANNER_ENABLED` | Server | Enable LLM question planner | `false` |
-
-> **Never** set `NEXT_PUBLIC_*` prefixes on secrets — they leak to the browser bundle.
-
----
-
-## Deploy to Vercel (Recommended)
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# One-command deploy
-vercel --prod
-```
-
-**Vercel Project Settings → Environment Variables:**
-
-| Key | Value |
-|-----|-------|
-| `GENIE_ENABLED` | `true` |
-| `GROQ_API_KEY` | *(your key, marked secret)* |
-| `GROQ_MODEL` | `openai/gpt-oss-120b` |
-
-**Vercel automatically:**
-- Bundles `data/` and `public/library/` at build time (read-only)
-- Serves all routes as Serverless Functions
-- Handles HTTPS and CDN
-
----
-
-## Deploy to Railway
-
-```bash
-# Install Railway CLI
-npm i -g @railway/cli
-
-railway login
-railway init
-railway up
-```
-
-**Railway Service → Variables:**
-
-| Key | Value |
-|-----|-------|
-| `GENIE_ENABLED` | `true` |
-| `GROQ_API_KEY` | *(your key)* |
-
-**Start command:** `npm run start` (already in `package.json`)
-
-> No volume needed — data is bundled with the image.
-
----
-
-## Health Check
-
-```
-GET /api/health
-```
-
-Response (200 OK):
+Response:
 ```json
 {
   "ok": true,
-  "version": "0.1.0",
-  "photoCount": 200,
-  "tagCoverage": 1.0
+  "version": "0.2.0",
+  "tagCoverage": 1,
+  "photoCount": 200
 }
 ```
 
 ---
 
-## Hidden Switches (No UI)
+## 2. Deploy Frontend to Vercel
 
-| Switch | Effect |
-|--------|--------|
-| `?genie=off` appended to any search URL | Disables Genie strip for that session |
-| `GENIE_ENABLED=false` in env | Disables Genie globally for all users |
-| `?debug=1` appended to `/search` or `/results` | Shows trigger diagnostics panel |
+Vercel hosts the responsive phone chassis interface, tester callouts, and pages.
 
----
+### Step 1: Import Project into Vercel
+1. Go to [vercel.com](https://vercel.com) and sign in.
+2. Click **Add New...** → **Project**.
+3. Select your repository: `Google-photos-AI-genie` (branch: `main` or `tester-experience`).
+4. **Framework Preset:** Next.js (detected automatically).
+5. **Root Directory:** `./`
 
-## Post-Deploy Smoke Test
+### Step 2: Connect Frontend to Railway Backend
+In Vercel → **Environment Variables**, add:
 
-```bash
-# Replace with your deployed URL
-BASE_URL=https://your-app.vercel.app
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `BACKEND_URL` | `https://your-app.up.railway.app` | Tells Vercel to route all `/api/*` requests to Railway |
+| `GENIE_ENABLED` | `true` | Master Genie toggle |
 
-# Health check
-curl $BASE_URL/api/health
+> **How it works:** When `BACKEND_URL` is set, `next.config.ts` automatically proxies all `/api/*` traffic from Vercel to your Railway backend. There are **zero CORS issues** and no client bundle modifications needed!
+> If `BACKEND_URL` is omitted, Vercel will run the API routes serverlessly on its own.
 
-# Search
-curl "$BASE_URL/api/search?q=pool"
-
-# Genie coach (should trigger for "pool")
-curl -s -X POST "$BASE_URL/api/coach/analyze" \
-  -H "Content-Type: application/json" \
-  -d '{"query":"pool","genieOff":false}' | node -e "const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); console.log('triggered:', d.triggered, 'questions:', d.questions?.length)"
-```
-
-Expected:
-- `/api/health` → `{ "ok": true }`
-- `/api/search?q=pool` → 20+ results
-- `/api/coach/analyze` for `"pool"` → `triggered: true, questions: 3`
+### Step 3: Deploy
+Click **Deploy**. Within ~1 minute, your Vercel deployment will be live!
 
 ---
 
-## Attribution (Legal)
+## 3. Architecture & Security Highlights
 
-All photos are from **Pixabay** (free for commercial use under Pixabay License).
-A "Photos from Pixabay" credit is shown on all photo-bearing screens.
-Dates, places and cast names shown are **synthetic** (AI-generated for demo purposes).
+1. **CORS Preflight & Headers:**
+   `src/proxy.ts` handles all CORS headers and `OPTIONS` preflight requests on Railway with `204 No Content` and standard headers (`Access-Control-Allow-Origin: *`, `GET, POST, OPTIONS`).
+
+2. **Serverless Asset Bundling:**
+   `next.config.ts` includes `outputFileTracingIncludes` so that `data/` and `public/library/` are automatically packaged into serverless functions on Vercel.
+
+3. **Fallback Data Loading:**
+   `src/lib/dataLoader.ts` contains a fallback mechanism: even if a serverless environment separates CDN assets from the function disk, all 200 photo records, metadata, and tags are loaded deterministically from memory/JSON.
+
+---
+
+## 4. Smoke Test Checklist
+
+Once both are deployed, run these checks:
+
+| Check | URL / Action | Expected Result |
+|-------|--------------|-----------------|
+| Railway Health | `https://your-railway.up.railway.app/api/health` | `{"ok":true,"photoCount":200}` |
+| Vercel Health | `https://your-vercel.vercel.app/api/health` | `{"ok":true,"photoCount":200}` |
+| Search API | `https://your-vercel.vercel.app/api/search?q=pool` | Returns 20+ photos |
+| Coach API | POST `.../api/coach/analyze` with `{"query":"pool"}` | `{"triggered":true,...}` |
+| Frontend UI | Open `https://your-vercel.vercel.app/` | Phone frame renders with 200-photo timeline |
+| Guide Mode | Toggle Guide switch (top-left) | Callout boxes appear cleanly outside chassis |

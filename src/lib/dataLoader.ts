@@ -138,6 +138,33 @@ class DataStore {
       }
     }
 
+    // Fallback for serverless runtimes (e.g., Vercel Lambda) where public/library
+    // assets are hosted on CDN and not present in the function filesystem.
+    if (this.photos.length === 0 && Object.keys(this.tags).length > 0) {
+      const tagFiles = Object.keys(this.tags).sort((a, b) => {
+        const themeA = a.split("_")[0];
+        const themeB = b.split("_")[0];
+        if (themeA !== themeB) return themeA.localeCompare(themeB);
+        return a.localeCompare(b);
+      });
+
+      for (const file of tagFiles) {
+        const id = file.replace(/\.[^.]+$/, "");
+        const theme = file.split("_")[0] || "general";
+        const tag = this.tags[file] || this.createDefaultTag(theme, file);
+        const metadata = this.photoMeta[file];
+
+        this.photos.push({
+          id,
+          file,
+          theme,
+          src: `/library/${file}`,
+          tag,
+          metadata,
+        });
+      }
+    }
+
     this.initialized = true;
   }
 
