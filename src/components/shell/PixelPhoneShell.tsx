@@ -38,7 +38,7 @@ export function PixelPhoneShell({ children }: PixelPhoneShellProps) {
 
   return (
     <div
-      className="relative w-full h-screen max-h-screen bg-[#eaedf1] flex flex-col items-center justify-center p-2 sm:p-4 select-none overflow-hidden font-sans"
+      className="relative w-full h-screen max-h-screen bg-[#eaedf1] flex items-center justify-center p-1 sm:p-2 select-none overflow-hidden font-sans"
       suppressHydrationWarning
     >
       {/* Top Floating Toggle Bar with Normal Mode / Guide Mode Switch */}

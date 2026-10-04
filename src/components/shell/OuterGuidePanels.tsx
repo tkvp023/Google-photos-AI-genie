@@ -39,7 +39,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     );
 
     rightColumn = (
-      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 z-20 animate-fade-in pointer-events-auto">
+      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 pt-10 z-20 animate-fade-in pointer-events-auto">
         <GuideCallout
           side="right"
           badgeType="trigger"
@@ -83,7 +83,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     );
 
     rightColumn = (
-      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 z-20 animate-fade-in pointer-events-auto">
+      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 pt-10 z-20 animate-fade-in pointer-events-auto">
         <GuideCallout
           side="right"
           badgeType="interaction"
@@ -127,7 +127,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     );
 
     rightColumn = (
-      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 z-20 animate-fade-in pointer-events-auto">
+      <div className="hidden lg:flex flex-col justify-between w-[280px] xl:w-[320px] h-[640px] pl-4 pt-10 z-20 animate-fade-in pointer-events-auto">
         <GuideCallout
           side="right"
           badgeType="trigger"
@@ -163,7 +163,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     );
 
     rightColumn = (
-      <div className="hidden lg:flex flex-col justify-center w-[280px] xl:w-[320px] h-[640px] pl-4 z-20 animate-fade-in pointer-events-auto">
+      <div className="hidden lg:flex flex-col justify-center w-[280px] xl:w-[320px] h-[640px] pl-4 pt-10 z-20 animate-fade-in pointer-events-auto">
         <GuideCallout
           side="right"
           badgeType="concept"
@@ -191,7 +191,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     );
 
     rightColumn = (
-      <div className="hidden lg:flex flex-col justify-center w-[280px] xl:w-[320px] h-[640px] pl-4 z-20 animate-fade-in pointer-events-auto">
+      <div className="hidden lg:flex flex-col justify-center w-[280px] xl:w-[320px] h-[640px] pl-4 pt-10 z-20 animate-fade-in pointer-events-auto">
         <GuideCallout
           side="right"
           badgeType="dataset"
@@ -205,7 +205,7 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
   }
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[1400px] h-full max-h-[880px] px-2 sm:px-4 pt-12 sm:pt-14">
+    <div className="relative flex items-center justify-center w-full max-w-[1400px] h-full max-h-[860px] px-2 sm:px-4">
       {isGuideOn && leftColumn}
       {children}
       {isGuideOn && rightColumn}
