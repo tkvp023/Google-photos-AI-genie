@@ -37,8 +37,10 @@ In Railway Dashboard → **Variables**:
 | Variable | Value | Purpose |
 |----------|-------|---------|
 | `GENIE_ENABLED` | `true` | Enables Genie strip & suggestions |
-| `GROQ_API_KEY` | *(optional)* | For LLM planner assistance |
-| `GROQ_MODEL` | `openai/gpt-oss-120b` | LLM model name |
+| `GEMINI_API_KEY` | *(your key from Google AI Studio)* | Powers Gemini Question Planner & Query Analyzer |
+| `GEMINI_MODEL` | `gemini-2.5-flash` | Gemini model name (default: `gemini-2.5-flash`) |
+| `PLANNER_ENABLED` | `true` | Activates Gemini LLM Question Planner (auto-enabled if key provided) |
+| `GROQ_API_KEY` | *(optional)* | Fallback LLM provider if used |
 
 ### Step 4: Generate Domain
 In Railway Dashboard → Service → **Settings** → **Networking** → Click **Generate Domain**.

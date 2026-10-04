@@ -27,7 +27,7 @@ export const config = {
   },
   SYNONYM_MAX_EXPANSION: 2,
   SYNONYM_WEIGHT: 0.5,
-  PLANNER_ENABLED: false,
+  PLANNER_ENABLED: process.env.PLANNER_ENABLED === "true" || (Boolean(process.env.GEMINI_API_KEY) && process.env.PLANNER_ENABLED !== "false"),
   PLANNER_MAX_CALLS_PER_SESSION: 10,
   PLANNER_TIMEOUT_MS: 1500,
   GROQ_TIMEOUT_MS: 2000,
