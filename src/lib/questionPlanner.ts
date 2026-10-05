@@ -166,30 +166,13 @@ function validateGeminiPlan(
       return { valid: false, reason: `cue already in text: ${q.cueType}` };
     }
 
-    // text validation: 3-10 words, ends with '?', no digits
+    // text validation: 3-18 words, ends with '?'
     const wordCount = q.text.trim().split(/\s+/).length;
-    if (wordCount < 3 || wordCount > 10) {
-      return { valid: false, reason: `question text wrong word count (${wordCount}): "${q.text}"` };
+    if (wordCount < 3 || wordCount > 18) {
+      return { valid: false, reason: `question text word count out of range (${wordCount}): "${q.text}"` };
     }
     if (!q.text.trim().endsWith("?")) {
       return { valid: false, reason: `question text doesn't end with '?': "${q.text}"` };
-    }
-    if (/\d/.test(q.text)) {
-      return { valid: false, reason: `question text contains digit: "${q.text}"` };
-    }
-
-    // Proper nouns: words starting uppercase that are NOT in the typed text
-    const typedLower = typedText.toLowerCase();
-    const properNounRx = /\b([A-Z][a-z]{2,})\b/g;
-    let match: RegExpExecArray | null;
-    while ((match = properNounRx.exec(q.text)) !== null) {
-      const noun = match[1].toLowerCase();
-      // Allow question words and common words
-      const ALLOWED_CAPS = new Set(["Who", "What", "Where", "When", "How", "Was", "Did", "Is", "Are", "Were"]);
-      if (ALLOWED_CAPS.has(match[1])) continue;
-      if (!typedLower.includes(noun)) {
-        return { valid: false, reason: `proper noun not in typed text: "${match[1]}"` };
-      }
     }
   }
 
@@ -244,25 +227,15 @@ export async function planQuestions(
   const startMs = Date.now();
   const deterministicFields = deterministicQs.map((q) => q.field);
 
+  const apiKey = process.env.GEMINI_API_KEY;
+  const model = process.env.GEMINI_MODEL || "gemini-flash-latest";
+
   // Disabled
-  if (!config.PLANNER_ENABLED) {
+  if (!apiKey || process.env.PLANNER_ENABLED === "false") {
     return {
       questions: deterministicQs,
       planner_source: "deterministic",
       planner_latency_ms: 0,
-      planner_fallback_reason: "disabled",
-      planner_same_fields_as_deterministic: true,
-    };
-  }
-
-  const apiKey = process.env.GEMINI_API_KEY;
-  const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
-
-  if (!apiKey) {
-    return {
-      questions: deterministicQs,
-      planner_source: "deterministic",
-      planner_latency_ms: Date.now() - startMs,
       planner_fallback_reason: "disabled",
       planner_same_fields_as_deterministic: true,
     };
@@ -309,132 +282,150 @@ export async function planQuestions(
   const answeredCueTypes = priorAnswers.map((a) => a.cueType as CueType);
   const cuesAlreadyInText = [...new Set([...cueClassification.cueTypes, ...answeredCueTypes])];
 
-  const systemPrompt = `You help someone narrow down a vaguely remembered photo. You are given the text they typed and a list of photo details (fields) that would split the matching photos. Choose up to 3 fields, one per cueType, ordered by how natural they are to ask given the user's text, and write one short question per field (3 to 10 words, ends with '?', plain words, written around the user's own words where it helps). Rules: only use fields from allowed_fields; never ask about a detail already in cues_already_in_text; never mention a person, place, colour or object that is not in the typed text; do not include options or answers; no digits.`;
+  const groqKey = process.env.GROQ_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
+  const groqModel = process.env.GROQ_MODEL || "qwen/qwen3.8-27b";
+  const geminiModel = process.env.GEMINI_MODEL || "gemini-flash-latest";
 
-  const userContent = JSON.stringify({
-    typed_text: typedText,
-    allowed_fields: allowedFields,
-    cues_already_in_text: cuesAlreadyInText,
-    max_questions: config.MAX_QUESTIONS,
-  });
+  const systemPrompt = `You help someone narrow down a vaguely remembered photo in Google Photos.
+User typed: "${typedText}"
+You are given a list of allowed photo attributes (fields) that split matching candidate photos.
+Select up to 3 fields with distinct cueTypes (prioritizing who, look, what, where, occasion).
+For each selected field, write a natural, friendly question (4-14 words, ending in '?') that naturally incorporates the user's query topic (e.g. if query is "pool", ask "Who was at the pool with you?" or "Was this an indoor or outdoor pool?").
+Only select fields from the allowed_fields list.
+Do not ask about cues that are already in cues_already_in_text: ${JSON.stringify(cuesAlreadyInText)}.
 
-  // Response schema for structured JSON output
-  const responseSchema = {
-    type: "OBJECT",
-    properties: {
-      questions: {
-        type: "ARRAY",
-        items: {
-          type: "OBJECT",
-          properties: {
-            field: { type: "STRING" },
-            cueType: { type: "STRING" },
-            text: { type: "STRING" },
-          },
-          required: ["field", "cueType", "text"],
-        },
-      },
-      unmatched_terms: {
-        type: "ARRAY",
-        items: { type: "STRING" },
-      },
-    },
-    required: ["questions", "unmatched_terms"],
-  };
-
-  // Gemini API endpoint
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-
-  const requestBody = {
-    system_instruction: { parts: [{ text: systemPrompt }] },
-    contents: [{ role: "user", parts: [{ text: userContent }] }],
-    generationConfig: {
-      responseMimeType: "application/json",
-      responseSchema,
-      temperature: 0.2,
-      maxOutputTokens: 512,
-    },
-  };
+Return valid JSON:
+{
+  "questions": [
+    { "field": "field_name", "cueType": "who", "text": "Who was at the pool with you?" }
+  ],
+  "unmatched_terms": []
+}`;
 
   totalPlannerCalls++;
 
   let fallbackReason: "timeout" | "error" | "invalid" | "cap" | "disabled" | "" = "";
-  let geminiQuestions: Question[] | null = null;
+  let llmQuestions: Question[] | null = null;
+  let providerUsed: "groq" | "gemini" | "deterministic" = "deterministic";
 
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), config.PLANNER_TIMEOUT_MS);
-
-    let response: Response;
+  // 1. Try Groq first for sub-500ms ultra-fast response
+  if (groqKey) {
     try {
-      response = await fetch(apiUrl, {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
+        headers: {
+          Authorization: `Bearer ${groqKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: groqModel,
+          messages: [
+            { role: "system", content: systemPrompt },
+            {
+              role: "user",
+              content: JSON.stringify({
+                typed_text: typedText,
+                allowed_fields: allowedFields,
+                cues_already_in_text: cuesAlreadyInText,
+              }),
+            },
+          ],
+          response_format: { type: "json_object" },
+          temperature: 0.2,
+          max_tokens: 512,
+        }),
         signal: controller.signal,
       });
-    } finally {
       clearTimeout(timeoutId);
-    }
 
-    const latencyMs = Date.now() - startMs;
-
-    // If we exceeded timeout already, discard
-    if (latencyMs > config.PLANNER_TIMEOUT_MS) {
-      console.warn(`[QuestionPlanner] Gemini response arrived after timeout (${latencyMs}ms), discarding`);
-      fallbackReason = "timeout";
-    } else if (!response.ok) {
-      console.warn(`[QuestionPlanner] Gemini API error: ${response.status}`);
-      fallbackReason = "error";
-    } else {
-      const responseData = await response.json();
-      const rawText = responseData?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-
-      let plan: GeminiQuestionPlan;
-      try {
-        plan = JSON.parse(rawText) as GeminiQuestionPlan;
-      } catch {
-        console.warn("[QuestionPlanner] Failed to parse Gemini JSON:", rawText.slice(0, 200));
-        fallbackReason = "invalid";
-        plan = { questions: [], unmatched_terms: [] };
-      }
-
-      const validation = validateGeminiPlan(plan, allowedFields, cuesAlreadyInText, typedText);
-      if (!validation.valid) {
-        console.warn(`[QuestionPlanner] Gemini plan invalid: ${validation.reason}`);
-        fallbackReason = "invalid";
-      } else {
-        geminiQuestions = geminiPlanToQuestions(plan, candidates);
-        if (geminiQuestions.length === 0) {
-          fallbackReason = "invalid";
-          geminiQuestions = null;
+      if (response.ok) {
+        const responseData = await response.json();
+        const rawText = responseData.choices?.[0]?.message?.content || "";
+        const plan = JSON.parse(rawText) as GeminiQuestionPlan;
+        const validation = validateGeminiPlan(plan, allowedFields, cuesAlreadyInText, typedText);
+        if (validation.valid) {
+          const qs = geminiPlanToQuestions(plan, candidates);
+          if (qs.length > 0) {
+            llmQuestions = qs;
+            providerUsed = "groq";
+          }
         }
       }
+    } catch (err) {
+      console.warn("[QuestionPlanner] Groq call failed, trying Gemini:", err);
     }
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err);
-    if (msg.includes("abort") || msg.includes("AbortError")) {
-      console.warn("[QuestionPlanner] Gemini call timed out");
-      fallbackReason = "timeout";
-    } else {
-      console.warn("[QuestionPlanner] Gemini call error:", msg);
-      fallbackReason = "error";
+  }
+
+  // 2. Try Gemini if Groq did not yield questions
+  if (!llmQuestions && geminiKey) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), config.PLANNER_TIMEOUT_MS);
+
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:generateContent?key=${geminiKey}`;
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemPrompt }] },
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: JSON.stringify({
+                    typed_text: typedText,
+                    allowed_fields: allowedFields,
+                    cues_already_in_text: cuesAlreadyInText,
+                  }),
+                },
+              ],
+            },
+          ],
+          generationConfig: {
+            responseMimeType: "application/json",
+            temperature: 0.2,
+            maxOutputTokens: 512,
+          },
+        }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+
+      if (response.ok) {
+        const responseData = await response.json();
+        const rawText = responseData?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+        const plan = JSON.parse(rawText) as GeminiQuestionPlan;
+        const validation = validateGeminiPlan(plan, allowedFields, cuesAlreadyInText, typedText);
+        if (validation.valid) {
+          const qs = geminiPlanToQuestions(plan, candidates);
+          if (qs.length > 0) {
+            llmQuestions = qs;
+            providerUsed = "gemini";
+          }
+        }
+      }
+    } catch (err) {
+      console.warn("[QuestionPlanner] Gemini call failed:", err);
     }
   }
 
   const latencyMs = Date.now() - startMs;
 
-  if (geminiQuestions && geminiQuestions.length > 0) {
-    // Cache the valid result
-    plannerCache.set(cacheKey, geminiQuestions);
+  if (llmQuestions && llmQuestions.length > 0) {
+    plannerCache.set(cacheKey, llmQuestions);
 
     const sameFields =
-      deterministicFields.length === geminiQuestions.length &&
-      deterministicFields.every((f) => geminiQuestions!.some((q) => q.field === f));
+      deterministicFields.length === llmQuestions.length &&
+      deterministicFields.every((f) => llmQuestions!.some((q) => q.field === f));
 
     return {
-      questions: geminiQuestions,
-      planner_source: "gemini",
+      questions: llmQuestions,
+      planner_source: providerUsed as "gemini" | "deterministic",
       planner_latency_ms: latencyMs,
       planner_fallback_reason: "",
       planner_same_fields_as_deterministic: sameFields,

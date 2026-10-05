@@ -53,6 +53,8 @@ function ResultsContent() {
   const [countTotal, setCountTotal] = useState<number>(0);
   const [ambiguousCount, setAmbiguousCount] = useState<number>(0);
   const [topScore, setTopScore] = useState<number>(0);
+  const [unmatchedTerms, setUnmatchedTerms] = useState<string[]>([]);
+  const [showRelated, setShowRelated] = useState<boolean>(false);
   const [coachTriggerStatus, setCoachTriggerStatus] = useState<{ triggered: boolean; reason: string } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [feedbackRating, setFeedbackRating] = useState<"up" | "down" | null>(null);
@@ -68,6 +70,7 @@ function ResultsContent() {
     if (!q) {
       setResults([]);
       setCount(0);
+      setUnmatchedTerms([]);
       setLoading(false);
       return;
     }
@@ -83,15 +86,18 @@ function ResultsContent() {
           setCountTotal(data.count_total ?? data.count ?? data.results.length);
           setAmbiguousCount(data.ambiguous_count ?? 0);
           setTopScore(data.top_score ?? 0);
+          setUnmatchedTerms(data.unmatched_terms || []);
         } else {
           setResults([]);
           setCount(0);
+          setUnmatchedTerms([]);
         }
       })
       .catch((err) => {
         console.error("Search fetch error:", err);
         setResults([]);
         setCount(0);
+        setUnmatchedTerms([]);
       })
       .finally(() => setLoading(false));
 
@@ -358,69 +364,161 @@ function ResultsContent() {
           </section>
         )}
 
+        {/* Unmatched location or terms notice */}
+        {unmatchedTerms.length > 0 && (
+          <div className="mx-3 my-2 p-3 bg-[#241c18] border border-[#f59e6c]/40 rounded-xl text-[13px] text-[#e8d5cb] flex items-start gap-2.5 animate-fade-in">
+            <span className="material-symbols-outlined text-[#f59e6c] text-[20px] flex-shrink-0 mt-0.5">location_on</span>
+            <div>
+              <p className="font-semibold text-white">No exact matches for &ldquo;{unmatchedTerms.join(", ")}&rdquo;</p>
+              <p className="text-[12px] text-[#a89b92] mt-0.5 leading-relaxed">
+                This demo library contains photos from <strong>Goa, Bengaluru, Chennai, Coorg, Hyderabad, Manali, Munnar, Ooty, and Pondicherry</strong>.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* AI Highlight Banner if top photo has AI explanation */}
+        {!isGenieOff && results[0]?.explanation?.startsWith("AI Match:") && (
+          <div className="mx-3 my-2 p-2.5 bg-[#251d18] border border-[#f59e6c]/30 rounded-xl flex items-center gap-2 text-[13px] text-[#f2e2d8] animate-fade-in">
+            <span className="material-symbols-outlined text-[#f59e6c] text-[18px]">auto_awesome</span>
+            <span>{results[0].explanation}</span>
+          </div>
+        )}
+
         {loading ? (
           <div className="flex-1 flex flex-col items-center justify-center py-20 text-[#a89b92]">
             <div className="w-8 h-8 border-2 border-[#f59e6c] border-t-transparent rounded-full animate-spin mb-3" />
-            <p className="text-[14px]">Searching photos...</p>
+            <p className="text-[14px]">Searching photos with AI...</p>
           </div>
         ) : count > 0 ? (
           /* Results Grid */
-          <div className="flex-1 flex flex-col">
-            {/* Top Highlights */}
-            {results.length >= 2 && (
-              <div className="grid grid-cols-2 gap-1 px-1 pb-1">
-                {results.slice(0, 2).map((photo) => (
-                  <Link
-                    key={`highlight-${photo.id}`}
-                    href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
-                    className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
-                  >
-                    <Image
-                      src={photo.src}
-                      alt={photo.file}
-                      fill
-                      sizes="(max-width: 400px) 50vw, 200px"
-                      className="object-cover group-hover:scale-102 transition-transform duration-200"
-                      unoptimized
-                    />
-                  </Link>
-                ))}
-              </div>
-            )}
+          (() => {
+            const strongMatches = results.filter((r) => (r.tier || 3) === 1 || r.score >= 50);
+            const relatedMatches = results.filter((r) => !strongMatches.includes(r));
+            const primaryList = strongMatches.length > 0 ? strongMatches : results;
 
-            {/* Section Header: "Most recent" */}
-            <div className="px-3 pt-4 pb-2 flex items-center justify-between text-[#f0e6e0]">
-              <h2 className="text-[15px] font-semibold tracking-tight">Most recent</h2>
-              <span className="text-[13px] text-[#a89b92]">{count} photos</span>
-            </div>
+            return (
+              <div className="flex-1 flex flex-col">
+                {/* Top Highlights */}
+                {primaryList.length >= 2 && (
+                  <div className="grid grid-cols-2 gap-1 px-1 pb-1">
+                    {primaryList.slice(0, 2).map((photo) => (
+                      <Link
+                        key={`highlight-${photo.id}`}
+                        href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                        className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
+                      >
+                        <Image
+                          src={photo.src}
+                          alt={photo.file}
+                          fill
+                          sizes="(max-width: 400px) 50vw, 200px"
+                          className="object-cover group-hover:scale-102 transition-transform duration-200"
+                          unoptimized
+                        />
+                        {photo.explanation?.startsWith("AI Match:") && (
+                          <div className="absolute bottom-2 left-2 right-2 bg-black/80 backdrop-blur-xs text-[11px] text-[#f59e6c] px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+                            <span className="material-symbols-outlined text-[13px]">auto_awesome</span>
+                            <span className="truncate">{photo.explanation.replace("AI Match: ", "")}</span>
+                          </div>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
-            {/* 3-Column Photo Grid */}
-            <div className="grid grid-cols-3 gap-[2px] px-1 pb-4">
-              {results.map((photo) => (
-                <Link
-                  key={photo.id}
-                  href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
-                  className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
-                >
-                  <Image
-                    src={photo.src}
-                    alt={photo.file}
-                    fill
-                    sizes="(max-width: 400px) 33vw, 130px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-200"
-                    unoptimized
-                  />
-                  {isDebug && photo.tier && (
-                    <div className="absolute bottom-1 right-1 bg-black/85 backdrop-blur-xs text-[10px] font-mono text-white px-1.5 py-0.5 rounded flex items-center gap-1 border border-white/20 shadow-xs">
-                      <span className={`font-bold ${photo.tier === 1 ? "text-emerald-300" : photo.tier === 2 ? "text-amber-300" : "text-zinc-400"}`}>
-                        T{photo.tier}
+                {/* Section Header: Best Matches */}
+                <div className="px-3 pt-4 pb-2 flex items-center justify-between text-[#f0e6e0]">
+                  <h2 className="text-[15px] font-semibold tracking-tight flex items-center gap-2">
+                    <span>{strongMatches.length > 0 ? "Best matches" : "Most relevant photos"}</span>
+                    {strongMatches.length > 0 && (
+                      <span className="bg-[#f59e6c]/20 text-[#f59e6c] text-[11px] px-2 py-0.5 rounded-full font-medium">
+                        Verified Match
                       </span>
-                      <span>{photo.score.toFixed(1)}</span>
-                    </div>
-                  )}
-                </Link>
-              ))}
-            </div>
+                    )}
+                  </h2>
+                  <span className="text-[13px] text-[#a89b92]">
+                    {strongMatches.length > 0 ? `${strongMatches.length} photo${strongMatches.length === 1 ? "" : "s"}` : `${count} photos`}
+                  </span>
+                </div>
+
+                {/* 3-Column Photo Grid */}
+                <div className="grid grid-cols-3 gap-[2px] px-1 pb-4">
+                  {primaryList.map((photo) => (
+                    <Link
+                      key={photo.id}
+                      href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                      className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.file}
+                        fill
+                        sizes="(max-width: 400px) 33vw, 130px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-200"
+                        unoptimized
+                      />
+                      {photo.explanation?.startsWith("AI Match:") && (
+                        <div className="absolute top-1 left-1 bg-black/80 backdrop-blur-xs text-[10px] text-[#f59e6c] px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-xs">
+                          <span className="material-symbols-outlined text-[11px]">auto_awesome</span>
+                        </div>
+                      )}
+                      {isDebug && photo.tier && (
+                        <div className="absolute bottom-1 right-1 bg-black/85 backdrop-blur-xs text-[10px] font-mono text-white px-1.5 py-0.5 rounded flex items-center gap-1 border border-white/20 shadow-xs">
+                          <span className={`font-bold ${photo.tier === 1 ? "text-emerald-300" : photo.tier === 2 ? "text-amber-300" : "text-zinc-400"}`}>
+                            T{photo.tier}
+                          </span>
+                          <span>{photo.score.toFixed(1)}</span>
+                        </div>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Expandable Section for Related Photos (when strongMatches exist and related photos exist) */}
+                {strongMatches.length > 0 && relatedMatches.length > 0 && (
+                  <div className="px-3 pt-2 pb-4 border-t border-[#29201a]/80">
+                    <button
+                      type="button"
+                      onClick={() => setShowRelated(!showRelated)}
+                      className="w-full py-2.5 px-3 rounded-xl bg-[#241c18] border border-[#3e2e25] flex items-center justify-between text-[13px] font-medium text-[#d7c3b8] hover:bg-[#2d221c] transition-colors cursor-pointer"
+                    >
+                      <div className="flex items-center gap-1.5">
+                        <span className="material-symbols-outlined text-[16px] text-[#a89b92]">grid_view</span>
+                        <span>Other related photos ({relatedMatches.length})</span>
+                      </div>
+                      <span className="material-symbols-outlined text-[18px] text-[#a89b92]">
+                        {showRelated ? "expand_less" : "expand_more"}
+                      </span>
+                    </button>
+                    {showRelated && (
+                      <div className="grid grid-cols-3 gap-[2px] pt-2 animate-fade-in">
+                        {relatedMatches.map((photo) => (
+                          <Link
+                            key={`rel-${photo.id}`}
+                            href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                            className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
+                          >
+                            <Image
+                              src={photo.src}
+                              alt={photo.file}
+                              fill
+                              sizes="(max-width: 400px) 33vw, 130px"
+                              className="object-cover group-hover:scale-105 transition-transform duration-200"
+                              unoptimized
+                            />
+                            {isDebug && photo.tier && (
+                              <div className="absolute bottom-1 right-1 bg-black/85 backdrop-blur-xs text-[10px] font-mono text-white px-1.5 py-0.5 rounded flex items-center gap-1 border border-white/20 shadow-xs">
+                                <span className="text-zinc-400">T{photo.tier}</span>
+                                <span>{photo.score.toFixed(1)}</span>
+                              </div>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
 
             {/* Step 2 Required Attribution: S6 attribution line + A2 disclaimer + A3 library info */}
             <div className="py-4 text-center text-[14px] text-[#8f7e73] space-y-1">
@@ -447,7 +545,9 @@ function ResultsContent() {
               <TesterDisclaimer />
             </div>
           </div>
-        ) : (
+        );
+      })()
+    ) : (
           /* S8 Zero Results Fallback */
           <div className="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
             <div className="w-20 h-20 rounded-full bg-[#2a211b] flex items-center justify-center mb-4">

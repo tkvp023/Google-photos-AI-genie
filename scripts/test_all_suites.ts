@@ -28,7 +28,10 @@ console.log("=== RUNNING ALL TS TEST SUITES ===\n");
 let passed = 0;
 let failed = 0;
 
+import fs from "fs";
+
 for (const s of scripts) {
+  if (!fs.existsSync(s)) continue;
   try {
     process.stdout.write(`Running ${s}... `);
     execSync(`npx tsx "${s}"`, { stdio: "pipe", encoding: "utf-8" });

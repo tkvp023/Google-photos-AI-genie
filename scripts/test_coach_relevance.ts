@@ -36,10 +36,13 @@ if (hasWhen && hasWhere && hasWho) {
 for (const q of questionsPool) {
   for (const opt of q.options) {
     if (q.cueType === "where") {
-      const cityExists = poolCandidates.some(
-        (p) => p.metadata?.place?.city?.toLowerCase() === opt.value.toLowerCase()
+      const whereExists = poolCandidates.some(
+        (p) =>
+          p.metadata?.place?.city?.toLowerCase() === opt.value.toLowerCase() ||
+          p.tag?.indoor_outdoor?.toLowerCase() === opt.value.toLowerCase() ||
+          p.tag?.setting?.toLowerCase().includes(opt.value.toLowerCase())
       );
-      if (!cityExists) {
+      if (!whereExists) {
         console.error(`FAIL [ERROR] Option "${opt.value}" for where does not exist in candidates metadata!`);
         process.exit(1);
       }

@@ -1,7 +1,7 @@
 ================================================================================
 SEARCH MATCHING & COACH TRIGGER DIAGNOSIS REPORT
 Total photos in library: 200
-Current config: MIN_SCORE=1.5, COACH_MIN_MATCHES=10
+Current config: MIN_SCORE=1.5, COACH_MIN_CANDIDATES=6
 ================================================================================
 
 --------------------------------------------------------------------------------
@@ -20,22 +20,22 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 24
   Matches >= 60% of content terms: 24
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=22):
   pool 20, kids 1, beach 1
 
 Top 10 Photos:
-  #1 pool_13.jpg (theme: pool) | Score: 24.9 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #2 pool_08.jpg (theme: pool) | Score: 23.1 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #3 pool_11.jpg (theme: pool) | Score: 21.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
-  #4 pool_06.jpg (theme: pool) | Score: 20.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[swim]
-  #5 pool_20.jpg (theme: pool) | Score: 20.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #6 pool_16.jpg (theme: pool) | Score: 20 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
-  #7 pool_04.jpg (theme: pool) | Score: 19.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #8 pool_09.jpg (theme: pool) | Score: 19.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
-  #9 pool_12.jpg (theme: pool) | Score: 19.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
-  #10 pool_17.jpg (theme: pool) | Score: 19 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; objects:[pool]
+  #1 pool_13.jpg (theme: pool) | Score: 25.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #2 pool_08.jpg (theme: pool) | Score: 23.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #3 pool_11.jpg (theme: pool) | Score: 21.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
+  #4 pool_06.jpg (theme: pool) | Score: 21.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[swim]
+  #5 pool_20.jpg (theme: pool) | Score: 21.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #6 pool_04.jpg (theme: pool) | Score: 20.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #7 pool_16.jpg (theme: pool) | Score: 20.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
+  #8 pool_09.jpg (theme: pool) | Score: 19.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
+  #9 pool_12.jpg (theme: pool) | Score: 19.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
+  #10 pool_17.jpg (theme: pool) | Score: 19.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; objects:[pool]
 
 
 --------------------------------------------------------------------------------
@@ -54,13 +54,13 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 20
   Matches >= 60% of content terms: 20
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=20):
   birthday 20
 
 Top 10 Photos:
-  #1 birthday_03.jpg (theme: birthday) | Score: 13.3 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday]; activity:[birthday]; occasion_guess:[birthday]; text_in_image:[birthday]; objects:[birthday]
+  #1 birthday_03.jpg (theme: birthday) | Score: 13.5 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday]; activity:[birthday]; occasion_guess:[birthday]; text_in_image:[birthday]; objects:[birthday]
   #2 birthday_15.jpg (theme: birthday) | Score: 8.5 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday]; occasion_guess:[birthday]
   #3 birthday_19.jpg (theme: birthday) | Score: 8.5 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday]; occasion_guess:[birthday]
   #4 birthday_02.jpg (theme: birthday) | Score: 6.5 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; occasion_guess:[birthday]
@@ -88,7 +88,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 23
   Matches >= 60% of content terms: 23
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=43):
   beach 20, pool 8, pets 8, birthday 6, graduation 1
@@ -122,7 +122,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 33
   Matches >= 60% of content terms: 33
-  Current Coach Trigger (matches >= 10 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
 Theme counts of current matches (score >= 2, total=1):
   pool 1
@@ -159,22 +159,22 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 4):
   Matches ALL content terms (100%): 1
   Matches >= 60% of content terms: 2
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=55):
   pool 20, kids 11, beach 9, festival 4, graduation 4, hiking 3, restaurant 3, roadtrip 1
 
 Top 10 Photos:
-  #1 pool_01.jpg (theme: pool) | Score: 27.5 | Matched 4/4 terms [red,swimsuit,pool,friends] | Fields: clothing:[red,swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,friends,friend]; activity:[swimming,swim]; objects:[pool]; group_type:[friends,friend]
-  #2 pool_06.jpg (theme: pool) | Score: 26.3 | Matched 3/4 terms [swimsuit,pool,friends] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; objects:[swim]; group_type:[friends,friend]
-  #3 pool_13.jpg (theme: pool) | Score: 24.9 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #4 pool_08.jpg (theme: pool) | Score: 23.1 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #5 pool_20.jpg (theme: pool) | Score: 22.8 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; objects:[pool]
-  #6 pool_14.jpg (theme: pool) | Score: 21.9 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]
-  #7 pool_04.jpg (theme: pool) | Score: 21.8 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; objects:[pool]
-  #8 pool_11.jpg (theme: pool) | Score: 21.2 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
-  #9 pool_16.jpg (theme: pool) | Score: 20 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
-  #10 pool_09.jpg (theme: pool) | Score: 19.2 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
+  #1 pool_01.jpg (theme: pool) | Score: 27.8 | Matched 4/4 terms [red,swimsuit,pool,friends] | Fields: clothing:[red,swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,friends,friend]; activity:[swimming,swim]; objects:[pool]; group_type:[friends,friend]
+  #2 pool_06.jpg (theme: pool) | Score: 26.8 | Matched 3/4 terms [swimsuit,pool,friends] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; objects:[swim]; group_type:[friends,friend]
+  #3 pool_13.jpg (theme: pool) | Score: 25.4 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #4 pool_08.jpg (theme: pool) | Score: 23.4 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #5 pool_20.jpg (theme: pool) | Score: 23.3 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; objects:[pool]
+  #6 pool_14.jpg (theme: pool) | Score: 22.4 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]
+  #7 pool_04.jpg (theme: pool) | Score: 22.3 | Matched 2/4 terms [swimsuit,pool] | Fields: clothing:[swimsuit,swim]; theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; objects:[pool]
+  #8 pool_11.jpg (theme: pool) | Score: 21.4 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
+  #9 pool_16.jpg (theme: pool) | Score: 20.3 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
+  #10 pool_09.jpg (theme: pool) | Score: 19.4 | Matched 1/4 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
 
 
 --------------------------------------------------------------------------------
@@ -193,22 +193,22 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 24
   Matches >= 60% of content terms: 24
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=22):
   pool 20, kids 1, beach 1
 
 Top 10 Photos:
-  #1 pool_13.jpg (theme: pool) | Score: 24.9 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #2 pool_08.jpg (theme: pool) | Score: 23.1 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #3 pool_11.jpg (theme: pool) | Score: 21.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
-  #4 pool_06.jpg (theme: pool) | Score: 20.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[swim]
-  #5 pool_20.jpg (theme: pool) | Score: 20.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #6 pool_16.jpg (theme: pool) | Score: 20 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
-  #7 pool_04.jpg (theme: pool) | Score: 19.8 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
-  #8 pool_09.jpg (theme: pool) | Score: 19.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
-  #9 pool_12.jpg (theme: pool) | Score: 19.2 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
-  #10 pool_17.jpg (theme: pool) | Score: 19 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; objects:[pool]
+  #1 pool_13.jpg (theme: pool) | Score: 25.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #2 pool_08.jpg (theme: pool) | Score: 23.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #3 pool_11.jpg (theme: pool) | Score: 21.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool,swimming,swim]
+  #4 pool_06.jpg (theme: pool) | Score: 21.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[swim]
+  #5 pool_20.jpg (theme: pool) | Score: 21.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #6 pool_04.jpg (theme: pool) | Score: 20.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swim]; activity:[swimming,swim]; clothing:[swim]; objects:[pool]
+  #7 pool_16.jpg (theme: pool) | Score: 20.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; clothing:[swim]
+  #8 pool_09.jpg (theme: pool) | Score: 19.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
+  #9 pool_12.jpg (theme: pool) | Score: 19.4 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool,swimming,swim]; objects:[pool]
+  #10 pool_17.jpg (theme: pool) | Score: 19.3 | Matched 1/1 terms [pool] | Fields: theme:[pool]; setting:[pool]; one_line:[pool]; activity:[swimming,swim]; objects:[pool]
 
 
 --------------------------------------------------------------------------------
@@ -220,29 +220,29 @@ Expanded tokens (after synonyms): ["dog"]
 
 Match counts by MIN_SCORE threshold:
   MIN_SCORE >= 1: 21
-  MIN_SCORE >= 2: 17 (CURRENT DEFAULT)
-  MIN_SCORE >= 4: 3
-  MIN_SCORE >= 6: 0
+  MIN_SCORE >= 2: 21 (CURRENT DEFAULT)
+  MIN_SCORE >= 4: 15
+  MIN_SCORE >= 6: 2
 
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 20
   Matches >= 60% of content terms: 20
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
-Theme counts of current matches (score >= 2, total=17):
-  pets 14, roadtrip 2, hiking 1
+Theme counts of current matches (score >= 2, total=21):
+  pets 17, roadtrip 2, hiking 1, birthday 1
 
 Top 10 Photos:
-  #1 pets_10.jpg (theme: pets) | Score: 5.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #2 pets_14.jpg (theme: pets) | Score: 5.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #3 pets_12.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: objects:[dog]
-  #4 hiking_08.jpg (theme: hiking) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #5 pets_01.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: activity:[dog]; objects:[dog]
-  #6 pets_02.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #7 pets_03.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #8 pets_06.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
-  #9 pets_07.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]
-  #10 pets_08.jpg (theme: pets) | Score: 3.8 | Matched 1/1 terms [dog] | Fields: one_line:[dog]
+  #1 pets_10.jpg (theme: pets) | Score: 6 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #2 pets_14.jpg (theme: pets) | Score: 6 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #3 hiking_08.jpg (theme: hiking) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #4 pets_01.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: activity:[dog]; objects:[dog]
+  #5 pets_02.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #6 pets_03.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #7 pets_06.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]; objects:[dog]
+  #8 pets_07.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]
+  #9 pets_08.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]
+  #10 pets_11.jpg (theme: pets) | Score: 4 | Matched 1/1 terms [dog] | Fields: one_line:[dog]
 
 
 --------------------------------------------------------------------------------
@@ -262,13 +262,13 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 2):
   Matches ALL content terms (100%): 1
   Matches >= 60% of content terms: 1
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=31):
   restaurant 20, birthday 11
 
 Top 10 Photos:
-  #1 restaurant_17.jpg (theme: restaurant) | Score: 11.7 | Matched 2/2 terms [restaurant,dinner] | Fields: theme:[restaurant]; setting:[restaurant]; one_line:[dinner]
+  #1 restaurant_17.jpg (theme: restaurant) | Score: 11.9 | Matched 2/2 terms [restaurant,dinner] | Fields: theme:[restaurant]; setting:[restaurant]; one_line:[dinner]
   #2 restaurant_15.jpg (theme: restaurant) | Score: 7.9 | Matched 1/2 terms [restaurant] | Fields: theme:[restaurant]; setting:[restaurant]
   #3 restaurant_16.jpg (theme: restaurant) | Score: 7.9 | Matched 1/2 terms [restaurant] | Fields: theme:[restaurant]; setting:[restaurant]
   #4 restaurant_18.jpg (theme: restaurant) | Score: 7.9 | Matched 1/2 terms [restaurant] | Fields: theme:[restaurant]; setting:[restaurant]
@@ -289,29 +289,29 @@ Expanded tokens (after synonyms): ["hiking"]
 
 Match counts by MIN_SCORE threshold:
   MIN_SCORE >= 1: 21
-  MIN_SCORE >= 2: 20 (CURRENT DEFAULT)
+  MIN_SCORE >= 2: 21 (CURRENT DEFAULT)
   MIN_SCORE >= 4: 12
-  MIN_SCORE >= 6: 3
+  MIN_SCORE >= 6: 4
 
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 21
   Matches >= 60% of content terms: 21
-  Current Coach Trigger (matches >= 10 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
-Theme counts of current matches (score >= 2, total=20):
-  hiking 20
+Theme counts of current matches (score >= 2, total=21):
+  hiking 20, pets 1
 
 Top 10 Photos:
-  #1 hiking_05.jpg (theme: hiking) | Score: 6.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
-  #2 hiking_15.jpg (theme: hiking) | Score: 6.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
-  #3 hiking_18.jpg (theme: hiking) | Score: 6.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
-  #4 hiking_13.jpg (theme: hiking) | Score: 5.9 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
-  #5 hiking_01.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
-  #6 hiking_02.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
-  #7 hiking_03.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
-  #8 hiking_09.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
-  #9 hiking_10.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; activity:[hiking]
-  #10 hiking_11.jpg (theme: hiking) | Score: 4.1 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; activity:[hiking]
+  #1 hiking_05.jpg (theme: hiking) | Score: 6.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
+  #2 hiking_13.jpg (theme: hiking) | Score: 6.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
+  #3 hiking_15.jpg (theme: hiking) | Score: 6.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
+  #4 hiking_18.jpg (theme: hiking) | Score: 6.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]; objects:[hiking]
+  #5 hiking_01.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
+  #6 hiking_02.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
+  #7 hiking_03.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
+  #8 hiking_09.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; one_line:[hiking]; activity:[hiking]
+  #9 hiking_10.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; activity:[hiking]
+  #10 hiking_11.jpg (theme: hiking) | Score: 4.5 | Matched 1/1 terms [hiking] | Fields: theme:[hiking]; activity:[hiking]
 
 
 --------------------------------------------------------------------------------
@@ -324,22 +324,22 @@ Expanded tokens (after synonyms): ["silver", "racket"]
 
 Match counts by MIN_SCORE threshold:
   MIN_SCORE >= 1: 3
-  MIN_SCORE >= 2: 2 (CURRENT DEFAULT)
+  MIN_SCORE >= 2: 3 (CURRENT DEFAULT)
   MIN_SCORE >= 4: 0
   MIN_SCORE >= 6: 0
 
 Term-overlap counts (content terms = 2):
   Matches ALL content terms (100%): 0
   Matches >= 60% of content terms: 0
-  Current Coach Trigger (matches >= 10 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
-Theme counts of current matches (score >= 2, total=2):
-  birthday 1, graduation 1
+Theme counts of current matches (score >= 2, total=3):
+  birthday 1, graduation 1, roadtrip 1
 
 Top 10 Photos:
   #1 birthday_11.jpg (theme: birthday) | Score: 2 | Matched 1/2 terms [silver] | Fields: objects:[silver]
   #2 graduation_02.jpg (theme: graduation) | Score: 2 | Matched 1/2 terms [silver] | Fields: objects:[silver]
-  #3 roadtrip_10.jpg (theme: roadtrip) | Score: 1.8 | Matched 1/2 terms [silver] | Fields: one_line:[silver]
+  #3 roadtrip_10.jpg (theme: roadtrip) | Score: 2 | Matched 1/2 terms [silver] | Fields: one_line:[silver]
   #4 beach_01.jpg (theme: beach) | Score: 0 | Matched 0/2 terms [] | Fields: none
   #5 beach_02.jpg (theme: beach) | Score: 0 | Matched 0/2 terms [] | Fields: none
   #6 beach_03.jpg (theme: beach) | Score: 0 | Matched 0/2 terms [] | Fields: none
@@ -365,7 +365,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 0
   Matches >= 60% of content terms: 0
-  Current Coach Trigger (matches >= 10 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
 Theme counts of current matches (score >= 2, total=0):
   None
@@ -395,10 +395,10 @@ beach                       1       43          23          23        YES (>=10)
 friends                     1       1           33          33        NO              pool:1
 red swimsuit pool friends   4       55          1           2         YES (>=10)      pool:20 kids:11 hiking:3
 me at the pool              1       22          24          24        YES (>=10)      pool:20 kids:1 beach:1
-dog                         1       17          20          20        YES (>=10)      pets:14 hiking:1 roadtrip:2
+dog                         1       21          20          20        YES (>=10)      pets:17 hiking:1 roadtrip:2
 restaurant dinner           2       31          1           1         YES (>=10)      restaurant:20 birthday:11
-hiking                      1       20          21          21        YES (>=10)      hiking:20
-silver racket               2       2           0           0         NO              birthday:1 graduation:1
+hiking                      1       21          21          21        YES (>=10)      hiking:20 pets:1
+silver racket               2       3           0           0         NO              birthday:1 graduation:1 roadtrip:1
 elephant                    1       0           0           0         NO              
 
 --------------------------------------------------------------------------------

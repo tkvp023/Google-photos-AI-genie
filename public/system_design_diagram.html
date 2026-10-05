@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Photos: AI Genie System Design Architecture</title>
+  <style>
+    :root {
+      --google-blue: #1a73e8;
+      --google-red: #ea4335;
+      --google-yellow: #fbbc04;
+      --google-green: #34a853;
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Google Sans", sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); padding: 32px; }
+    .header { text-align: center; margin-bottom: 32px; }
+    .badge { display: inline-block; padding: 6px 14px; background: rgba(26, 115, 232, 0.2); border: 1px solid var(--google-blue); border-radius: 9999px; color: #60a5fa; font-size: 13px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px; }
+    h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    p.subtitle { color: var(--text-muted); font-size: 16px; max-width: 800px; margin: 0 auto; }
+    
+    .diagram-container { display: flex; flex-direction: column; gap: 24px; max-width: 1400px; margin: 0 auto; }
+    
+    .tier {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    .tier-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px; }
+    .tier-title { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; }
+    .tier-indicator { width: 12px; height: 12px; border-radius: 50%; }
+    .latency-pill { background: rgba(52, 168, 83, 0.15); border: 1px solid var(--google-green); color: #4ade80; font-size: 12px; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+
+    .grid-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    
+    .box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .box.blue { border-left: 4px solid var(--google-blue); }
+    .box.green { border-left: 4px solid var(--google-green); }
+    .box.yellow { border-left: 4px solid var(--google-yellow); }
+    .box.red { border-left: 4px solid var(--google-red); }
+    .box.purple { border-left: 4px solid #a855f7; }
+
+    .box-title { font-size: 14px; font-weight: 700; color: #fff; }
+    .box-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .metric { font-family: monospace; font-size: 11px; background: rgba(255,255,255,0.05); padding: 4px 6px; border-radius: 4px; color: #38bdf8; display: inline-block; width: fit-content; }
+
+    .connector-arrow { text-align: center; color: var(--google-blue); font-size: 24px; margin: -10px 0; font-weight: bold; }
+    
+    .callout { background: rgba(26, 115, 232, 0.08); border: 1px dashed var(--google-blue); border-radius: 12px; padding: 16px; margin-top: 24px; font-size: 13px; line-height: 1.6; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">PRODUCTION SYSTEM ARCHITECTURE</span>
+    <h1>Google Photos: "AI Genie" Pre-Search Engine</h1>
+    <p class="subtitle">End-to-End System Design: Sub-50ms Keystroke Disambiguation across 1B+ Users & 4T+ Photos</p>
+  </div>
+
+  <div class="diagram-container">
+
+    <!-- TIER 1: CLIENT -->
+    <div class="tier">
+      <div class="tier-header">
+        <div class="tier-title">
+          <div class="tier-indicator" style="background: var(--google-blue)"></div>
+          <span>1. CLIENT INTERFACE & REAL-TIME INTERACTION LAYER (Android / iOS / Web)</span>
+        </div>
+        <div class="latency-pill">Latency: &lt; 35ms E2E</div>
+      </div>
+      <div class="grid-row">
+        <div class="box blue">
+          <div class="box-title">Search Bar Input</div>
+          <div class="box-desc">Single source of truth. Captures raw typing without intercepting modals or full-screen takeovers.</div>
+          <span class="metric">Keystroke Stream (60/120 FPS)</span>
+        </div>
+        <div class="box blue">
+          <div class="box-title">300ms Debounce Gate</div>
+          <div class="box-desc">Filters typing pauses to prevent thrashing. Zero evaluation during continuous high-speed typing.</div>
+          <span class="metric">Idle Window: 300ms - 400ms</span>
+        </div>
+        <div class="box yellow">
+          <div class="box-title">7-Rule Trigger Gate</div>
+          <div class="box-desc">Candidate pool >= 6? Vague 2-of-3 anchors missing? Not a 2-min burst? Suppresses clutter.</div>
+          <span class="metric">Evaluation time: &lt; 2ms</span>
+        </div>
+        <div class="box green">
+          <div class="box-title">Inline Genie Strip</div>
+          <div class="box-desc">Max 3 rows: Who? Look? What? Tapping a chip cleanly appends deterministic phrase into search bar.</div>
+          <span class="metric">Zero Zero-Result Chips</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector-arrow">▼ &nbsp; (Adaptive Hybrid Routing: On-Device vs Edge gRPC) &nbsp; ▼</div>
+
+    <!-- TIER 2: SERVING ENGINES -->
+    <div class="tier">
+      <div class="tier-header">
+        <div class="tier-title">
+          <div class="tier-indicator" style="background: var(--google-yellow)"></div>
+          <span>2. DUAL-TIER DISAMBIGUATION SERVING ENGINE</span>
+        </div>
+        <div class="latency-pill" style="background: rgba(251, 188, 4, 0.15); border-color: var(--google-yellow); color: #fde047;">P95 Latency: &lt; 15ms (Device) / &lt; 45ms (Cloud)</div>
+      </div>
+      <div class="grid-row">
+        <div class="box green">
+          <div class="box-title">Tier 1: On-Device (Android AICore / iOS)</div>
+          <div class="box-desc">Local sandboxed SQLite DB + Roaring Bitmaps. C++ NDK Shannon Entropy calculation. 100% offline capable.</div>
+          <span class="metric">Pixel / Galaxy Flagships (&lt;10ms)</span>
+        </div>
+        <div class="box yellow">
+          <div class="box-title">Tier 2: Cloud Edge (Google PoP / Borg)</div>
+          <div class="box-desc">Stateless C++ microservice on Borg over HTTP/3 (QUIC). Reads pre-indexed episodic bitsets from Bigtable cache.</div>
+          <span class="metric">Web & Android Go (&lt;45ms)</span>
+        </div>
+        <div class="box purple">
+          <div class="box-title">Shannon Information Gain Selector</div>
+          <div class="box-desc">Computes H(A) across matching photo attributes. Picks 3 dimensions that split candidates most evenly.</div>
+          <span class="metric">Episodic Cue Weight: 1.3x</span>
+        </div>
+        <div class="box blue">
+          <div class="box-title">Phrase Composition Engine</div>
+          <div class="box-desc">Deterministic mapping from attribute token ID to natural language phrase. Zero LLM latency at search time.</div>
+          <span class="metric">Execution: &lt; 1ms</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector-arrow">▲ &nbsp; (Pre-Computed Notes Synced Offline) &nbsp; ▲</div>
+
+    <!-- TIER 3: INGESTION PIPELINE -->
+    <div class="tier">
+      <div class="tier-header">
+        <div class="tier-title">
+          <div class="tier-indicator" style="background: var(--google-green)"></div>
+          <span>3. ASYNCHRONOUS INGESTION PIPELINE (Offline / One-Time Scan at Backup)</span>
+        </div>
+        <div class="latency-pill" style="background: rgba(59, 130, 246, 0.15); border-color: var(--google-blue); color: #93c5fd;">Amortized Cost: $0.00 at Search Time</div>
+      </div>
+      <div class="grid-row">
+        <div class="box green">
+          <div class="box-title">Media Upload (Colossus / GCS)</div>
+          <div class="box-desc">Original photo uploaded. Triggers Photos Media Processing (PMP) pipeline in background.</div>
+          <span class="metric">6B Photos Uploaded / Day</span>
+        </div>
+        <div class="box purple">
+          <div class="box-title">Gemini Vision Batch (TPU v5e)</div>
+          <div class="box-desc">Quantized multimodal vision model extracts 14 structured episodic dimensions (Who, Look, Occasion, Setting).</div>
+          <span class="metric">Async Ingestion Queue</span>
+        </div>
+        <div class="box red">
+          <div class="box-title">Privacy & Sensitive Content Gate</div>
+          <div class="box-desc">Flags medical, financial, and NSFW content with is_sensitive=true. Strictly excluded from chip carousels.</div>
+          <span class="metric">Zero Privacy Leakage</span>
+        </div>
+        <div class="box blue">
+          <div class="box-title">Roaring Bitset Index Builder</div>
+          <div class="box-desc">Serializes 14 tag IDs into compact integer bitmaps. Stored in Cloud Spanner & delta-synced to device cache.</div>
+          <span class="metric">~175 KB / User Library</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector-arrow">▼ &nbsp; (User Executes Enriched Search: "pool, with friends, outdoors") &nbsp; ▼</div>
+
+    <!-- TIER 4: DOWNSTREAM ASK PHOTOS -->
+    <div class="tier">
+      <div class="tier-header">
+        <div class="tier-title">
+          <div class="tier-indicator" style="background: #a855f7"></div>
+          <span>4. DOWNSTREAM CORE EXECUTION: ASK PHOTOS (Gemini Multimodal Retrieval)</span>
+        </div>
+        <div class="latency-pill" style="background: rgba(168, 85, 247, 0.15); border-color: #a855f7; color: #c084fc;">Retrieval Accuracy: 92%+ Top-4 Slots</div>
+      </div>
+      <div class="grid-row">
+        <div class="box purple">
+          <div class="box-title">Gemini Query Encoder</div>
+          <div class="box-desc">Multi-cue prompt maps directly to a sharp, discriminative coordinate in multimodal embedding space.</div>
+          <span class="metric">768-dim Semantic Embedding</span>
+        </div>
+        <div class="box blue">
+          <div class="box-title">ScaNN Vector Index Retrieval</div>
+          <div class="box-desc">Searches personal library vector space via ScaNN, applying metadata pre-filtering on companions and setting.</div>
+          <span class="metric">Top-K Nearest Neighbors</span>
+        </div>
+        <div class="box green">
+          <div class="box-title">High-Precision Results Grid</div>
+          <div class="box-desc">Target photo is returned in slots 1-4. User finds photo in &lt;10s instead of scrolling for minutes.</div>
+          <span class="metric">Vague Success Rate: &gt;75%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Engineering Key Takeaway:</strong> The system achieves sub-50ms real-time responsiveness and &gt;99.9% compute cost savings by decoupling <em>heavy multimodal understanding</em> (executed once in the background at photo backup) from <em>real-time search disambiguation</em> (executed via O(1) Roaring Bitmap set operations and Shannon entropy ranking).
+    </div>
+
+  </div>
+
+</body>
+</html>

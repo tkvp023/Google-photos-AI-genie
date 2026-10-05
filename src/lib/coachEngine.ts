@@ -302,18 +302,18 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         allowDontRemember: true,
       });
     }
-    if (!answeredCues.has("mood") && questions.length < 2) {
+    if (!answeredCues.has("occasion") && questions.length < config.MAX_QUESTIONS) {
       questions.push({
-        id: "q_mood_generic",
-        cueType: "mood",
-        field: "mood",
-        text: "What was the vibe?",
+        id: "q_occasion_generic",
+        cueType: "occasion",
+        field: "occasion_guess",
+        text: "What was the occasion?",
         layer: "generic_fallback",
         options: [
-          { label: "Cheerful", value: "cheerful" },
-          { label: "Calm", value: "calm" },
-          { label: "Playful", value: "playful" },
-          { label: "Energetic", value: "energetic" },
+          { label: "Birthday?", value: "birthday", isGuess: true },
+          { label: "Party?", value: "party", isGuess: true },
+          { label: "Trip?", value: "trip", isGuess: true },
+          { label: "Festival?", value: "festival", isGuess: true },
         ],
         allowText: true,
         allowDontRemember: true,
@@ -459,6 +459,40 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
  *  - 2–5 distinct values per row; each option must cover >= 10% of candidates;
  *    every option must exist in the candidates' tags/metadata
  */
+/**
+ * Contextualizes question titles using the user's base query keyword.
+ */
+function getContextualQuestionText(field: string, baseText: string, query: string): string {
+  const qClean = (query || "").trim().split(",")[0].trim().toLowerCase();
+  if (!qClean || qClean.length < 3) return baseText;
+  
+  if (field === "group_type" || field === "cast_people") {
+    return `Who was with you at the ${qClean}?`;
+  }
+  if (field === "activity") {
+    return `What were you doing at the ${qClean}?`;
+  }
+  if (field === "indoor_outdoor") {
+    return `Was this an indoor or outdoor ${qClean}?`;
+  }
+  if (field === "clothing_color") {
+    return `What color was worn at the ${qClean}?`;
+  }
+  if (field === "place_city") {
+    return `Which place or city was this ${qClean}?`;
+  }
+  if (field === "time_of_day") {
+    return `What time of day at the ${qClean}?`;
+  }
+  if (field === "occasion_guess") {
+    return `What was the occasion for this ${qClean}?`;
+  }
+  if (field === "mood") {
+    return `What was the vibe at the ${qClean}?`;
+  }
+  return baseText;
+}
+
 export function selectQuestions(
   candidates: PhotoItem[],
   query: string,
@@ -476,8 +510,8 @@ export function selectQuestions(
     return genericFallbackQuestions(query, priorAnswers, candidates);
   }
 
-  // CE-12: If candidates reached COACH_STOP_AT (<= 8) after narrowing, stop coaching (unless ignoreStopThreshold is true for explicit help)
-  if (!ignoreStopThreshold && priorAnswers.length > 0 && candidates.length <= config.COACH_STOP_AT) {
+  // CE-12: If candidates reached COACH_STOP_AT (<= 8), stop coaching (unless ignoreStopThreshold is true for explicit help)
+  if (!ignoreStopThreshold && candidates.length <= config.COACH_STOP_AT) {
     return [];
   }
 
@@ -575,14 +609,14 @@ export function selectQuestions(
       };
     });
 
-    if (options.length < 2) continue;
+    const contextualText = getContextualQuestionText(item.field, item.text, query);
 
     candidateQuestions.push({
       question: {
         id: `q_${item.field}`,
         cueType: item.cueType,
         field: item.field,
-        text: item.text,
+        text: contextualText,
         layer: "dynamic_adaptive",
         options,
         allowText: true,
@@ -597,7 +631,7 @@ export function selectQuestions(
   candidateQuestions.sort((a, b) => b.balanceScore - a.balanceScore);
 
   // Rule C selection: ensure >= 2 memory cue rows, <= 1 metadata row
-  const MEMORY_CUE_FIELDS = new Set(["activity", "occasion_guess", "clothing_color", "group_type", "mood"]);
+  const MEMORY_CUE_FIELDS = new Set(["activity", "occasion_guess", "clothing_color", "group_type", "indoor_outdoor", "setting", "mood"]);
   const isMemoryField = (field: string) => MEMORY_CUE_FIELDS.has(field);
 
   const selected: Question[] = [];
@@ -693,6 +727,8 @@ export function evaluateTrigger(params: {
 }): TriggerEvaluation {
   const { query, isVague, genieOff, hasBeenDismissed, alreadyShown, mode } = params;
 
+  const triggerMode = params.triggerMode ?? config.COACH_TRIGGER_MODE;
+
   // 1. genie_enabled (ONE hidden switch ?genie=off or config.GENIE_ENABLED=false)
   if (mode === "A" || genieOff || !config.GENIE_ENABLED) {
     return {
@@ -752,8 +788,30 @@ export function evaluateTrigger(params: {
     };
   }
 
+  // If pre-computed countStrong was provided and > 0, we know matches exist
+  const hasPrecomputedMatches = params.countStrong !== undefined && params.countStrong > 0;
+
+  // Strict mode clear winner check if pre-computed ambiguousCount is provided
+  const ambigCount = params.ambiguousCount;
+  if (triggerMode === "strict" && ambigCount !== undefined && ambigCount < config.COACH_MIN_AMBIGUOUS) {
+    return {
+      shouldTrigger: false,
+      blockedReason: "clear_winner",
+      candidateCount: ambigCount,
+      candidatePhotos: [],
+      tokens: cat.contentTokens,
+      recognisedTokens: cat.recognisedTokens,
+      unrecognisedTokens: cat.unrecognisedTokens,
+      noMatchState: "none",
+      countStrong: params.countStrong,
+      countTotal: params.countTotal,
+      ambiguousCount: ambigCount,
+      topScore: params.topScore,
+    };
+  }
+
   // 6. no_matches (no content token matches any photo: show NO chips and caption "No photos fit this description.")
-  if (cat.recognisedTokens.length === 0) {
+  if (!hasPrecomputedMatches && cat.recognisedTokens.length === 0) {
     return {
       shouldTrigger: false,
       blockedReason: "no_matches",
@@ -768,12 +826,30 @@ export function evaluateTrigger(params: {
 
   // 7. few_candidates (candidates < 6)
   // Candidates = photos matching ALL recognised content tokens (tier 1), else tier 1 + tier 2.
-  const recognisedQuery = cat.recognisedTokens.join(" ");
+  const recognisedQuery = cat.recognisedTokens.length > 0 ? cat.recognisedTokens.join(" ") : query;
   const searchRes = search(recognisedQuery);
   const tier1 = searchRes.results.filter((p) => p.tier === 1);
   const tier2 = searchRes.results.filter((p) => p.tier === 2);
   const candidatePhotos = (tier1.length >= config.COACH_MIN_CANDIDATES ? tier1 : tier1.concat(tier2)) as PhotoItem[];
-  const candidateCount = candidatePhotos.length;
+  const candidateCount = params.countStrong !== undefined ? params.countStrong : candidatePhotos.length;
+  const finalAmbiguousCount = params.ambiguousCount !== undefined ? params.ambiguousCount : searchRes.ambiguous_count;
+
+  if (triggerMode === "strict" && finalAmbiguousCount !== undefined && finalAmbiguousCount < config.COACH_MIN_AMBIGUOUS) {
+    return {
+      shouldTrigger: false,
+      blockedReason: "clear_winner",
+      candidateCount,
+      candidatePhotos,
+      tokens: cat.contentTokens,
+      recognisedTokens: cat.recognisedTokens,
+      unrecognisedTokens: cat.unrecognisedTokens,
+      noMatchState: "none",
+      countStrong: searchRes.count_strong,
+      countTotal: searchRes.count_total,
+      ambiguousCount: finalAmbiguousCount,
+      topScore: searchRes.top_score,
+    };
+  }
 
   if (candidateCount < config.COACH_MIN_CANDIDATES) {
     return {
