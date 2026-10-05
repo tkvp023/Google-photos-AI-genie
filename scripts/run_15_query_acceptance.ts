@@ -112,10 +112,11 @@ async function run() {
 
       // Try LLM planner first
       try {
-        const planned = await planQuestionsWithLLM(candidates, q, []);
-        if (planned && planned.length > 0) {
-          questions = planned;
-          logLine(`COACH STRIP SOURCE: LLM Question Planner`);
+        const fallbackQs = selectQuestions(candidates, q, []);
+        const plannedRes = await planQuestionsWithLLM(q, candidates, fallbackQs, []);
+        if (plannedRes?.questions && plannedRes.questions.length > 0) {
+          questions = plannedRes.questions;
+          logLine(`COACH STRIP SOURCE: LLM Question Planner (${plannedRes.planner_source})`);
         }
       } catch (e) {
         // Fallback

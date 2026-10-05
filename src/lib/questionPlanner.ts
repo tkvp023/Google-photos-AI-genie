@@ -448,4 +448,5 @@ export function resetPlannerCallCount(): void {
 }
 
 /** Expose allowed fields builder for tests. */
-export { buildAllowedFields };
+export { buildAllowedFields, planQuestions as planQuestionsWithLLM };
+
