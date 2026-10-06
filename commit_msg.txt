@@ -1,0 +1,10 @@
+feat: complete final focused round and freeze
+
+- Fix descriptive queries regression: filler word removal & bidirectional synonyms for kid/sand/car
+- Verify step as arbiter of Tier 1; roadtrip_01 ranked #1 for dog in car query
+- Ensure live Groq LLM query understanding runs on all benchmark queries
+- Fix vague classification for 'a couple of summers ago, with friends' (14 photos, strip triggered)
+- Prioritize observed cues over synthetic fields; drop options behind single photos
+- Re-run paired re-audit on 40 photos with Groq qwen/qwen3.8-27b with real non-defaulted verdicts
+- Update changed_descriptions.csv with visual observations directly inspected
+- Verify all 20 test suites pass and Next.js builds with 0 errors

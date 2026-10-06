@@ -393,16 +393,80 @@ function ResultsContent() {
         ) : count > 0 ? (
           /* Results Grid */
           (() => {
-            const strongMatches = results.filter((r) => (r.tier || 3) === 1 || r.score >= 50);
-            const relatedMatches = results.filter((r) => !strongMatches.includes(r));
-            const primaryList = strongMatches.length > 0 ? strongMatches : results;
+            const strongMatches = results.filter((r) => (r.tier || 3) === 1);
+            const weakMatches = results.filter((r) => (r.tier || 3) > 1);
+
+            // If no photo passes relevance cut-off, show 'No photos fit this description.'
+            if (strongMatches.length === 0) {
+              return (
+                <div className="flex-1 flex flex-col">
+                  <div className="flex-1 flex flex-col items-center justify-center py-16 px-4 text-center animate-fade-in">
+                    <span className="material-symbols-outlined text-[48px] text-[#f59e6c]/40 mb-3">search_off</span>
+                    <p className="text-[16px] font-semibold text-white mb-1">No photos fit this description.</p>
+                    <p className="text-[13px] text-[#a89b92] max-w-[280px]">
+                      Try different keywords or check Closest matches below.
+                    </p>
+                  </div>
+
+                  {/* Collapsed Closest Matches Section */}
+                  {weakMatches.length > 0 && (
+                    <div className="px-3 pt-2 pb-4 border-t border-[#29201a]/80">
+                      <button
+                        type="button"
+                        onClick={() => setShowRelated(!showRelated)}
+                        className="w-full py-2.5 px-3 rounded-xl bg-[#241c18] border border-[#3e2e25] flex items-center justify-between text-[13px] font-medium text-[#d7c3b8] hover:bg-[#2d221c] transition-colors cursor-pointer"
+                      >
+                        <div className="flex items-center gap-1.5">
+                          <span className="material-symbols-outlined text-[16px] text-[#a89b92]">grid_view</span>
+                          <span>Closest matches ({weakMatches.length})</span>
+                        </div>
+                        <span className="material-symbols-outlined text-[18px] text-[#a89b92]">
+                          {showRelated ? "expand_less" : "expand_more"}
+                        </span>
+                      </button>
+                      {showRelated && (
+                        <div className="grid grid-cols-3 gap-[2px] pt-2 animate-fade-in">
+                          {weakMatches.map((photo) => (
+                            <Link
+                              key={`weak-${photo.id}`}
+                              href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
+                              className="relative aspect-square overflow-hidden bg-[#241c18] group cursor-pointer"
+                            >
+                              <Image
+                                src={photo.src}
+                                alt={photo.file}
+                                fill
+                                sizes="(max-width: 400px) 33vw, 130px"
+                                className="object-cover group-hover:scale-105 transition-transform duration-200"
+                                unoptimized
+                              />
+                              {isDebug && photo.tier && (
+                                <div className="absolute bottom-1 right-1 bg-black/85 backdrop-blur-xs text-[10px] font-mono text-white px-1.5 py-0.5 rounded flex items-center gap-1 border border-white/20 shadow-xs">
+                                  <span className="text-zinc-400">T{photo.tier}</span>
+                                  <span>{photo.score.toFixed(1)}</span>
+                                </div>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            // Up to 12 strong matches in primary display
+            const primaryDisplay = strongMatches.slice(0, 12);
+            const overflowMatches = strongMatches.slice(12);
+            const allOtherRelated = [...overflowMatches, ...weakMatches];
 
             return (
               <div className="flex-1 flex flex-col">
                 {/* Top Highlights */}
-                {primaryList.length >= 2 && (
+                {primaryDisplay.length >= 2 && (
                   <div className="grid grid-cols-2 gap-1 px-1 pb-1">
-                    {primaryList.slice(0, 2).map((photo) => (
+                    {primaryDisplay.slice(0, 2).map((photo) => (
                       <Link
                         key={`highlight-${photo.id}`}
                         href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
@@ -438,13 +502,15 @@ function ResultsContent() {
                     )}
                   </h2>
                   <span className="text-[13px] text-[#a89b92]">
-                    {strongMatches.length > 0 ? `${strongMatches.length} photo${strongMatches.length === 1 ? "" : "s"}` : `${count} photos`}
+                    {primaryDisplay.length < results.length
+                      ? `Showing ${primaryDisplay.length} of ${results.length} photos`
+                      : `${primaryDisplay.length} photo${primaryDisplay.length === 1 ? "" : "s"}`}
                   </span>
                 </div>
 
-                {/* 3-Column Photo Grid */}
+                {/* 3-Column Photo Grid (Up to 12 photos) */}
                 <div className="grid grid-cols-3 gap-[2px] px-1 pb-4">
-                  {primaryList.map((photo) => (
+                  {primaryDisplay.map((photo) => (
                     <Link
                       key={photo.id}
                       href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}
@@ -475,8 +541,8 @@ function ResultsContent() {
                   ))}
                 </div>
 
-                {/* Expandable Section for Related Photos (when strongMatches exist and related photos exist) */}
-                {strongMatches.length > 0 && relatedMatches.length > 0 && (
+                {/* Expandable Section for Other Related Photos */}
+                {allOtherRelated.length > 0 && (
                   <div className="px-3 pt-2 pb-4 border-t border-[#29201a]/80">
                     <button
                       type="button"
@@ -485,7 +551,7 @@ function ResultsContent() {
                     >
                       <div className="flex items-center gap-1.5">
                         <span className="material-symbols-outlined text-[16px] text-[#a89b92]">grid_view</span>
-                        <span>Other related photos ({relatedMatches.length})</span>
+                        <span>Closest matches ({allOtherRelated.length})</span>
                       </div>
                       <span className="material-symbols-outlined text-[18px] text-[#a89b92]">
                         {showRelated ? "expand_less" : "expand_more"}
@@ -493,7 +559,7 @@ function ResultsContent() {
                     </button>
                     {showRelated && (
                       <div className="grid grid-cols-3 gap-[2px] pt-2 animate-fade-in">
-                        {relatedMatches.map((photo) => (
+                        {allOtherRelated.map((photo) => (
                           <Link
                             key={`rel-${photo.id}`}
                             href={`/photo/${photo.id}?from=results&q=${encodeURIComponent(q)}`}

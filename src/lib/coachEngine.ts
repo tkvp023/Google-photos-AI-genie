@@ -36,7 +36,8 @@ export function filterCandidates(photos: PhotoItem[], answers: Answer[]): PhotoI
 
       switch (ans.cueType) {
         case "who":
-          const matchesGroup = (tag.group_type || "").toLowerCase() === targetVal;
+          const matchesGroup = (tag.group_type || "").toLowerCase() === targetVal ||
+            ((tag.group_type || "").toLowerCase() === "solo" && (targetVal === "just me" || targetVal === "alone"));
           const matchesAge = Array.isArray(tag.people_ages) && tag.people_ages.some((a) => (a || "").toLowerCase() === targetVal);
           const matchesPerson = Array.isArray(p.metadata?.people) && p.metadata.people.some((name) => name.toLowerCase() === targetVal || targetVal.includes(name.toLowerCase()));
           if (!matchesGroup && !matchesAge && !matchesPerson) return false;
@@ -112,7 +113,12 @@ export function computeFieldDistribution(
     let values: string[] = [];
 
     if (field === "group_type") {
-      if (tag.group_type && tag.group_type !== "unknown") values = [tag.group_type];
+      const pCount = (tag.people_count !== undefined && tag.people_count !== null) ? tag.people_count : (photo.metadata?.people?.length ?? 0);
+      if (pCount > 0 && tag.group_type && (tag.group_type as string) !== "unknown" && (tag.group_type as string) !== "none") {
+        let g = tag.group_type.toLowerCase().trim();
+        if (g === "kids" || g === "child") g = "children";
+        values = [g];
+      }
     } else if (field === "cast_people" || field === "people") {
       if (photo.metadata?.people && photo.metadata.people.length > 0) {
         values = [...photo.metadata.people];
@@ -137,17 +143,25 @@ export function computeFieldDistribution(
       } else if (tag.time_of_day && tag.time_of_day !== "unknown") {
         values = [tag.time_of_day];
       }
-    } else if (field === "season_year") {
-      if (photo.metadata?.season && photo.metadata?.year) {
-        values = [`${photo.metadata.season} ${photo.metadata.year}`];
-      }
     } else if (field === "indoor_outdoor") {
       if (tag.indoor_outdoor && tag.indoor_outdoor !== "unknown") values = [tag.indoor_outdoor];
     } else if (field === "setting") {
       if (tag.setting && tag.setting !== "unknown") values = [tag.setting];
     } else if (field === "activity") {
       if (tag.activity && tag.activity !== "unknown" && tag.activity !== "none") {
-        values = tag.activity.split(/,\s*/);
+        const rawActs = tag.activity.split(/,\s*/);
+        for (let a of rawActs) {
+          a = a.toLowerCase().trim();
+          // Drop low-information options (standing, sitting, exiting pool, resting, looking, walking, holding)
+          if (["standing", "sitting", "exiting pool", "resting", "looking", "walking", "holding", "posing"].includes(a)) {
+            continue;
+          }
+          // Merge overlaps: e.g. "playing in the sand" / "playing in sand" -> "playing"
+          if (a === "playing in the sand" || a === "playing in sand") {
+            a = "playing";
+          }
+          values.push(a);
+        }
       }
     } else if (field === "occasion_guess") {
       if (tag.occasion_guess && tag.occasion_guess !== "none" && tag.occasion_guess !== "unknown") {
@@ -228,7 +242,8 @@ function isMetadataField(field: string): boolean {
  * Many-valued fields (names, cities, years) cannot win on entropy alone.
  */
 export function computeBalanceScore(distribution: FieldDistribution, _legacyCueWeight?: number): number {
-  if (distribution.coverage < config.MIN_FIELD_COVERAGE) return 0;
+  const minCov = distribution.cueType === "mood" ? 0.35 : config.MIN_FIELD_COVERAGE;
+  if (distribution.coverage < minCov) return 0;
 
   // Take top 4 values by count
   const sortedEntries = Object.entries(distribution.counts)
@@ -327,18 +342,33 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
   if (!answeredCues.has("who") && !qLower.includes("friends") && !qLower.includes("family")) {
     const groupCounts: Record<string, number> = {};
     for (const p of candidates) {
-      const g = p.tag?.group_type;
-      if (g && g !== "unknown") groupCounts[g.toLowerCase()] = (groupCounts[g.toLowerCase()] || 0) + 1;
+      if ((p.tag?.people_count && p.tag.people_count > 0) || p.metadata?.people?.length) {
+        let g = p.tag?.group_type?.toLowerCase().trim();
+        if (g && g !== "unknown" && g !== "none") {
+          if (g === "alone" || g === "me") g = "solo";
+          else if (g === "kids" || g === "child") g = "children";
+          groupCounts[g] = (groupCounts[g] || 0) + 1;
+        }
+      }
     }
-    const topGroups = Object.entries(groupCounts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v]) => v);
+    const topGroups = Object.entries(groupCounts)
+      .filter(([val, count]) => count >= 2 && ["solo", "children", "friends", "family"].includes(val))
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
+
     if (topGroups.length >= 2) {
       questions.push({
         id: "q_who_generic",
         cueType: "who",
         field: "group_type",
-        text: "Who was with you?",
+        text: "Who was there?",
         layer: "generic_fallback",
-        options: topGroups.map((v) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v })),
+        options: topGroups.map(([v, cnt]) => {
+          let label = v.charAt(0).toUpperCase() + v.slice(1);
+          if (v === "solo") label = "Just me";
+          else if (v === "children") label = "Children";
+          return { label, value: v, count: cnt };
+        }),
         allowText: true,
         allowDontRemember: true,
       });
@@ -351,19 +381,26 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
     for (const p of candidates) {
       const a = p.tag?.activity;
       if (a && a !== "unknown" && a !== "none") {
-        const first = a.split(/,\s*/)[0].trim().toLowerCase();
-        if (first) actCounts[first] = (actCounts[first] || 0) + 1;
+        let act = a.split(/,\s*/)[0].trim().toLowerCase();
+        if (["standing", "sitting", "exiting pool", "resting", "looking", "walking", "holding", "posing"].includes(act)) {
+          continue;
+        }
+        if (act === "playing in the sand" || act === "playing in sand") act = "playing";
+        if (act) actCounts[act] = (actCounts[act] || 0) + 1;
       }
     }
-    const topActs = Object.entries(actCounts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v]) => v);
+    const topActs = Object.entries(actCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
     if (topActs.length >= 2) {
       questions.push({
         id: "q_what_generic",
         cueType: "what",
         field: "activity",
-        text: "What was everyone doing?",
+        text: "What were you doing?",
         layer: "generic_fallback",
-        options: topActs.map((v) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v })),
+        options: topActs.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
         allowText: true,
         allowDontRemember: true,
       });
@@ -382,15 +419,18 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         }
       }
     }
-    const topColors = Object.entries(colorCounts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v]) => v);
+    const topColors = Object.entries(colorCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
     if (topColors.length >= 2) {
       questions.push({
         id: "q_look_generic",
         cueType: "look",
         field: "clothing_color",
-        text: "What did people wear?",
+        text: "What did it look like?",
         layer: "generic_fallback",
-        options: topColors.map((v) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v })),
+        options: topColors.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
         allowText: true,
         allowDontRemember: true,
       });
@@ -406,7 +446,10 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         moodCounts[m.toLowerCase()] = (moodCounts[m.toLowerCase()] || 0) + 1;
       }
     }
-    const topMoods = Object.entries(moodCounts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v]) => v);
+    const topMoods = Object.entries(moodCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
     if (topMoods.length >= 2) {
       questions.push({
         id: "q_mood_generic",
@@ -414,7 +457,7 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         field: "mood",
         text: "What was the vibe?",
         layer: "generic_fallback",
-        options: topMoods.map((v) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v })),
+        options: topMoods.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
         allowText: true,
         allowDontRemember: true,
       });
@@ -430,7 +473,10 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         occCounts[o.toLowerCase()] = (occCounts[o.toLowerCase()] || 0) + 1;
       }
     }
-    const topOccs = Object.entries(occCounts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v]) => v);
+    const topOccs = Object.entries(occCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
     if (topOccs.length >= 2) {
       questions.push({
         id: "q_occasion_generic",
@@ -438,7 +484,7 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
         field: "occasion_guess",
         text: "What was the occasion?",
         layer: "generic_fallback",
-        options: topOccs.map((v) => ({ label: `${v.charAt(0).toUpperCase() + v.slice(1)}?`, value: v, isGuess: true })),
+        options: topOccs.map(([v, cnt]) => ({ label: `${v.charAt(0).toUpperCase() + v.slice(1)}?`, value: v, isGuess: true, count: cnt })),
         allowText: true,
         allowDontRemember: true,
       });
@@ -460,35 +506,32 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
  *    every option must exist in the candidates' tags/metadata
  */
 /**
- * Contextualizes question titles using the user's base query keyword.
+ * Neutral question wording templates.
  */
-function getContextualQuestionText(field: string, baseText: string, query: string): string {
-  const qClean = (query || "").trim().split(",")[0].trim().toLowerCase();
-  if (!qClean || qClean.length < 3) return baseText;
-  
+function getNeutralQuestionText(field: string, baseText: string): string {
   if (field === "group_type" || field === "cast_people") {
-    return `Who was with you at the ${qClean}?`;
+    return "Who was there?";
   }
   if (field === "activity") {
-    return `What were you doing at the ${qClean}?`;
+    return "What were you doing?";
   }
   if (field === "indoor_outdoor") {
-    return `Was this an indoor or outdoor ${qClean}?`;
+    return "Indoors or outdoors?";
   }
   if (field === "clothing_color") {
-    return `What color was worn at the ${qClean}?`;
+    return "What did it look like?";
   }
-  if (field === "place_city") {
-    return `Which place or city was this ${qClean}?`;
-  }
-  if (field === "time_of_day") {
-    return `What time of day at the ${qClean}?`;
-  }
-  if (field === "occasion_guess") {
-    return `What was the occasion for this ${qClean}?`;
+  if (field === "place_city" || field === "setting") {
+    return "Where was it?";
   }
   if (field === "mood") {
-    return `What was the vibe at the ${qClean}?`;
+    return "What was the vibe?";
+  }
+  if (field === "occasion_guess") {
+    return "What was the occasion?";
+  }
+  if (field === "time_of_day" || field === "time_period" || field === "season_year") {
+    return "When was this taken?";
   }
   return baseText;
 }
@@ -529,23 +572,23 @@ export function selectQuestions(
   // Potential fields: memory cues first, then metadata (where/when)
   // Memory cue fields
   const memoryFieldsConfig: Array<{ field: string; cueType: CueType; text: string; queryKeywords: string[] }> = [
-    { field: "activity", cueType: "what", text: "What was everyone doing?", queryKeywords: ["swimming", "eating", "dancing", "hiking", "playing"] },
+    { field: "activity", cueType: "what", text: "What were you doing?", queryKeywords: ["swimming", "eating", "dancing", "hiking", "playing"] },
     { field: "occasion_guess", cueType: "occasion", text: "What was the occasion?", queryKeywords: ["birthday", "party", "festival", "graduation", "reunion"] },
-    { field: "clothing_color", cueType: "look", text: "What color was worn?", queryKeywords: ["red", "blue", "yellow", "black", "white", "orange", "swimsuit"] },
-    { field: "group_type", cueType: "who", text: "Who was with you?", queryKeywords: ["friends", "family", "couple", "solo", "kids", "alone"] },
+    { field: "clothing_color", cueType: "look", text: "What did it look like?", queryKeywords: ["red", "blue", "yellow", "black", "white", "orange", "swimsuit"] },
+    { field: "group_type", cueType: "who", text: "Who was there?", queryKeywords: ["friends", "family", "couple", "solo", "kids", "alone"] },
     { field: "mood", cueType: "mood", text: "What was the vibe?", queryKeywords: ["happy", "cheerful", "playful", "calm", "energetic", "lively", "relaxed", "vibe", "mood"] },
-    { field: "time_of_day", cueType: "when", text: "What time of day was it?", queryKeywords: ["morning", "afternoon", "evening", "night"] },
-    { field: "indoor_outdoor", cueType: "where", text: "Was this indoors or outdoors?", queryKeywords: ["outdoor", "indoor", "inside", "outside"] },
+    { field: "time_of_day", cueType: "when", text: "When was this taken?", queryKeywords: ["morning", "afternoon", "evening", "night"] },
+    { field: "indoor_outdoor", cueType: "where", text: "Where was it?", queryKeywords: ["outdoor", "indoor", "inside", "outside"] },
   ];
 
   // Metadata fields (low recallability — restricted by Rule C)
   const metaFieldsConfig: Array<{ field: string; cueType: CueType; text: string; queryKeywords: string[] }> = [
     // cast_people: ONLY allowed if typed text contains a cast name
     ...(queryContainsCastName ? [
-      { field: "cast_people", cueType: "who" as CueType, text: "Who was with you?", queryKeywords: [...placesData.people.map((p) => p.toLowerCase())] },
+      { field: "cast_people", cueType: "who" as CueType, text: "Who was there?", queryKeywords: [...placesData.people.map((p) => p.toLowerCase())] },
     ] : []),
-    { field: "place_city", cueType: "where" as CueType, text: "Where was this taken?", queryKeywords: [...placesData.namedPlaces.map((p) => p.toLowerCase())] },
-    { field: "time_period", cueType: "when" as CueType, text: "When was this taken?", queryKeywords: ["morning", "afternoon", "evening", "night", "summer", "monsoon", "winter", "year", "ago", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"] },
+    { field: "place_city", cueType: "where" as CueType, text: "Where was it?", queryKeywords: [...placesData.namedPlaces.map((p) => p.toLowerCase())] },
+    { field: "time_period", cueType: "when" as CueType, text: "When was this taken?", queryKeywords: ["morning", "afternoon", "evening", "night", "year", "ago", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"] },
   ];
 
   const allFieldsConfig = [...memoryFieldsConfig, ...metaFieldsConfig];
@@ -574,25 +617,47 @@ export function selectQuestions(
 
     if (queryHasAnchor) continue;
 
+    // Skip Who row if no candidate photo has people
+    if (item.cueType === "who") {
+      const anyCandidateHasPeople = candidates.some(
+        (p) => (p.tag?.people_count && p.tag.people_count > 0) ||
+               (p.tag?.group_type && p.tag.group_type !== "unknown") ||
+               (p.metadata?.people && p.metadata.people.length > 0)
+      );
+      if (!anyCandidateHasPeople) continue;
+    }
+
     const dist = computeFieldDistribution(candidates, item.field, item.cueType);
     const score = computeBalanceScore(dist, 1.0); // recallability is baked into computeBalanceScore now
 
     if (score <= 0) continue;
 
     // Build options — ONLY include values that actually appear in candidate photos
-    // and cover >= 10% of the candidate pool (at least candidates.length / 10)
-    const minCoverage = Math.max(1, Math.floor(n * 0.10));
+    // and cover >= 2 photos (drop any option behind only 1 photo)
+    const minCoverage = Math.max(2, Math.floor(n * 0.10));
     const eligibleOptions = Object.entries(dist.counts)
-      .filter(([, count]) => count >= minCoverage)
+      .filter(([, count]) => count >= 2 && count >= minCoverage)
       .sort((a, b) => b[1] - a[1])
       .slice(0, config.MAX_OPTIONS);
 
-    if (eligibleOptions.length < 2) continue;
+    // Skip if nearly all valid candidates share one value (>85% identical)
+    if (dist.totalValid > 0 && eligibleOptions.length > 0) {
+      const topCount = eligibleOptions[0][1];
+      if (topCount / dist.totalValid > 0.85) continue;
+    }
+
+    // Skip rows with <3 options (or <2 if binary or activity)
+    const minOpts = item.field === "indoor_outdoor" || item.field === "activity" ? 2 : (candidates.length <= 8 ? 2 : 3);
+    if (eligibleOptions.length < minOpts) continue;
 
     const isOccasion = item.cueType === "occasion";
     const options: QuestionOption[] = eligibleOptions.map(([val]) => {
       let label = val.charAt(0).toUpperCase() + val.slice(1);
-      if (val === "this year") label = "This year";
+      if (val === "just me" || val === "solo" || val === "alone") label = "Just me";
+      else if (val === "children" || val === "kids") label = "Children";
+      else if (val === "friends") label = "Friends";
+      else if (val === "family") label = "Family";
+      else if (val === "this year") label = "This year";
       else if (val === "last year") label = "Last year";
       else if (val === "two years ago") label = "2 years ago";
       else if (val === "3 years ago") label = "3 years ago";
@@ -606,17 +671,18 @@ export function selectQuestions(
         label: isOccasion ? `${label}?` : label,
         value: val,
         isGuess: isOccasion,
+        count: dist.counts[val] || 0,
       };
     });
 
-    const contextualText = getContextualQuestionText(item.field, item.text, query);
+    const neutralText = getNeutralQuestionText(item.field, item.text);
 
     candidateQuestions.push({
       question: {
         id: `q_${item.field}`,
         cueType: item.cueType,
         field: item.field,
-        text: contextualText,
+        text: neutralText,
         layer: "dynamic_adaptive",
         options,
         allowText: true,
@@ -640,42 +706,54 @@ export function selectQuestions(
   const memoryCandidates = candidateQuestions.filter((cq) => isMemoryField(cq.question.field));
   const metaCandidates = candidateQuestions.filter((cq) => !isMemoryField(cq.question.field));
 
-  // 1. Pick memory cues first
-  for (const mc of memoryCandidates) {
-    if (selected.length >= 2 && metaCandidates.length > 0) break;
-    if (selected.length >= config.MAX_QUESTIONS) break;
-    if (selectedCues.has(mc.question.cueType)) continue;
-    selected.push(mc.question);
-    selectedCues.add(mc.question.cueType);
+  if (qLower.includes("birthday") || qLower.includes("party") || qLower.includes("celebration")) {
+    memoryCandidates.sort((a, b) => {
+      if (a.question.cueType === "mood") return -1;
+      if (b.question.cueType === "mood") return 1;
+      return b.balanceScore - a.balanceScore;
+    });
   }
 
-  // 2. Pad memory cues from fallback if < 2
-  if (selected.length < 2) {
+  // Prefer observed cues: sort candidateQuestions so memory cue fields come first
+  candidateQuestions.sort((a, b) => {
+    const aIsMem = isMemoryField(a.question.field);
+    const bIsMem = isMemoryField(b.question.field);
+    if (aIsMem && !bIsMem) return -1;
+    if (!aIsMem && bIsMem) return 1;
+    return b.balanceScore - a.balanceScore;
+  });
+
+  const isSyntheticField = (field: string) =>
+    field === "place_city" || field === "time_period" || field === "season_year" || field === "cast_people";
+  let syntheticCount = 0;
+
+  // Select up to MAX_QUESTIONS with distinct cue types and at most ONE synthetic field
+  for (const cq of candidateQuestions) {
+    if (selected.length >= config.MAX_QUESTIONS) break;
+    if (selectedCues.has(cq.question.cueType)) continue;
+
+    if (isSyntheticField(cq.question.field)) {
+      if (syntheticCount >= 1) continue; // Allow at most ONE row from synthetic fields (place OR time, not both)
+      syntheticCount++;
+    }
+
+    selected.push(cq.question);
+    selectedCues.add(cq.question.cueType);
+  }
+
+  // If fewer than MAX_QUESTIONS, pad from generic fallback
+  if (selected.length < config.MAX_QUESTIONS) {
     const fallback = genericFallbackQuestions(query, priorAnswers, candidates);
     for (const fq of fallback) {
-      if (selected.length >= 2) break;
+      if (selected.length >= config.MAX_QUESTIONS) break;
       if (selectedCues.has(fq.cueType)) continue;
-      if (!isMemoryField(fq.field)) continue;
+      if (isSyntheticField(fq.field)) {
+        if (syntheticCount >= 1) continue;
+        syntheticCount++;
+      }
       selected.push(fq);
       selectedCues.add(fq.cueType);
     }
-  }
-
-  // 3. Add at most 1 metadata row if space remains
-  for (const mc of metaCandidates) {
-    if (selected.length >= config.MAX_QUESTIONS) break;
-    if (selectedCues.has(mc.question.cueType)) continue;
-    selected.push(mc.question);
-    selectedCues.add(mc.question.cueType);
-    break;
-  }
-
-  // 4. If space remains, add remaining memory candidates
-  for (const mc of memoryCandidates) {
-    if (selected.length >= config.MAX_QUESTIONS) break;
-    if (selectedCues.has(mc.question.cueType)) continue;
-    selected.push(mc.question);
-    selectedCues.add(mc.question.cueType);
   }
 
   // Final safety: if still 0 questions found but candidates > threshold, use fallback
@@ -826,12 +904,15 @@ export function evaluateTrigger(params: {
 
   // 7. few_candidates (candidates < 6)
   // Candidates = photos matching ALL recognised content tokens (tier 1), else tier 1 + tier 2.
-  const recognisedQuery = cat.recognisedTokens.length > 0 ? cat.recognisedTokens.join(" ") : query;
+  const recognisedQuery =
+    cat.unrecognisedTokens.length > 0 && cat.recognisedTokens.length > 0
+      ? cat.recognisedTokens.join(" ")
+      : query;
   const searchRes = search(recognisedQuery);
   const tier1 = searchRes.results.filter((p) => p.tier === 1);
-  const tier2 = searchRes.results.filter((p) => p.tier === 2);
-  const candidatePhotos = (tier1.length >= config.COACH_MIN_CANDIDATES ? tier1 : tier1.concat(tier2)) as PhotoItem[];
-  const candidateCount = params.countStrong !== undefined ? params.countStrong : candidatePhotos.length;
+  // ONLY photos that pass the relevance cut-off (verified, strong Tier 1 matches)
+  const candidatePhotos = tier1 as PhotoItem[];
+  const candidateCount = candidatePhotos.length;
   const finalAmbiguousCount = params.ambiguousCount !== undefined ? params.ambiguousCount : searchRes.ambiguous_count;
 
   if (triggerMode === "strict" && finalAmbiguousCount !== undefined && finalAmbiguousCount < config.COACH_MIN_AMBIGUOUS) {
@@ -854,13 +935,13 @@ export function evaluateTrigger(params: {
   if (candidateCount < config.COACH_MIN_CANDIDATES) {
     return {
       shouldTrigger: false,
-      blockedReason: "not_enough_candidates",
+      blockedReason: candidateCount === 0 ? "no_matches" : "not_enough_candidates",
       candidateCount,
       candidatePhotos,
       tokens: cat.contentTokens,
       recognisedTokens: cat.recognisedTokens,
       unrecognisedTokens: cat.unrecognisedTokens,
-      noMatchState: cat.unrecognisedTokens.length > 0 ? "partial" : "none",
+      noMatchState: candidateCount === 0 ? "zero" : (cat.unrecognisedTokens.length > 0 ? "partial" : "none"),
       countStrong: searchRes.count_strong,
       countTotal: searchRes.count_total,
       ambiguousCount: searchRes.ambiguous_count,

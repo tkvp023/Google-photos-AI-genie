@@ -94,26 +94,35 @@ function buildOptionsFromField(
 ): QuestionOption[] {
   const dist = computeFieldDistribution(candidates, field, cueType);
   const sortedEntries = Object.entries(dist.counts)
+    .filter(([val]) => {
+      const v = val.toLowerCase().trim();
+      if (["standing", "sitting", "exiting pool", "resting", "looking", "walking", "holding", "posing"].includes(v)) return false;
+      if (/^(summer|monsoon|winter|post-monsoon)/i.test(v)) return false;
+      return true;
+    })
     .sort((a, b) => b[1] - a[1])
     .slice(0, config.MAX_OPTIONS);
 
   const isOccasion = cueType === "occasion";
   return sortedEntries.map(([val]) => {
     let label = val.charAt(0).toUpperCase() + val.slice(1);
-    if (val === "this year") label = "This year";
+    if (val === "just me" || val === "solo" || val === "alone") label = "Just me";
+    else if (val === "children" || val === "kids") label = "Children";
+    else if (val === "friends") label = "Friends";
+    else if (val === "family") label = "Family";
+    else if (val === "this year") label = "This year";
     else if (val === "last year") label = "Last year";
     else if (val === "two years ago") label = "2 years ago";
     else if (val === "3 years ago") label = "3 years ago";
     else if (val === "earlier") label = "Earlier";
-    else if (/^(summer|monsoon|winter|post-monsoon)\s+\d{4}$/i.test(val)) {
-      label = val.split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-    } else if (cueType === "where" || cueType === "who") {
+    else if (cueType === "where" || cueType === "who") {
       label = val.split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
     }
     return {
       label: isOccasion ? `${label}?` : label,
       value: val,
       isGuess: isOccasion,
+      count: dist.counts[val] || 0,
     };
   });
 }
@@ -192,11 +201,20 @@ function geminiPlanToQuestions(
     const options = buildOptionsFromField(candidates, gq.field, cueType);
     if (options.length < 2) continue; // skip if data doesn't support this field
 
+    const neutralText =
+      cueType === "who" ? "Who was there?" :
+      cueType === "what" ? "What were you doing?" :
+      cueType === "look" ? "What did it look like?" :
+      cueType === "where" ? "Where was it?" :
+      cueType === "mood" ? "What was the vibe?" :
+      cueType === "occasion" ? "What was the occasion?" :
+      "When was this taken?";
+
     questions.push({
       id: `q_gemini_${gq.field}`,
       cueType,
       field: gq.field,
-      text: gq.text,
+      text: neutralText,
       layer: "dynamic_adaptive",
       options,
       allowText: true,

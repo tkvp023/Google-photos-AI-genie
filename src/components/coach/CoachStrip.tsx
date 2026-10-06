@@ -115,8 +115,8 @@ export function CoachStrip({
             return isPhraseSelected(currentText, phrase);
           });
 
-          // If answered, collapse to selected chip only
-          const displayOptions = selectedOption ? [selectedOption] : q.options;
+          // All options remain visible so user can tap another option to replace
+          const displayOptions = q.options;
 
           return (
             <div key={q.id} className="flex items-center gap-2 min-h-[44px]">

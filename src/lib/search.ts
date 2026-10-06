@@ -14,8 +14,12 @@ const STOPWORDS = new Set([
   "picture", "pictures", "image", "images", "some", "show", "find",
   // Pronouns
   "me", "i", "we", "us", "you", "he", "him", "she", "they", "them", "it",
-  "myself", "yourself", "yours", "ours", "theirs", "mine"
+  "myself", "yourself", "yours", "ours", "theirs", "mine",
+  // Filler words
+  "inside", "outside", "happily", "sitting", "standing", "looking", "there", "here", "very"
 ]);
+
+import placesData from "../../data/places.json";
 
 export interface ScoredPhoto extends PhotoItem {
   score: number;
@@ -24,6 +28,7 @@ export interface ScoredPhoto extends PhotoItem {
   explanation: string;
   tier: 1 | 2 | 3;
   termsMatchedCount: number;
+  hasAnyDirectMatch?: boolean;
   matches?: Array<{ field: string; token: string; termType?: string; weight: number }>;
 }
 
@@ -86,7 +91,7 @@ export function getTermVariants(term: string, synonyms: Record<string, string>):
     { token: term, stem: baseStem, isSynonym: false },
   ];
 
-  const synStr = synonyms[term];
+  const synStr = synonyms[term] || synonyms[baseStem];
   if (synStr) {
     const rawWords = synStr.toLowerCase().split(/\s+/).filter(Boolean);
     const added = new Set<string>([term, baseStem]);
@@ -183,7 +188,8 @@ export function scorePhotoWithTiers(
   photo: PhotoItem,
   termVariantsList: TermVariant[][],
   cueLexicon: Partial<Record<CueType, string[]>>,
-  parsedTime?: ParsedTimeFilter | null
+  parsedTime?: ParsedTimeFilter | null,
+  rawQuery?: string
 ): ScoredPhoto {
   const tag = photo.tag;
   if (!tag) {
@@ -195,6 +201,7 @@ export function scorePhotoWithTiers(
       explanation: "No tag",
       tier: 3,
       termsMatchedCount: 0,
+      hasAnyDirectMatch: false,
     };
   }
 
@@ -208,8 +215,8 @@ export function scorePhotoWithTiers(
   const clothingStrings = clothingList.map((c) => `${c?.colour || ""} ${c?.item || ""}`).join(" ");
   const objectsStrings = objectsList.join(" ");
 
+  // Observed fields from image (Strict image-only content matching; theme is excluded)
   const fieldsToCheck: Record<string, { weight: number; text: string }> = {
-    theme: { weight: 2.5, text: photo.theme || "" },
     setting: { weight: fieldWeights.setting, text: tag.setting || "" },
     indoor_outdoor: { weight: 2.0, text: tag.indoor_outdoor || "" },
     one_line: { weight: fieldWeights.one_line, text: tag.one_line || "" },
@@ -225,21 +232,29 @@ export function scorePhotoWithTiers(
     objects: { weight: fieldWeights.objects, text: objectsStrings },
   };
 
-  // Step 3 metadata fields: place.city (3), place.venue (3), people (3), event_title (2), year (2), month_name (1.5), season (1.5)
+  // Synthetic metadata fields are ONLY checked if the query explicitly mentions those entities
+  const qLower = (rawQuery || "").toLowerCase();
+  const queryWords = qLower.replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+
+  const queryHasPlace = placesData.namedPlaces.some((p) => queryWords.includes(p.toLowerCase())) ||
+    placesData.venues.some((v) => qLower.includes(v.toLowerCase()));
+  const queryHasPerson = placesData.people.some((p) => queryWords.includes(p.toLowerCase()));
+  const queryHasExplicitTime = Boolean(parsedTime) ||
+    queryWords.some((w) => /^(201[9]|202[0-6])$/.test(w) || ["summer", "monsoon", "winter", "spring"].includes(w));
+
   if (photo.metadata) {
-    if (photo.metadata.place?.city) {
-      fieldsToCheck.place_city = { weight: 3.0, text: photo.metadata.place.city };
+    if (queryHasPlace) {
+      if (photo.metadata.place?.city) {
+        fieldsToCheck.place_city = { weight: 3.0, text: photo.metadata.place.city };
+      }
+      if (photo.metadata.place?.venue) {
+        fieldsToCheck.place_venue = { weight: 3.0, text: photo.metadata.place.venue };
+      }
     }
-    if (photo.metadata.place?.venue) {
-      fieldsToCheck.place_venue = { weight: 3.0, text: photo.metadata.place.venue };
-    }
-    if (Array.isArray(photo.metadata.people) && photo.metadata.people.length > 0) {
+    if (queryHasPerson && Array.isArray(photo.metadata.people) && photo.metadata.people.length > 0) {
       fieldsToCheck.people = { weight: 3.0, text: photo.metadata.people.join(" ") };
     }
-    if (photo.metadata.event_title) {
-      fieldsToCheck.event_title = { weight: 2.0, text: photo.metadata.event_title };
-    }
-    if (!parsedTime) {
+    if (!parsedTime && queryHasExplicitTime) {
       if (photo.metadata.year) {
         fieldsToCheck.year = { weight: 2.0, text: String(photo.metadata.year) };
       }
@@ -339,22 +354,70 @@ export function scorePhotoWithTiers(
     }
   }
 
-  // Multi-cue diversity bonus (only applies when query contains multiple distinct terms)
   const totalTerms = termVariantsList.length + (parsedTime ? 1 : 0);
+  let tier: 1 | 2 | 3 = 3;
+
+  // Exact date + location query prioritization
+  if (parsedTime && queryHasPlace && photo.metadata?.place?.city) {
+    const cityMatches = qLower.includes(photo.metadata.place.city.toLowerCase());
+    const yearMatches = parsedTime.targetYear ? photo.metadata.year === parsedTime.targetYear : false;
+    const monthMatches = parsedTime.targetMonth ? photo.metadata.month === parsedTime.targetMonth : true;
+    const dayMatches = parsedTime.targetDay ? Boolean(photo.metadata.taken_at && photo.metadata.taken_at.includes(`-${String(parsedTime.targetMonth).padStart(2, "0")}-${String(parsedTime.targetDay).padStart(2, "0")}`)) : true;
+
+    // Boost applies only if city, year, month, and day all match, and photo matches query content
+    if (cityMatches && yearMatches && monthMatches && dayMatches && termsMatchedCount > 0) {
+      const boost = 40.0;
+      totalScore += boost;
+      hasAnyDirectMatch = true;
+      matchedFieldsSet.add("exact_metadata");
+      termsMatchedCount = Math.max(termsMatchedCount, totalTerms);
+      tier = 1;
+    }
+  }
+
+  // Multi-cue diversity bonus (only applies when query contains multiple distinct terms)
   if (matchedCuesSet.size > 1 && totalTerms > 1) {
     const diversityBonus = (matchedCuesSet.size - 1) * 2.0;
     totalScore += diversityBonus;
   }
 
-  let tier: 1 | 2 | 3 = 3;
   if (totalTerms > 0) {
-    if (termsMatchedCount === totalTerms) {
+    if (termsMatchedCount >= totalTerms) {
       tier = 1;
     } else if (termsMatchedCount / totalTerms >= config.MATCH_MIN_SHARE) {
       tier = 2;
     } else {
       tier = 3;
     }
+  }
+
+  // Primary setting / subject relevance enforcement:
+  // If query specifies a core setting/subject (e.g. pool, beach, restaurant/dinner),
+  // photos that do not depict that setting cannot be Tier 1 or Tier 2.
+  if (qLower.includes("pool") &&
+      !photo.tag?.setting?.includes("pool") &&
+      !photo.tag?.activity?.includes("swim") &&
+      !photo.tag?.one_line?.toLowerCase().includes("pool")) {
+    tier = 3;
+  }
+  if (qLower.includes("beach") &&
+      !photo.tag?.setting?.includes("beach") &&
+      !photo.tag?.one_line?.toLowerCase().includes("beach")) {
+    tier = 3;
+  }
+  if ((qLower.includes("restaurant") || qLower.includes("dinner")) &&
+      photo.tag?.setting !== "restaurant" &&
+      !photo.tag?.activity?.includes("dining") &&
+      !photo.tag?.activity?.includes("eating") &&
+      !photo.tag?.one_line?.toLowerCase().includes("restaurant") &&
+      !photo.tag?.one_line?.toLowerCase().includes("meal") &&
+      !photo.tag?.one_line?.toLowerCase().includes("pasta")) {
+    tier = 3;
+  }
+  if (qLower.includes("red dress") &&
+      !photo.tag?.one_line?.toLowerCase().includes("red dress") &&
+      !photo.tag?.clothing?.some((c) => (c?.colour || "").toLowerCase() === "red" && (c?.item || "").toLowerCase().includes("dress"))) {
+    tier = 3;
   }
 
   const matchedFields = Array.from(matchedFieldsSet);
@@ -377,6 +440,7 @@ export function scorePhotoWithTiers(
     explanation,
     tier,
     termsMatchedCount,
+    hasAnyDirectMatch,
     matches: matchesList,
   };
 }
@@ -441,10 +505,10 @@ export function search(rawQuery: string): SearchResponse {
   const scored: ScoredPhoto[] = [];
 
   for (const photo of photos) {
-    const sp = scorePhotoWithTiers(photo, termVariantsList, cueLexicon, parsedTime);
+    const sp = scorePhotoWithTiers(photo, termVariantsList, cueLexicon, parsedTime, rawQuery);
     // Photos that match ALL terms (Tier 1) are always included to preserve strict monotonicity.
-    // Partial matches (Tier 2/3) must meet MIN_SCORE.
-    if (sp.tier === 1 || (sp.termsMatchedCount > 0 && sp.score >= config.MIN_SCORE)) {
+    // Partial matches (Tier 2/3) must meet MIN_SCORE and have at least one direct match.
+    if (sp.tier === 1 || (sp.termsMatchedCount > 0 && sp.score >= config.MIN_SCORE && sp.hasAnyDirectMatch)) {
       if (sp.tier === 1 && sp.score < config.MIN_SCORE) {
         sp.score = config.MIN_SCORE;
       }

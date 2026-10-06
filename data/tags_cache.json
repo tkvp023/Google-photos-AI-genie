@@ -917,7 +917,7 @@
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_08.jpg": {
-    "one_line": "A white unicorn pi\u00f1ata stands surrounded by party hats and a pink balloon on a light surface.",
+    "one_line": "A white unicorn piñata stands surrounded by party hats and a pink balloon on a light surface.",
     "setting": "home",
     "indoor_outdoor": "indoor",
     "activity": null,
@@ -929,12 +929,12 @@
     "clothing_colours": null,
     "clothing": null,
     "objects": [
-      "unicorn pi\u00f1ata",
+      "unicorn piñata",
       "party hats",
       "balloon"
     ],
     "time_of_day": null,
-    "mood": "joyful",
+    "mood": null,
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_09.jpg": {
@@ -955,11 +955,11 @@
       "balloon"
     ],
     "time_of_day": null,
-    "mood": "joyful",
+    "mood": null,
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_10.jpg": {
-    "one_line": "A white unicorn pi\u00f1ata rests on a surface surrounded by pink party hats and a balloon.",
+    "one_line": "A white unicorn piñata rests on a surface surrounded by pink party hats and a balloon.",
     "setting": "home",
     "indoor_outdoor": "indoor",
     "activity": null,
@@ -971,12 +971,12 @@
     "clothing_colours": null,
     "clothing": null,
     "objects": [
-      "unicorn pi\u00f1ata",
+      "unicorn piñata",
       "party hats",
       "balloon"
     ],
     "time_of_day": null,
-    "mood": "joyful",
+    "mood": null,
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_11.jpg": {
@@ -1109,7 +1109,7 @@
       "tablecloth"
     ],
     "time_of_day": null,
-    "mood": "joyful",
+    "mood": null,
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_17.jpg": {
@@ -1177,7 +1177,7 @@
       "frosting"
     ],
     "time_of_day": null,
-    "mood": "joyful",
+    "mood": null,
     "model_version": "gemini-3.5-flash-lite"
   },
   "birthday_20.jpg": {
@@ -5049,7 +5049,7 @@
     "model_version": "gemini-3.5-flash-lite"
   },
   "restaurant_06.jpg": {
-    "one_line": "A close-up view of a vegetable pizza topped with broccoli, tomatoes, peppers, and jalape\u00f1os.",
+    "one_line": "A close-up view of a vegetable pizza topped with broccoli, tomatoes, peppers, and jalapeños.",
     "setting": null,
     "indoor_outdoor": null,
     "activity": null,
@@ -5065,7 +5065,7 @@
       "broccoli",
       "tomatoes",
       "peppers",
-      "jalape\u00f1os",
+      "jalapeños",
       "mushrooms"
     ],
     "time_of_day": null,

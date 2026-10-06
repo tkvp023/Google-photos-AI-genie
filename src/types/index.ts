@@ -125,6 +125,7 @@ export interface QuestionOption {
   label: string;      // display text, e.g. "Friends"
   value: string;      // normalised value, e.g. "friends"
   isGuess?: boolean;  // true for occasion options (shows "?" suffix)
+  count?: number;     // number of candidate photos matching this option
 }
 
 export interface Question {

@@ -43,6 +43,7 @@ export interface ParsedTimeFilter {
   isPrecise: boolean; // exact year, exact month+year, exact season+year
   targetYear?: number;
   targetMonth?: number;
+  targetDay?: number;
   targetSeason?: Season;
   softYears?: number[]; // +/- 1 year
 }
@@ -60,9 +61,9 @@ export function parseTimeQuery(query: string): ParsedTimeFilter | null {
   // "last summer" -> 2025
   // "two summers ago" -> 2024
   // "three summers ago" -> 2023
-  if (/\b(?:two|2)\s+summers?\s+ago\b/i.test(q)) {
+  if (/\b(?:two|2|a\s+couple\s+of)\s+summers?\s+ago\b/i.test(q)) {
     return {
-      rawMatchedPhrase: q.match(/\b(?:two|2)\s+summers?\s+ago\b/i)![0],
+      rawMatchedPhrase: q.match(/\b(?:two|2|a\s+couple\s+of)\s+summers?\s+ago\b/i)![0],
       isRelative: true,
       isPrecise: false,
       targetYear: 2024,
@@ -174,17 +175,20 @@ export function parseTimeQuery(query: string): ParsedTimeFilter | null {
   }
 
 
-  const monthYearRegex = /\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\s+(201[9]|202[0-6])\b/i;
-  const myMatch = q.match(monthYearRegex);
-  if (myMatch) {
-    const monthNum = MONTH_NAME_TO_NUM[myMatch[1].toLowerCase()];
-    const yr = parseInt(myMatch[2], 10);
+  // 3. Exact Day + Month + Year or Month + Year (e.g. "12 March 2021", "March 2021")
+  const dateRegex = /\b(?:(\d{1,2})(?:st|nd|rd|th)?\s+)?(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\s+(201[9]|202[0-6])\b/i;
+  const dMatch = q.match(dateRegex);
+  if (dMatch) {
+    const dayNum = dMatch[1] ? parseInt(dMatch[1], 10) : undefined;
+    const monthNum = MONTH_NAME_TO_NUM[dMatch[2].toLowerCase()];
+    const yr = parseInt(dMatch[3], 10);
     return {
-      rawMatchedPhrase: myMatch[0],
+      rawMatchedPhrase: dMatch[0],
       isRelative: false,
       isPrecise: true,
       targetYear: yr,
       targetMonth: monthNum,
+      targetDay: dayNum,
       targetSeason: MONTH_TO_SEASON[monthNum],
       softYears: [yr - 1, yr + 1],
     };

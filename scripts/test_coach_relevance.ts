@@ -25,10 +25,11 @@ const hasWhen = cuesPool.includes("when");
 const hasWhere = cuesPool.includes("where");
 const hasWho = cuesPool.includes("who");
 
-if (hasWhen && hasWhere && hasWho) {
-  console.log(`PASS [OK] "pool" offers when, where, and who questions!`);
+const syntheticCount = (hasWhen ? 1 : 0) + (hasWhere ? 1 : 0);
+if (hasWho && syntheticCount === 1) {
+  console.log(`PASS [OK] "pool" offers who and at most one synthetic field (where or when)!`);
 } else {
-  console.error(`FAIL [ERROR] "pool" missing expected cues! Got: ${cuesPool.join(", ")}`);
+  console.error(`FAIL [ERROR] "pool" missing expected cues or violated synthetic limit! Got: ${cuesPool.join(", ")}`);
   process.exit(1);
 }
 
@@ -36,13 +37,10 @@ if (hasWhen && hasWhere && hasWho) {
 for (const q of questionsPool) {
   for (const opt of q.options) {
     if (q.cueType === "where") {
-      const whereExists = poolCandidates.some(
-        (p) =>
-          p.metadata?.place?.city?.toLowerCase() === opt.value.toLowerCase() ||
-          p.tag?.indoor_outdoor?.toLowerCase() === opt.value.toLowerCase() ||
-          p.tag?.setting?.toLowerCase().includes(opt.value.toLowerCase())
+      const cityExists = poolCandidates.some(
+        (p) => p.metadata?.place?.city?.toLowerCase() === opt.value.toLowerCase()
       );
-      if (!whereExists) {
+      if (!cityExists) {
         console.error(`FAIL [ERROR] Option "${opt.value}" for where does not exist in candidates metadata!`);
         process.exit(1);
       }

@@ -30,8 +30,8 @@ if (!moodQ) {
   console.error("FAIL: selectQuestions for 'birthday' did not offer a mood question");
   process.exit(1);
 }
-if (!moodQ.text.includes("What was the vibe")) {
-  console.error(`FAIL: Expected question text to contain 'What was the vibe', got '${moodQ.text}'`);
+if (moodQ.text !== "What was the vibe?") {
+  console.error(`FAIL: Expected question text 'What was the vibe?', got '${moodQ.text}'`);
   process.exit(1);
 }
 if (moodQ.options.length === 0 || moodQ.options.length > 4) {

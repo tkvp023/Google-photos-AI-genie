@@ -1,0 +1,241 @@
+photo_id,field,value,verdict,reason
+pool_04.jpg,one_line,a person swims underwater in a clear blue pool.,correct,The sentence accurately describes a person swimming underwater in a blue pool as seen in the image.
+pool_04.jpg,group_type,solo,correct,Only a single person is visible in the pool.
+pool_04.jpg,occasion,none,correct,"There is no special occasion or event indicated, just casual swimming."
+pool_04.jpg,activity,swimming,correct,The person is clearly swimming underwater.
+pool_04.jpg,clothing_colours,black swimsuit,correct,The person is wearing a black patterned swimsuit.
+pool_04.jpg,objects,"water, pool tiles",correct,Water and the checkered/tiled bottom of the pool are clearly visible.
+pool_01.jpg,one_line,a group of friends splashing in a sunny outdoor pool,wrong,"The image shows a paper flower or origami object floating on water, not a group of friends."
+pool_01.jpg,group_type,friends,wrong,There are no people or groups in the image.
+pool_01.jpg,occasion,none,correct,There is no special occasion depicted.
+pool_01.jpg,activity,swimming,wrong,No one is swimming; an object is simply floating on the water surface.
+pool_01.jpg,clothing_colours,"red swimsuit, blue shorts",wrong,No clothing is visible in the image.
+pool_01.jpg,objects,"pool float, sunglasses",wrong,"The image shows a small paper/fabric object floating on water, not a pool float or sunglasses."
+pool_09.jpg,one_line,an indoor swimming pool with two life rings hanging on the wall.,correct,The image shows an indoor swimming pool with two life rings resting/hanging by the wall.
+pool_09.jpg,group_type,unknown,correct,"There are no people present in the image, so group type is unknown/not applicable."
+pool_09.jpg,occasion,none,correct,There is no special occasion or event depicted.
+pool_09.jpg,activity,none,correct,No people are performing any activity in the pool area.
+pool_09.jpg,clothing_colours,,correct,No people or clothing are visible in the scene.
+pool_09.jpg,objects,"life rings, pool ladder, windows",correct,"Life rings, pool ladder, and windows are clearly visible in the image."
+pool_08.jpg,one_line,a shirtless adult stands in a pool resting their hands on the edge.,correct,"The sentence accurately describes the person's state, setting, and action."
+pool_08.jpg,group_type,solo,correct,Only one person is visible in the image.
+pool_08.jpg,occasion,none,correct,There is no special occasion depicted; it's a casual pool scene.
+pool_08.jpg,activity,swimming,unsupported,"The person is standing and resting on the pool edge, not actively swimming."
+pool_08.jpg,clothing_colours,pink swim trunks,correct,Pink swim trunks are visible at the waist area.
+pool_08.jpg,objects,"pool edge, water",correct,The pool edge and water are clearly visible in the scene.
+beach_08.jpg,one_line,a young child plays in the sand while pulling a colorful toy wagon and holding a plastic shovel.,correct,"The sentence accurately describes the child, the setting, and the objects interacting with the child."
+beach_08.jpg,group_type,solo,correct,Only one child is visible in the frame.
+beach_08.jpg,occasion,none,correct,"It's a casual beach play setting, not a specific special occasion or event."
+beach_08.jpg,activity,"playing in the sand, pulling a toy wagon",correct,The child is walking in the sand while holding a wagon handle and a shovel.
+beach_08.jpg,clothing_colours,"unknown brown baseball cap, white t-shirt, blue and white floral swim shorts",unsupported,"The baseball cap is dark grey/blackish, not brown as stated ('unknown brown' is contradictory and inaccurate)."
+beach_08.jpg,objects,"blue plastic toy wagon with orange wheels, green wagon handle, yellow plastic toy shovel, sand",correct,All listed items are clearly visible and correctly described with their colors.
+beach_05.jpg,one_line,a family of four plays in the sand on a beach at sunset.,correct,The sentence accurately describes the family of four playing in the sand at sunset by the ocean.
+beach_05.jpg,group_type,family,correct,"The group consists of two adults and two children interacting closely, standardly identifiable as a family."
+beach_05.jpg,occasion,none,correct,It is a casual outing at the beach with no specific special occasion visible.
+beach_05.jpg,activity,playing in the sand,correct,The children and adults are actively gathered around and touching/playing in the sand.
+beach_05.jpg,clothing_colours,"orange red maxi dress, pink t-shirt, grey and white t-shirt, red shorts, white t-shirt, unknown blue shorts",correct,All listed clothing items and colors accurately match what the individuals are wearing.
+beach_05.jpg,objects,"sand, ocean, boats",correct,"Sand, ocean, and small boats on the horizon are all clearly visible in the image."
+beach_04.jpg,one_line,a man holding two young children and a woman in a coral dress smiling on a sandy beach at sunset.,correct,"The sentence accurately describes the people, their actions, clothing, and setting."
+beach_04.jpg,group_type,family,correct,The people depicted clearly form a family unit.
+beach_04.jpg,occasion,none,correct,"There is no special occasion or event visible, just a casual beach photo."
+beach_04.jpg,activity,posing for a photo,correct,The family is posing together looking towards the camera.
+beach_04.jpg,clothing_colours,"pink shirt, unknown blue trousers, orange maxi dress, white shirt, blue shorts, grey shirt, orange shorts",correct,The listed clothing items and colours accurately match what the family members are wearing.
+beach_04.jpg,objects,"sand, ocean waves, sun",correct,"The visible environmental elements include sand, ocean waves, and the sun setting."
+beach_03.jpg,one_line,two young children play in the sand on a sunny beach near tropical blue water.,correct,The sentence accurately describes the two children playing in the sand on a tropical beach.
+beach_03.jpg,group_type,family,unsupported,"While they are children, there is no visual confirmation that they are siblings or part of a specific family grouping as opposed to unrelated models."
+beach_03.jpg,occasion,photoshoot,correct,"The staged composition, professional lighting, and posed nature of the children strongly indicate a professional photoshoot."
+beach_03.jpg,activity,playing in the sand,correct,"The children are actively interacting with sand, hats, flowers, and driftwood on the beach."
+beach_03.jpg,clothing_colours,"pink wide-brim hat, white dress, white collared shirt, beige shorts",correct,All listed clothing items and colors match what the children are wearing in the image.
+beach_03.jpg,objects,"straw hat, purple flowers, driftwood, sand",correct,All listed objects are clearly visible in the image composition.
+birthday_19.jpg,one_line,a close-up view of frosted cupcakes with lit birthday candles.,correct,The image clearly shows a close-up of cupcakes with blue frosting and lit birthday candles.
+birthday_19.jpg,group_type,unknown,correct,No people or group are visible in the image.
+birthday_19.jpg,occasion,birthday,correct,The presence of lit birthday candles clearly indicates a birthday occasion.
+birthday_19.jpg,activity,eating,unsupported,"The cupcakes are sitting with lit candles, but no one is actively shown eating them."
+birthday_19.jpg,clothing_colours,,correct,No clothing is visible in the frame.
+birthday_19.jpg,objects,"cupcakes, candles, frosting, sprinkles",correct,All listed objects are clearly visible in the image.
+birthday_14.jpg,one_line,champagne bottles resting in a metal ice bucket filled with ice.,correct,Accurately describes the contents and setting shown in the image.
+birthday_14.jpg,group_type,unknown,correct,There are no people visible in the image to determine a group type.
+birthday_14.jpg,occasion,none,correct,No specific occasion or event is depicted beyond the bottles in ice.
+birthday_14.jpg,activity,none,correct,No active human action is taking place.
+birthday_14.jpg,clothing_colours,,correct,No clothing is present in the image.
+birthday_14.jpg,objects,"champagne bottles, ice bucket, ice",correct,All listed objects are clearly visible and correctly identified.
+birthday_02.jpg,one_line,three teens wearing party hats are sitting around a table eating sushi indoors.,correct,"The description accurately captures the three teens, party hats, table, eating sushi, and indoor setting."
+birthday_02.jpg,group_type,friends,correct,The teenagers appear to be friends hanging out together.
+birthday_02.jpg,occasion,birthday,unsupported,"While party hats and balloons are present, they are branded with TikTok and it could be a gathering or party other than a birthday."
+birthday_02.jpg,activity,eating,correct,The individual in the foreground is holding sushi with chopsticks to eat.
+birthday_02.jpg,clothing_colours,"grey top, blue top, grey cardigan",correct,The clothing colours and types accurately match what the three individuals are wearing.
+birthday_02.jpg,objects,"party hats, chopsticks, sushi, paper cups, paper plates, balloons",correct,All listed objects are clearly visible in the image.
+birthday_01.jpg,one_line,a crowd of young adults socializing and dancing under string lights on an outdoor patio.,correct,accurately describes the scene showing young adults socializing and dancing under string lights on an outdoor patio.
+birthday_01.jpg,group_type,mixed,correct,the crowd consists of a mixed group of people of various backgrounds and genders.
+birthday_01.jpg,occasion,party,correct,"the atmosphere, string lights, and socializing suggest an evening social gathering or party."
+birthday_01.jpg,activity,"dancing, socializing, and watching",correct,"people are visibly dancing, socializing, and watching the events unfold."
+birthday_01.jpg,clothing_colours,"blue and white striped t-shirt, unknown print shirt, grey shirt draped over shoulders, unknown jacket, blue t-shirt, unknown shirt tied around waist",unsupported,uses generic 'unknown' placeholders for multiple clothing items rather than describing them accurately.
+birthday_01.jpg,objects,"string lights, pergola, event badges, bubbles",correct,"string lights, the pergola structure, event badges around necks, and floating bubbles are all clearly visible."
+restaurant_03.jpg,one_line,close-up of a person eating a salad and meat dish.,correct,The image clearly shows a close-up of a person eating a salad and holding another plate with sliced meat.
+restaurant_03.jpg,group_type,solo,correct,Only one person is visible in the frame participating in the meal.
+restaurant_03.jpg,occasion,none,correct,It looks like a casual dining setting without any distinct special occasion visible.
+restaurant_03.jpg,activity,eating,correct,The person is actively using cutlery to eat from the dish.
+restaurant_03.jpg,clothing_colours,white shirt,correct,The person is wearing a white garment/shirt visible on the shoulder and torso area.
+restaurant_03.jpg,objects,"plate, salad, meat, fork, wine glass",correct,"All listed objects are clearly present: plates, salad, meat (prosciutto/ham), fork/serving utensil, and wine glasses/glasses."
+restaurant_07.jpg,one_line,a buffet counter filled with various pots of indian curry dishes and sides.,correct,The sentence accurately describes the scene showing a buffet counter with multiple pots containing curry and side dishes.
+restaurant_07.jpg,group_type,unknown,correct,No people are visible in the image to determine a group type.
+restaurant_07.jpg,occasion,none,correct,"There is no specific visible occasion like a party or wedding, just a food display."
+restaurant_07.jpg,activity,none,correct,No active human action is taking place; it's a static display of food.
+restaurant_07.jpg,clothing_colours,,correct,No people or clothing are visible in the image.
+restaurant_07.jpg,objects,"copper pots, serving spoons, curry, rice, bread",correct,"All listed objects are clearly visible in the image (copper pots, serving spoons, various curries, rice, and bread)."
+restaurant_08.jpg,one_line,freshly baked pizzas sitting on pans inside an oven.,correct,The description accurately captures the pizzas on pans inside an oven.
+restaurant_08.jpg,group_type,unknown,correct,"There are no people present in the image, so group type is unknown."
+restaurant_08.jpg,occasion,none,correct,No specific occasion or event is depicted.
+restaurant_08.jpg,activity,none,correct,No human activity is taking place in the image.
+restaurant_08.jpg,clothing_colours,,correct,No people or clothing are visible in the image.
+restaurant_08.jpg,objects,"pizza, oven, pizza pans",correct,All listed objects are clearly visible in the image.
+restaurant_17.jpg,one_line,"a dinner table is set with a metal fondue pot, plates, glasses, and decorative ornaments.",correct,Accurately describes the visible scene showing a dinner table set for fondue with tableware and decorations.
+restaurant_17.jpg,group_type,unknown,correct,No people are visible in the image to determine the group type.
+restaurant_17.jpg,occasion,christmas,correct,The table features festive decorations such as angel figurines and star-patterned napkins typically used for Christmas.
+restaurant_17.jpg,activity,none,correct,The table is simply set with no people actively dining or interacting.
+restaurant_17.jpg,clothing_colours,,correct,"No people are visible, so no clothing is present."
+restaurant_17.jpg,objects,"fondue pot, plates, wine glasses, napkins, ornaments, angel figurines",correct,All listed objects are clearly visible on the dining table.
+festival_20.jpg,one_line,a large crowd of people dancing and raising their hands at a nighttime concert.,correct,accurately describes a large crowd with raised hands in a dark venue environment.
+festival_20.jpg,group_type,crowd,correct,the image clearly depicts a large crowd of people.
+festival_20.jpg,occasion,festival,unsupported,"while it is a music event or concert, 'festival' is a specific setting that cannot be definitively verified from the indoor/club-like view."
+festival_20.jpg,activity,dancing,correct,people are raising their hands and moving in a manner typical of dancing at a concert.
+festival_20.jpg,clothing_colours,"red shirt, unknown shirt",unsupported,includes a vague placeholder ('unknown shirt') rather than specifically detailing clearly visible garments like the plaid shirt.
+festival_20.jpg,objects,"stage lights, speakers",correct,speakers and stage lighting atmosphere are consistent with a live music event.
+festival_01.jpg,one_line,a silhouetted crowd raises their hands facing an illuminated stage with lights and smoke.,correct,"accurately describes the silhouetted crowd, raised hands, stage, lights, and smoke/fog."
+festival_01.jpg,group_type,mixed,correct,the crowd consists of a mixed group of people attending a concert.
+festival_01.jpg,occasion,festival,correct,large concert/festival stage setup with a massive crowd facing it.
+festival_01.jpg,activity,cheering at a concert,correct,crowd with raised hands facing an illuminated stage clearly depicts cheering at a concert.
+festival_01.jpg,clothing_colours,unknown t-shirt,unsupported,"people are primarily seen in dark silhouettes, making specific clothing colors impossible to verify accurately."
+festival_01.jpg,objects,"stage, stage lights, truss structure, fog",correct,all listed objects are clearly visible in the image.
+festival_18.jpg,one_line,a large crowd views a stage show with complex white spotlights and a large video screen.,correct,The sentence accurately describes the crowd watching a stage performance with spotlights and a large video screen.
+festival_18.jpg,group_type,crowd,correct,A large crowd of people is clearly visible viewing the stage.
+festival_18.jpg,occasion,festival,correct,The setting is clearly a music festival or large stage concert event.
+festival_18.jpg,activity,watching a performance,correct,The crowd is facing the stage and watching the performance.
+festival_18.jpg,clothing_colours,blue vest,correct,A security worker wearing a blueish shirt and a dark vest with yellow text is clearly visible in the foreground.
+festival_18.jpg,objects,"spotlights, video screen, security vest",correct,"Spotlights, the large video screen, and security vests are all clearly visible in the image."
+festival_07.jpg,one_line,a dj stands at a mixing console performing in front of a crowd at night.,correct,The description accurately captures the DJ performing at a console in front of a crowd in a nighttime setting.
+festival_07.jpg,group_type,mixed,correct,The crowd visible in the background consists of a mixed group of people.
+festival_07.jpg,occasion,concert,correct,The setting is an outdoor concert or music event at night with a crowd.
+festival_07.jpg,activity,djing,correct,The main figure is actively operating a DJ mixer console.
+festival_07.jpg,clothing_colours,"black t-shirt, blue shirt",correct,The DJ is wearing a dark/black patterned t-shirt and a person in the crowd wears a blue shirt.
+festival_07.jpg,objects,"dj mixer, headphones, cup",correct,"A DJ mixer is on the table, headphones are worn by the DJ, and a cup/glass is visible on the right."
+hiking_18.jpg,one_line,a hiker walks up a rocky trail winding through a lush green valley toward misty mountain peaks.,correct,The sentence accurately describes the hiker on a rocky trail in a mountain valley with misty peaks.
+hiking_18.jpg,group_type,solo,correct,Only one person is visible in the image.
+hiking_18.jpg,occasion,none,correct,This is a casual hiking activity with no special occasion present.
+hiking_18.jpg,activity,hiking,correct,The person is clearly hiking up a mountain trail with gear.
+hiking_18.jpg,clothing_colours,"black jacket, black pants",correct,The hiker is wearing dark or black outerwear and pants.
+hiking_18.jpg,objects,"hiking poles, backpack, trail, rocks, trees",correct,All listed objects are clearly visible in the image.
+hiking_14.jpg,one_line,a small wooden hut sits in a lush green mountain meadow surrounded by forests and peaks.,correct,"The sentence accurately describes the small wooden hut, green meadow, surrounding forests, and mountain peaks visible in the image."
+hiking_14.jpg,group_type,unknown,correct,"There are no people in the image, so group_type being unknown or not applicable is correct."
+hiking_14.jpg,occasion,none,correct,There is no special occasion or event depicted in this landscape photo.
+hiking_14.jpg,activity,none,correct,No human activity is taking place in this landscape scene.
+hiking_14.jpg,clothing_colours,,correct,No people or clothing are present in the image.
+hiking_14.jpg,objects,"cabin, trees, mountain",correct,"The primary objects visible in the image are the wooden cabin, trees (forest), and mountains."
+hiking_08.jpg,one_line,an adult man and two small dogs sit together on a rocky cliff overlooking a landscape.,correct,"The sentence accurately describes the man, two small dogs, sitting on a rocky cliff overlooking a landscape."
+hiking_08.jpg,group_type,solo,wrong,"The image features a man with two dogs, so group_type should be 'man with pets' or similar, not 'solo'."
+hiking_08.jpg,occasion,none,correct,There is no special occasion or event taking place; it's a casual outdoor outing.
+hiking_08.jpg,activity,sightseeing,correct,The man and dogs are sitting and looking out over a landscape/scenery.
+hiking_08.jpg,clothing_colours,"black hoodie, grey shorts",correct,The man is wearing a dark/black hoodie and grey shorts.
+hiking_08.jpg,objects,"dogs, dog harnesses, dog leashes, backpack, sunglasses",correct,All listed objects are clearly visible in the image.
+hiking_15.jpg,one_line,two hikers with backpacks walk along a mountain path during a sunny sunset.,correct,accurately describes two hikers with backpacks walking on a trail through mountainous terrain during sunset.
+hiking_15.jpg,group_type,friends,unsupported,the relationship between the two hikers cannot be definitively verified as friends from the rear view.
+hiking_15.jpg,occasion,none,correct,it is a casual outdoor activity with no specific special occasion.
+hiking_15.jpg,activity,hiking,correct,the individuals are clearly hiking with backpacks and hiking poles on a mountain path.
+hiking_15.jpg,clothing_colours,"unknown jacket, unknown jacket",unsupported,uses placeholder 'unknown' instead of describing the visible dark/black clothing and light-colored outerwear.
+hiking_15.jpg,objects,"backpack, hiking poles, mountains, trees",correct,all listed objects are clearly visible in the image.
+kids_19.jpg,one_line,close-up of red and metal playground gymnast rings hanging from ropes outdoors.,correct,accurately describes the close-up image of red and metal gymnast rings hanging from ropes outdoors.
+kids_19.jpg,group_type,unknown,correct,"no people are present in the image, so group type is unknown."
+kids_19.jpg,occasion,none,correct,there is no special occasion depicted.
+kids_19.jpg,activity,none,correct,"no people are performing any activity, the rings are just hanging."
+kids_19.jpg,clothing_colours,,correct,no clothing is present in the image.
+kids_19.jpg,objects,"gym rings, ropes",correct,gym rings and ropes are clearly visible in the image.
+kids_09.jpg,one_line,an aerial view of a colorful playground with children and adults walking and playing.,correct,"The sentence accurately describes the aerial perspective, the colorful playground, and people walking and playing."
+kids_09.jpg,group_type,crowd,correct,"Multiple individuals and groups are scattered across the playground area, constituting a crowd."
+kids_09.jpg,occasion,none,correct,There is no special occasion or event visible; it's a typical day at a public playground.
+kids_09.jpg,activity,playing,correct,"People are playing on the playground equipment, jumping on the trampoline, and walking around."
+kids_09.jpg,clothing_colours,"blue shirt, red jacket, white shirt, black pants",correct,These clothing colors and types are clearly visible on several of the people in the image.
+kids_09.jpg,objects,"playground castle, slide, trampoline, benches",correct,"All listed objects (the elaborate castle structure, slides, trampoline at the bottom, and benches) are clearly visible."
+kids_01.jpg,one_line,two young children crouch at the edge of a garden pond touching the water.,correct,The sentence accurately describes the two children crouching and touching the water of a pond in a garden setting.
+kids_01.jpg,group_type,friends,unsupported,"While they are children together, their specific relationship (friends, siblings, etc.) cannot be definitively verified from visual evidence alone."
+kids_01.jpg,occasion,none,correct,"The image shows a casual, everyday moment rather than a specific special occasion or event."
+kids_01.jpg,activity,touching water in a pond,correct,Both children are clearly reaching down to touch the water in the pond.
+kids_01.jpg,clothing_colours,"blue patterned short-sleeve shirt, black shorts, blue denim cap, green and black clogs, red floral shirt, black flat cap",correct,"All listed clothing items, colors, and accessories match what the children are wearing in the image."
+kids_01.jpg,objects,"pond, rocks, stepping stones",correct,"The pond, surrounding rocks, and stepping stones in the background are all visible in the image."
+kids_06.jpg,one_line,a child in a park holds a white panel over their head while looking up and smiling.,correct,"The sentence accurately describes the main subject, setting, and action visible in the image."
+kids_06.jpg,group_type,mixed,unsupported,"There are multiple children visible in the park, making 'group' or 'multiple people' more accurate rather than 'mixed'."
+kids_06.jpg,occasion,none,correct,There is no special occasion or event depicted; it appears to be a casual outdoor moment.
+kids_06.jpg,activity,holding a panel over head and playing in the rain,correct,The child is holding a panel over their head while water droplets or rain are visible in the scene.
+kids_06.jpg,clothing_colours,"unknown t-shirt, unknown shorts, unknown cap, unknown bag",correct,"Since the image is in black and white, the exact colors cannot be determined, making 'unknown' appropriate."
+kids_06.jpg,objects,"white panel, trees, bench, shopping bag",correct,All listed objects are clearly visible in the image.
+graduation_14.jpg,one_line,black and white photo of children wearing graduation caps and holding certificates.,correct,"The image is black and white, showing children in graduation caps looking down at papers/certificates."
+graduation_14.jpg,group_type,crowd,unsupported,"The image shows a small group of children sitting together, not a large crowd."
+graduation_14.jpg,occasion,graduation,correct,"The children are wearing graduation caps and holding documents, clearly indicating a graduation event."
+graduation_14.jpg,activity,reading certificates,correct,"The children are looking down and holding documents with text, appearing to read them."
+graduation_14.jpg,clothing_colours,unknown graduation gown,unsupported,"The photo is strictly black and white, so the actual colors of clothing or gowns cannot be determined."
+graduation_14.jpg,objects,"graduation cap, certificates",correct,Graduation caps on their heads and certificates/papers in their hands are clearly visible.
+graduation_11.jpg,one_line,four people standing outdoors in a row wearing purple graduation gowns while holding black mortarboard caps.,correct,accurately describes four individuals in purple graduation gowns standing in a row and holding black mortarboard caps outdoors.
+graduation_11.jpg,group_type,friends,unsupported,"while they are a group of people, their specific relationship (e.g. friends vs classmates/colleagues) cannot be verified from the image alone."
+graduation_11.jpg,occasion,graduation,correct,clearly indicated by the graduation gowns and mortarboard caps.
+graduation_11.jpg,activity,"standing, posing, holding graduation caps",correct,the people are standing in a row and holding their graduation caps.
+graduation_11.jpg,clothing_colours,"purple graduation gown, black shoes, unknown pants",correct,"purple graduation gowns and black shoes/pants are visible, and using 'unknown pants' appropriately flags partially obscured clothing."
+graduation_11.jpg,objects,"black graduation cap, wooden fence",correct,black graduation caps and a wooden fence in the background are clearly visible.
+graduation_09.jpg,one_line,a large group of people wearing graduation caps and gowns seated indoors.,correct,accurately describes the large group wearing caps and gowns seated in rows
+graduation_09.jpg,group_type,mixed,correct,the crowd appears to consist of a mixed group of people
+graduation_09.jpg,occasion,graduation,correct,graduation caps and gowns clearly indicate a graduation ceremony
+graduation_09.jpg,activity,attending a graduation ceremony,correct,the attendees are seated together as part of a ceremony audience
+graduation_09.jpg,clothing_colours,"black graduation cap, unknown graduation gown, white collar",unsupported,uses the placeholder 'unknown' and the image is in black and white so exact color shades cannot be confirmed
+graduation_09.jpg,objects,"graduation cap, graduation gown",correct,graduation caps and gowns are clearly visible on the attendees
+graduation_05.jpg,one_line,a large group of graduates in caps and gowns toss their mortarboards into the air outdoors.,correct,Accurately and comprehensively describes the scene visible in the image.
+graduation_05.jpg,group_type,friends,unsupported,"The group consists of graduates at a ceremony, so 'graduates' or 'students' is more accurate than 'friends' which cannot be verified."
+graduation_05.jpg,occasion,graduation,correct,"Clearly a graduation ceremony given the caps, gowns, and stoles."
+graduation_05.jpg,activity,throwing graduation caps into the air,correct,The graduates are visibly throwing their mortarboards into the air.
+graduation_05.jpg,clothing_colours,"unknown graduation gowns, white stoles, black mortarboard caps",unsupported,"The gowns appear to be dark green or dark colored rather than 'unknown', making the tag inaccurate/suboptimally phrased."
+graduation_05.jpg,objects,"mortarboards, graduation caps, graduation gowns, light poles, trees",correct,All listed objects are clearly visible in the image.
+pets_07.jpg,one_line,a white and brown dog wearing a harness stands in a grassy field.,correct,The sentence accurately describes the white and brown dog wearing a harness while standing in a grassy field.
+pets_07.jpg,group_type,unknown,correct,"There are no humans or social groups present, so 'unknown' is appropriate."
+pets_07.jpg,occasion,none,correct,This is a casual outdoor scene with no special occasion present.
+pets_07.jpg,activity,none,correct,The dog is just standing/posing rather than performing a distinct activity like running or playing.
+pets_07.jpg,clothing_colours,,correct,No people are wearing clothing in the image.
+pets_07.jpg,objects,harness,correct,The harness worn by the dog is clearly visible.
+pets_11.jpg,one_line,a rough collie stands over a brown dog lying on a green lawn.,correct,The description accurately depicts a rough collie standing over a brown dog on a green lawn.
+pets_11.jpg,group_type,unknown,correct,The relationship between the animals (pets/animals) is not part of a specific named human group type.
+pets_11.jpg,occasion,none,correct,There is no special occasion or event depicted.
+pets_11.jpg,activity,playing,correct,The dogs appear to be interacting playfully outdoors.
+pets_11.jpg,clothing_colours,,correct,No clothing is present in the image.
+pets_11.jpg,objects,,correct,No distinct objects other than the dogs and natural environment are visible.
+pets_04.jpg,one_line,an adult german shepherd carrying a large wooden stick running across a grassy field with a puppy.,correct,"The description accurately captures the adult German Shepherd carrying a stick, running with a puppy on a grassy field."
+pets_04.jpg,group_type,unknown,unsupported,"The group consists of animals (dogs), so group_type should ideally reflect animals or pets rather than unknown."
+pets_04.jpg,occasion,none,correct,There is no special occasion depicted; it is just dogs outdoors.
+pets_04.jpg,activity,none,unsupported,"The dogs are clearly running and carrying a stick, so activity should not be 'none'."
+pets_04.jpg,clothing_colours,,correct,No clothing is present in the image.
+pets_04.jpg,objects,"dogs, stick, grass",correct,The objects listed are all clearly visible in the image.
+pets_03.jpg,one_line,a happy light-colored dog panting and walking next to a person in a grassy field.,correct,Accurately describes the scene showing a light-colored dog panting with a person in a grassy field.
+pets_03.jpg,group_type,unknown,correct,"The relationship between the person and the dog is unclear, so 'unknown' is appropriate."
+pets_03.jpg,occasion,none,correct,It is a casual outdoor setting with no specific occasion.
+pets_03.jpg,activity,walking,correct,The dog and person are captured in motion walking through the field.
+pets_03.jpg,clothing_colours,blue jeans,correct,The person is clearly wearing blue jeans.
+pets_03.jpg,objects,"dog, harness, grass",correct,"The dog, its harness, and the grassy ground are all clearly visible."
+roadtrip_13.jpg,one_line,a wide dirt road stretches across a barren landscape under a bright blue sky filled with white clouds.,correct,"The sentence accurately describes the dirt road, landscape, sky, and clouds visible in the image."
+roadtrip_13.jpg,group_type,unknown,correct,"No people are present in this landscape image, making 'unknown' appropriate."
+roadtrip_13.jpg,occasion,none,correct,There is no special occasion or event depicted in this natural landscape.
+roadtrip_13.jpg,activity,none,correct,No specific human activity is shown; it is a scenic landscape photograph.
+roadtrip_13.jpg,clothing_colours,,correct,No people wearing clothing are present in the image.
+roadtrip_13.jpg,objects,"dirt road, hills, clouds, sky",correct,All listed objects are clearly visible in the image.
+roadtrip_04.jpg,one_line,a person holds a straw hat out of the window of a moving car.,correct,The sentence accurately describes a person holding a straw hat out of a car window on a road.
+roadtrip_04.jpg,group_type,solo,correct,"Only one person's arm is visible, representing a single individual."
+roadtrip_04.jpg,occasion,none,correct,"It is a casual travel scene, not a special occasion or event."
+roadtrip_04.jpg,activity,none,unsupported,"The activity of holding a hat out of a car window/traveling is visible, so 'none' is incorrect; it should describe the action."
+roadtrip_04.jpg,clothing_colours,blue jacket,correct,A blue denim jacket sleeve is clearly visible on the person's arm.
+roadtrip_04.jpg,objects,"car, hat, road",correct,"The car, straw hat, and gravel road are all clearly present in the image."
+roadtrip_12.jpg,one_line,cars driving along a paved road through a desert canyon landscape under a clear blue sky.,correct,The sentence accurately describes all visible elements in the image.
+roadtrip_12.jpg,group_type,unknown,correct,There are no identifiable human groups or people clearly visible to categorize.
+roadtrip_12.jpg,occasion,none,correct,"This is a scenic landscape and driving shot, not a specific occasion."
+roadtrip_12.jpg,activity,none,unsupported,"Driving is an active motion taking place in the image, so 'driving' would be more accurate than 'none'."
+roadtrip_12.jpg,clothing_colours,,correct,No people with distinguishable clothing are visible.
+roadtrip_12.jpg,objects,"road, cars, mountains, bushes",correct,All listed objects are clearly visible in the image.
+roadtrip_18.jpg,one_line,an empty road with yellow lines cuts through dry grassy hills under a bright blue sky.,correct,"The sentence accurately and completely describes the landscape, road, yellow lines, hills, and bright blue sky."
+roadtrip_18.jpg,group_type,unknown,correct,There are no people or groups present in the landscape image.
+roadtrip_18.jpg,occasion,none,correct,There is no special occasion or event taking place.
+roadtrip_18.jpg,activity,none,correct,No human activity is depicted in the image.
+roadtrip_18.jpg,clothing_colours,,correct,"No people are present, so there is no clothing to describe."
+roadtrip_18.jpg,objects,"road, yellow lines, hills, mountains, grass",correct,All listed objects are clearly visible in the image.

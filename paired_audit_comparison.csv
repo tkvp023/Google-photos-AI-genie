@@ -1,0 +1,253 @@
+photo_id,field,value_before,verdict_before,value_after,verdict_after,reason
+pool_04.jpg,one_line,a person swims underwater in a clear blue pool.,correct,A person swims underwater in a blue pool.,correct,The description accurately reflects the ground truth of a person swimming underwater in a blue pool.
+pool_04.jpg,group_type,solo,correct,solo,correct,"The ground truth confirms only a single person is visible, matching the 'solo' tag."
+pool_04.jpg,occasion,none,correct,null,correct,"The ground truth states there is no special occasion, so 'null' is an accurate representation of absence."
+pool_04.jpg,activity,swimming,correct,swimming,correct,The ground truth explicitly identifies the activity as swimming.
+pool_04.jpg,clothing_colours,black swimsuit,correct,"black, white",wrong,"The ground truth specifies a 'black patterned swimsuit'. While patterns may contain other colors, the primary and defining color is black. Adding 'white' without specific ground truth support for white elements (as opposed to just a pattern) is an unsupported addition that contradicts the specific 'black swimsuit' baseline. However, looking strictly at the rubric: 'wrong' is for factual contradiction. Is 'black, white' a contradiction? The ground truth says 'black patterned'. If the pattern is white, it's correct. If the pattern is something else, it's wrong. The baseline note says 'black patterned swimsuit' and the previous tag was 'black swimsuit'. The new tag adds 'white'. Without visual confirmation of white, this is speculative. But is it 'wrong' or 'unsupported'? The rubric says 'unsupported' is for guessing. 'Wrong' is for factual contradiction. If the swimsuit is black with a non-white pattern, 'white' is wrong. If it's black and white, it's correct. The baseline note 'black patterned' is ambiguous. However, usually, if the ground truth says 'black swimsuit' (previous tag) and 'black patterned' (note), adding 'white' is an assumption. Let's look at the 'unsupported' definition: 'assumes, guesses... without visual evidence'. This fits. But wait, is it 'wrong'? If the image clearly shows a black swimsuit, and the tag says 'black, white', and there is no white, it is wrong. If there is white, it is correct. The ground truth note says 'black patterned'. It does not confirm white. Therefore, claiming 'white' is an assumption. Is it 'unsupported' or 'wrong'? Usually, adding a color not present is 'wrong'. Adding a color that might be present but isn't confirmed is 'unsupported'. Given the strictness, and that the previous tag was just 'black', adding 'white' is likely an hallucination or over-specification. Let's look at the 'objects' field for comparison. The ground truth says 'water, pool tiles'. The new tag is 'water'. This is incomplete but not wrong. For clothing, if the swimsuit is black, saying 'black, white' implies white is a significant color. If it's not, it's wrong. If it is, it's correct. The ground truth note 'black patterned' suggests the pattern is the key feature. If the pattern is white, 'black, white' is correct. If the pattern is e.g. grey or blue, 'white' is wrong. Since I must rely on the provided ground truth context which says 'black patterned swimsuit' and the previous tag 'black swimsuit', the addition of 'white' is not supported by the explicit text 'black'. It is an assumption. Therefore 'unsupported' is the safer, more accurate verdict for an unverified addition. However, often in these audits, if the primary color is correct but an extra color is added that isn't in the ground truth, it's often flagged as 'wrong' if the extra color is clearly absent, or 'unsupported' if it's a guess. Let's re-read the rubric. 'unsupported': assumes... without visual evidence. 'wrong': factually contradicted. If the swimsuit is black, and I say 'black, white', and there is no white, it is factually contradicted (partially). If there is white, it is correct. The ground truth does not confirm white. It confirms 'black patterned'. It is safer to mark as 'unsupported' because it's a guess about the pattern color. BUT, looking at typical dataset standards, if the ground truth is 'black swimsuit', and the tag is 'black, white', and the image is a black swimsuit, the 'white' is a hallucination. Hallucinations are usually 'wrong' or 'unsupported'. Let's look at the 'objects' field. Ground truth: 'water, pool tiles'. New tag: 'water'. This is a subset. Is it 'correct'? It is accurate but incomplete. The rubric says 'correct' if 'accurately described'. It doesn't say 'complete'. So 'water' is correct. For clothing, 'black, white' vs 'black patterned'. If the pattern is not white, it's wrong. If it is, it's correct. The ground truth note 'black patterned' is the only clue. It doesn't say 'black and white'. It says 'black patterned'. This implies the base is black. The pattern color is unspecified. Therefore, asserting 'white' is an assumption. Verdict: unsupported."
+pool_04.jpg,objects,"water, pool tiles",correct,water,correct,"The tag 'water' is factually present in the image as confirmed by the ground truth. While 'pool tiles' are also present, the omission does not make the existing tag 'water' incorrect or unsupported; it is a valid, accurate description of a visible object."
+pool_01.jpg,one_line,a group of friends splashing in a sunny outdoor pool,wrong,A floral paper boat floats on blue water.,correct,"The description accurately reflects the ground truth of a paper object (described as floral/origami) floating on water, correcting the previous error about people."
+pool_01.jpg,group_type,friends,wrong,null,correct,Correctly identified as null since there are no people or groups in the image.
+pool_01.jpg,occasion,none,correct,null,correct,Correctly identified as null as no special occasion is depicted.
+pool_01.jpg,activity,swimming,wrong,null,correct,"Correctly identified as null; the object is floating, which is a state rather than an active human activity like swimming."
+pool_01.jpg,clothing_colours,"red swimsuit, blue shorts",wrong,null,correct,Correctly identified as null since no clothing is visible.
+pool_01.jpg,objects,"pool float, sunglasses",wrong,"paper boat, water",correct,"Accurately lists the paper boat and water, aligning with the ground truth of a paper object floating on water."
+pool_09.jpg,one_line,an indoor swimming pool with two life rings hanging on the wall.,correct,An indoor swimming pool features light blue tiles and two lifebuoys along the back wall.,correct,"The description accurately reflects the ground truth of an indoor swimming pool with life rings (lifebuoys) by the wall. The mention of light blue tiles is consistent with the 'aqua-blue' slug and typical pool imagery, and does not contradict the core facts."
+pool_09.jpg,group_type,unknown,correct,null,correct,"Ground truth states no people are present, so 'null' is the correct representation for an absent entity."
+pool_09.jpg,occasion,none,correct,null,correct,"Ground truth states no special occasion is depicted, so 'null' is correct."
+pool_09.jpg,activity,none,correct,null,correct,"Ground truth states no activity is being performed, so 'null' is correct."
+pool_09.jpg,clothing_colours,,correct,null,correct,"Ground truth states no people or clothing are visible, so 'null' is correct."
+pool_09.jpg,objects,"life rings, pool ladder, windows",correct,"lifebuoy, ladder, pool",correct,"The listed objects (lifebuoy, ladder, pool) are all present in the image according to the ground truth notes (life rings, pool ladder, windows/pool area). 'Lifebuoy' is a synonym for 'life ring'."
+pool_08.jpg,one_line,a shirtless adult stands in a pool resting their hands on the edge.,correct,A shirtless muscular man exits a swimming pool.,wrong,"The ground truth states the person is 'resting their hands on the edge', which contradicts the action of 'exits' (implying leaving the water). Additionally, 'muscular' is an assumption not explicitly confirmed in the baseline notes, though the primary error is the action."
+pool_08.jpg,group_type,solo,correct,solo,correct,The ground truth confirms 'solo' as only one person is visible.
+pool_08.jpg,occasion,none,correct,null,correct,The ground truth confirms 'none' (represented as null) as there is no special occasion.
+pool_08.jpg,activity,swimming,unsupported,exiting pool,wrong,"The ground truth explicitly states the person is 'standing and resting on the pool edge', not 'exiting' the pool. Exiting implies a specific motion of leaving the water, which is not supported by the static resting pose described."
+pool_08.jpg,clothing_colours,pink swim trunks,correct,red,wrong,"The ground truth specifies 'pink swim trunks', whereas the candidate tag claims 'red'. Pink and red are distinct colors."
+pool_08.jpg,objects,"pool edge, water",correct,"water, pool edge",correct,"The ground truth lists 'pool edge, water', which matches the candidate tags 'water, pool edge'."
+beach_08.jpg,one_line,a young child plays in the sand while pulling a colorful toy wagon and holding a plastic shovel.,correct,A young boy plays with a toy wagon and shovel on a sandy beach.,correct,"The description accurately summarizes the scene: a young child (boy is a reasonable inference for a toddler in this context, or at least not factually contradictory enough to be 'wrong' compared to 'unsupported' which implies guessing hidden details; however, 'boy' is a specific gender claim. Let's re-evaluate. The ground truth says 'young child'. The new tag says 'young boy'. Is gender visible? Usually, yes, but if not explicitly confirmed in GT, is it unsupported? The GT notes say 'young child'. The URL slug says 'child-toddler'. The image likely shows a boy. However, strict auditing: if gender isn't explicitly in GT, is it unsupported? The prompt says 'unsupported: assumes... without visual evidence'. If the visual evidence clearly shows a boy, it's correct. If it's ambiguous, it's unsupported. Given the previous tag was 'young child', changing to 'boy' adds specific info. However, looking at the other fields, 'clothing_colours' includes 'brown' which is flagged as wrong in GT. Let's look at 'one_line' again. 'A young boy plays with a toy wagon and shovel on a sandy beach.' This is a very standard caption. Is 'boy' an assumption? In many datasets, gender is inferred. But strictly, if GT says 'child', 'boy' is a specific claim. Let's look at the rubric: 'unsupported: assumes... without visual evidence'. If the image clearly shows a boy, it's correct. If not, unsupported. Without seeing the image, I must rely on the GT notes. The GT notes do not specify gender. However, 'one_line' is often a summary. Let's compare with 'activity'. The activity is simplified. Let's look at 'clothing_colours'. The GT says the cap is dark grey/blackish, not brown. The new tag says 'brown'. This is definitely wrong. Back to 'one_line'. If I have to be strict, 'boy' might be unsupported if not explicitly verified. However, usually, if a child is dressed in shorts and a cap, and it's a beach scene, gender is often visually apparent. But let's look at the 'unsupported' definition: 'guessing an unstated occasion, assuming relationships'. Gender is a physical attribute. If it's visible, it's correct. If the GT didn't mention it, it might be an oversight in GT or the new tag is adding detail. Let's assume the visual evidence supports 'boy' as it's a common descriptor for such images. Wait, the GT note for 'clothing_colours' says 'unknown brown baseball cap... is contradictory and inaccurate'. This implies the cap color is the issue. It doesn't mention gender. Let's look at the 'objects' field. 'toy wagon, shovel, cap'. The GT lists 'blue plastic toy wagon...', 'yellow plastic toy shovel', 'sand'. The new tag omits 'sand' and colors. Is that wrong? No, just less detailed. Is it unsupported? No. Is it correct? Yes, those objects are there. Now back to 'one_line'. 'A young boy...'. If the image shows a girl, it's wrong. If it shows a boy, it's correct. If it's ambiguous, it's unsupported. Given the strictness, and that the GT used 'child', I will lean towards 'correct' assuming the visual evidence (which the auditor would see) confirms the gender, or that 'boy' is an acceptable specific descriptor for the 'child' in the GT. However, if I must be extremely strict and the GT didn't confirm gender, 'unsupported' is a risk. But 'wrong' is for factual contradictions. 'Unsupported' is for assumptions. Is gender an assumption? Often yes, if not clearly distinct. But let's look at the other fields. 'activity' is 'playing'. GT says 'playing in the sand, pulling a toy wagon'. 'Playing' is a correct hypernym. 'occasion' is 'null'. GT says 'none'. 'null' is equivalent to 'none' in many schemas. 'group_type' is 'solo'. GT says 'solo'. Correct. 'clothing_colours' is 'white, blue, brown'. GT says cap is dark grey/blackish, not brown. So 'brown' is wrong. The shirt is white (correct). Shorts are blue/white floral (blue is correct). So the list contains a wrong color. Verdict: wrong. 'objects' is 'toy wagon, shovel, cap'. GT lists wagon, shovel, sand. Cap is part of clothing, but often listed as an object/accessory. Is 'cap' an object? Yes. Is it in the image? Yes. So 'correct'. Now, 'one_line'. If 'clothing_colours' is wrong because of 'brown', does that affect 'one_line'? No. 'one_line' doesn't mention color. It mentions 'boy'. If the image is of a boy, it's correct. If the GT didn't specify, it's a potential unsupported assumption. However, in image captioning tasks, identifying the subject's gender is standard if visible. I will mark it 'correct' as it is a direct description of the visible subject, assuming the visual evidence (which the auditor has) supports it. If I had to guess, 'boy' is likely correct based on typical dataset patterns where 'child' in GT is a neutral term but the image is specific. Let's stick with 'correct' for one_line as it accurately describes the action and setting, and 'boy' is a specific instance of 'child'.
+
+Wait, let's re-read the GT for clothing: 'unknown brown baseball cap... is contradictory and inaccurate'. This implies the cap is NOT brown. The new tag says 'brown'. This is a factual error. So 'clothing_colours' is 'wrong'.
+
+For 'one_line', if the gender is not explicitly in GT, is it unsupported? The rubric says 'unsupported: assumes... without visual evidence'. If the visual evidence shows a boy, it's not an assumption. Since I am an auditor with access to the image (simulated), I would verify. In the absence of the image, I rely on the GT. The GT says 'young child'. It does not say 'boy'. However, 'one_line' is a summary. If the image clearly shows a boy, 'boy' is correct. If it's ambiguous, 'unsupported'. Given the strictness, and that 'child' was the GT, changing to 'boy' adds a specific attribute. If that attribute is not in the GT, it might be considered 'unsupported' if not visually obvious. But usually, gender is visually obvious. I will mark it 'correct' because it is a natural language description that is factually consistent with the 'child' playing in the sand, and 'boy' is a likely accurate descriptor for the specific image file (beach_08.jpg) which likely depicts a boy. If it were a girl, it would be 'wrong'. If it were ambiguous, 'unsupported'. Most likely 'correct'.
+
+Let's double check 'occasion'. GT: 'none'. New: 'null'. In JSON/metadata contexts, 'null' often represents the absence of a value, which aligns with 'none'. So 'correct'.
+
+'activity'. GT: 'playing in the sand, pulling a toy wagon'. New: 'playing'. 'Playing' is the general activity. It is correct.
+
+'objects'. GT: 'blue plastic toy wagon with orange wheels, green wagon handle, yellow plastic toy shovel, sand'. New: 'toy wagon, shovel, cap'. The new list is a subset of the objects (plus cap). It does not contradict. It is correct.
+
+'clothing_colours'. GT: 'white t-shirt, blue and white floral swim shorts', cap is 'dark grey/blackish'. New: 'white, blue, brown'. 'Brown' is explicitly contradicted by the GT note ('not brown as stated'). Therefore, 'wrong'."
+beach_08.jpg,group_type,solo,correct,solo,correct,"The ground truth confirms 'solo', and the new tag matches this."
+beach_08.jpg,occasion,none,correct,null,correct,"The ground truth states 'none', and 'null' is an appropriate representation for the absence of a specific occasion."
+beach_08.jpg,activity,"playing in the sand, pulling a toy wagon",correct,playing,correct,"The ground truth describes 'playing in the sand, pulling a toy wagon', which falls under the general activity of 'playing'."
+beach_08.jpg,clothing_colours,"unknown brown baseball cap, white t-shirt, blue and white floral swim shorts",unsupported,"white, blue, brown",wrong,"The ground truth explicitly states the baseball cap is dark grey/blackish and not brown, contradicting the new tag's inclusion of 'brown'."
+beach_08.jpg,objects,"blue plastic toy wagon with orange wheels, green wagon handle, yellow plastic toy shovel, sand",correct,"toy wagon, shovel, cap",correct,"The listed objects (toy wagon, shovel, cap) are all present in the image according to the ground truth notes, even if less detailed than the baseline."
+beach_05.jpg,one_line,a family of four plays in the sand on a beach at sunset.,correct,A family plays in the sand on a beach during sunset.,correct,"Accurately describes the family, activity, location, and time of day."
+beach_05.jpg,group_type,family,correct,family,correct,Correctly identifies the group as a family based on visible members.
+beach_05.jpg,occasion,none,correct,null,correct,Correctly indicates no specific special occasion is visible in the image.
+beach_05.jpg,activity,playing in the sand,correct,playing in the sand,correct,Accurately describes the primary activity of playing in the sand.
+beach_05.jpg,clothing_colours,"orange red maxi dress, pink t-shirt, grey and white t-shirt, red shorts, white t-shirt, unknown blue shorts",correct,"red, pink, grey, white, blue",correct,Listed colors match the clothing items described in the ground truth.
+beach_05.jpg,objects,"sand, ocean, boats",correct,boats,wrong,"Omits sand and ocean, which are clearly visible and listed in ground truth."
+beach_04.jpg,one_line,a man holding two young children and a woman in a coral dress smiling on a sandy beach at sunset.,correct,A smiling family of four poses together on a sandy beach at sunset.,correct,"Accurately describes the family, setting, and action visible in the image."
+beach_04.jpg,group_type,family,correct,family,correct,The subjects clearly form a family unit as per ground truth.
+beach_04.jpg,occasion,none,correct,null,correct,No special occasion is visible; null is appropriate for casual photo.
+beach_04.jpg,activity,posing for a photo,correct,posing,correct,"The family is posing for a photo, matching the ground truth."
+beach_04.jpg,clothing_colours,"pink shirt, unknown blue trousers, orange maxi dress, white shirt, blue shorts, grey shirt, orange shorts",correct,"orange, red, blue, white, grey",wrong,Omits specific items and includes 'red' which is not in ground truth.
+beach_04.jpg,objects,"sand, ocean waves, sun",correct,null,wrong,"Ground truth lists sand, waves, and sun; null contradicts visible elements."
+beach_03.jpg,one_line,two young children play in the sand on a sunny beach near tropical blue water.,correct,Two young children play with sand and flowers on a sunny beach.,correct,"Accurately describes children, sand, flowers, and beach setting."
+beach_03.jpg,group_type,family,unsupported,children,correct,Visually confirms two children; avoids unsupported family assumption.
+beach_03.jpg,occasion,photoshoot,correct,null,wrong,Ground truth confirms professional photoshoot; null contradicts visual evidence.
+beach_03.jpg,activity,playing in the sand,correct,playing,correct,Playing is the core activity shown in the image.
+beach_03.jpg,clothing_colours,"pink wide-brim hat, white dress, white collared shirt, beige shorts",correct,"white, pink, grey",wrong,"Claims grey clothing, but ground truth lists beige shorts."
+beach_03.jpg,objects,"straw hat, purple flowers, driftwood, sand",correct,"pink hat, straw hat, flowers, driftwood",correct,Listed objects match visible items in the image.
+birthday_19.jpg,one_line,a close-up view of frosted cupcakes with lit birthday candles.,correct,Several cupcakes with blue frosting and lit birthday candles are displayed.,correct,"Accurately describes visible cupcakes, blue frosting, and lit candles."
+birthday_19.jpg,group_type,unknown,correct,null,correct,No people are visible in the image.
+birthday_19.jpg,occasion,birthday,correct,birthday,correct,Lit birthday candles clearly indicate a birthday occasion.
+birthday_19.jpg,activity,eating,unsupported,null,correct,No active eating or other human activity is depicted.
+birthday_19.jpg,clothing_colours,,correct,null,correct,No clothing is visible in the frame.
+birthday_19.jpg,objects,"cupcakes, candles, frosting, sprinkles",correct,"cupcakes, candles, frosting",correct,Listed objects are clearly visible; omission of sprinkles is acceptable.
+birthday_14.jpg,one_line,champagne bottles resting in a metal ice bucket filled with ice.,correct,Several open bottles of champagne are chilling inside a metallic bucket filled with ice.,correct,Accurately describes champagne bottles in a metal ice bucket.
+birthday_14.jpg,group_type,unknown,correct,null,correct,"No people visible, so null is appropriate."
+birthday_14.jpg,occasion,none,correct,null,correct,"No specific occasion depicted, null is correct."
+birthday_14.jpg,activity,none,correct,null,correct,"No active human action, null is correct."
+birthday_14.jpg,clothing_colours,,correct,null,correct,"No clothing present, null is correct."
+birthday_14.jpg,objects,"champagne bottles, ice bucket, ice",correct,"champagne bottles, ice, bucket",correct,"Lists visible objects: champagne bottles, ice, bucket."
+birthday_02.jpg,one_line,three teens wearing party hats are sitting around a table eating sushi indoors.,correct,Three young women wearing TikTok party hats sit indoors around a table with food.,correct,"Accurately describes subjects, setting, and visible items."
+birthday_02.jpg,group_type,friends,correct,friends,correct,Matches ground truth assessment of social relationship.
+birthday_02.jpg,occasion,birthday,unsupported,birthday,unsupported,Ground truth explicitly marks this as unsupported due to branding.
+birthday_02.jpg,activity,eating,correct,eating,correct,Matches ground truth observation of eating action.
+birthday_02.jpg,clothing_colours,"grey top, blue top, grey cardigan",correct,"grey, blue",correct,"Colors match ground truth, though less specific."
+birthday_02.jpg,objects,"party hats, chopsticks, sushi, paper cups, paper plates, balloons",correct,"party hats, chopsticks, paper cups, paper plates, food, balloons",correct,All listed items are visible and supported by ground truth.
+birthday_01.jpg,one_line,a crowd of young adults socializing and dancing under string lights on an outdoor patio.,correct,A diverse crowd of people gathers outdoors under a lit pergola at dusk.,correct,Accurately describes the outdoor crowd under a lit pergola at dusk.
+birthday_01.jpg,group_type,mixed,correct,friends,unsupported,"Assumes relationship; ground truth specifies mixed group, not friends."
+birthday_01.jpg,occasion,party,correct,null,wrong,Ground truth confirms party; null contradicts visible social gathering evidence.
+birthday_01.jpg,activity,"dancing, socializing, and watching",correct,socializing,correct,Socializing is explicitly supported by ground truth activity notes.
+birthday_01.jpg,clothing_colours,"blue and white striped t-shirt, unknown print shirt, grey shirt draped over shoulders, unknown jacket, blue t-shirt, unknown shirt tied around waist",unsupported,"blue, white, black, red, grey",correct,Colors align with visible clothing items in the crowd.
+birthday_01.jpg,objects,"string lights, pergola, event badges, bubbles",correct,"string lights, pergola, buildings",correct,String lights and pergola are confirmed; buildings are plausible background.
+restaurant_03.jpg,one_line,close-up of a person eating a salad and meat dish.,correct,A person eats salad with a fork while holding a small plate of cured meat.,correct,Accurately describes the person eating salad and holding meat plate.
+restaurant_03.jpg,group_type,solo,correct,solo,correct,Only one person is visible in the frame.
+restaurant_03.jpg,occasion,none,correct,null,correct,Casual setting with no distinct special occasion visible.
+restaurant_03.jpg,activity,eating,correct,eating,correct,Person is actively using cutlery to eat.
+restaurant_03.jpg,clothing_colours,white shirt,correct,white,correct,Person is wearing a white shirt.
+restaurant_03.jpg,objects,"plate, salad, meat, fork, wine glass",correct,"salad, fork, plate, cured meat, glass",correct,All listed objects are clearly present in the image.
+restaurant_07.jpg,one_line,a buffet counter filled with various pots of indian curry dishes and sides.,correct,A buffet display features various metal bowls filled with colorful curries and side dishes.,correct,Accurately describes the buffet display and food items visible in the image.
+restaurant_07.jpg,group_type,unknown,correct,null,correct,Correctly null as no people are present in the image.
+restaurant_07.jpg,occasion,none,correct,null,correct,Correctly null as no specific occasion is depicted.
+restaurant_07.jpg,activity,none,correct,null,correct,Correctly null as the scene is static with no human action.
+restaurant_07.jpg,clothing_colours,,correct,null,correct,Correctly null as no people or clothing are visible.
+restaurant_07.jpg,objects,"copper pots, serving spoons, curry, rice, bread",correct,"metal bowls, spoons, curry, rice, spices, containers",correct,All listed objects are clearly visible and accurately described.
+restaurant_08.jpg,one_line,freshly baked pizzas sitting on pans inside an oven.,correct,Two pizzas with vegetable toppings bake inside an oven.,unsupported,Vegetable toppings are not confirmed by ground truth notes.
+restaurant_08.jpg,group_type,unknown,correct,null,correct,"No people present, so group type is correctly null."
+restaurant_08.jpg,occasion,none,correct,null,correct,"No specific occasion depicted, correctly null."
+restaurant_08.jpg,activity,none,correct,null,correct,"No human activity taking place, correctly null."
+restaurant_08.jpg,clothing_colours,,correct,null,correct,"No people or clothing visible, correctly null."
+restaurant_08.jpg,objects,"pizza, oven, pizza pans",correct,"pizza, oven, pizza pan",correct,Listed objects match ground truth visible items.
+restaurant_17.jpg,one_line,"a dinner table is set with a metal fondue pot, plates, glasses, and decorative ornaments.",correct,"A fondue set sits on a dining table surrounded by plates, glasses, and holiday decorations.",correct,"Accurately describes the fondue set, tableware, and holiday decorations visible."
+restaurant_17.jpg,group_type,unknown,correct,null,correct,"No people are visible, so null is appropriate."
+restaurant_17.jpg,occasion,christmas,correct,null,wrong,Ground truth confirms Christmas decorations; null contradicts visible evidence.
+restaurant_17.jpg,activity,none,correct,null,correct,"No people present, so no activity is occurring."
+restaurant_17.jpg,clothing_colours,,correct,null,correct,"No people visible, so no clothing colors exist."
+restaurant_17.jpg,objects,"fondue pot, plates, wine glasses, napkins, ornaments, angel figurines",correct,"fondue set, plates, glasses, napkins, table",correct,Listed objects are visible; omission of specific ornaments is acceptable.
+festival_20.jpg,one_line,a large crowd of people dancing and raising their hands at a nighttime concert.,correct,A large crowd of people with hands raised dancing in a dimly lit venue.,correct,"Accurately describes the crowd, raised hands, and dim venue setting."
+festival_20.jpg,group_type,crowd,correct,friends,wrong,"Image shows a large crowd, not a small group of friends."
+festival_20.jpg,occasion,festival,unsupported,null,correct,Correctly null as specific occasion cannot be definitively verified from image.
+festival_20.jpg,activity,dancing,correct,dancing,correct,People are clearly dancing with raised hands in a concert setting.
+festival_20.jpg,clothing_colours,"red shirt, unknown shirt",unsupported,"red, blue, black, white, green",correct,"Lists specific visible colors, replacing vague placeholders with accurate details."
+festival_20.jpg,objects,"stage lights, speakers",correct,null,wrong,"Speakers and stage lights are visible, so null is incorrect."
+festival_01.jpg,one_line,a silhouetted crowd raises their hands facing an illuminated stage with lights and smoke.,correct,Silhouetted concertgoers raise their hands in front of a brightly lit stage filled with smoke.,correct,"Accurately describes silhouetted crowd, raised hands, lit stage, and smoke."
+festival_01.jpg,group_type,mixed,correct,friends,unsupported,"Assumes relationship; ground truth confirms mixed crowd, not friends."
+festival_01.jpg,occasion,festival,correct,null,wrong,Ground truth confirms festival; null contradicts visible evidence.
+festival_01.jpg,activity,cheering at a concert,correct,cheering,correct,Cheering is supported by raised hands facing the stage.
+festival_01.jpg,clothing_colours,unknown t-shirt,unsupported,null,correct,Correctly null as silhouettes prevent color verification.
+festival_01.jpg,objects,"stage, stage lights, truss structure, fog",correct,"stage, lights, smoke",correct,Listed objects are clearly visible and supported by ground truth.
+festival_18.jpg,one_line,a large crowd views a stage show with complex white spotlights and a large video screen.,correct,A large crowd of people attend a concert illuminated by bright stage lights.,correct,"Accurately describes the crowd, concert setting, and lighting."
+festival_18.jpg,group_type,crowd,correct,friends,wrong,"Image shows a large crowd, not a small group of friends."
+festival_18.jpg,occasion,festival,correct,null,wrong,Ground truth confirms it is a festival; null is incorrect.
+festival_18.jpg,activity,watching a performance,correct,watching a performance,correct,Crowd is clearly watching the stage performance.
+festival_18.jpg,clothing_colours,blue vest,correct,"black, blue",correct,Matches the visible blue shirt and dark vest.
+festival_18.jpg,objects,"spotlights, video screen, security vest",correct,"stage, lights, screen, vest",correct,"Stage, lights, screen, and vest are all visible."
+festival_07.jpg,one_line,a dj stands at a mixing console performing in front of a crowd at night.,correct,A disc jockey performs at a crowded venue during nighttime.,correct,"Accurately describes the DJ, crowd, and nighttime setting."
+festival_07.jpg,group_type,mixed,correct,friends,unsupported,"Assumes relationship; ground truth confirms mixed crowd, not friends."
+festival_07.jpg,occasion,concert,correct,null,wrong,Ground truth confirms concert; null contradicts visible event context.
+festival_07.jpg,activity,djing,correct,performing,correct,Performing is a valid generalization of DJing.
+festival_07.jpg,clothing_colours,"black t-shirt, blue shirt",correct,"black, blue, pink",unsupported,Pink is not mentioned in ground truth; likely hallucinated.
+festival_07.jpg,objects,"dj mixer, headphones, cup",correct,"dj mixer, headphones, cup, lights",correct,All listed objects are supported by ground truth notes.
+hiking_18.jpg,one_line,a hiker walks up a rocky trail winding through a lush green valley toward misty mountain peaks.,correct,A hiker walks up a stony mountain path surrounded by rocky peaks and low clouds.,correct,"Accurately describes hiker, path, peaks, and clouds visible in image."
+hiking_18.jpg,group_type,solo,correct,solo,correct,"Only one person is visible, matching ground truth."
+hiking_18.jpg,occasion,none,correct,null,correct,No special occasion is present; null is appropriate.
+hiking_18.jpg,activity,hiking,correct,hiking,correct,"Person is clearly hiking, matching ground truth."
+hiking_18.jpg,clothing_colours,"black jacket, black pants",correct,"black, blue",wrong,Ground truth specifies black jacket and pants; blue is unsupported.
+hiking_18.jpg,objects,"hiking poles, backpack, trail, rocks, trees",correct,"backpack, trekking poles, path, mountains, clouds, trees",correct,All listed objects are visible and consistent with ground truth.
+hiking_14.jpg,one_line,a small wooden hut sits in a lush green mountain meadow surrounded by forests and peaks.,correct,A small wooden cabin sits in a green alpine meadow surrounded by pine trees and towering mountains under a blue sky.,correct,"Accurately describes cabin, meadow, trees, mountains, and sky."
+hiking_14.jpg,group_type,unknown,correct,null,correct,"No people present, so null is appropriate."
+hiking_14.jpg,occasion,none,correct,null,correct,No special event depicted in landscape.
+hiking_14.jpg,activity,none,correct,null,correct,No human activity visible in the scene.
+hiking_14.jpg,clothing_colours,,correct,null,correct,No people or clothing present.
+hiking_14.jpg,objects,"cabin, trees, mountain",correct,"cabin, trees, mountains, grass",correct,"Cabin, trees, mountains, and grass are visible."
+hiking_08.jpg,one_line,an adult man and two small dogs sit together on a rocky cliff overlooking a landscape.,correct,A bald man sits on a rocky cliff overlooking a forested landscape with two small dogs standing beside him.,wrong,"Claims dogs are standing, but ground truth states they sit."
+hiking_08.jpg,group_type,solo,wrong,solo,wrong,"Image contains two dogs, so 'solo' is factually incorrect."
+hiking_08.jpg,occasion,none,correct,null,correct,No special occasion is present; null is appropriate.
+hiking_08.jpg,activity,sightseeing,correct,sitting,correct,Sitting is the primary physical action depicted in the image.
+hiking_08.jpg,clothing_colours,"black hoodie, grey shorts",correct,"black, grey",correct,Matches the black hoodie and grey shorts described.
+hiking_08.jpg,objects,"dogs, dog harnesses, dog leashes, backpack, sunglasses",correct,"dogs, harness, leash, backpack, rocks",correct,All listed objects are visible and supported by ground truth.
+hiking_15.jpg,one_line,two hikers with backpacks walk along a mountain path during a sunny sunset.,correct,Two hikers with backpacks walk down a mountain trail during sunset.,correct,"Accurately describes hikers, trail, and sunset setting."
+hiking_15.jpg,group_type,friends,unsupported,friends,unsupported,Relationship cannot be verified from rear view.
+hiking_15.jpg,occasion,none,correct,null,correct,No specific occasion is evident in the image.
+hiking_15.jpg,activity,hiking,correct,hiking,correct,Hiking is clearly depicted with gear and terrain.
+hiking_15.jpg,clothing_colours,"unknown jacket, unknown jacket",unsupported,"black, white",correct,Matches visible dark and light clothing colors.
+hiking_15.jpg,objects,"backpack, hiking poles, mountains, trees",correct,"backpacks, hiking poles",correct,Listed objects are clearly visible in the image.
+kids_19.jpg,one_line,close-up of red and metal playground gymnast rings hanging from ropes outdoors.,correct,Close-up of playground gym rings hanging by yellow ropes outdoors.,wrong,"Ground truth specifies red and metal rings, not yellow ropes."
+kids_19.jpg,group_type,unknown,correct,null,correct,"No people present, so group type is correctly null."
+kids_19.jpg,occasion,none,correct,null,correct,"No special occasion depicted, correctly null."
+kids_19.jpg,activity,none,correct,null,correct,"No activity performed, correctly null."
+kids_19.jpg,clothing_colours,,correct,null,correct,"No clothing present, correctly null."
+kids_19.jpg,objects,"gym rings, ropes",correct,"gym rings, yellow ropes, blue ropes",wrong,Claims blue ropes which are not in ground truth.
+kids_09.jpg,one_line,an aerial view of a colorful playground with children and adults walking and playing.,correct,An aerial view shows people walking and playing around a large castle-themed playground with a trampoline.,correct,"Accurately describes aerial view, castle playground, trampoline, and people playing."
+kids_09.jpg,group_type,crowd,correct,friends,unsupported,"Assumes relationship; ground truth identifies a crowd, not friends."
+kids_09.jpg,occasion,none,correct,null,correct,"Correctly identifies absence of special occasion, matching ground truth 'none'."
+kids_09.jpg,activity,playing,correct,playing,correct,Matches ground truth activity of playing on playground equipment.
+kids_09.jpg,clothing_colours,"blue shirt, red jacket, white shirt, black pants",correct,"blue, black, white, pink, red, green",correct,Listed colors are plausible and consistent with visible clothing in the image.
+kids_09.jpg,objects,"playground castle, slide, trampoline, benches",correct,"playground, trampoline, slide, bench",correct,All listed objects are clearly visible and match ground truth items.
+kids_01.jpg,one_line,two young children crouch at the edge of a garden pond touching the water.,correct,"Two young boys squat by a small pond outdoors, reaching their hands into the water.",correct,Accurately describes the two boys squatting and reaching into the pond.
+kids_01.jpg,group_type,friends,unsupported,children,correct,"Visually verifiable that the subjects are children, avoiding unsupported relationship claims."
+kids_01.jpg,occasion,none,correct,null,correct,Correctly identifies the absence of a specific special occasion or event.
+kids_01.jpg,activity,touching water in a pond,correct,squatting,wrong,"Omits the primary action of touching water, which is central to the scene."
+kids_01.jpg,clothing_colours,"blue patterned short-sleeve shirt, black shorts, blue denim cap, green and black clogs, red floral shirt, black flat cap",correct,"blue, white, black, red",wrong,Omits green and blue denim colors present in the ground truth clothing.
+kids_01.jpg,objects,"pond, rocks, stepping stones",correct,"cap, hat, pond, rock, shoes",wrong,Omits stepping stones and incorrectly lists 'hat' when ground truth specifies caps.
+kids_06.jpg,one_line,a child in a park holds a white panel over their head while looking up and smiling.,correct,A young boy holds a board over his head in a park.,correct,"Accurately describes the main subject, action, and setting visible in the image."
+kids_06.jpg,group_type,mixed,unsupported,children,correct,"Multiple children are visible, making 'children' accurate for the group type."
+kids_06.jpg,occasion,none,correct,null,correct,No special event is depicted; 'null' correctly indicates absence of occasion.
+kids_06.jpg,activity,holding a panel over head and playing in the rain,correct,standing,wrong,Omits key actions like holding a board and playing in rain.
+kids_06.jpg,clothing_colours,"unknown t-shirt, unknown shorts, unknown cap, unknown bag",correct,null,correct,"Image is black and white, so colors are indeterminate; 'null' is appropriate."
+kids_06.jpg,objects,"white panel, trees, bench, shopping bag",correct,"board, trees, bench, shopping bag",correct,"Listed objects (board, trees, bench, bag) are clearly visible in the scene."
+graduation_14.jpg,one_line,black and white photo of children wearing graduation caps and holding certificates.,correct,Several children wear graduation caps and look down at papers.,correct,"Accurately describes children, caps, and looking down at papers."
+graduation_14.jpg,group_type,crowd,unsupported,children,correct,"Correctly identifies the subjects as children, replacing unsupported 'crowd'."
+graduation_14.jpg,occasion,graduation,correct,graduation,correct,Graduation is clearly indicated by caps and certificates.
+graduation_14.jpg,activity,reading certificates,correct,reading,correct,"Children are looking down at documents, consistent with reading."
+graduation_14.jpg,clothing_colours,unknown graduation gown,unsupported,null,correct,"Correctly null as image is black and white, colors indeterminate."
+graduation_14.jpg,objects,"graduation cap, certificates",correct,"graduation cap, paper, tassel",correct,"Caps, papers, and tassels are visible in the image."
+graduation_11.jpg,one_line,four people standing outdoors in a row wearing purple graduation gowns while holding black mortarboard caps.,correct,Four people wearing graduation gowns stand in a row holding caps.,correct,Accurately describes four people in gowns standing in a row holding caps.
+graduation_11.jpg,group_type,friends,unsupported,friends,unsupported,Relationship as friends cannot be verified from visual evidence alone.
+graduation_11.jpg,occasion,graduation,correct,graduation,correct,Graduation gowns and caps clearly indicate a graduation ceremony.
+graduation_11.jpg,activity,"standing, posing, holding graduation caps",correct,standing,correct,"Standing is the primary visible activity, consistent with ground truth."
+graduation_11.jpg,clothing_colours,"purple graduation gown, black shoes, unknown pants",correct,"purple, black, white",correct,Purple gowns and black caps/shoes are visible; white likely refers to shirts.
+graduation_11.jpg,objects,"black graduation cap, wooden fence",correct,"graduation gown, graduation cap",correct,Graduation gowns and caps are clearly visible objects in the image.
+graduation_09.jpg,one_line,a large group of people wearing graduation caps and gowns seated indoors.,correct,A crowd of people wearing graduation caps and gowns are seated together.,correct,Accurately describes the crowd wearing caps and gowns seated together.
+graduation_09.jpg,group_type,mixed,correct,friends,unsupported,"Assumes relationship; ground truth indicates mixed group, not friends."
+graduation_09.jpg,occasion,graduation,correct,graduation,correct,Graduation caps and gowns clearly indicate a graduation ceremony.
+graduation_09.jpg,activity,attending a graduation ceremony,correct,sitting,correct,"Attendees are seated, so sitting is an accurate description of activity."
+graduation_09.jpg,clothing_colours,"black graduation cap, unknown graduation gown, white collar",unsupported,"black, white",correct,Black and white are visible in the monochrome image.
+graduation_09.jpg,objects,"graduation cap, graduation gown",correct,"graduation caps, gowns",correct,Graduation caps and gowns are clearly visible on attendees.
+graduation_05.jpg,one_line,a large group of graduates in caps and gowns toss their mortarboards into the air outdoors.,correct,A large crowd of graduates in green robes and caps toss their graduation caps into the air under a clear blue sky.,correct,"Accurately describes graduates, green robes, caps, and sky."
+graduation_05.jpg,group_type,friends,unsupported,friends,unsupported,Relationship as friends is not visually verifiable.
+graduation_05.jpg,occasion,graduation,correct,graduation,correct,Clearly a graduation ceremony based on attire.
+graduation_05.jpg,activity,throwing graduation caps into the air,correct,celebrating,correct,Throwing caps is a form of celebration.
+graduation_05.jpg,clothing_colours,"unknown graduation gowns, white stoles, black mortarboard caps",unsupported,"green, white",correct,Green robes and white stoles are visible.
+graduation_05.jpg,objects,"mortarboards, graduation caps, graduation gowns, light poles, trees",correct,"graduation caps, graduation robes, stoles, light poles, trees",correct,All listed objects are clearly visible in the image.
+pets_07.jpg,one_line,a white and brown dog wearing a harness stands in a grassy field.,correct,A Jack Russell terrier wearing a harness stands in a grassy field.,unsupported,Breed 'Jack Russell terrier' is not confirmed by ground truth.
+pets_07.jpg,group_type,unknown,correct,null,correct,"No humans present, so null is appropriate."
+pets_07.jpg,occasion,none,correct,null,correct,"Casual scene with no special occasion, so null is correct."
+pets_07.jpg,activity,none,correct,null,correct,"Dog is standing, no distinct activity, so null is correct."
+pets_07.jpg,clothing_colours,,correct,null,correct,"No people present, so null is correct."
+pets_07.jpg,objects,harness,correct,"dog harness, grass",correct,Harness and grass are visible and supported by ground truth.
+pets_11.jpg,one_line,a rough collie stands over a brown dog lying on a green lawn.,correct,Two dogs play together on a green lawn.,correct,Accurately describes two dogs playing on a green lawn.
+pets_11.jpg,group_type,unknown,correct,null,correct,Correctly null as no specific human group type is present.
+pets_11.jpg,occasion,none,correct,null,correct,Correctly null as no special occasion is depicted.
+pets_11.jpg,activity,playing,correct,playing,correct,Matches ground truth that dogs are playing.
+pets_11.jpg,clothing_colours,,correct,null,correct,Correctly null as no clothing is visible.
+pets_11.jpg,objects,,correct,grass,wrong,Contradicts ground truth stating no distinct objects are visible.
+pets_04.jpg,one_line,an adult german shepherd carrying a large wooden stick running across a grassy field with a puppy.,correct,An adult German Shepherd carrying a large stick runs across a grassy field alongside a small puppy.,correct,"Accurately describes the dogs, stick, and field as per ground truth."
+pets_04.jpg,group_type,unknown,unsupported,null,wrong,"Ground truth indicates group_type should reflect animals, not null."
+pets_04.jpg,occasion,none,correct,null,correct,No special occasion is depicted; null is appropriate.
+pets_04.jpg,activity,none,unsupported,null,wrong,Dogs are running; activity should not be null.
+pets_04.jpg,clothing_colours,,correct,null,correct,No clothing present; null is correct.
+pets_04.jpg,objects,"dogs, stick, grass",correct,"stick, grass",wrong,"Omits 'dogs', which are clearly visible and listed in ground truth."
+pets_03.jpg,one_line,a happy light-colored dog panting and walking next to a person in a grassy field.,correct,A tan dog with its tongue out walks through a grassy field next to a person wearing blue jeans.,correct,"Accurately describes the dog, person, clothing, and setting."
+pets_03.jpg,group_type,unknown,correct,solo,wrong,"Ground truth states 'unknown' due to unclear relationship, not solo."
+pets_03.jpg,occasion,none,correct,null,correct,No specific occasion is evident in the casual outdoor setting.
+pets_03.jpg,activity,walking,correct,walking,correct,Matches ground truth activity of walking through the field.
+pets_03.jpg,clothing_colours,blue jeans,correct,blue,correct,Blue is the correct color for the visible jeans.
+pets_03.jpg,objects,"dog, harness, grass",correct,"dog harness, jeans",wrong,Missing 'grass' which is a key visible object in ground truth.
+roadtrip_13.jpg,one_line,a wide dirt road stretches across a barren landscape under a bright blue sky filled with white clouds.,correct,A dirt road stretches across a barren landscape under a vast blue sky filled with white clouds.,correct,"Accurately describes the dirt road, landscape, sky, and clouds."
+roadtrip_13.jpg,group_type,unknown,correct,null,correct,"No people present, so null is appropriate."
+roadtrip_13.jpg,occasion,none,correct,null,correct,No special occasion depicted in the landscape.
+roadtrip_13.jpg,activity,none,correct,null,correct,No human activity shown in the scenic photo.
+roadtrip_13.jpg,clothing_colours,,correct,null,correct,"No people present, so no clothing colors."
+roadtrip_13.jpg,objects,"dirt road, hills, clouds, sky",correct,"dirt road, clouds, hills",correct,Listed objects are clearly visible in the image.
+roadtrip_04.jpg,one_line,a person holds a straw hat out of the window of a moving car.,correct,A person holds a white hat out of a car window while driving on a dirt road.,wrong,"Hat is straw-colored, not white; contradicts ground truth."
+roadtrip_04.jpg,group_type,solo,correct,solo,correct,"Only one person's arm is visible, confirming solo."
+roadtrip_04.jpg,occasion,none,correct,null,correct,"Casual travel scene, no special occasion evident."
+roadtrip_04.jpg,activity,none,unsupported,riding in car,correct,Accurately describes the visible action of riding in a car.
+roadtrip_04.jpg,clothing_colours,blue jacket,correct,blue,correct,Blue denim jacket sleeve is clearly visible.
+roadtrip_04.jpg,objects,"car, hat, road",correct,"car, hat, road",correct,"Car, hat, and road are all clearly present."
+roadtrip_12.jpg,one_line,cars driving along a paved road through a desert canyon landscape under a clear blue sky.,correct,Cars drive along a paved road through a desert landscape beneath rugged mountains and clear blue skies.,correct,"Accurately describes visible cars, road, desert, mountains, and sky."
+roadtrip_12.jpg,group_type,unknown,correct,null,correct,"No people visible, so null is appropriate."
+roadtrip_12.jpg,occasion,none,correct,null,correct,"Scenic landscape shot, no specific occasion implied."
+roadtrip_12.jpg,activity,none,unsupported,driving,correct,"Cars are driving, matching the active motion in the image."
+roadtrip_12.jpg,clothing_colours,,correct,null,correct,"No people visible, so no clothing colors to report."
+roadtrip_12.jpg,objects,"road, cars, mountains, bushes",correct,"cars, road, mountains, sky, desert landscape",correct,All listed objects are clearly visible in the image.
+roadtrip_18.jpg,one_line,an empty road with yellow lines cuts through dry grassy hills under a bright blue sky.,correct,"An asphalt road extends across a dry, grassy landscape toward mountains under a clear blue sky.",correct,"Accurately describes the road, landscape, mountains, and sky."
+roadtrip_18.jpg,group_type,unknown,correct,null,correct,"No people present, so null is appropriate."
+roadtrip_18.jpg,occasion,none,correct,null,correct,"No special occasion depicted, null is correct."
+roadtrip_18.jpg,activity,none,correct,null,correct,"No human activity shown, null is correct."
+roadtrip_18.jpg,clothing_colours,,correct,null,correct,"No people present, so no clothing to describe."
+roadtrip_18.jpg,objects,"road, yellow lines, hills, mountains, grass",correct,"road, mountains, grass",correct,Listed objects are visible; omitted items are minor details.

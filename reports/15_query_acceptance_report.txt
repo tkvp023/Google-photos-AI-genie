@@ -3,35 +3,13 @@
 
 ======================================================
 QUERY: "pasta"
-TOTAL RESULTS: 14 (Tier 1 strong: 14)
+TOTAL RESULTS: 1 (Tier 1 strong: 1)
 TOP RESULTS (up to 6):
-  1. [restaurant_01] (Tier 1, score: 98)
-     Scene: "people dining together at a sunlit restaurant table with pasta, salad, and beer."
-     Explanation: AI Match: Explicitly shows pasta on dining table
-  2. [birthday_19] (Tier 1, score: 2)
-     Scene: "a close-up view of frosted cupcakes with lit birthday candles."
-     Explanation: Matched activity, event_title (what+occasion)
-  3. [birthday_13] (Tier 1, score: 1.5)
-     Scene: "a party table decorated with pink cups, wooden bowls filled with snacks, and sweets."
-     Explanation: Matched activity (what)
-  4. [birthday_14] (Tier 1, score: 1.5)
-     Scene: "champagne bottles resting in a metal ice bucket filled with ice."
-     Explanation: Matched event_title (occasion)
-  5. [birthday_15] (Tier 1, score: 1.5)
-     Scene: "a small white birthday cake topped with berries and a single lit candle on a wooden table."
-     Explanation: Matched event_title (occasion)
-  6. [birthday_16] (Tier 1, score: 1.5)
-     Scene: "a pink frosted frosted cake decorated with rose patterns and three spiral candles next to a floral centerpiece."
-     Explanation: Matched event_title (occasion)
-COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
-COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [indoor_outdoor / where]: "Was this an indoor or outdoor pasta?"
-    Options: [ Indoor | Outdoor ]
-  Row 2 [mood / mood]: "What was the vibe at the pasta?"
-    Options: [ Cheerful | Calm ]
-  Row 3 [time_period / when]: "When was this taken?"
-    Options: [ 3 years ago | Earlier | Last year ]
+  1. [restaurant_01] (Tier 1, score: 95)
+     Scene: "Several people sit around a table sharing a meal with pasta, salad, and drinks."
+     Explanation: AI Match: Friends dining together sharing pasta meal
+COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
+COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "xyzq"
@@ -42,261 +20,272 @@ COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "pool"
-TOTAL RESULTS: 22 (Tier 1 strong: 22)
+TOTAL RESULTS: 19 (Tier 1 strong: 19)
 TOP RESULTS (up to 6):
-  1. [pool_01] (Tier 1, score: 95)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
-     Explanation: AI Match: Group swimming in a sunny outdoor pool
-  2. [pool_06] (Tier 1, score: 92)
-     Scene: "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes."
-     Explanation: AI Match: Children splashing in a swimming pool
-  3. [pool_02] (Tier 1, score: 90)
-     Scene: "a child jumping into the clear turquoise pool with goggles"
-     Explanation: AI Match: Child jumping into a clear turquoise pool
-  4. [pool_04] (Tier 1, score: 88)
-     Scene: "a person swims underwater in a clear blue pool."
-     Explanation: AI Match: Person swimming underwater in a clear pool
-  5. [pool_08] (Tier 1, score: 85)
-     Scene: "a shirtless adult stands in a pool resting their hands on the edge."
-     Explanation: AI Match: Adult standing in a pool at villa
-  6. [pool_13] (Tier 1, score: 85)
-     Scene: "an underwater view of a person swimming freestyle in a lap pool."
-     Explanation: AI Match: Underwater view of person swimming in pool
+  1. [pool_08] (Tier 1, score: 98)
+     Scene: "A shirtless muscular man exits a swimming pool."
+     Explanation: AI Match: Direct pool theme with active swimmer
+  2. [pool_09] (Tier 1, score: 97)
+     Scene: "An indoor swimming pool features light blue tiles and two lifebuoys along the back wall."
+     Explanation: AI Match: Clear indoor pool structure and tiles
+  3. [pool_11] (Tier 1, score: 96)
+     Scene: "A woman rests her chin on her crossed arms by the edge of a swimming pool."
+     Explanation: AI Match: Woman relaxing by the pool edge
+  4. [pool_12] (Tier 1, score: 96)
+     Scene: "An outdoor swimming pool with blue tiles sits on a wooden deck next to a garden and a dark blue umbrella."
+     Explanation: AI Match: Outdoor pool with deck and garden
+  5. [pool_04] (Tier 1, score: 95)
+     Scene: "A person swims underwater in a blue pool."
+     Explanation: AI Match: Underwater swimming action in blue pool
+  6. [pool_06] (Tier 1, score: 95)
+     Scene: "Two young children wearing sunglasses swim with inflatable float rings in a pool."
+     Explanation: AI Match: Children swimming with float rings
 COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
+COACH STRIP SOURCE: LLM Question Planner (groq)
 COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [group_type / who]: "Who was with you at the pool?"
-    Options: [ Solo | Friends ]
-  Row 2 [indoor_outdoor / where]: "Was this an indoor or outdoor pool?"
-    Options: [ Outdoor | Indoor ]
-  Row 3 [time_period / when]: "When was this taken?"
-    Options: [ 2 years ago | Earlier | This year | Last year ]
+  Row 1 [cast_people / who]: "Who was at the pool with you?"
+    Options: [ Rohan | Meera | Ananya | Priya | Aarav ]
+  Row 2 [activity / what]: "Were you swimming or just relaxing at the pool?"
+    Options: [ Swimming | Exiting pool | Playing | Resting ]
+  Row 3 [season_year / when]: "Which summer was this pool photo from?"
+    Options: [ Summer 2024 | Summer 2021 | Summer 2026 | Winter 2025 ]
 
 ======================================================
 QUERY: "kids park"
-TOTAL RESULTS: 60 (Tier 1 strong: 24)
+TOTAL RESULTS: 14 (Tier 1 strong: 14)
 TOP RESULTS (up to 6):
-  1. [kids_06] (Tier 1, score: 17.9)
-     Scene: "a child in a park holds a white panel over their head while looking up and smiling."
-     Explanation: Matched theme, one_line, people_ages (who+occasion+where)
-  2. [kids_08] (Tier 1, score: 16.9)
-     Scene: "three children playing on a playground seesaw in an outdoor park."
-     Explanation: Matched theme, people_ages, event_title (who+occasion+where)
-  3. [kids_05] (Tier 1, score: 15.5)
-     Scene: "two young children are smiling and facing each other outdoors."
-     Explanation: Matched theme, people_ages, event_title (who+occasion+where)
-  4. [kids_09] (Tier 1, score: 15.5)
-     Scene: "an aerial view of a colorful playground with children and adults walking and playing."
-     Explanation: Matched theme, people_ages, event_title (who+occasion+where)
-  5. [kids_12] (Tier 1, score: 15.5)
-     Scene: "a young boy smiling while swinging on a playground swing."
-     Explanation: Matched theme, people_ages, event_title (who+occasion+where)
-  6. [kids_13] (Tier 1, score: 15.5)
-     Scene: "a toddler with curly hair smiling outdoors near some flowers."
-     Explanation: Matched theme, people_ages, event_title (who+occasion+where)
+  1. [kids_08] (Tier 1, score: 98)
+     Scene: "Three kids play on a playground seesaw shaped like a dragonfly outdoors."
+     Explanation: AI Match: Kids playing on park playground equipment
+  2. [kids_12] (Tier 1, score: 97)
+     Scene: "A young boy happily swings on a swing outdoors amidst lush green trees."
+     Explanation: AI Match: Child swinging in lush park setting
+  3. [kids_15] (Tier 1, score: 96)
+     Scene: "Two young boys smile while riding swings outdoors."
+     Explanation: AI Match: Kids swinging in outdoor park meadow
+  4. [kids_16] (Tier 1, score: 95)
+     Scene: "A young boy smiling while sliding down a large earth-toned slide."
+     Explanation: AI Match: Child sliding on park playground slide
+  5. [kids_09] (Tier 1, score: 94)
+     Scene: "An aerial view shows people walking and playing around a large castle-themed playground with a trampoline."
+     Explanation: AI Match: Aerial view of large park playground
+  6. [kids_20] (Tier 1, score: 93)
+     Scene: "A young child stands inside a wooden play structure near a slide outdoors."
+     Explanation: AI Match: Child in wooden park play structure
 COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
 COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [clothing_color / look]: "What color was worn at the kids park?"
-    Options: [ Blue | Red | White | Black | Grey ]
-  Row 2 [activity / what]: "What were you doing at the kids park?"
-    Options: [ Playing | Swings | Walking ]
-  Row 3 [place_city / where]: "Which place or city was this kids park?"
-    Options: [ Chennai | Bengaluru | Manali ]
+  Row 1 [activity / what]: "What were you doing?"
+    Options: [ Standing | Playing | Walking | Sitting | Swinging ]
+  Row 2 [clothing_color / look]: "What did it look like?"
+    Options: [ Blue | White | Red | Pink | Black ]
+  Row 3 [place_city / where]: "Where was it?"
+    Options: [ Chennai | Bengaluru | Manali | Pondicherry ]
 
 ======================================================
 QUERY: "birthday"
-TOTAL RESULTS: 20 (Tier 1 strong: 20)
+TOTAL RESULTS: 5 (Tier 1 strong: 5)
 TOP RESULTS (up to 6):
-  1. [birthday_03] (Tier 1, score: 13.5)
-     Scene: "three dogs wearing birthday hats and festive wear sit in a grassy park with balloons and a cake."
-     Explanation: Matched theme, one_line, activity (occasion+what+look)
-  2. [birthday_15] (Tier 1, score: 8.5)
-     Scene: "a small white birthday cake topped with berries and a single lit candle on a wooden table."
-     Explanation: Matched theme, one_line, occasion_guess (occasion)
-  3. [birthday_19] (Tier 1, score: 8.5)
-     Scene: "a close-up view of frosted cupcakes with lit birthday candles."
-     Explanation: Matched theme, one_line, occasion_guess (occasion)
-  4. [birthday_02] (Tier 1, score: 6.5)
-     Scene: "three teens wearing party hats are sitting around a table eating sushi indoors."
-     Explanation: Matched theme, occasion_guess, event_title (occasion)
-  5. [birthday_08] (Tier 1, score: 6.5)
-     Scene: "a white and pink unicorn piñata stands surrounded by party hats and a pink balloon on a plain white background."
-     Explanation: Matched theme, occasion_guess, event_title (occasion)
-  6. [birthday_09] (Tier 1, score: 6.5)
-     Scene: "a white unicorn piñata is surrounded by pink party hats and a pink balloon on a white background."
-     Explanation: Matched theme, occasion_guess, event_title (occasion)
-COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
-COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [indoor_outdoor / where]: "Was this an indoor or outdoor birthday?"
-    Options: [ Indoor | Outdoor ]
-  Row 2 [mood / mood]: "What was the vibe at the birthday?"
-    Options: [ Cheerful | Calm ]
-  Row 3 [time_period / when]: "When was this taken?"
-    Options: [ 3 years ago | Earlier | This year ]
+  1. [birthday_03] (Tier 1, score: 6)
+     Scene: "Three dogs wearing party hats and festive collars sit on the grass next to a small birthday cake."
+     Explanation: Matched one_line, occasion_guess, objects (occasion+look)
+  2. [birthday_19] (Tier 1, score: 4)
+     Scene: "Several cupcakes with blue frosting and lit birthday candles are displayed."
+     Explanation: Matched one_line, occasion_guess (occasion)
+  3. [birthday_02] (Tier 1, score: 2)
+     Scene: "Three young women wearing TikTok party hats sit indoors around a table with food."
+     Explanation: Matched occasion_guess (occasion)
+  4. [birthday_09] (Tier 1, score: 2)
+     Scene: "A white unicorn pinata is surrounded by several pink party hats and a pink balloon on a white surface."
+     Explanation: Matched occasion_guess (occasion)
+  5. [birthday_15] (Tier 1, score: 2)
+     Scene: "A small frosted cake topped with berries and a single lit candle sits on a wooden surface against a blue backdrop."
+     Explanation: Matched occasion_guess (occasion)
+COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
+COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "dog"
-TOTAL RESULTS: 21 (Tier 1 strong: 21)
+TOTAL RESULTS: 20 (Tier 1 strong: 20)
 TOP RESULTS (up to 6):
-  1. [pets_10] (Tier 1, score: 6)
-     Scene: "a small white dog biting a wooden stick outdoors."
-     Explanation: Matched one_line, objects, event_title (what+look+occasion)
-  2. [pets_14] (Tier 1, score: 6)
-     Scene: "a dark-furred terrier type dog runs eagerly through green grass."
-     Explanation: Matched one_line, objects, event_title (what+look+occasion)
-  3. [hiking_08] (Tier 1, score: 4)
-     Scene: "an adult man and two small dogs sit together on a rocky cliff overlooking a landscape."
+  1. [birthday_03] (Tier 1, score: 4)
+     Scene: "Three dogs wearing party hats and festive collars sit on the grass next to a small birthday cake."
      Explanation: Matched one_line, objects (what+look)
-  4. [pets_01] (Tier 1, score: 4)
-     Scene: "a brown labrador retriever wearing a harness and leash stands outside on fallen leaves next to a person."
-     Explanation: Matched activity, objects (what+look)
-  5. [pets_02] (Tier 1, score: 4)
-     Scene: "an adult jumping across a ditch in a grassy field with a dog nearby."
+  2. [hiking_08] (Tier 1, score: 4)
+     Scene: "A bald man sits on a rocky cliff overlooking a forested landscape with two small dogs standing beside him."
      Explanation: Matched one_line, objects (what+look)
-  6. [pets_03] (Tier 1, score: 4)
-     Scene: "a happy light-colored dog panting and walking next to a person in a grassy field."
+  3. [pets_01] (Tier 1, score: 4)
+     Scene: "A brown dog wearing a harness and leash stands outside on autumn leaves."
+     Explanation: Matched one_line, objects (what+look)
+  4. [pets_02] (Tier 1, score: 4)
+     Scene: "A person leaps across a dry gully in a grassy field while a dog watches nearby."
+     Explanation: Matched one_line, objects (what+look)
+  5. [pets_03] (Tier 1, score: 4)
+     Scene: "A tan dog with its tongue out walks through a grassy field next to a person wearing blue jeans."
+     Explanation: Matched one_line, objects (what+look)
+  6. [pets_06] (Tier 1, score: 4)
+     Scene: "A black dog with a white stripe on its face lies on green grass biting a toy."
      Explanation: Matched one_line, objects (what+look)
 COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
 COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [activity / what]: "What were you doing at the dog?"
-    Options: [ Playing | Running | Walking ]
-  Row 2 [mood / mood]: "What was the vibe at the dog?"
-    Options: [ Cheerful | Energetic | Calm ]
-  Row 3 [place_city / where]: "Which place or city was this dog?"
-    Options: [ Bengaluru | Chennai | Pondicherry | Goa ]
+  Row 1 [activity / what]: "What were you doing?"
+    Options: [ Running | Sitting | Jumping | Walking | Playing ]
+  Row 2 [place_city / where]: "Where was it?"
+    Options: [ Chennai | Bengaluru | Pondicherry | Goa ]
+  Row 3 [time_period / when]: "When was this taken?"
+    Options: [ Earlier | 3 years ago | This year ]
 
 ======================================================
 QUERY: "beach"
-TOTAL RESULTS: 43 (Tier 1 strong: 43)
+TOTAL RESULTS: 22 (Tier 1 strong: 22)
 TOP RESULTS (up to 6):
-  1. [beach_07] (Tier 1, score: 9.4)
-     Scene: "three children are jumping on a trampoline on a sandy beach near the ocean."
-     Explanation: Matched theme, setting, one_line (where+occasion)
-  2. [beach_14] (Tier 1, score: 9.4)
-     Scene: "a toddler plays in the sand with plastic beach toys."
-     Explanation: Matched theme, setting, one_line (where+occasion)
-  3. [beach_15] (Tier 1, score: 9.4)
-     Scene: "a child in a bright jacket swings on a beach swing facing the ocean."
-     Explanation: Matched theme, setting, one_line (where+occasion)
-  4. [beach_18] (Tier 1, score: 9.4)
-     Scene: "children playing and building sandcastles on a crowded beach."
-     Explanation: Matched theme, setting, one_line (where+occasion)
-  5. [beach_19] (Tier 1, score: 9.4)
-     Scene: "a toddler standing on a wet sandy beach holding toys."
-     Explanation: Matched theme, setting, one_line (where+occasion)
-  6. [beach_17] (Tier 1, score: 8)
-     Scene: "two people kayaking in calm sea under bright sunlight."
-     Explanation: Matched theme, setting, place_venue (where+occasion)
+  1. [beach_01] (Tier 1, score: 3.5)
+     Scene: "A man playfully holds a young girl upside down on a sandy beach near the ocean."
+     Explanation: Matched setting, one_line (where)
+  2. [beach_02] (Tier 1, score: 3.5)
+     Scene: "A silhouette of a person stands on a sandy beach at sunset."
+     Explanation: Matched setting, one_line (where)
+  3. [beach_03] (Tier 1, score: 3.5)
+     Scene: "Two young children play with sand and flowers on a sunny beach."
+     Explanation: Matched setting, one_line (where)
+  4. [beach_04] (Tier 1, score: 3.5)
+     Scene: "A smiling family of four poses together on a sandy beach at sunset."
+     Explanation: Matched setting, one_line (where)
+  5. [beach_05] (Tier 1, score: 3.5)
+     Scene: "A family plays in the sand on a beach during sunset."
+     Explanation: Matched setting, one_line (where)
+  6. [beach_07] (Tier 1, score: 3.5)
+     Scene: "Three children joyfully jump on a trampoline set up on a sandy beach near the ocean."
+     Explanation: Matched setting, one_line (where)
 COACH STRIP TRIGGERED: true 
-COACH STRIP SOURCE: Deterministic Coach Engine
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
 COACH STRIP ROWS & OPTIONS (3 rows):
-  Row 1 [activity / what]: "What were you doing at the beach?"
-    Options: [ Playing | Walking | Swimming ]
-  Row 2 [indoor_outdoor / where]: "Was this an indoor or outdoor beach?"
-    Options: [ Outdoor | Indoor ]
-  Row 3 [time_period / when]: "When was this taken?"
-    Options: [ 3 years ago | Earlier | Last year | This year | 2 years ago ]
+  Row 1 [activity / what]: "What were you doing?"
+    Options: [ Playing | Standing | Walking | Playing in the sand | Sitting ]
+  Row 2 [group_type / who]: "Who was there?"
+    Options: [ Just me | Family | Children ]
+  Row 3 [clothing_color / look]: "What did it look like?"
+    Options: [ White | Blue | Pink | Grey | Black ]
 
 ======================================================
 QUERY: "red dress"
-TOTAL RESULTS: 38 (Tier 1 strong: 5)
+TOTAL RESULTS: 33 (Tier 1 strong: 0)
 TOP RESULTS (up to 6):
-  1. [kids_04] (Tier 1, score: 6)
-     Scene: "two children sit together inside a red toy wagon outdoors in a grassy park."
-     Explanation: Matched one_line, objects, clothing (look)
-  2. [beach_05] (Tier 1, score: 4)
-     Scene: "a family of four plays in the sand on a beach at sunset."
-     Explanation: Matched clothing (look)
-  3. [beach_16] (Tier 1, score: 4)
-     Scene: "a family plays in the sand together on the beach at sunset."
-     Explanation: Matched clothing (look)
-  4. [graduation_03] (Tier 1, score: 4)
-     Scene: "an adult woman wearing a graduation cap and gown poses in front of a white building with arches."
-     Explanation: Matched clothing (look)
-  5. [kids_10] (Tier 1, score: 4)
-     Scene: "two young children sitting on grass wearing costumes outdoors."
-     Explanation: Matched clothing (look)
-  6. [beach_04] (Tier 2, score: 4)
-     Scene: "a man holding two young children and a woman in a coral dress smiling on a sandy beach at sunset."
-     Explanation: Matched one_line, clothing (look)
-COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
-COACH STRIP: [Not shown]
+  1. [graduation_03] (Tier 3, score: 15)
+     Scene: "A young woman wearing a graduation cap and white dress poses outdoors in front of a classical building."
+     Explanation: AI Match: White dress, red only in look
+  2. [kids_04] (Tier 3, score: 10)
+     Scene: "Two young children sit together inside a red toy wagon placed on a grassy field surrounded by trees."
+     Explanation: AI Match: Red wagon, no dress mentioned
+  3. [beach_01] (Tier 3, score: 10)
+     Scene: "A man playfully holds a young girl upside down on a sandy beach near the ocean."
+     Explanation: AI Match: Red in look, no dress
+  4. [beach_04] (Tier 3, score: 10)
+     Scene: "A smiling family of four poses together on a sandy beach at sunset."
+     Explanation: AI Match: Red in look, no dress
+  5. [beach_05] (Tier 3, score: 10)
+     Scene: "A family plays in the sand on a beach during sunset."
+     Explanation: AI Match: Red in look, no dress
+  6. [beach_16] (Tier 3, score: 10)
+     Scene: "A family plays in the sand on a beach during sunset."
+     Explanation: AI Match: Red in look, no dress
+COACH STRIP TRIGGERED: true 
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
+COACH STRIP ROWS & OPTIONS (3 rows):
+  Row 1 [group_type / who]: "Who was there?"
+    Options: [ Friends | Just me | Family | Children ]
+  Row 2 [place_city / where]: "Where was it?"
+    Options: [ Chennai | Pondicherry | Bengaluru | Hyderabad | Goa ]
+  Row 3 [time_period / when]: "When was this taken?"
+    Options: [ Earlier | Last year | 3 years ago | 2 years ago ]
 
 ======================================================
 QUERY: "dinner with friends"
 TOTAL RESULTS: 46 (Tier 1 strong: 0)
 TOP RESULTS (up to 6):
-  1. [restaurant_17] (Tier 2, score: 6)
-     Scene: "a dinner table is set with a metal fondue pot, plates, glasses, and decorative ornaments."
-     Explanation: Matched one_line, event_title (what+occasion)
-  2. [pool_01] (Tier 2, score: 3.5)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
+  1. [hiking_06] (Tier 2, score: 3.5)
+     Scene: "Three friends jump in the air against a mountain landscape during sunset."
      Explanation: Matched one_line, group_type (who)
-  3. [birthday_14] (Tier 2, score: 2)
-     Scene: "champagne bottles resting in a metal ice bucket filled with ice."
-     Explanation: Matched event_title (occasion)
-  4. [birthday_15] (Tier 2, score: 2)
-     Scene: "a small white birthday cake topped with berries and a single lit candle on a wooden table."
-     Explanation: Matched event_title (occasion)
-  5. [birthday_16] (Tier 2, score: 2)
-     Scene: "a pink frosted frosted cake decorated with rose patterns and three spiral candles next to a floral centerpiece."
-     Explanation: Matched event_title (occasion)
-  6. [birthday_17] (Tier 2, score: 2)
-     Scene: "a bottle of rose wine tied with a pink ribbon next to four filled glasses on a table with fairy lights."
-     Explanation: Matched event_title (occasion)
-COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
-COACH STRIP: [Not shown]
+  2. [beach_17] (Tier 2, score: 1.5)
+     Scene: "Two people paddle a kayak across an open expanse of sea with a distant cliff on the right."
+     Explanation: Matched group_type (who)
+  3. [birthday_01] (Tier 2, score: 1.5)
+     Scene: "A diverse crowd of people gathers outdoors under a lit pergola at dusk."
+     Explanation: Matched group_type (who)
+  4. [birthday_02] (Tier 2, score: 1.5)
+     Scene: "Three young women wearing TikTok party hats sit indoors around a table with food."
+     Explanation: Matched group_type (who)
+  5. [festival_01] (Tier 2, score: 1.5)
+     Scene: "Silhouetted concertgoers raise their hands in front of a brightly lit stage filled with smoke."
+     Explanation: Matched group_type (who)
+  6. [festival_02] (Tier 2, score: 1.5)
+     Scene: "A large crowd of people with raised hands watches a band perform on stage under bright lights."
+     Explanation: Matched group_type (who)
+COACH STRIP TRIGGERED: true 
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
+COACH STRIP ROWS & OPTIONS (3 rows):
+  Row 1 [clothing_color / look]: "What did it look like?"
+    Options: [ Black | White | Blue | Red | Grey ]
+  Row 2 [place_city / where]: "Where was it?"
+    Options: [ Bengaluru | Hyderabad | Goa | Munnar ]
+  Row 3 [time_of_day / when]: "When was this taken?"
+    Options: [ Night | Afternoon | Evening ]
 
 ======================================================
 QUERY: "pool with friends in Goa"
-TOTAL RESULTS: 7 (Tier 1 strong: 2)
+TOTAL RESULTS: 77 (Tier 1 strong: 0)
 TOP RESULTS (up to 6):
-  1. [pool_01] (Tier 1, score: 100)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
-     Explanation: AI Match: Goa pool with friends splashing
-  2. [pool_06] (Tier 1, score: 85)
-     Scene: "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes."
-     Explanation: AI Match: Goa pool with friends swimming
-  3. [pool_04] (Tier 2, score: 40)
-     Scene: "a person swims underwater in a clear blue pool."
-     Explanation: AI Match: Goa pool but solo swimmer
-  4. [pool_02] (Tier 2, score: 35)
-     Scene: "a child jumping into the clear turquoise pool with goggles"
-     Explanation: AI Match: Goa pool but solo child
-  5. [pool_07] (Tier 3, score: 30)
-     Scene: "a pair of blue and yellow swim fins and a snorkel rest on a wooden table."
-     Explanation: AI Match: Goa pool gear, no people
-  6. [pool_03] (Tier 3, score: 25)
-     Scene: "close-up of blue pool water surface with ripples and light reflections."
-     Explanation: AI Match: Goa pool water, no people
-COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
-COACH STRIP: [Not shown]
+  1. [pool_04] (Tier 2, score: 8.6)
+     Scene: "A person swims underwater in a blue pool."
+     Explanation: Matched setting, one_line, activity (where+what)
+  2. [pool_06] (Tier 2, score: 8.6)
+     Scene: "Two young children wearing sunglasses swim with inflatable float rings in a pool."
+     Explanation: Matched setting, one_line, activity (where+what)
+  3. [pool_02] (Tier 2, score: 8.2)
+     Scene: "A bald man wearing goggles swims in blue water."
+     Explanation: Matched setting, one_line, activity (where+what)
+  4. [pool_07] (Tier 2, score: 8.1)
+     Scene: "Blue and yellow swim fins and a teal snorkel rest on a wooden table."
+     Explanation: Matched one_line, objects, place_city (what+look+where)
+  5. [beach_17] (Tier 2, score: 5.6)
+     Scene: "Two people paddle a kayak across an open expanse of sea with a distant cliff on the right."
+     Explanation: Matched group_type, place_city (who+where)
+  6. [festival_01] (Tier 2, score: 5.6)
+     Scene: "Silhouetted concertgoers raise their hands in front of a brightly lit stage filled with smoke."
+     Explanation: Matched group_type, place_city (who+where)
+COACH STRIP TRIGGERED: true 
+COACH STRIP SOURCE: LLM Question Planner (deterministic)
+COACH STRIP ROWS & OPTIONS (3 rows):
+  Row 1 [activity / what]: "What was everyone doing?"
+    Options: [ Dancing | Swimming | Kayaking | Cheering ]
+  Row 2 [clothing_color / look]: "What did people wear?"
+    Options: [ Black | White | Blue | Red ]
+  Row 3 [mood / mood]: "What was the vibe?"
+    Options: [ Energetic | Playful | Festive | Joyful ]
 
 ======================================================
 QUERY: "a couple of summers ago, with friends"
-TOTAL RESULTS: 42 (Tier 1 strong: 0)
+TOTAL RESULTS: 49 (Tier 1 strong: 0)
 TOP RESULTS (up to 6):
-  1. [pool_01] (Tier 2, score: 10.5)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
-     Explanation: Matched event_title, season, one_line (occasion+when+who)
-  2. [pool_06] (Tier 2, score: 8.5)
-     Scene: "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes."
-     Explanation: Matched event_title, season, group_type (occasion+when+who)
-  3. [graduation_04] (Tier 2, score: 4.5)
-     Scene: "a silhouette of a group of graduates standing on a hill and tossing graduation caps into the air at sunset."
-     Explanation: Matched season, group_type (when+who)
-  4. [graduation_05] (Tier 2, score: 4.5)
-     Scene: "a large group of graduates in caps and gowns toss their mortarboards into the air outdoors."
-     Explanation: Matched season, group_type (when+who)
-  5. [graduation_11] (Tier 2, score: 4.5)
-     Scene: "four people standing outdoors in a row wearing purple graduation gowns while holding black mortarboard caps."
-     Explanation: Matched season, group_type (when+who)
-  6. [graduation_18] (Tier 2, score: 4.5)
-     Scene: "two graduates stand by the sea at sunset, hugging and raising victory signs."
-     Explanation: Matched group_type, season (who+when)
+  1. [hiking_06] (Tier 3, score: 3.5)
+     Scene: "Three friends jump in the air against a mountain landscape during sunset."
+     Explanation: [Weak match] Matched one_line, group_type (who)
+  2. [restaurant_02] (Tier 3, score: 3.5)
+     Scene: "A couple sits at a wooden table in a restaurant while a man holds a wine glass and a woman smiles."
+     Explanation: [Weak match] Matched one_line, group_type (who)
+  3. [restaurant_18] (Tier 3, score: 3.5)
+     Scene: "A couple sits at a wooden table holding hands while dining on pastries and drinks."
+     Explanation: [Weak match] Matched one_line, group_type (who)
+  4. [beach_17] (Tier 3, score: 1.5)
+     Scene: "Two people paddle a kayak across an open expanse of sea with a distant cliff on the right."
+     Explanation: [Weak match] Matched group_type (who)
+  5. [birthday_01] (Tier 3, score: 1.5)
+     Scene: "A diverse crowd of people gathers outdoors under a lit pergola at dusk."
+     Explanation: [Weak match] Matched group_type (who)
+  6. [birthday_02] (Tier 3, score: 1.5)
+     Scene: "Three young women wearing TikTok party hats sit indoors around a table with food."
+     Explanation: [Weak match] Matched group_type (who)
 COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
 COACH STRIP: [Not shown]
 
@@ -309,75 +298,63 @@ COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "12 March 2021 Goa pool"
-TOTAL RESULTS: 42 (Tier 1 strong: 0)
+TOTAL RESULTS: 40 (Tier 1 strong: 0)
 TOP RESULTS (up to 6):
-  1. [pool_01] (Tier 2, score: 18.4)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
-     Explanation: Matched place_city, theme, setting (where+what+look+occasion)
-  2. [pool_04] (Tier 2, score: 18.4)
-     Scene: "a person swims underwater in a clear blue pool."
-     Explanation: Matched place_city, theme, setting (where+what+look+occasion)
-  3. [pool_06] (Tier 2, score: 17.4)
-     Scene: "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes."
-     Explanation: Matched place_city, theme, setting (where+what+look+occasion)
-  4. [pool_07] (Tier 2, score: 13.9)
-     Scene: "a pair of blue and yellow swim fins and a snorkel rest on a wooden table."
-     Explanation: Matched place_city, theme, one_line (where+what+look+occasion)
-  5. [pool_02] (Tier 2, score: 11.4)
-     Scene: "a child jumping into the clear turquoise pool with goggles"
-     Explanation: Matched place_city, theme, setting (where+occasion)
-  6. [pool_03] (Tier 2, score: 11.4)
-     Scene: "close-up of blue pool water surface with ripples and light reflections."
-     Explanation: Matched place_city, theme, setting (where+occasion)
+  1. [pool_04] (Tier 2, score: 33.6)
+     Scene: "A person swims underwater in a blue pool."
+     Explanation: Matched place_city, setting, one_line (where+what)
+  2. [pool_06] (Tier 2, score: 33.6)
+     Scene: "Two young children wearing sunglasses swim with inflatable float rings in a pool."
+     Explanation: Matched place_city, setting, one_line (where+what)
+  3. [pool_02] (Tier 2, score: 33.2)
+     Scene: "A bald man wearing goggles swims in blue water."
+     Explanation: Matched place_city, setting, one_line (where+what)
+  4. [pool_07] (Tier 2, score: 33.1)
+     Scene: "Blue and yellow swim fins and a teal snorkel rest on a wooden table."
+     Explanation: Matched place_city, one_line, objects (where+what+look)
+  5. [pool_05] (Tier 2, score: 30.6)
+     Scene: "Multiple brightly colored balloons float on the surface of a blue swimming pool."
+     Explanation: Matched place_city, setting, one_line (where)
+  6. [beach_07] (Tier 2, score: 30)
+     Scene: "Three children joyfully jump on a trampoline set up on a sandy beach near the ocean."
+     Explanation: Matched place_city, time, exact_metadata (where+when)
 COACH STRIP TRIGGERED: false (blocked: not_vague)
 COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "two children in swimming pool with sunglasses"
-TOTAL RESULTS: 51 (Tier 1 strong: 1)
+TOTAL RESULTS: 49 (Tier 1 strong: 1)
 TOP RESULTS (up to 6):
-  1. [pool_06] (Tier 1, score: 31.3)
-     Scene: "two children wearing sunglasses splash in a swimming pool with inflatable inner tubes."
-     Explanation: Matched one_line, activity, objects (what+who+look+where+occasion)
-  2. [pool_09] (Tier 2, score: 21.4)
-     Scene: "an indoor swimming pool with two life rings hanging on the wall."
-     Explanation: Matched one_line, theme, setting (what+where+look+occasion)
-  3. [pool_01] (Tier 2, score: 20.3)
-     Scene: "a group of friends splashing in a sunny outdoor pool"
-     Explanation: Matched activity, theme, setting (what+where+look+occasion)
-  4. [pool_13] (Tier 3, score: 25.4)
-     Scene: "an underwater view of a person swimming freestyle in a lap pool."
-     Explanation: [Weak match] Matched one_line, activity, clothing (what+look+where+occasion)
-  5. [pool_08] (Tier 3, score: 23.4)
-     Scene: "a shirtless adult stands in a pool resting their hands on the edge."
-     Explanation: [Weak match] Matched activity, clothing, theme (what+look+where+occasion)
-  6. [pool_11] (Tier 3, score: 21.4)
-     Scene: "a young woman rests her arms on the edge of an outdoor swimming pool."
-     Explanation: [Weak match] Matched one_line, objects, theme (what+look+where+occasion)
+  1. [pool_06] (Tier 1, score: 24)
+     Scene: "Two young children wearing sunglasses swim with inflatable float rings in a pool."
+     Explanation: Matched one_line, group_type, activity (what+who+where+look)
+  2. [kids_18] (Tier 2, score: 15)
+     Scene: "Two young boys are playing near a small pink pool outdoors."
+     Explanation: Matched one_line, group_type, setting (what+who+where+look)
+  3. [pool_09] (Tier 2, score: 13.5)
+     Scene: "An indoor swimming pool features light blue tiles and two lifebuoys along the back wall."
+     Explanation: Matched one_line, setting, objects (what+where+look)
+  4. [pool_08] (Tier 3, score: 13.5)
+     Scene: "A shirtless muscular man exits a swimming pool."
+     Explanation: [Weak match] Matched one_line, setting, activity (what+where+look)
+  5. [pool_11] (Tier 3, score: 13.5)
+     Scene: "A woman rests her chin on her crossed arms by the edge of a swimming pool."
+     Explanation: [Weak match] Matched one_line, objects, setting (what+look+where)
+  6. [pool_12] (Tier 3, score: 11.5)
+     Scene: "An outdoor swimming pool with blue tiles sits on a wooden deck next to a garden and a dark blue umbrella."
+     Explanation: [Weak match] Matched one_line, setting, objects (what+where+look)
 COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
 COACH STRIP: [Not shown]
 
 ======================================================
 QUERY: "black and white dog sitting happily inside car"
-TOTAL RESULTS: 107 (Tier 1 strong: 1)
+TOTAL RESULTS: 2 (Tier 1 strong: 2)
 TOP RESULTS (up to 6):
-  1. [roadtrip_01] (Tier 1, score: 30.8)
-     Scene: "a fluffy black and white dog sitting inside a car looking happily towards the camera."
-     Explanation: Matched one_line, objects, indoor_outdoor (look+what+where)
-  2. [roadtrip_16] (Tier 3, score: 12.7)
-     Scene: "two adults are inside a car driving on a highway with mountains visible in the distance."
-     Explanation: [Weak match] Matched clothing, indoor_outdoor, one_line (look+where+what)
-  3. [pets_10] (Tier 3, score: 12)
-     Scene: "a small white dog biting a wooden stick outdoors."
-     Explanation: [Weak match] Matched one_line, objects, event_title (look+what+occasion)
-  4. [pets_14] (Tier 3, score: 12)
-     Scene: "a dark-furred terrier type dog runs eagerly through green grass."
-     Explanation: [Weak match] Matched clothing, one_line, objects (look+what+occasion)
-  5. [roadtrip_11] (Tier 3, score: 10.7)
-     Scene: "a small toy car is placed on top of a vintage map of north america."
-     Explanation: [Weak match] Matched indoor_outdoor, one_line, activity (where+what+look)
-  6. [roadtrip_20] (Tier 3, score: 10.7)
-     Scene: "driver's view from inside a car driving on a road surrounded by a lush green forest."
-     Explanation: [Weak match] Matched indoor_outdoor, one_line, objects (where+what+look)
+  1. [roadtrip_01] (Tier 1, score: 95)
+     Scene: "A black and white collie sits inside a car looking towards the camera."
+     Explanation: AI Match: Black and white dog sitting inside car
+  2. [roadtrip_07] (Tier 1, score: 85)
+     Scene: "A black and white dog looks out the window of a car on a road."
+     Explanation: AI Match: Black and white dog inside car window
 COACH STRIP TRIGGERED: false (blocked: not_enough_candidates)
 COACH STRIP: [Not shown]
