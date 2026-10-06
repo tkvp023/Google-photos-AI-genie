@@ -435,14 +435,25 @@ Return valid JSON:
   const latencyMs = Date.now() - startMs;
 
   if (llmQuestions && llmQuestions.length > 0) {
-    plannerCache.set(cacheKey, llmQuestions);
+    // If LLM returned fewer questions than deterministic engine, pad with deterministic questions
+    const finalLLMQs = [...llmQuestions];
+    const existingCues = new Set(finalLLMQs.map((q) => q.cueType));
+    for (const dq of deterministicQs) {
+      if (finalLLMQs.length >= config.MAX_QUESTIONS) break;
+      if (!existingCues.has(dq.cueType)) {
+        finalLLMQs.push(dq);
+        existingCues.add(dq.cueType);
+      }
+    }
+
+    plannerCache.set(cacheKey, finalLLMQs);
 
     const sameFields =
-      deterministicFields.length === llmQuestions.length &&
-      deterministicFields.every((f) => llmQuestions!.some((q) => q.field === f));
+      deterministicFields.length === finalLLMQs.length &&
+      deterministicFields.every((f) => finalLLMQs.some((q) => q.field === f));
 
     return {
-      questions: llmQuestions,
+      questions: finalLLMQs,
       planner_source: providerUsed as "gemini" | "deterministic",
       planner_latency_ms: latencyMs,
       planner_fallback_reason: "",

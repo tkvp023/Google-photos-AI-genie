@@ -491,6 +491,113 @@ export function genericFallbackQuestions(query: string, priorAnswers: Answer[], 
     }
   }
 
+  // 6. where (place_city or indoor_outdoor from candidates)
+  if (!answeredCues.has("where") && questions.length < config.MAX_QUESTIONS) {
+    const cityCounts: Record<string, number> = {};
+    for (const p of candidates) {
+      const city = p.metadata?.place?.city;
+      if (city && city !== "unknown") {
+        cityCounts[city.toLowerCase()] = (cityCounts[city.toLowerCase()] || 0) + 1;
+      }
+    }
+    const topCities = Object.entries(cityCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
+    if (topCities.length >= 2) {
+      questions.push({
+        id: "q_where_city_generic",
+        cueType: "where",
+        field: "place_city",
+        text: "Where was it?",
+        layer: "generic_fallback",
+        options: topCities.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
+        allowText: true,
+        allowDontRemember: true,
+      });
+    } else {
+      const ioCounts: Record<string, number> = {};
+      for (const p of candidates) {
+        const io = p.tag?.indoor_outdoor;
+        if (io && (io === "outdoor" || io === "indoor")) {
+          ioCounts[io] = (ioCounts[io] || 0) + 1;
+        }
+      }
+      const topIO = Object.entries(ioCounts)
+        .filter(([, cnt]) => cnt >= 2)
+        .sort((a, b) => b[1] - a[1]);
+      if (topIO.length >= 2) {
+        questions.push({
+          id: "q_where_io_generic",
+          cueType: "where",
+          field: "indoor_outdoor",
+          text: "Indoors or outdoors?",
+          layer: "generic_fallback",
+          options: topIO.map(([v, cnt]) => ({ label: v === "outdoor" ? "Outdoors" : "Indoors", value: v, count: cnt })),
+          allowText: true,
+          allowDontRemember: true,
+        });
+      }
+    }
+  }
+
+  // 7. when (time_period or time_of_day from candidates)
+  if (!answeredCues.has("when") && questions.length < config.MAX_QUESTIONS) {
+    const periodCounts: Record<string, number> = {};
+    for (const p of candidates) {
+      if (p.metadata?.year) {
+        const yr = p.metadata.year;
+        const diff = 2026 - yr;
+        let period = "earlier";
+        if (diff === 0) period = "this year";
+        else if (diff === 1) period = "last year";
+        else if (diff === 2) period = "two years ago";
+        else if (diff === 3) period = "3 years ago";
+        periodCounts[period] = (periodCounts[period] || 0) + 1;
+      }
+    }
+    const topPeriods = Object.entries(periodCounts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
+    if (topPeriods.length >= 2) {
+      questions.push({
+        id: "q_when_period_generic",
+        cueType: "when",
+        field: "time_period",
+        text: "When was this taken?",
+        layer: "generic_fallback",
+        options: topPeriods.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
+        allowText: true,
+        allowDontRemember: true,
+      });
+    } else {
+      const todCounts: Record<string, number> = {};
+      for (const p of candidates) {
+        const tod = p.tag?.time_of_day;
+        if (tod && tod !== "unknown") {
+          todCounts[tod.toLowerCase()] = (todCounts[tod.toLowerCase()] || 0) + 1;
+        }
+      }
+      const topTOD = Object.entries(todCounts)
+        .filter(([, cnt]) => cnt >= 2)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4);
+      if (topTOD.length >= 2) {
+        questions.push({
+          id: "q_when_tod_generic",
+          cueType: "when",
+          field: "time_of_day",
+          text: "When was this taken?",
+          layer: "generic_fallback",
+          options: topTOD.map(([v, cnt]) => ({ label: v.charAt(0).toUpperCase() + v.slice(1), value: v, count: cnt })),
+          allowText: true,
+          allowDontRemember: true,
+        });
+      }
+    }
+  }
+
   return questions.slice(0, config.MAX_QUESTIONS);
 }
 
@@ -646,8 +753,8 @@ export function selectQuestions(
       if (topCount / dist.totalValid > 0.85) continue;
     }
 
-    // Skip rows with <3 options (or <2 if binary or activity)
-    const minOpts = item.field === "indoor_outdoor" || item.field === "activity" ? 2 : (candidates.length <= 8 ? 2 : 3);
+    // Skip rows with <2 options
+    const minOpts = 2;
     if (eligibleOptions.length < minOpts) continue;
 
     const isOccasion = item.cueType === "occasion";

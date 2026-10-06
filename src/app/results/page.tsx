@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -65,6 +65,7 @@ function ResultsContent() {
   const [coachQuestions, setCoachQuestions] = useState<Question[]>([]);
   const [coachLoading, setCoachLoading] = useState<boolean>(false);
   const [isLibraryInfoOpen, setIsLibraryInfoOpen] = useState(false);
+  const dismissedQueryRef = useRef<string>("");
 
   useEffect(() => {
     if (!q) {
@@ -72,6 +73,9 @@ function ResultsContent() {
       setCount(0);
       setUnmatchedTerms([]);
       setLoading(false);
+      setCoachQuestions([]);
+      setIsCoachHelpOpen(false);
+      setCoachTriggerStatus(null);
       return;
     }
 
@@ -101,20 +105,45 @@ function ResultsContent() {
       })
       .finally(() => setLoading(false));
 
-    if (isDebug && q && !isGenieOff) {
-      fetch("/api/coach/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: q, explicit: false, genieOff: isGenieOff }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setCoachTriggerStatus({
-            triggered: Boolean(data.triggered),
-            reason: data.trigger_blocked_reason || (data.triggered ? "ambiguity and match thresholds satisfied" : "not triggered"),
-          });
+    if (q && !isGenieOff) {
+      const qNorm = q.trim().toLowerCase();
+      if (dismissedQueryRef.current && dismissedQueryRef.current === qNorm) {
+        // User explicitly dismissed for this exact query
+      } else {
+        setCoachLoading(true);
+        fetch("/api/coach/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: q, explicit: false, genieOff: isGenieOff }),
         })
-        .catch(() => {});
+          .then((res) => res.json())
+          .then((data) => {
+            const isTrig = Boolean(data.triggered);
+            setCoachTriggerStatus({
+              triggered: isTrig,
+              reason: data.trigger_blocked_reason || (isTrig ? "ambiguity and match thresholds satisfied" : "not triggered"),
+            });
+            if (isTrig && data.questions && data.questions.length > 0) {
+              setCoachQuestions(data.questions);
+              setIsCoachHelpOpen(true);
+            } else {
+              setCoachQuestions([]);
+              setIsCoachHelpOpen(false);
+            }
+          })
+          .catch((err) => {
+            console.error("Coach analyze error:", err);
+            setCoachQuestions([]);
+            setIsCoachHelpOpen(false);
+          })
+          .finally(() => {
+            setCoachLoading(false);
+          });
+      }
+    } else {
+      setCoachQuestions([]);
+      setIsCoachHelpOpen(false);
+      setCoachTriggerStatus(null);
     }
   }, [q, isDebug, isGenieOff]);
 
@@ -146,7 +175,10 @@ function ResultsContent() {
     const nextState = !isCoachHelpOpen;
     setIsCoachHelpOpen(nextState);
     if (nextState) {
-      fetchCoachQuestions(q);
+      dismissedQueryRef.current = "";
+      if (coachQuestions.length === 0) {
+        fetchCoachQuestions(q);
+      }
     }
   };
 
@@ -351,7 +383,10 @@ function ResultsContent() {
                 noMatchState="none"
                 unmatchedTerms={[]}
                 onChipTap={handleResultsChipTap}
-                onDismiss={() => setIsCoachHelpOpen(false)}
+                onDismiss={() => {
+                  setIsCoachHelpOpen(false);
+                  dismissedQueryRef.current = q.trim().toLowerCase();
+                }}
               />
             )}
           </div>
