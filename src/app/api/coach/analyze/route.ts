@@ -66,6 +66,16 @@ export async function POST(req: NextRequest) {
       );
       if (deterministicQuestions.length === 0) {
         deterministicQuestions = genericFallbackQuestions(trimmedQuery, [], candidatePhotos);
+      } else if (deterministicQuestions.length < config.MAX_QUESTIONS) {
+        const fallbacks = genericFallbackQuestions(trimmedQuery, [], candidatePhotos);
+        const seenCues = new Set(deterministicQuestions.map((q) => q.cueType));
+        for (const fq of fallbacks) {
+          if (deterministicQuestions.length >= config.MAX_QUESTIONS) break;
+          if (!seenCues.has(fq.cueType)) {
+            deterministicQuestions.push(fq);
+            seenCues.add(fq.cueType);
+          }
+        }
       }
       layer = deterministicQuestions[0]?.layer === "generic_fallback" ? "generic" : "library";
     }
