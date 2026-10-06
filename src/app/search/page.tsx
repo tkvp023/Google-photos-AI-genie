@@ -201,9 +201,9 @@ function SearchContent() {
   const peopleList = [
     { id: "1", name: "Family", src: "/library/graduation_01.jpg" },
     { id: "2", name: "Aarav", src: "/library/pool_02.jpg" },
-    { id: "3", name: "Dad", src: "/library/beach_01.jpg" },
-    { id: "4", name: "Brother", src: "/library/festival_01.jpg" },
-    { id: "5", name: "Mom", src: "/library/birthday_01.jpg" },
+    { id: "3", name: "Kavita", src: "/library/beach_01.jpg" },
+    { id: "4", name: "Ananya", src: "/library/festival_01.jpg" },
+    { id: "5", name: "Rohan", src: "/library/birthday_01.jpg" },
     { id: "6", name: "Friend", src: "/library/kids_01.jpg" },
   ];
 

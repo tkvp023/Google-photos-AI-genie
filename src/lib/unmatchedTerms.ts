@@ -11,7 +11,7 @@ import { normalise, applySynonyms } from "./search";
 const EXTRA_STOPS = new Set([
   "photo", "photos", "picture", "pictures", "image", "images",
   "me", "my", "i", "us", "our",
-  "some", "few", "lot", "lots", "many", "couple",
+  "some", "few", "lot", "lots", "many",
   "find", "show", "get", "look", "looking", "see",
   "thing", "things", "something", "any", "all", "one",
   "from", "old", "new", "nice", "good", "great", "best",

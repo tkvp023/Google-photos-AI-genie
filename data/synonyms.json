@@ -42,5 +42,17 @@
   "blr": "bengaluru",
   "madras": "chennai",
   "hyd": "hyderabad",
-  "bombay": "mumbai"
+  "bombay": "mumbai",
+  "party": "birthday celebration",
+  "food": "restaurant meal dining",
+  "travel": "trip car driving road vacation",
+  "forest": "woods trees",
+  "flowers": "flower floral garden",
+  "flower": "flowers floral garden",
+  "sea": "ocean seaside beach",
+  "ocean": "sea seaside beach",
+  "boat": "ship sailing water ocean",
+  "morning": "sunrise daylight outdoor breakfast",
+  "couple": "two partners romantic pair",
+  "dance": "music party celebration concert"
 }

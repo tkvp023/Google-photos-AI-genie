@@ -1,7 +1,7 @@
 ================================================================================
 SEARCH MATCHING & COACH TRIGGER DIAGNOSIS REPORT
 Total photos in library: 200
-Current config: MIN_SCORE=1.5, COACH_MIN_CANDIDATES=8
+Current config: MIN_SCORE=1.5, COACH_MIN_CANDIDATES=6
 ================================================================================
 
 --------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 22
   Matches >= 60% of content terms: 22
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=19):
   pool 18, kids 1
@@ -54,20 +54,20 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 21
   Matches >= 60% of content terms: 21
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=8):
   birthday 8
 
 Top 10 Photos:
-  #1 birthday_03.jpg (theme: birthday) | Score: 22 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday,party,cake]; occasion_guess:[birthday]; objects:[birthday,party,cake]
-  #2 birthday_15.jpg (theme: birthday) | Score: 14 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[cake]; occasion_guess:[birthday]; objects:[cake]
-  #3 birthday_02.jpg (theme: birthday) | Score: 12 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; occasion_guess:[birthday]; objects:[party]
-  #4 birthday_09.jpg (theme: birthday) | Score: 12 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; occasion_guess:[birthday]; objects:[party]
-  #5 birthday_08.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; objects:[party]
-  #6 birthday_10.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; objects:[party]
-  #7 birthday_16.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[cake]; objects:[cake]
-  #8 birthday_19.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday,cake]; occasion_guess:[birthday]; objects:[cake]
+  #1 birthday_03.jpg (theme: birthday) | Score: 23 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday,party,cake]; occasion_guess:[birthday]; objects:[birthday,party,cake]
+  #2 birthday_15.jpg (theme: birthday) | Score: 15 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[cake]; occasion_guess:[birthday]; objects:[cake]
+  #3 birthday_02.jpg (theme: birthday) | Score: 13 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; occasion_guess:[birthday]; objects:[party]
+  #4 birthday_09.jpg (theme: birthday) | Score: 13 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; occasion_guess:[birthday]; objects:[party]
+  #5 birthday_19.jpg (theme: birthday) | Score: 10 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[birthday,cake]; occasion_guess:[birthday]; objects:[cake]
+  #6 birthday_08.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; objects:[party]
+  #7 birthday_10.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[party]; objects:[party]
+  #8 birthday_16.jpg (theme: birthday) | Score: 8 | Matched 1/1 terms [birthday] | Fields: theme:[birthday]; one_line:[cake]; objects:[cake]
   #9 restaurant_18.jpg (theme: restaurant) | Score: 1 | Matched 1/1 terms [birthday] | Fields: objects:[cake]
   #10 beach_01.jpg (theme: beach) | Score: 0 | Matched 0/1 terms [] | Fields: none
 
@@ -88,7 +88,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 23
   Matches >= 60% of content terms: 23
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=22):
   beach 19, pool 1, graduation 1, pets 1
@@ -122,7 +122,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 46
   Matches >= 60% of content terms: 46
-  Current Coach Trigger (matches >= 8 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
 Theme counts of current matches (score >= 2, total=1):
   hiking 1
@@ -159,7 +159,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 4):
   Matches ALL content terms (100%): 0
   Matches >= 60% of content terms: 0
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=52):
   pool 18, kids 11, festival 7, beach 7, hiking 4, birthday 2, graduation 2, restaurant 1
@@ -193,7 +193,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 22
   Matches >= 60% of content terms: 22
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=19):
   pool 18, kids 1
@@ -227,7 +227,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 20
   Matches >= 60% of content terms: 20
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=20):
   pets 16, roadtrip 2, birthday 1, hiking 1
@@ -262,7 +262,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 2):
   Matches ALL content terms (100%): 25
   Matches >= 60% of content terms: 25
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=22):
   restaurant 16, birthday 6
@@ -296,7 +296,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 20
   Matches >= 60% of content terms: 20
-  Current Coach Trigger (matches >= 8 at score>=2): TRIGGERED (Lots of photos match)
+  Current Coach Trigger (matches >= 6 at score>=2): TRIGGERED (Lots of photos match)
 
 Theme counts of current matches (score >= 2, total=11):
   hiking 11
@@ -331,7 +331,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 2):
   Matches ALL content terms (100%): 0
   Matches >= 60% of content terms: 0
-  Current Coach Trigger (matches >= 8 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
 Theme counts of current matches (score >= 2, total=0):
   None
@@ -365,7 +365,7 @@ Match counts by MIN_SCORE threshold:
 Term-overlap counts (content terms = 1):
   Matches ALL content terms (100%): 0
   Matches >= 60% of content terms: 0
-  Current Coach Trigger (matches >= 8 at score>=2): NOT TRIGGERED
+  Current Coach Trigger (matches >= 6 at score>=2): NOT TRIGGERED
 
 Theme counts of current matches (score >= 2, total=0):
   None

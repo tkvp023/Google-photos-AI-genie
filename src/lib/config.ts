@@ -4,7 +4,7 @@ export const config = {
   GENIE_ENABLED: process.env.GENIE_ENABLED !== "false",
   COACH_ENABLED: process.env.GENIE_ENABLED !== "false",
   COACH_DEBOUNCE_MS: 500,
-  COACH_MIN_CANDIDATES: 8,
+  COACH_MIN_CANDIDATES: 6,
   COACH_STOP_AT: 8,
   COACH_MIN_STRONG: 4,
   COACH_MIN_AMBIGUOUS: 4,
