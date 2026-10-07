@@ -9,6 +9,7 @@ import { PhotoGrid, PhotoGridItem } from "@/components/ui/PhotoGrid";
 import { Toast } from "@/components/ui/Toast";
 import { TesterDisclaimer } from "@/components/ui/TesterDisclaimer";
 import { LibraryInfoModal } from "@/components/ui/LibraryInfoModal";
+import { GenieHintBox } from "@/components/ui/GenieHintBox";
 
 interface MemoryStory {
   id: string;
@@ -136,6 +137,9 @@ function HomeContent() {
           </div>
         ) : (
           <>
+            {/* MVP Tester: AI Genie hint box */}
+            <GenieHintBox />
+
             {/* S1: Memories Carousel Strip */}
             {memories.length > 0 && (
               <section className="pt-3 pb-2 px-3 border-b border-[#F1F3F4]">
