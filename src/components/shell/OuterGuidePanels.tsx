@@ -99,11 +99,11 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
     rightColumn = (
       <div className="hidden lg:flex flex-col relative flex-shrink-0 w-[210px] xl:w-[240px] h-[860px] overflow-hidden z-20 animate-fade-in pointer-events-auto pl-3">
         {/* ── Always-visible Genie hint for MVP testers ── */}
-        <div className="absolute top-[20px] left-0 right-0">
+        <div className="absolute top-[16px] left-0 right-0 pr-1">
           <GenieHintBox />
         </div>
         {/* Points → memories carousel ~190px */}
-        <div className="absolute top-[230px] left-0 right-0">
+        <div className="absolute top-[215px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="trigger"

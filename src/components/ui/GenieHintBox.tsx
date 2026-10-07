@@ -1,97 +1,53 @@
 // src/components/ui/GenieHintBox.tsx
-// MVP tester callout: explains how to trigger AI Genie with real working examples.
-// Dismissible per-session via sessionStorage.
+// Compact MVP tester callout — fits inside the 210 px side whitespace column.
+// Always visible (no dismiss). Height target: ~175–185 px.
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const DISMISS_KEY = "gp_genie_hint_dismissed";
-
-// Each example hits ≥2 classifier cue categories, guaranteeing Genie activates.
-const EXAMPLES: { label: string; cues: string }[] = [
-  { label: "friends at the beach", cues: "who + where" },
-  { label: "birthday party evening", cues: "occasion + when" },
-  { label: "hiking in the mountains", cues: "what + where" },
-  { label: "family swimming at the pool", cues: "who + what + where" },
+// All 4 examples hit ≥2 cue categories → guaranteed Genie activation.
+const EXAMPLES = [
+  "friends at the beach",
+  "birthday party evening",
+  "hiking in the mountains",
+  "family swimming at pool",
 ];
 
 export function GenieHintBox() {
-  const [dismissed, setDismissed] = useState(true);
-
-  useEffect(() => {
-    try {
-      setDismissed(sessionStorage.getItem(DISMISS_KEY) === "1");
-    } catch {
-      setDismissed(false);
-    }
-  }, []);
-
-  const handleDismiss = () => {
-    try {
-      sessionStorage.setItem(DISMISS_KEY, "1");
-    } catch {}
-    setDismissed(true);
-  };
-
-  if (dismissed) return null;
-
   return (
     <div
       role="note"
       aria-label="How to trigger AI Genie"
-      className="mx-3 mt-3 mb-1 rounded-2xl border border-[#E0D0FF] bg-gradient-to-br from-[#F5EEFF] via-[#EEE8FF] to-[#E8F0FF] shadow-sm"
+      className="rounded-xl border border-[#D8C4FF] bg-gradient-to-b from-[#F3EAFF] to-[#EAE0FF] shadow-sm overflow-hidden"
     >
       {/* ── Header ── */}
-      <div className="flex items-start justify-between px-3.5 pt-3 pb-0.5">
-        <div className="flex items-center gap-2">
-          <span className="text-lg leading-none select-none" aria-hidden="true">✨</span>
-          <p className="text-[13px] font-bold text-[#3D0A91] leading-tight tracking-tight">
-            How to trigger AI Genie
-          </p>
-        </div>
-        <button
-          type="button"
-          aria-label="Dismiss Genie hint"
-          onClick={handleDismiss}
-          className="mt-0.5 w-6 h-6 rounded-full flex items-center justify-center text-[#8B68C4] hover:bg-[#DDD0FF] transition-colors cursor-pointer flex-shrink-0"
-        >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-          </svg>
-        </button>
+      <div className="flex items-center gap-1.5 px-2.5 pt-2 pb-1 border-b border-[#E0D0FF]">
+        <span className="text-[13px] leading-none select-none" aria-hidden="true">✨</span>
+        <p className="text-[11px] font-bold text-[#3D0A91] leading-tight tracking-tight">
+          How to trigger AI Genie
+        </p>
       </div>
 
-      {/* ── Steps ── */}
-      <ol className="px-3.5 pt-2 pb-1 space-y-1 list-none">
-        <li className="flex gap-2 text-[12px] text-[#4A2080] leading-snug">
-          <span className="font-bold text-[#7C4DFF] flex-shrink-0">1.</span>
-          <span>Tap the <span className="font-semibold">🔍 Search bar</span> at the top</span>
-        </li>
-        <li className="flex gap-2 text-[12px] text-[#4A2080] leading-snug">
-          <span className="font-bold text-[#7C4DFF] flex-shrink-0">2.</span>
-          <span>Type a <span className="font-semibold">descriptive phrase</span> with 2+ details — <em>who, where, what, when, occasion…</em></span>
-        </li>
-        <li className="flex gap-2 text-[12px] text-[#4A2080] leading-snug">
-          <span className="font-bold text-[#7C4DFF] flex-shrink-0">3.</span>
-          <span>Genie pops up automatically — tap its <span className="font-semibold">coloured chips</span> to filter results</span>
-        </li>
-      </ol>
+      {/* ── One-liner instruction ── */}
+      <p className="px-2.5 pt-1.5 text-[10px] text-[#4A2080] leading-snug">
+        In 🔍 Search, type a phrase with{" "}
+        <span className="font-semibold">2+ details</span> — Genie appears automatically.
+        Then tap the coloured chips.
+      </p>
 
-      {/* ── Example chips ── */}
-      <div className="px-3.5 pt-1.5 pb-3">
-        <p className="text-[10.5px] font-semibold text-[#7C4DFF] uppercase tracking-wider mb-1.5">
-          Try these →
+      {/* ── Examples ── */}
+      <div className="px-2.5 pt-1.5 pb-2">
+        <p className="text-[9px] font-semibold text-[#7C4DFF] uppercase tracking-widest mb-1">
+          Try these:
         </p>
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-[5px]">
           {EXAMPLES.map((ex) => (
-            <div key={ex.label} className="flex items-center gap-2">
-              <span className="flex-1 px-3 py-1.5 rounded-full bg-white/80 border border-[#C9B0FF] text-[12px] text-[#3D0A91] font-medium leading-tight shadow-[0_1px_3px_rgba(124,77,255,0.08)]">
-                &ldquo;{ex.label}&rdquo;
-              </span>
-              <span className="text-[10px] text-[#9E7FCC] font-medium whitespace-nowrap flex-shrink-0">
-                {ex.cues}
-              </span>
-            </div>
+            <span
+              key={ex}
+              className="block px-2 py-[3px] rounded-md bg-white/80 border border-[#C9B0FF] text-[10px] text-[#3D0A91] font-medium leading-tight"
+            >
+              &ldquo;{ex}&rdquo;
+            </span>
           ))}
         </div>
       </div>
