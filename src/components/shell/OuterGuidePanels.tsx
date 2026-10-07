@@ -103,8 +103,8 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
           <GenieHintBox />
         </div>
 
-        {/* Points → memories carousel ~190px */}
-        <div className="absolute top-[240px] left-0 right-0">
+        {/* Points → memories carousel — pushed well below the hint box */}
+        <div className="absolute top-[330px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="trigger"
@@ -114,8 +114,8 @@ export function OuterGuideLayout({ isGuideOn, children }: OuterGuideLayoutProps)
             description="Type 'pool', 'beach', 'hiking' or 'birthday' in search to see the Genie strip appear."
           />
         </div>
-        {/* Points → bottom nav FAB ~710px */}
-        <div className="absolute bottom-[80px] left-0 right-0">
+        {/* Points → bottom nav FAB */}
+        <div className="absolute bottom-[100px] left-0 right-0">
           <GuideCallout
             side="right"
             badgeType="interaction"
